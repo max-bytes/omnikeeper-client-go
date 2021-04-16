@@ -1,4 +1,4 @@
-module www.mhx.at/gitlab/landscape/omnikeeper-client-go
+module www.mhx.at/gitlab/landscape/omnikeeper-client-go.git
 
 go 1.13
 
