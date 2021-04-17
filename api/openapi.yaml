@@ -3237,11 +3237,11 @@ components:
     oauth2:
       flows:
         authorizationCode:
-          authorizationUrl: https://host.docker.internal:8443/auth/realms/landscape/protocol/openid-connect/auth
-          refreshUrl: https://host.docker.internal:8443/auth/realms/landscape/protocol/openid-connect/token
+          authorizationUrl: file:///protocol/openid-connect/auth
+          refreshUrl: file:///protocol/openid-connect/token
           scopes: {}
-          tokenUrl: https://host.docker.internal:8443/auth/realms/landscape/protocol/openid-connect/token
+          tokenUrl: file:///protocol/openid-connect/token
         clientCredentials:
           scopes: {}
-          tokenUrl: https://host.docker.internal:8443/auth/realms/landscape/protocol/openid-connect/token
+          tokenUrl: file:///protocol/openid-connect/token
       type: oauth2
