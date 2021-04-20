@@ -48,6 +48,8 @@ type APIClient struct {
 
 	// API Services
 
+	AnsibleInventoryScanIngestApi *AnsibleInventoryScanIngestApiService
+
 	AttributeApi *AttributeApiService
 
 	CIApi *CIApiService
@@ -59,6 +61,8 @@ type APIClient struct {
 	GridViewApi *GridViewApiService
 
 	LayerApi *LayerApiService
+
+	OKPluginGenericJSONIngestApi *OKPluginGenericJSONIngestApiService
 
 	RelationApi *RelationApiService
 
@@ -81,12 +85,14 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.AnsibleInventoryScanIngestApi = (*AnsibleInventoryScanIngestApiService)(&c.common)
 	c.AttributeApi = (*AttributeApiService)(&c.common)
 	c.CIApi = (*CIApiService)(&c.common)
 	c.CISearchApi = (*CISearchApiService)(&c.common)
 	c.GraphQLApi = (*GraphQLApiService)(&c.common)
 	c.GridViewApi = (*GridViewApiService)(&c.common)
 	c.LayerApi = (*LayerApiService)(&c.common)
+	c.OKPluginGenericJSONIngestApi = (*OKPluginGenericJSONIngestApiService)(&c.common)
 	c.RelationApi = (*RelationApiService)(&c.common)
 	c.TraitApi = (*TraitApiService)(&c.common)
 

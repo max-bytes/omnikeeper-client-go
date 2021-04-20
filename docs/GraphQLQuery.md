@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **OperationName** | Pointer to **NullableString** |  | [optional] 
 **NamedQuery** | Pointer to **NullableString** |  | [optional] 
 **Query** | Pointer to **NullableString** |  | [optional] 
-**Variables** | Pointer to **interface{}** |  | [optional] 
+**Variables** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -135,20 +135,20 @@ HasQuery returns a boolean if a field has been set.
 UnsetQuery ensures that no value is present for Query, not even an explicit nil
 ### GetVariables
 
-`func (o *GraphQLQuery) GetVariables() interface{}`
+`func (o *GraphQLQuery) GetVariables() map[string]interface{}`
 
 GetVariables returns the Variables field if non-nil, zero value otherwise.
 
 ### GetVariablesOk
 
-`func (o *GraphQLQuery) GetVariablesOk() (*interface{}, bool)`
+`func (o *GraphQLQuery) GetVariablesOk() (*map[string]interface{}, bool)`
 
 GetVariablesOk returns a tuple with the Variables field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVariables
 
-`func (o *GraphQLQuery) SetVariables(v interface{})`
+`func (o *GraphQLQuery) SetVariables(v map[string]interface{})`
 
 SetVariables sets Variables field to given value.
 

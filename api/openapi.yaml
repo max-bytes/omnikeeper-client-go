@@ -5,6 +5,96 @@ info:
 servers:
 - url: /
 paths:
+  /api/v{version}/Ingest/AnsibleInventoryScan:
+    post:
+      operationId: IngestAnsibleInventoryScan
+      parameters:
+      - explode: true
+        in: query
+        name: writeLayerID
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: searchLayerIDs
+        required: true
+        schema:
+          items:
+            format: int64
+            type: integer
+          type: array
+        style: form
+      - explode: false
+        in: path
+        name: version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/odata:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AnsibleInventoryScanDTO'
+        required: true
+      responses:
+        "200":
+          description: Success
+      security:
+      - oauth2: []
+      tags:
+      - AnsibleInventoryScanIngest
   /api/v{version}/Attribute/getMergedAttributesWithName:
     get:
       operationId: GetMergedAttributesWithName
@@ -32,6 +122,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -159,6 +250,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -291,6 +383,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -375,6 +468,7 @@ paths:
           items:
             format: uuid
             type: string
+          nullable: true
           type: array
         style: form
       - explode: true
@@ -393,6 +487,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -674,6 +769,8 @@ paths:
         name: layerIDs
         required: true
         schema:
+          description: Specifies which layers contribute to the result, and in which
+            order
           items:
             format: int64
             type: integer
@@ -694,7 +791,10 @@ paths:
         name: atTime
         required: false
         schema:
+          description: Specify datetime, for which point in time to get the data;
+            leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm)
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -772,6 +872,8 @@ paths:
         name: layerIDs
         required: true
         schema:
+          description: Specifies which layers contribute to the result, and in which
+            order
           items:
             format: int64
             type: integer
@@ -794,7 +896,10 @@ paths:
         name: atTime
         required: false
         schema:
+          description: Specify datetime, for which point in time to get the data;
+            leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm)
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -932,6 +1037,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -1183,6 +1289,7 @@ paths:
         name: name
         required: true
         schema:
+          nullable: true
           type: string
         style: simple
       - explode: false
@@ -1259,6 +1366,7 @@ paths:
         name: name
         required: true
         schema:
+          nullable: true
           type: string
         style: simple
       - explode: false
@@ -1286,6 +1394,7 @@ paths:
         name: name
         required: true
         schema:
+          nullable: true
           type: string
         style: simple
       - explode: false
@@ -1539,6 +1648,7 @@ paths:
         name: context
         required: true
         schema:
+          nullable: true
           type: string
         style: simple
       - explode: false
@@ -1564,6 +1674,7 @@ paths:
         name: context
         required: true
         schema:
+          nullable: true
           type: string
         style: simple
       - explode: false
@@ -1592,6 +1703,7 @@ paths:
         name: context
         required: true
         schema:
+          nullable: true
           type: string
         style: simple
       - explode: false
@@ -1999,6 +2111,144 @@ paths:
       summary: get layers by name
       tags:
       - Layer
+  /api/v{version}/ingest/genericJSON/manage/context:
+    get:
+      operationId: GetAllContexts
+      parameters:
+      - explode: false
+        in: path
+        name: version
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Success
+      security:
+      - oauth2: []
+      tags:
+      - OKPluginGenericJSONIngest
+    post:
+      operationId: AddNewContext
+      parameters:
+      - explode: false
+        in: path
+        name: version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/odata:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Context'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Context'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Context'
+        required: true
+      responses:
+        "200":
+          description: Success
+      security:
+      - oauth2: []
+      tags:
+      - OKPluginGenericJSONIngest
+  /api/v{version}/ingest/genericJSON/manage/context/{name}:
+    delete:
+      operationId: RemoveContext
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: version
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Success
+      security:
+      - oauth2: []
+      tags:
+      - OKPluginGenericJSONIngest
+    get:
+      operationId: GetContextByName
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: version
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Success
+      security:
+      - oauth2: []
+      tags:
+      - OKPluginGenericJSONIngest
   /api/v{version}/Relation/getMergedRelation:
     get:
       operationId: GetMergedRelation
@@ -2042,6 +2292,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -2134,6 +2385,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -2251,6 +2503,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -2376,6 +2629,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -2501,6 +2755,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -2625,6 +2880,7 @@ paths:
         required: false
         schema:
           format: date-time
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -2724,48 +2980,49 @@ paths:
       - Trait
 components:
   schemas:
-    AddContextRequest:
-      additionalProperties: false
+    AnsibleInventoryScanDTO:
       example:
-        configuration:
-          writeLayer: 0
-          columns:
-          - writeLayer: 1
-            sourceAttributeName: sourceAttributeName
-            columnDescription: columnDescription
-          - writeLayer: 1
-            sourceAttributeName: sourceAttributeName
-            columnDescription: columnDescription
-          trait: trait
-          showCIIDColumn: true
-          readLayerset:
-          - 6
-          - 6
-        name: name
-        description: description
-        speakingName: speakingName
+        yumUpdates:
+          key: '{}'
+        yumInstalled:
+          key: '{}'
+        yumRepos:
+          key: '{}'
+        setupFacts:
+          key: '{}'
       properties:
-        name:
-          nullable: true
-          type: string
-        speakingName:
-          nullable: true
-          type: string
-        description:
-          nullable: true
-          type: string
-        configuration:
-          $ref: '#/components/schemas/GridViewConfiguration'
+        setupFacts:
+          additionalProperties:
+            type: object
+          type: object
+        yumInstalled:
+          additionalProperties:
+            type: object
+          type: object
+        yumRepos:
+          additionalProperties:
+            type: object
+          type: object
+        yumUpdates:
+          additionalProperties:
+            type: object
+          type: object
+      required:
+      - setupFacts
+      - yumInstalled
+      - yumRepos
+      - yumUpdates
       type: object
-    AttributeState:
+    AttributeValueType:
       enum:
-      - New
-      - Changed
-      - Removed
-      - Renewed
+      - Text
+      - MultilineText
+      - Integer
+      - JSON
+      - YAML
+      - Image
       type: string
     AttributeValueDTO:
-      additionalProperties: false
       example:
         values:
         - values
@@ -2785,17 +3042,66 @@ components:
       - type
       - values
       type: object
-    AttributeValueType:
+    AttributeState:
       enum:
-      - Text
-      - MultilineText
-      - Integer
-      - JSON
-      - YAML
-      - Image
+      - New
+      - Changed
+      - Removed
+      - Renewed
       type: string
+    CIAttributeDTO:
+      example:
+        name: name
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        value:
+          values:
+          - values
+          - values
+          isArray: true
+        ciid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+        name:
+          type: string
+        value:
+          $ref: '#/components/schemas/AttributeValueDTO'
+        ciid:
+          format: uuid
+          type: string
+        state:
+          $ref: '#/components/schemas/AttributeState'
+      required:
+      - ciid
+      - id
+      - name
+      - state
+      - value
+      type: object
+    FragmentDTO:
+      example:
+        name: name
+        value:
+          values:
+          - values
+          - values
+          isArray: true
+        ciid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        name:
+          type: string
+        value:
+          $ref: '#/components/schemas/AttributeValueDTO'
+        ciid:
+          format: uuid
+          type: string
+      required:
+      - ciid
+      - name
+      - value
+      type: object
     BulkCIAttributeLayerScopeDTO:
-      additionalProperties: false
       example:
         layerID: 0
         namePrefix: namePrefix
@@ -2829,8 +3135,192 @@ components:
       - layerID
       - namePrefix
       type: object
+    CIDTO:
+      example:
+        attributes:
+          key:
+            name: name
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            value:
+              values:
+              - values
+              - values
+              isArray: true
+            ciid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+        attributes:
+          additionalProperties:
+            $ref: '#/components/schemas/CIAttributeDTO'
+          type: object
+      required:
+      - attributes
+      - id
+      type: object
+    GraphQLQuery:
+      example:
+        variables: '{}'
+        query: query
+        operationName: operationName
+        namedQuery: namedQuery
+      properties:
+        operationName:
+          nullable: true
+          type: string
+        namedQuery:
+          nullable: true
+          type: string
+        query:
+          nullable: true
+          type: string
+        variables:
+          nullable: true
+          type: object
+      type: object
+    GridViewColumn:
+      example:
+        writeLayer: 1
+        sourceAttributeName: sourceAttributeName
+        columnDescription: columnDescription
+      properties:
+        sourceAttributeName:
+          nullable: true
+          type: string
+        columnDescription:
+          nullable: true
+          type: string
+        valueType:
+          $ref: '#/components/schemas/AttributeValueType'
+        writeLayer:
+          format: int64
+          nullable: true
+          type: integer
+      type: object
+    GridViewConfiguration:
+      example:
+        writeLayer: 0
+        columns:
+        - writeLayer: 1
+          sourceAttributeName: sourceAttributeName
+          columnDescription: columnDescription
+        - writeLayer: 1
+          sourceAttributeName: sourceAttributeName
+          columnDescription: columnDescription
+        trait: trait
+        showCIIDColumn: true
+        readLayerset:
+        - 6
+        - 6
+      properties:
+        showCIIDColumn:
+          type: boolean
+        writeLayer:
+          format: int64
+          type: integer
+        readLayerset:
+          items:
+            format: int64
+            type: integer
+          nullable: true
+          type: array
+        columns:
+          items:
+            $ref: '#/components/schemas/GridViewColumn'
+          nullable: true
+          type: array
+        trait:
+          nullable: true
+          type: string
+      type: object
+    EditContextRequest:
+      example:
+        configuration:
+          writeLayer: 0
+          columns:
+          - writeLayer: 1
+            sourceAttributeName: sourceAttributeName
+            columnDescription: columnDescription
+          - writeLayer: 1
+            sourceAttributeName: sourceAttributeName
+            columnDescription: columnDescription
+          trait: trait
+          showCIIDColumn: true
+          readLayerset:
+          - 6
+          - 6
+        description: description
+        speakingName: speakingName
+      properties:
+        speakingName:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        configuration:
+          $ref: '#/components/schemas/GridViewConfiguration'
+      type: object
+    ProblemDetails:
+      properties:
+        type:
+          nullable: true
+          type: string
+        title:
+          nullable: true
+          type: string
+        status:
+          format: int32
+          nullable: true
+          type: integer
+        detail:
+          nullable: true
+          type: string
+        instance:
+          nullable: true
+          type: string
+        extensions:
+          additionalProperties:
+            type: object
+          nullable: true
+          readOnly: true
+          type: object
+      type: object
+    AddContextRequest:
+      example:
+        configuration:
+          writeLayer: 0
+          columns:
+          - writeLayer: 1
+            sourceAttributeName: sourceAttributeName
+            columnDescription: columnDescription
+          - writeLayer: 1
+            sourceAttributeName: sourceAttributeName
+            columnDescription: columnDescription
+          trait: trait
+          showCIIDColumn: true
+          readLayerset:
+          - 6
+          - 6
+        name: name
+        description: description
+        speakingName: speakingName
+      properties:
+        name:
+          nullable: true
+          type: string
+        speakingName:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        configuration:
+          $ref: '#/components/schemas/GridViewConfiguration'
+      type: object
     ChangeDataCell:
-      additionalProperties: false
       example:
         name: name
         changeable: true
@@ -2848,8 +3338,35 @@ components:
         changeable:
           type: boolean
       type: object
+    SparseRow:
+      example:
+        cells:
+        - name: name
+          changeable: true
+          value:
+            values:
+            - values
+            - values
+            isArray: true
+        - name: name
+          changeable: true
+          value:
+            values:
+            - values
+            - values
+            isArray: true
+        ciid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        ciid:
+          format: uuid
+          type: string
+        cells:
+          items:
+            $ref: '#/components/schemas/ChangeDataCell'
+          nullable: true
+          type: array
+      type: object
     ChangeDataRequest:
-      additionalProperties: false
       example:
         sparseRows:
         - cells:
@@ -2891,211 +3408,7 @@ components:
           nullable: true
           type: array
       type: object
-    CIAttributeDTO:
-      additionalProperties: false
-      example:
-        name: name
-        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        value:
-          values:
-          - values
-          - values
-          isArray: true
-        ciid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-      properties:
-        id:
-          format: uuid
-          type: string
-        name:
-          type: string
-        value:
-          $ref: '#/components/schemas/AttributeValueDTO'
-        ciid:
-          format: uuid
-          type: string
-        state:
-          $ref: '#/components/schemas/AttributeState'
-      required:
-      - ciid
-      - id
-      - name
-      - state
-      - value
-      type: object
-    CIDTO:
-      additionalProperties: false
-      example:
-        attributes:
-          key:
-            name: name
-            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            value:
-              values:
-              - values
-              - values
-              isArray: true
-            ciid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-      properties:
-        id:
-          format: uuid
-          type: string
-        attributes:
-          additionalProperties:
-            $ref: '#/components/schemas/CIAttributeDTO'
-          type: object
-      required:
-      - attributes
-      - id
-      type: object
-    EditContextRequest:
-      additionalProperties: false
-      example:
-        configuration:
-          writeLayer: 0
-          columns:
-          - writeLayer: 1
-            sourceAttributeName: sourceAttributeName
-            columnDescription: columnDescription
-          - writeLayer: 1
-            sourceAttributeName: sourceAttributeName
-            columnDescription: columnDescription
-          trait: trait
-          showCIIDColumn: true
-          readLayerset:
-          - 6
-          - 6
-        description: description
-        speakingName: speakingName
-      properties:
-        speakingName:
-          nullable: true
-          type: string
-        description:
-          nullable: true
-          type: string
-        configuration:
-          $ref: '#/components/schemas/GridViewConfiguration'
-      type: object
-    EffectiveTraitDTO:
-      additionalProperties: false
-      properties:
-        traitAttributes:
-          additionalProperties:
-            $ref: '#/components/schemas/CIAttributeDTO'
-          type: object
-        traitRelations:
-          additionalProperties:
-            items:
-              $ref: '#/components/schemas/RelatedCIDTO'
-            type: array
-          type: object
-      required:
-      - traitAttributes
-      - traitRelations
-      type: object
-    FragmentDTO:
-      additionalProperties: false
-      example:
-        name: name
-        value:
-          values:
-          - values
-          - values
-          isArray: true
-        ciid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-      properties:
-        name:
-          type: string
-        value:
-          $ref: '#/components/schemas/AttributeValueDTO'
-        ciid:
-          format: uuid
-          type: string
-      required:
-      - ciid
-      - name
-      - value
-      type: object
-    GraphQLQuery:
-      additionalProperties: false
-      example:
-        variables: ""
-        query: query
-        operationName: operationName
-        namedQuery: namedQuery
-      properties:
-        operationName:
-          nullable: true
-          type: string
-        namedQuery:
-          nullable: true
-          type: string
-        query:
-          nullable: true
-          type: string
-        variables:
-          nullable: true
-      type: object
-    GridViewColumn:
-      additionalProperties: false
-      example:
-        writeLayer: 1
-        sourceAttributeName: sourceAttributeName
-        columnDescription: columnDescription
-      properties:
-        sourceAttributeName:
-          nullable: true
-          type: string
-        columnDescription:
-          nullable: true
-          type: string
-        valueType:
-          $ref: '#/components/schemas/AttributeValueType'
-        writeLayer:
-          format: int64
-          nullable: true
-          type: integer
-      type: object
-    GridViewConfiguration:
-      additionalProperties: false
-      example:
-        writeLayer: 0
-        columns:
-        - writeLayer: 1
-          sourceAttributeName: sourceAttributeName
-          columnDescription: columnDescription
-        - writeLayer: 1
-          sourceAttributeName: sourceAttributeName
-          columnDescription: columnDescription
-        trait: trait
-        showCIIDColumn: true
-        readLayerset:
-        - 6
-        - 6
-      properties:
-        showCIIDColumn:
-          type: boolean
-        writeLayer:
-          format: int64
-          type: integer
-        readLayerset:
-          items:
-            format: int64
-            type: integer
-          nullable: true
-          type: array
-        columns:
-          items:
-            $ref: '#/components/schemas/GridViewColumn'
-          nullable: true
-          type: array
-        trait:
-          nullable: true
-          type: string
-      type: object
     LayerDTO:
-      additionalProperties: false
       example:
         name: name
         id: 0
@@ -3109,8 +3422,51 @@ components:
       - id
       - name
       type: object
+    IExtractConfig:
+      type: object
+    ITransformConfig:
+      type: object
+    ILoadConfig:
+      example:
+        writeLayerID: 6
+        searchLayerIDs:
+        - 0
+        - 0
+      properties:
+        searchLayerIDs:
+          items:
+            format: int64
+            type: integer
+          nullable: true
+          readOnly: true
+          type: array
+        writeLayerID:
+          format: int64
+          readOnly: true
+          type: integer
+      type: object
+    Context:
+      example:
+        extractConfig: '{}'
+        loadConfig:
+          writeLayerID: 6
+          searchLayerIDs:
+          - 0
+          - 0
+        name: name
+        transformConfig: '{}'
+      properties:
+        name:
+          nullable: true
+          type: string
+        extractConfig:
+          type: object
+        transformConfig:
+          type: object
+        loadConfig:
+          $ref: '#/components/schemas/ILoadConfig'
+      type: object
     PredicateDTO:
-      additionalProperties: false
       example:
         wordingFrom: wordingFrom
         id: id
@@ -3126,44 +3482,13 @@ components:
           nullable: true
           type: string
       type: object
-    ProblemDetails:
-      additionalProperties: {}
-      properties:
-        type:
-          nullable: true
-          type: string
-        title:
-          nullable: true
-          type: string
-        status:
-          format: int32
-          nullable: true
-          type: integer
-        detail:
-          nullable: true
-          type: string
-        instance:
-          nullable: true
-          type: string
-      type: object
-    RelatedCIDTO:
-      additionalProperties: false
-      properties:
-        fromCIID:
-          format: uuid
-          type: string
-        toCIID:
-          format: uuid
-          type: string
-        predicateID:
-          type: string
-      required:
-      - fromCIID
-      - predicateID
-      - toCIID
-      type: object
+    RelationState:
+      enum:
+      - New
+      - Removed
+      - Renewed
+      type: string
     RelationDTO:
-      additionalProperties: false
       example:
         toCIID: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         predicateID: predicateID
@@ -3198,40 +3523,36 @@ components:
       - state
       - toCIID
       type: object
-    RelationState:
-      enum:
-      - New
-      - Removed
-      - Renewed
-      type: string
-    SparseRow:
-      additionalProperties: false
-      example:
-        cells:
-        - name: name
-          changeable: true
-          value:
-            values:
-            - values
-            - values
-            isArray: true
-        - name: name
-          changeable: true
-          value:
-            values:
-            - values
-            - values
-            isArray: true
-        ciid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+    RelatedCIDTO:
       properties:
-        ciid:
+        fromCIID:
           format: uuid
           type: string
-        cells:
-          items:
-            $ref: '#/components/schemas/ChangeDataCell'
-          nullable: true
-          type: array
+        toCIID:
+          format: uuid
+          type: string
+        predicateID:
+          type: string
+      required:
+      - fromCIID
+      - predicateID
+      - toCIID
+      type: object
+    EffectiveTraitDTO:
+      properties:
+        traitAttributes:
+          additionalProperties:
+            $ref: '#/components/schemas/CIAttributeDTO'
+          type: object
+        traitRelations:
+          additionalProperties:
+            items:
+              $ref: '#/components/schemas/RelatedCIDTO'
+            type: array
+          type: object
+      required:
+      - traitAttributes
+      - traitRelations
       type: object
   securitySchemes:
     oauth2:

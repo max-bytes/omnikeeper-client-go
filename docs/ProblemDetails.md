@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **NullableInt32** |  | [optional] 
 **Detail** | Pointer to **NullableString** |  | [optional] 
 **Instance** | Pointer to **NullableString** |  | [optional] 
+**Extensions** | Pointer to **map[string]map[string]interface{}** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -204,6 +205,41 @@ HasInstance returns a boolean if a field has been set.
 `func (o *ProblemDetails) UnsetInstance()`
 
 UnsetInstance ensures that no value is present for Instance, not even an explicit nil
+### GetExtensions
+
+`func (o *ProblemDetails) GetExtensions() map[string]map[string]interface{}`
+
+GetExtensions returns the Extensions field if non-nil, zero value otherwise.
+
+### GetExtensionsOk
+
+`func (o *ProblemDetails) GetExtensionsOk() (*map[string]map[string]interface{}, bool)`
+
+GetExtensionsOk returns a tuple with the Extensions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtensions
+
+`func (o *ProblemDetails) SetExtensions(v map[string]map[string]interface{})`
+
+SetExtensions sets Extensions field to given value.
+
+### HasExtensions
+
+`func (o *ProblemDetails) HasExtensions() bool`
+
+HasExtensions returns a boolean if a field has been set.
+
+### SetExtensionsNil
+
+`func (o *ProblemDetails) SetExtensionsNil(b bool)`
+
+ SetExtensionsNil sets the value for Extensions to be an explicit nil
+
+### UnsetExtensions
+`func (o *ProblemDetails) UnsetExtensions()`
+
+UnsetExtensions ensures that no value is present for Extensions, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

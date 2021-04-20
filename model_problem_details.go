@@ -21,6 +21,7 @@ type ProblemDetails struct {
 	Status NullableInt32 `json:"status,omitempty"`
 	Detail NullableString `json:"detail,omitempty"`
 	Instance NullableString `json:"instance,omitempty"`
+	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
 }
 
 // NewProblemDetails instantiates a new ProblemDetails object
@@ -250,6 +251,39 @@ func (o *ProblemDetails) UnsetInstance() {
 	o.Instance.Unset()
 }
 
+// GetExtensions returns the Extensions field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ProblemDetails) GetExtensions() map[string]map[string]interface{} {
+	if o == nil  {
+		var ret map[string]map[string]interface{}
+		return ret
+	}
+	return o.Extensions
+}
+
+// GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ProblemDetails) GetExtensionsOk() (*map[string]map[string]interface{}, bool) {
+	if o == nil || o.Extensions == nil {
+		return nil, false
+	}
+	return &o.Extensions, true
+}
+
+// HasExtensions returns a boolean if a field has been set.
+func (o *ProblemDetails) HasExtensions() bool {
+	if o != nil && o.Extensions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
+func (o *ProblemDetails) SetExtensions(v map[string]map[string]interface{}) {
+	o.Extensions = v
+}
+
 func (o ProblemDetails) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type.IsSet() {
@@ -266,6 +300,9 @@ func (o ProblemDetails) MarshalJSON() ([]byte, error) {
 	}
 	if o.Instance.IsSet() {
 		toSerialize["instance"] = o.Instance.Get()
+	}
+	if o.Extensions != nil {
+		toSerialize["extensions"] = o.Extensions
 	}
 	return json.Marshal(toSerialize)
 }
