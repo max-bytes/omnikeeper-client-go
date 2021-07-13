@@ -9,12 +9,12 @@ release_note=$3
 git_host=$4
 
 if [ "$git_host" = "" ]; then
-    git_host="www.mhx.at/gitlab"
+    git_host="github.com"
     echo "[INFO] No command line input provided. Set \$git_host to $git_host"
 fi
 
 if [ "$git_user_id" = "" ]; then
-    git_user_id="landscape"
+    git_user_id="maximiliancsuk"
     echo "[INFO] No command line input provided. Set \$git_user_id to $git_user_id"
 fi
 
