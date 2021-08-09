@@ -1,4 +1,4 @@
-module github.com/maximiliancsuk/omnikeeper-client-go
+module github.com/max-bytes/omnikeeper-client-go
 
 go 1.13
 

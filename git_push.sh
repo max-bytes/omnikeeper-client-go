@@ -14,7 +14,7 @@ if [ "$git_host" = "" ]; then
 fi
 
 if [ "$git_user_id" = "" ]; then
-    git_user_id="maximiliancsuk"
+    git_user_id="max-bytes"
     echo "[INFO] No command line input provided. Set \$git_user_id to $git_user_id"
 fi
 
