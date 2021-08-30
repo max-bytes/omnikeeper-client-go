@@ -17,8 +17,8 @@ import (
 // GridViewConfiguration struct for GridViewConfiguration
 type GridViewConfiguration struct {
 	ShowCIIDColumn *bool `json:"showCIIDColumn,omitempty"`
-	WriteLayer *int64 `json:"writeLayer,omitempty"`
-	ReadLayerset []int64 `json:"readLayerset,omitempty"`
+	WriteLayer NullableString `json:"writeLayer,omitempty"`
+	ReadLayerset []string `json:"readLayerset,omitempty"`
 	Columns []GridViewColumn `json:"columns,omitempty"`
 	Trait NullableString `json:"trait,omitempty"`
 }
@@ -72,42 +72,52 @@ func (o *GridViewConfiguration) SetShowCIIDColumn(v bool) {
 	o.ShowCIIDColumn = &v
 }
 
-// GetWriteLayer returns the WriteLayer field value if set, zero value otherwise.
-func (o *GridViewConfiguration) GetWriteLayer() int64 {
-	if o == nil || o.WriteLayer == nil {
-		var ret int64
+// GetWriteLayer returns the WriteLayer field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GridViewConfiguration) GetWriteLayer() string {
+	if o == nil || o.WriteLayer.Get() == nil {
+		var ret string
 		return ret
 	}
-	return *o.WriteLayer
+	return *o.WriteLayer.Get()
 }
 
 // GetWriteLayerOk returns a tuple with the WriteLayer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GridViewConfiguration) GetWriteLayerOk() (*int64, bool) {
-	if o == nil || o.WriteLayer == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GridViewConfiguration) GetWriteLayerOk() (*string, bool) {
+	if o == nil  {
 		return nil, false
 	}
-	return o.WriteLayer, true
+	return o.WriteLayer.Get(), o.WriteLayer.IsSet()
 }
 
 // HasWriteLayer returns a boolean if a field has been set.
 func (o *GridViewConfiguration) HasWriteLayer() bool {
-	if o != nil && o.WriteLayer != nil {
+	if o != nil && o.WriteLayer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWriteLayer gets a reference to the given int64 and assigns it to the WriteLayer field.
-func (o *GridViewConfiguration) SetWriteLayer(v int64) {
-	o.WriteLayer = &v
+// SetWriteLayer gets a reference to the given NullableString and assigns it to the WriteLayer field.
+func (o *GridViewConfiguration) SetWriteLayer(v string) {
+	o.WriteLayer.Set(&v)
+}
+// SetWriteLayerNil sets the value for WriteLayer to be an explicit nil
+func (o *GridViewConfiguration) SetWriteLayerNil() {
+	o.WriteLayer.Set(nil)
+}
+
+// UnsetWriteLayer ensures that no value is present for WriteLayer, not even an explicit nil
+func (o *GridViewConfiguration) UnsetWriteLayer() {
+	o.WriteLayer.Unset()
 }
 
 // GetReadLayerset returns the ReadLayerset field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GridViewConfiguration) GetReadLayerset() []int64 {
+func (o *GridViewConfiguration) GetReadLayerset() []string {
 	if o == nil  {
-		var ret []int64
+		var ret []string
 		return ret
 	}
 	return o.ReadLayerset
@@ -116,7 +126,7 @@ func (o *GridViewConfiguration) GetReadLayerset() []int64 {
 // GetReadLayersetOk returns a tuple with the ReadLayerset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GridViewConfiguration) GetReadLayersetOk() (*[]int64, bool) {
+func (o *GridViewConfiguration) GetReadLayersetOk() (*[]string, bool) {
 	if o == nil || o.ReadLayerset == nil {
 		return nil, false
 	}
@@ -132,8 +142,8 @@ func (o *GridViewConfiguration) HasReadLayerset() bool {
 	return false
 }
 
-// SetReadLayerset gets a reference to the given []int64 and assigns it to the ReadLayerset field.
-func (o *GridViewConfiguration) SetReadLayerset(v []int64) {
+// SetReadLayerset gets a reference to the given []string and assigns it to the ReadLayerset field.
+func (o *GridViewConfiguration) SetReadLayerset(v []string) {
 	o.ReadLayerset = v
 }
 
@@ -217,8 +227,8 @@ func (o GridViewConfiguration) MarshalJSON() ([]byte, error) {
 	if o.ShowCIIDColumn != nil {
 		toSerialize["showCIIDColumn"] = o.ShowCIIDColumn
 	}
-	if o.WriteLayer != nil {
-		toSerialize["writeLayer"] = o.WriteLayer
+	if o.WriteLayer.IsSet() {
+		toSerialize["writeLayer"] = o.WriteLayer.Get()
 	}
 	if o.ReadLayerset != nil {
 		toSerialize["readLayerset"] = o.ReadLayerset

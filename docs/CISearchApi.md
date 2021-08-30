@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     withTraits := []string{"Inner_example"} // []string | 
     withoutTraits := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
@@ -61,7 +61,7 @@ Other parameters are passed through a pointer to a apiSearchCIsByTraitsRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
  **withTraits** | **[]string** |  | 
  **withoutTraits** | **[]string** |  | 
 

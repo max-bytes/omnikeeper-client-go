@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SearchLayerIDs** | Pointer to **[]int64** |  | [optional] [readonly] 
-**WriteLayerID** | Pointer to **int64** |  | [optional] [readonly] 
+**SearchLayerIDs** | Pointer to **[]string** |  | [optional] [readonly] 
+**WriteLayerID** | Pointer to **NullableString** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSearchLayerIDs
 
-`func (o *ILoadConfig) GetSearchLayerIDs() []int64`
+`func (o *ILoadConfig) GetSearchLayerIDs() []string`
 
 GetSearchLayerIDs returns the SearchLayerIDs field if non-nil, zero value otherwise.
 
 ### GetSearchLayerIDsOk
 
-`func (o *ILoadConfig) GetSearchLayerIDsOk() (*[]int64, bool)`
+`func (o *ILoadConfig) GetSearchLayerIDsOk() (*[]string, bool)`
 
 GetSearchLayerIDsOk returns a tuple with the SearchLayerIDs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSearchLayerIDs
 
-`func (o *ILoadConfig) SetSearchLayerIDs(v []int64)`
+`func (o *ILoadConfig) SetSearchLayerIDs(v []string)`
 
 SetSearchLayerIDs sets SearchLayerIDs field to given value.
 
@@ -63,20 +63,20 @@ HasSearchLayerIDs returns a boolean if a field has been set.
 UnsetSearchLayerIDs ensures that no value is present for SearchLayerIDs, not even an explicit nil
 ### GetWriteLayerID
 
-`func (o *ILoadConfig) GetWriteLayerID() int64`
+`func (o *ILoadConfig) GetWriteLayerID() string`
 
 GetWriteLayerID returns the WriteLayerID field if non-nil, zero value otherwise.
 
 ### GetWriteLayerIDOk
 
-`func (o *ILoadConfig) GetWriteLayerIDOk() (*int64, bool)`
+`func (o *ILoadConfig) GetWriteLayerIDOk() (*string, bool)`
 
 GetWriteLayerIDOk returns a tuple with the WriteLayerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWriteLayerID
 
-`func (o *ILoadConfig) SetWriteLayerID(v int64)`
+`func (o *ILoadConfig) SetWriteLayerID(v string)`
 
 SetWriteLayerID sets WriteLayerID field to given value.
 
@@ -86,6 +86,16 @@ SetWriteLayerID sets WriteLayerID field to given value.
 
 HasWriteLayerID returns a boolean if a field has been set.
 
+### SetWriteLayerIDNil
+
+`func (o *ILoadConfig) SetWriteLayerIDNil(b bool)`
+
+ SetWriteLayerIDNil sets the value for WriteLayerID to be an explicit nil
+
+### UnsetWriteLayerID
+`func (o *ILoadConfig) UnsetWriteLayerID()`
+
+UnsetWriteLayerID ensures that no value is present for WriteLayerID, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

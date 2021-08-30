@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ShowCIIDColumn** | Pointer to **bool** |  | [optional] 
-**WriteLayer** | Pointer to **int64** |  | [optional] 
-**ReadLayerset** | Pointer to **[]int64** |  | [optional] 
+**WriteLayer** | Pointer to **NullableString** |  | [optional] 
+**ReadLayerset** | Pointer to **[]string** |  | [optional] 
 **Columns** | Pointer to [**[]GridViewColumn**](GridViewColumn.md) |  | [optional] 
 **Trait** | Pointer to **NullableString** |  | [optional] 
 
@@ -56,20 +56,20 @@ HasShowCIIDColumn returns a boolean if a field has been set.
 
 ### GetWriteLayer
 
-`func (o *GridViewConfiguration) GetWriteLayer() int64`
+`func (o *GridViewConfiguration) GetWriteLayer() string`
 
 GetWriteLayer returns the WriteLayer field if non-nil, zero value otherwise.
 
 ### GetWriteLayerOk
 
-`func (o *GridViewConfiguration) GetWriteLayerOk() (*int64, bool)`
+`func (o *GridViewConfiguration) GetWriteLayerOk() (*string, bool)`
 
 GetWriteLayerOk returns a tuple with the WriteLayer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWriteLayer
 
-`func (o *GridViewConfiguration) SetWriteLayer(v int64)`
+`func (o *GridViewConfiguration) SetWriteLayer(v string)`
 
 SetWriteLayer sets WriteLayer field to given value.
 
@@ -79,22 +79,32 @@ SetWriteLayer sets WriteLayer field to given value.
 
 HasWriteLayer returns a boolean if a field has been set.
 
+### SetWriteLayerNil
+
+`func (o *GridViewConfiguration) SetWriteLayerNil(b bool)`
+
+ SetWriteLayerNil sets the value for WriteLayer to be an explicit nil
+
+### UnsetWriteLayer
+`func (o *GridViewConfiguration) UnsetWriteLayer()`
+
+UnsetWriteLayer ensures that no value is present for WriteLayer, not even an explicit nil
 ### GetReadLayerset
 
-`func (o *GridViewConfiguration) GetReadLayerset() []int64`
+`func (o *GridViewConfiguration) GetReadLayerset() []string`
 
 GetReadLayerset returns the ReadLayerset field if non-nil, zero value otherwise.
 
 ### GetReadLayersetOk
 
-`func (o *GridViewConfiguration) GetReadLayersetOk() (*[]int64, bool)`
+`func (o *GridViewConfiguration) GetReadLayersetOk() (*[]string, bool)`
 
 GetReadLayersetOk returns a tuple with the ReadLayerset field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReadLayerset
 
-`func (o *GridViewConfiguration) SetReadLayerset(v []int64)`
+`func (o *GridViewConfiguration) SetReadLayerset(v []string)`
 
 SetReadLayerset sets ReadLayerset field to given value.
 

@@ -16,18 +16,18 @@ import (
 
 // LayerDTO struct for LayerDTO
 type LayerDTO struct {
-	Name string `json:"name"`
-	Id int64 `json:"id"`
+	Id string `json:"id"`
+	Description string `json:"description"`
 }
 
 // NewLayerDTO instantiates a new LayerDTO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLayerDTO(name string, id int64) *LayerDTO {
+func NewLayerDTO(id string, description string) *LayerDTO {
 	this := LayerDTO{}
-	this.Name = name
 	this.Id = id
+	this.Description = description
 	return &this
 }
 
@@ -39,34 +39,10 @@ func NewLayerDTOWithDefaults() *LayerDTO {
 	return &this
 }
 
-// GetName returns the Name field value
-func (o *LayerDTO) GetName() string {
+// GetId returns the Id field value
+func (o *LayerDTO) GetId() string {
 	if o == nil {
 		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *LayerDTO) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *LayerDTO) SetName(v string) {
-	o.Name = v
-}
-
-// GetId returns the Id field value
-func (o *LayerDTO) GetId() int64 {
-	if o == nil {
-		var ret int64
 		return ret
 	}
 
@@ -75,7 +51,7 @@ func (o *LayerDTO) GetId() int64 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *LayerDTO) GetIdOk() (*int64, bool) {
+func (o *LayerDTO) GetIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -83,17 +59,41 @@ func (o *LayerDTO) GetIdOk() (*int64, bool) {
 }
 
 // SetId sets field value
-func (o *LayerDTO) SetId(v int64) {
+func (o *LayerDTO) SetId(v string) {
 	o.Id = v
+}
+
+// GetDescription returns the Description field value
+func (o *LayerDTO) GetDescription() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value
+// and a boolean to check if the value has been set.
+func (o *LayerDTO) GetDescriptionOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Description, true
+}
+
+// SetDescription sets field value
+func (o *LayerDTO) SetDescription(v string) {
+	o.Description = v
 }
 
 func (o LayerDTO) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["name"] = o.Name
+		toSerialize["id"] = o.Id
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["description"] = o.Description
 	}
 	return json.Marshal(toSerialize)
 }

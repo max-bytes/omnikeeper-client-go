@@ -136,7 +136,7 @@ type ApiFindMergedAttributesByNameRequest struct {
 	ctx _context.Context
 	ApiService *AttributeApiService
 	regex *string
-	layerIDs *[]int64
+	layerIDs *[]string
 	version string
 	ciids *[]string
 	atTime *time.Time
@@ -146,7 +146,7 @@ func (r ApiFindMergedAttributesByNameRequest) Regex(regex string) ApiFindMergedA
 	r.regex = &regex
 	return r
 }
-func (r ApiFindMergedAttributesByNameRequest) LayerIDs(layerIDs []int64) ApiFindMergedAttributesByNameRequest {
+func (r ApiFindMergedAttributesByNameRequest) LayerIDs(layerIDs []string) ApiFindMergedAttributesByNameRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
@@ -293,7 +293,7 @@ type ApiGetMergedAttributeRequest struct {
 	ApiService *AttributeApiService
 	ciid *string
 	name *string
-	layerIDs *[]int64
+	layerIDs *[]string
 	version string
 	atTime *time.Time
 }
@@ -306,7 +306,7 @@ func (r ApiGetMergedAttributeRequest) Name(name string) ApiGetMergedAttributeReq
 	r.name = &name
 	return r
 }
-func (r ApiGetMergedAttributeRequest) LayerIDs(layerIDs []int64) ApiGetMergedAttributeRequest {
+func (r ApiGetMergedAttributeRequest) LayerIDs(layerIDs []string) ApiGetMergedAttributeRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
@@ -441,7 +441,7 @@ type ApiGetMergedAttributesRequest struct {
 	ctx _context.Context
 	ApiService *AttributeApiService
 	ciids *[]string
-	layerIDs *[]int64
+	layerIDs *[]string
 	version string
 	atTime *time.Time
 }
@@ -450,7 +450,7 @@ func (r ApiGetMergedAttributesRequest) Ciids(ciids []string) ApiGetMergedAttribu
 	r.ciids = &ciids
 	return r
 }
-func (r ApiGetMergedAttributesRequest) LayerIDs(layerIDs []int64) ApiGetMergedAttributesRequest {
+func (r ApiGetMergedAttributesRequest) LayerIDs(layerIDs []string) ApiGetMergedAttributesRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
@@ -591,7 +591,7 @@ type ApiGetMergedAttributesWithNameRequest struct {
 	ctx _context.Context
 	ApiService *AttributeApiService
 	name *string
-	layerIDs *[]int64
+	layerIDs *[]string
 	version string
 	atTime *time.Time
 }
@@ -600,7 +600,7 @@ func (r ApiGetMergedAttributesWithNameRequest) Name(name string) ApiGetMergedAtt
 	r.name = &name
 	return r
 }
-func (r ApiGetMergedAttributesWithNameRequest) LayerIDs(layerIDs []int64) ApiGetMergedAttributesWithNameRequest {
+func (r ApiGetMergedAttributesWithNameRequest) LayerIDs(layerIDs []string) ApiGetMergedAttributesWithNameRequest {
 	r.layerIDs = &layerIDs
 	return r
 }

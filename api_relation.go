@@ -32,12 +32,12 @@ type RelationApiService service
 type ApiGetAllMergedRelationsRequest struct {
 	ctx _context.Context
 	ApiService *RelationApiService
-	layerIDs *[]int64
+	layerIDs *[]string
 	version string
 	atTime *time.Time
 }
 
-func (r ApiGetAllMergedRelationsRequest) LayerIDs(layerIDs []int64) ApiGetAllMergedRelationsRequest {
+func (r ApiGetAllMergedRelationsRequest) LayerIDs(layerIDs []string) ApiGetAllMergedRelationsRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
@@ -166,7 +166,7 @@ type ApiGetMergedRelationRequest struct {
 	fromCIID *string
 	toCIID *string
 	predicateID *string
-	layerIDs *[]int64
+	layerIDs *[]string
 	version string
 	atTime *time.Time
 }
@@ -183,7 +183,7 @@ func (r ApiGetMergedRelationRequest) PredicateID(predicateID string) ApiGetMerge
 	r.predicateID = &predicateID
 	return r
 }
-func (r ApiGetMergedRelationRequest) LayerIDs(layerIDs []int64) ApiGetMergedRelationRequest {
+func (r ApiGetMergedRelationRequest) LayerIDs(layerIDs []string) ApiGetMergedRelationRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
@@ -322,7 +322,7 @@ type ApiGetMergedRelationsFromOrToCIRequest struct {
 	ctx _context.Context
 	ApiService *RelationApiService
 	ciid *string
-	layerIDs *[]int64
+	layerIDs *[]string
 	version string
 	atTime *time.Time
 }
@@ -331,7 +331,7 @@ func (r ApiGetMergedRelationsFromOrToCIRequest) Ciid(ciid string) ApiGetMergedRe
 	r.ciid = &ciid
 	return r
 }
-func (r ApiGetMergedRelationsFromOrToCIRequest) LayerIDs(layerIDs []int64) ApiGetMergedRelationsFromOrToCIRequest {
+func (r ApiGetMergedRelationsFromOrToCIRequest) LayerIDs(layerIDs []string) ApiGetMergedRelationsFromOrToCIRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
@@ -462,7 +462,7 @@ type ApiGetMergedRelationsOutgoingFromCIRequest struct {
 	ctx _context.Context
 	ApiService *RelationApiService
 	fromCIID *string
-	layerIDs *[]int64
+	layerIDs *[]string
 	version string
 	atTime *time.Time
 }
@@ -471,7 +471,7 @@ func (r ApiGetMergedRelationsOutgoingFromCIRequest) FromCIID(fromCIID string) Ap
 	r.fromCIID = &fromCIID
 	return r
 }
-func (r ApiGetMergedRelationsOutgoingFromCIRequest) LayerIDs(layerIDs []int64) ApiGetMergedRelationsOutgoingFromCIRequest {
+func (r ApiGetMergedRelationsOutgoingFromCIRequest) LayerIDs(layerIDs []string) ApiGetMergedRelationsOutgoingFromCIRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
@@ -602,7 +602,7 @@ type ApiGetMergedRelationsWithPredicateRequest struct {
 	ctx _context.Context
 	ApiService *RelationApiService
 	predicateID *string
-	layerIDs *[]int64
+	layerIDs *[]string
 	version string
 	atTime *time.Time
 }
@@ -611,7 +611,7 @@ func (r ApiGetMergedRelationsWithPredicateRequest) PredicateID(predicateID strin
 	r.predicateID = &predicateID
 	return r
 }
-func (r ApiGetMergedRelationsWithPredicateRequest) LayerIDs(layerIDs []int64) ApiGetMergedRelationsWithPredicateRequest {
+func (r ApiGetMergedRelationsWithPredicateRequest) LayerIDs(layerIDs []string) ApiGetMergedRelationsWithPredicateRequest {
 	r.layerIDs = &layerIDs
 	return r
 }

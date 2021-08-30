@@ -31,17 +31,17 @@ type AnsibleInventoryScanIngestApiService service
 type ApiIngestAnsibleInventoryScanRequest struct {
 	ctx _context.Context
 	ApiService *AnsibleInventoryScanIngestApiService
-	writeLayerID *int64
-	searchLayerIDs *[]int64
+	writeLayerID *string
+	searchLayerIDs *[]string
 	version string
 	ansibleInventoryScanDTO *AnsibleInventoryScanDTO
 }
 
-func (r ApiIngestAnsibleInventoryScanRequest) WriteLayerID(writeLayerID int64) ApiIngestAnsibleInventoryScanRequest {
+func (r ApiIngestAnsibleInventoryScanRequest) WriteLayerID(writeLayerID string) ApiIngestAnsibleInventoryScanRequest {
 	r.writeLayerID = &writeLayerID
 	return r
 }
-func (r ApiIngestAnsibleInventoryScanRequest) SearchLayerIDs(searchLayerIDs []int64) ApiIngestAnsibleInventoryScanRequest {
+func (r ApiIngestAnsibleInventoryScanRequest) SearchLayerIDs(searchLayerIDs []string) ApiIngestAnsibleInventoryScanRequest {
 	r.searchLayerIDs = &searchLayerIDs
 	return r
 }

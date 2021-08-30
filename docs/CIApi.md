@@ -98,7 +98,7 @@ import (
 )
 
 func main() {
-    layerIDs := []int64{int64(123)} // []int64 | Specifies which layers contribute to the result, and in which order
+    layerIDs := []string{"Inner_example"} // []string | Specifies which layers contribute to the result, and in which order
     cIID := TODO // string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
@@ -130,7 +130,7 @@ Other parameters are passed through a pointer to a apiGetCIByIDRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **layerIDs** | **[]int64** | Specifies which layers contribute to the result, and in which order | 
+ **layerIDs** | **[]string** | Specifies which layers contribute to the result, and in which order | 
  **cIID** | [**string**](string.md) |  | 
 
  **atTime** | **time.Time** | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) | 
@@ -173,7 +173,7 @@ import (
 )
 
 func main() {
-    layerIDs := []int64{int64(123)} // []int64 | Specifies which layers contribute to the result, and in which order
+    layerIDs := []string{"Inner_example"} // []string | Specifies which layers contribute to the result, and in which order
     cIIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
@@ -205,7 +205,7 @@ Other parameters are passed through a pointer to a apiGetCIsByIDRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **layerIDs** | **[]int64** | Specifies which layers contribute to the result, and in which order | 
+ **layerIDs** | **[]string** | Specifies which layers contribute to the result, and in which order | 
  **cIIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) | 

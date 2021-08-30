@@ -19,7 +19,7 @@ type GridViewColumn struct {
 	SourceAttributeName NullableString `json:"sourceAttributeName,omitempty"`
 	ColumnDescription NullableString `json:"columnDescription,omitempty"`
 	ValueType *AttributeValueType `json:"valueType,omitempty"`
-	WriteLayer NullableInt64 `json:"writeLayer,omitempty"`
+	WriteLayer NullableString `json:"writeLayer,omitempty"`
 }
 
 // NewGridViewColumn instantiates a new GridViewColumn object
@@ -156,9 +156,9 @@ func (o *GridViewColumn) SetValueType(v AttributeValueType) {
 }
 
 // GetWriteLayer returns the WriteLayer field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GridViewColumn) GetWriteLayer() int64 {
+func (o *GridViewColumn) GetWriteLayer() string {
 	if o == nil || o.WriteLayer.Get() == nil {
-		var ret int64
+		var ret string
 		return ret
 	}
 	return *o.WriteLayer.Get()
@@ -167,7 +167,7 @@ func (o *GridViewColumn) GetWriteLayer() int64 {
 // GetWriteLayerOk returns a tuple with the WriteLayer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GridViewColumn) GetWriteLayerOk() (*int64, bool) {
+func (o *GridViewColumn) GetWriteLayerOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -183,8 +183,8 @@ func (o *GridViewColumn) HasWriteLayer() bool {
 	return false
 }
 
-// SetWriteLayer gets a reference to the given NullableInt64 and assigns it to the WriteLayer field.
-func (o *GridViewColumn) SetWriteLayer(v int64) {
+// SetWriteLayer gets a reference to the given NullableString and assigns it to the WriteLayer field.
+func (o *GridViewColumn) SetWriteLayer(v string) {
 	o.WriteLayer.Set(&v)
 }
 // SetWriteLayerNil sets the value for WriteLayer to be an explicit nil

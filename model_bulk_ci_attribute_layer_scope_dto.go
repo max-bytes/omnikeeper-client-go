@@ -17,7 +17,7 @@ import (
 // BulkCIAttributeLayerScopeDTO struct for BulkCIAttributeLayerScopeDTO
 type BulkCIAttributeLayerScopeDTO struct {
 	NamePrefix string `json:"namePrefix"`
-	LayerID int64 `json:"layerID"`
+	LayerID string `json:"layerID"`
 	Fragments []FragmentDTO `json:"fragments"`
 }
 
@@ -25,7 +25,7 @@ type BulkCIAttributeLayerScopeDTO struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBulkCIAttributeLayerScopeDTO(namePrefix string, layerID int64, fragments []FragmentDTO) *BulkCIAttributeLayerScopeDTO {
+func NewBulkCIAttributeLayerScopeDTO(namePrefix string, layerID string, fragments []FragmentDTO) *BulkCIAttributeLayerScopeDTO {
 	this := BulkCIAttributeLayerScopeDTO{}
 	this.NamePrefix = namePrefix
 	this.LayerID = layerID
@@ -66,9 +66,9 @@ func (o *BulkCIAttributeLayerScopeDTO) SetNamePrefix(v string) {
 }
 
 // GetLayerID returns the LayerID field value
-func (o *BulkCIAttributeLayerScopeDTO) GetLayerID() int64 {
+func (o *BulkCIAttributeLayerScopeDTO) GetLayerID() string {
 	if o == nil {
-		var ret int64
+		var ret string
 		return ret
 	}
 
@@ -77,7 +77,7 @@ func (o *BulkCIAttributeLayerScopeDTO) GetLayerID() int64 {
 
 // GetLayerIDOk returns a tuple with the LayerID field value
 // and a boolean to check if the value has been set.
-func (o *BulkCIAttributeLayerScopeDTO) GetLayerIDOk() (*int64, bool) {
+func (o *BulkCIAttributeLayerScopeDTO) GetLayerIDOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -85,7 +85,7 @@ func (o *BulkCIAttributeLayerScopeDTO) GetLayerIDOk() (*int64, bool) {
 }
 
 // SetLayerID sets field value
-func (o *BulkCIAttributeLayerScopeDTO) SetLayerID(v int64) {
+func (o *BulkCIAttributeLayerScopeDTO) SetLayerID(v string) {
 	o.LayerID = v
 }
 

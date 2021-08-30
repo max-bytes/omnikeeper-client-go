@@ -27,10 +27,10 @@ import (
 )
 
 func main() {
-    writeLayerID := int64(789) // int64 | 
-    searchLayerIDs := []int64{int64(123)} // []int64 | 
+    writeLayerID := "writeLayerID_example" // string | 
+    searchLayerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
-    ansibleInventoryScanDTO := *openapiclient.NewAnsibleInventoryScanDTO(map[string]map[string]interface{}{"key": map[string]interface{}(123)}, map[string]map[string]interface{}{"key": map[string]interface{}(123)}, map[string]map[string]interface{}{"key": map[string]interface{}(123)}, map[string]map[string]interface{}{"key": map[string]interface{}(123)}) // AnsibleInventoryScanDTO | 
+    ansibleInventoryScanDTO := *openapiclient.NewAnsibleInventoryScanDTO(map[string]interface{}{"key": interface{}(123)}, map[string]interface{}{"key": interface{}(123)}, map[string]interface{}{"key": interface{}(123)}, map[string]interface{}{"key": interface{}(123)}) // AnsibleInventoryScanDTO | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -57,8 +57,8 @@ Other parameters are passed through a pointer to a apiIngestAnsibleInventoryScan
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writeLayerID** | **int64** |  | 
- **searchLayerIDs** | **[]int64** |  | 
+ **writeLayerID** | **string** |  | 
+ **searchLayerIDs** | **[]string** |  | 
 
  **ansibleInventoryScanDTO** | [**AnsibleInventoryScanDTO**](AnsibleInventoryScanDTO.md) |  | 
 

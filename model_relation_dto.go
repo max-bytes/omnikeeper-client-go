@@ -20,7 +20,6 @@ type RelationDTO struct {
 	FromCIID string `json:"fromCIID"`
 	ToCIID string `json:"toCIID"`
 	PredicateID string `json:"predicateID"`
-	Predicate PredicateDTO `json:"predicate"`
 	State RelationState `json:"state"`
 }
 
@@ -28,13 +27,12 @@ type RelationDTO struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationDTO(id string, fromCIID string, toCIID string, predicateID string, predicate PredicateDTO, state RelationState) *RelationDTO {
+func NewRelationDTO(id string, fromCIID string, toCIID string, predicateID string, state RelationState) *RelationDTO {
 	this := RelationDTO{}
 	this.Id = id
 	this.FromCIID = fromCIID
 	this.ToCIID = toCIID
 	this.PredicateID = predicateID
-	this.Predicate = predicate
 	this.State = state
 	return &this
 }
@@ -143,30 +141,6 @@ func (o *RelationDTO) SetPredicateID(v string) {
 	o.PredicateID = v
 }
 
-// GetPredicate returns the Predicate field value
-func (o *RelationDTO) GetPredicate() PredicateDTO {
-	if o == nil {
-		var ret PredicateDTO
-		return ret
-	}
-
-	return o.Predicate
-}
-
-// GetPredicateOk returns a tuple with the Predicate field value
-// and a boolean to check if the value has been set.
-func (o *RelationDTO) GetPredicateOk() (*PredicateDTO, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Predicate, true
-}
-
-// SetPredicate sets field value
-func (o *RelationDTO) SetPredicate(v PredicateDTO) {
-	o.Predicate = v
-}
-
 // GetState returns the State field value
 func (o *RelationDTO) GetState() RelationState {
 	if o == nil {
@@ -204,9 +178,6 @@ func (o RelationDTO) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["predicateID"] = o.PredicateID
-	}
-	if true {
-		toSerialize["predicate"] = o.Predicate
 	}
 	if true {
 		toSerialize["state"] = o.State

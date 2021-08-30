@@ -32,7 +32,7 @@ import (
 )
 
 func main() {
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
 
@@ -63,7 +63,7 @@ Other parameters are passed through a pointer to a apiGetAllMergedRelationsReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 
 
@@ -108,7 +108,7 @@ func main() {
     fromCIID := TODO // string | 
     toCIID := TODO // string | 
     predicateID := "predicateID_example" // string | 
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
  **fromCIID** | [**string**](string.md) |  | 
  **toCIID** | [**string**](string.md) |  | 
  **predicateID** | **string** |  | 
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 
 
@@ -185,7 +185,7 @@ import (
 
 func main() {
     ciid := TODO // string | 
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
 
@@ -217,7 +217,7 @@ Other parameters are passed through a pointer to a apiGetMergedRelationsFromOrTo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ciid** | [**string**](string.md) |  | 
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 
 
@@ -260,7 +260,7 @@ import (
 
 func main() {
     fromCIID := TODO // string | 
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
 
@@ -292,7 +292,7 @@ Other parameters are passed through a pointer to a apiGetMergedRelationsOutgoing
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fromCIID** | [**string**](string.md) |  | 
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 
 
@@ -335,7 +335,7 @@ import (
 
 func main() {
     predicateID := "predicateID_example" // string | 
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
 
@@ -367,7 +367,7 @@ Other parameters are passed through a pointer to a apiGetMergedRelationsWithPred
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **predicateID** | **string** |  | 
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NamePrefix** | **string** |  | 
-**LayerID** | **int64** |  | 
+**LayerID** | **string** |  | 
 **Fragments** | [**[]FragmentDTO**](FragmentDTO.md) |  | 
 
 ## Methods
 
 ### NewBulkCIAttributeLayerScopeDTO
 
-`func NewBulkCIAttributeLayerScopeDTO(namePrefix string, layerID int64, fragments []FragmentDTO, ) *BulkCIAttributeLayerScopeDTO`
+`func NewBulkCIAttributeLayerScopeDTO(namePrefix string, layerID string, fragments []FragmentDTO, ) *BulkCIAttributeLayerScopeDTO`
 
 NewBulkCIAttributeLayerScopeDTO instantiates a new BulkCIAttributeLayerScopeDTO object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetNamePrefix sets NamePrefix field to given value.
 
 ### GetLayerID
 
-`func (o *BulkCIAttributeLayerScopeDTO) GetLayerID() int64`
+`func (o *BulkCIAttributeLayerScopeDTO) GetLayerID() string`
 
 GetLayerID returns the LayerID field if non-nil, zero value otherwise.
 
 ### GetLayerIDOk
 
-`func (o *BulkCIAttributeLayerScopeDTO) GetLayerIDOk() (*int64, bool)`
+`func (o *BulkCIAttributeLayerScopeDTO) GetLayerIDOk() (*string, bool)`
 
 GetLayerIDOk returns a tuple with the LayerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLayerID
 
-`func (o *BulkCIAttributeLayerScopeDTO) SetLayerID(v int64)`
+`func (o *BulkCIAttributeLayerScopeDTO) SetLayerID(v string)`
 
 SetLayerID sets LayerID field to given value.
 

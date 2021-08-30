@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     traitName := "traitName_example" // string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiGetEffectiveTraitsForTrait
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
  **traitName** | **string** |  | 
 
  **atTime** | **time.Time** |  | 

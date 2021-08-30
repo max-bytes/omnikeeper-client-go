@@ -8,9 +8,9 @@ Method | HTTP request | Description
 [**ChangeData**](GridViewApi.md#ChangeData) | **Post** /api/v{version}/GridView/contexts/{context}/change | Saves grid view row changes and returns change results
 [**DeleteContext**](GridViewApi.md#DeleteContext) | **Delete** /api/v{version}/GridView/context/{name} | Deletes specific context
 [**EditContext**](GridViewApi.md#EditContext) | **Put** /api/v{version}/GridView/context/{name} | Edits specific context
-[**GetContext**](GridViewApi.md#GetContext) | **Get** /api/v{version}/GridView/context/{name} | Returns a single context in full
-[**GetContexts**](GridViewApi.md#GetContexts) | **Get** /api/v{version}/GridView/contexts | Returns a list of contexts for grid view.
 [**GetData**](GridViewApi.md#GetData) | **Get** /api/v{version}/GridView/contexts/{context}/data | Returns grid view data for specific context
+[**GetGridViewContext**](GridViewApi.md#GetGridViewContext) | **Get** /api/v{version}/GridView/context/{name} | Returns a single context in full
+[**GetGridViewContexts**](GridViewApi.md#GetGridViewContexts) | **Get** /api/v{version}/GridView/contexts | Returns a list of contexts for grid view.
 [**GetSchema**](GridViewApi.md#GetSchema) | **Get** /api/v{version}/GridView/contexts/{context}/schema | Returns grid view schema for specific context
 
 
@@ -294,141 +294,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetContext
-
-> GetContext(ctx, name, version).Execute()
-
-Returns a single context in full
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    name := "name_example" // string | 
-    version := "version_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.GetContext(context.Background(), name, version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetContext``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** |  | 
-**version** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetContextRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2), [oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetContexts
-
-> GetContexts(ctx, version).Execute()
-
-Returns a list of contexts for grid view.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    version := "version_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.GetContexts(context.Background(), version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetContexts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**version** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetContextsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2), [oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GetData
 
 > GetData(ctx, context, version).Execute()
@@ -478,6 +343,141 @@ Other parameters are passed through a pointer to a apiGetDataRequest struct via 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridViewContext
+
+> GetGridViewContext(ctx, name, version).Execute()
+
+Returns a single context in full
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | 
+    version := "version_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.GridViewApi.GetGridViewContext(context.Background(), name, version).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetGridViewContext``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** |  | 
+**version** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridViewContextRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridViewContexts
+
+> GetGridViewContexts(ctx, version).Execute()
+
+Returns a list of contexts for grid view.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    version := "version_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.GridViewApi.GetGridViewContexts(context.Background(), version).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetGridViewContexts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**version** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridViewContextsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
 ### Return type

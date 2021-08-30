@@ -16,7 +16,7 @@ import (
 
 // AddContextRequest struct for AddContextRequest
 type AddContextRequest struct {
-	Name NullableString `json:"name,omitempty"`
+	Id NullableString `json:"id,omitempty"`
 	SpeakingName NullableString `json:"speakingName,omitempty"`
 	Description NullableString `json:"description,omitempty"`
 	Configuration *GridViewConfiguration `json:"configuration,omitempty"`
@@ -39,46 +39,46 @@ func NewAddContextRequestWithDefaults() *AddContextRequest {
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddContextRequest) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddContextRequest) GetId() string {
+	if o == nil || o.Id.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name.Get()
+	return *o.Id.Get()
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddContextRequest) GetNameOk() (*string, bool) {
+func (o *AddContextRequest) GetIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.Name.Get(), o.Name.IsSet()
+	return o.Id.Get(), o.Id.IsSet()
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *AddContextRequest) HasName() bool {
-	if o != nil && o.Name.IsSet() {
+// HasId returns a boolean if a field has been set.
+func (o *AddContextRequest) HasId() bool {
+	if o != nil && o.Id.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *AddContextRequest) SetName(v string) {
-	o.Name.Set(&v)
+// SetId gets a reference to the given NullableString and assigns it to the Id field.
+func (o *AddContextRequest) SetId(v string) {
+	o.Id.Set(&v)
 }
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *AddContextRequest) SetNameNil() {
-	o.Name.Set(nil)
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *AddContextRequest) SetIdNil() {
+	o.Id.Set(nil)
 }
 
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *AddContextRequest) UnsetName() {
-	o.Name.Unset()
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *AddContextRequest) UnsetId() {
+	o.Id.Unset()
 }
 
 // GetSpeakingName returns the SpeakingName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -199,8 +199,8 @@ func (o *AddContextRequest) SetConfiguration(v GridViewConfiguration) {
 
 func (o AddContextRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name.IsSet() {
-		toSerialize["name"] = o.Name.Get()
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
 	if o.SpeakingName.IsSet() {
 		toSerialize["speakingName"] = o.SpeakingName.Get()

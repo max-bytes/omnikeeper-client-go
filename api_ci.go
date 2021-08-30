@@ -136,14 +136,14 @@ func (a *CIApiService) GetAllCIIDsExecute(r ApiGetAllCIIDsRequest) ([]string, *_
 type ApiGetCIByIDRequest struct {
 	ctx _context.Context
 	ApiService *CIApiService
-	layerIDs *[]int64
+	layerIDs *[]string
 	cIID *string
 	version string
 	atTime *time.Time
 }
 
 // Specifies which layers contribute to the result, and in which order
-func (r ApiGetCIByIDRequest) LayerIDs(layerIDs []int64) ApiGetCIByIDRequest {
+func (r ApiGetCIByIDRequest) LayerIDs(layerIDs []string) ApiGetCIByIDRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
@@ -278,14 +278,14 @@ func (a *CIApiService) GetCIByIDExecute(r ApiGetCIByIDRequest) (CIDTO, *_nethttp
 type ApiGetCIsByIDRequest struct {
 	ctx _context.Context
 	ApiService *CIApiService
-	layerIDs *[]int64
+	layerIDs *[]string
 	cIIDs *[]string
 	version string
 	atTime *time.Time
 }
 
 // Specifies which layers contribute to the result, and in which order
-func (r ApiGetCIsByIDRequest) LayerIDs(layerIDs []int64) ApiGetCIsByIDRequest {
+func (r ApiGetCIsByIDRequest) LayerIDs(layerIDs []string) ApiGetCIsByIDRequest {
 	r.layerIDs = &layerIDs
 	return r
 }

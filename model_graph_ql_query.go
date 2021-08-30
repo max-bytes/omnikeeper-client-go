@@ -19,7 +19,7 @@ type GraphQLQuery struct {
 	OperationName NullableString `json:"operationName,omitempty"`
 	NamedQuery NullableString `json:"namedQuery,omitempty"`
 	Query NullableString `json:"query,omitempty"`
-	Variables map[string]interface{} `json:"variables,omitempty"`
+	Variables interface{} `json:"variables,omitempty"`
 }
 
 // NewGraphQLQuery instantiates a new GraphQLQuery object
@@ -166,9 +166,9 @@ func (o *GraphQLQuery) UnsetQuery() {
 }
 
 // GetVariables returns the Variables field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GraphQLQuery) GetVariables() map[string]interface{} {
+func (o *GraphQLQuery) GetVariables() interface{} {
 	if o == nil  {
-		var ret map[string]interface{}
+		var ret interface{}
 		return ret
 	}
 	return o.Variables
@@ -177,7 +177,7 @@ func (o *GraphQLQuery) GetVariables() map[string]interface{} {
 // GetVariablesOk returns a tuple with the Variables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GraphQLQuery) GetVariablesOk() (*map[string]interface{}, bool) {
+func (o *GraphQLQuery) GetVariablesOk() (*interface{}, bool) {
 	if o == nil || o.Variables == nil {
 		return nil, false
 	}
@@ -193,8 +193,8 @@ func (o *GraphQLQuery) HasVariables() bool {
 	return false
 }
 
-// SetVariables gets a reference to the given map[string]interface{} and assigns it to the Variables field.
-func (o *GraphQLQuery) SetVariables(v map[string]interface{}) {
+// SetVariables gets a reference to the given interface{} and assigns it to the Variables field.
+func (o *GraphQLQuery) SetVariables(v interface{}) {
 	o.Variables = v
 }
 

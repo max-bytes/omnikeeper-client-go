@@ -32,14 +32,14 @@ type CISearchApiService service
 type ApiSearchCIsByTraitsRequest struct {
 	ctx _context.Context
 	ApiService *CISearchApiService
-	layerIDs *[]int64
+	layerIDs *[]string
 	withTraits *[]string
 	withoutTraits *[]string
 	version string
 	atTime *time.Time
 }
 
-func (r ApiSearchCIsByTraitsRequest) LayerIDs(layerIDs []int64) ApiSearchCIsByTraitsRequest {
+func (r ApiSearchCIsByTraitsRequest) LayerIDs(layerIDs []string) ApiSearchCIsByTraitsRequest {
 	r.layerIDs = &layerIDs
 	return r
 }

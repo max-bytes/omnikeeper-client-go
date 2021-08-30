@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **NullableString** |  | [optional] 
+**Id** | Pointer to **NullableString** |  | [optional] 
 **SpeakingName** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **Configuration** | Pointer to [**GridViewConfiguration**](GridViewConfiguration.md) |  | [optional] 
@@ -28,41 +28,41 @@ NewAddContextRequestWithDefaults instantiates a new AddContextRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
+### GetId
 
-`func (o *AddContextRequest) GetName() string`
+`func (o *AddContextRequest) GetId() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetIdOk
 
-`func (o *AddContextRequest) GetNameOk() (*string, bool)`
+`func (o *AddContextRequest) GetIdOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetId
 
-`func (o *AddContextRequest) SetName(v string)`
+`func (o *AddContextRequest) SetId(v string)`
 
-SetName sets Name field to given value.
+SetId sets Id field to given value.
 
-### HasName
+### HasId
 
-`func (o *AddContextRequest) HasName() bool`
+`func (o *AddContextRequest) HasId() bool`
 
-HasName returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
-### SetNameNil
+### SetIdNil
 
-`func (o *AddContextRequest) SetNameNil(b bool)`
+`func (o *AddContextRequest) SetIdNil(b bool)`
 
- SetNameNil sets the value for Name to be an explicit nil
+ SetIdNil sets the value for Id to be an explicit nil
 
-### UnsetName
-`func (o *AddContextRequest) UnsetName()`
+### UnsetId
+`func (o *AddContextRequest) UnsetId()`
 
-UnsetName ensures that no value is present for Name, not even an explicit nil
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetSpeakingName
 
 `func (o *AddContextRequest) GetSpeakingName() string`

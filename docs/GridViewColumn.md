@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **SourceAttributeName** | Pointer to **NullableString** |  | [optional] 
 **ColumnDescription** | Pointer to **NullableString** |  | [optional] 
 **ValueType** | Pointer to [**AttributeValueType**](AttributeValueType.md) |  | [optional] 
-**WriteLayer** | Pointer to **NullableInt64** |  | [optional] 
+**WriteLayer** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -125,20 +125,20 @@ HasValueType returns a boolean if a field has been set.
 
 ### GetWriteLayer
 
-`func (o *GridViewColumn) GetWriteLayer() int64`
+`func (o *GridViewColumn) GetWriteLayer() string`
 
 GetWriteLayer returns the WriteLayer field if non-nil, zero value otherwise.
 
 ### GetWriteLayerOk
 
-`func (o *GridViewColumn) GetWriteLayerOk() (*int64, bool)`
+`func (o *GridViewColumn) GetWriteLayerOk() (*string, bool)`
 
 GetWriteLayerOk returns a tuple with the WriteLayer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWriteLayer
 
-`func (o *GridViewColumn) SetWriteLayer(v int64)`
+`func (o *GridViewColumn) SetWriteLayer(v string)`
 
 SetWriteLayer sets WriteLayer field to given value.
 

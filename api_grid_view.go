@@ -469,37 +469,37 @@ func (a *GridViewApiService) EditContextExecute(r ApiEditContextRequest) (*_neth
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetContextRequest struct {
+type ApiGetDataRequest struct {
 	ctx _context.Context
 	ApiService *GridViewApiService
-	name string
+	context string
 	version string
 }
 
 
-func (r ApiGetContextRequest) Execute() (*_nethttp.Response, error) {
-	return r.ApiService.GetContextExecute(r)
+func (r ApiGetDataRequest) Execute() (*_nethttp.Response, error) {
+	return r.ApiService.GetDataExecute(r)
 }
 
 /*
-GetContext Returns a single context in full
+GetData Returns grid view data for specific context
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
+ @param context
  @param version
- @return ApiGetContextRequest
+ @return ApiGetDataRequest
 */
-func (a *GridViewApiService) GetContext(ctx _context.Context, name string, version string) ApiGetContextRequest {
-	return ApiGetContextRequest{
+func (a *GridViewApiService) GetData(ctx _context.Context, context string, version string) ApiGetDataRequest {
+	return ApiGetDataRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
+		context: context,
 		version: version,
 	}
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GetContextExecute(r ApiGetContextRequest) (*_nethttp.Response, error) {
+func (a *GridViewApiService) GetDataExecute(r ApiGetDataRequest) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -508,7 +508,104 @@ func (a *GridViewApiService) GetContextExecute(r ApiGetContextRequest) (*_nethtt
 		localVarFileBytes    []byte
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetData")
+	if err != nil {
+		return nil, GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/v{version}/GridView/contexts/{context}/data"
+	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", _neturl.PathEscape(parameterToString(r.context, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetGridViewContextRequest struct {
+	ctx _context.Context
+	ApiService *GridViewApiService
+	name string
+	version string
+}
+
+
+func (r ApiGetGridViewContextRequest) Execute() (*_nethttp.Response, error) {
+	return r.ApiService.GetGridViewContextExecute(r)
+}
+
+/*
+GetGridViewContext Returns a single context in full
+
+ @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param name
+ @param version
+ @return ApiGetGridViewContextRequest
+*/
+func (a *GridViewApiService) GetGridViewContext(ctx _context.Context, name string, version string) ApiGetGridViewContextRequest {
+	return ApiGetGridViewContextRequest{
+		ApiService: a,
+		ctx: ctx,
+		name: name,
+		version: version,
+	}
+}
+
+// Execute executes the request
+func (a *GridViewApiService) GetGridViewContextExecute(r ApiGetGridViewContextRequest) (*_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetGridViewContext")
 	if err != nil {
 		return nil, GenericOpenAPIError{error: err.Error()}
 	}
@@ -566,26 +663,26 @@ func (a *GridViewApiService) GetContextExecute(r ApiGetContextRequest) (*_nethtt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetContextsRequest struct {
+type ApiGetGridViewContextsRequest struct {
 	ctx _context.Context
 	ApiService *GridViewApiService
 	version string
 }
 
 
-func (r ApiGetContextsRequest) Execute() (*_nethttp.Response, error) {
-	return r.ApiService.GetContextsExecute(r)
+func (r ApiGetGridViewContextsRequest) Execute() (*_nethttp.Response, error) {
+	return r.ApiService.GetGridViewContextsExecute(r)
 }
 
 /*
-GetContexts Returns a list of contexts for grid view.
+GetGridViewContexts Returns a list of contexts for grid view.
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
- @return ApiGetContextsRequest
+ @return ApiGetGridViewContextsRequest
 */
-func (a *GridViewApiService) GetContexts(ctx _context.Context, version string) ApiGetContextsRequest {
-	return ApiGetContextsRequest{
+func (a *GridViewApiService) GetGridViewContexts(ctx _context.Context, version string) ApiGetGridViewContextsRequest {
+	return ApiGetGridViewContextsRequest{
 		ApiService: a,
 		ctx: ctx,
 		version: version,
@@ -593,7 +690,7 @@ func (a *GridViewApiService) GetContexts(ctx _context.Context, version string) A
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GetContextsExecute(r ApiGetContextsRequest) (*_nethttp.Response, error) {
+func (a *GridViewApiService) GetGridViewContextsExecute(r ApiGetGridViewContextsRequest) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -602,109 +699,12 @@ func (a *GridViewApiService) GetContextsExecute(r ApiGetContextsRequest) (*_neth
 		localVarFileBytes    []byte
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetContexts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetGridViewContexts")
 	if err != nil {
 		return nil, GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GridView/contexts"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiGetDataRequest struct {
-	ctx _context.Context
-	ApiService *GridViewApiService
-	context string
-	version string
-}
-
-
-func (r ApiGetDataRequest) Execute() (*_nethttp.Response, error) {
-	return r.ApiService.GetDataExecute(r)
-}
-
-/*
-GetData Returns grid view data for specific context
-
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param context
- @param version
- @return ApiGetDataRequest
-*/
-func (a *GridViewApiService) GetData(ctx _context.Context, context string, version string) ApiGetDataRequest {
-	return ApiGetDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		context: context,
-		version: version,
-	}
-}
-
-// Execute executes the request
-func (a *GridViewApiService) GetDataExecute(r ApiGetDataRequest) (*_nethttp.Response, error) {
-	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetData")
-	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v{version}/GridView/contexts/{context}/data"
-	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", _neturl.PathEscape(parameterToString(r.context, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)

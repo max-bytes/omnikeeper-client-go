@@ -16,7 +16,7 @@ import (
 
 // Context struct for Context
 type Context struct {
-	Name NullableString `json:"name,omitempty"`
+	Id NullableString `json:"id,omitempty"`
 	ExtractConfig *map[string]interface{} `json:"extractConfig,omitempty"`
 	TransformConfig *map[string]interface{} `json:"transformConfig,omitempty"`
 	LoadConfig *ILoadConfig `json:"loadConfig,omitempty"`
@@ -39,46 +39,46 @@ func NewContextWithDefaults() *Context {
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Context) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Context) GetId() string {
+	if o == nil || o.Id.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name.Get()
+	return *o.Id.Get()
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Context) GetNameOk() (*string, bool) {
+func (o *Context) GetIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.Name.Get(), o.Name.IsSet()
+	return o.Id.Get(), o.Id.IsSet()
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *Context) HasName() bool {
-	if o != nil && o.Name.IsSet() {
+// HasId returns a boolean if a field has been set.
+func (o *Context) HasId() bool {
+	if o != nil && o.Id.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *Context) SetName(v string) {
-	o.Name.Set(&v)
+// SetId gets a reference to the given NullableString and assigns it to the Id field.
+func (o *Context) SetId(v string) {
+	o.Id.Set(&v)
 }
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *Context) SetNameNil() {
-	o.Name.Set(nil)
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *Context) SetIdNil() {
+	o.Id.Set(nil)
 }
 
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *Context) UnsetName() {
-	o.Name.Unset()
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *Context) UnsetId() {
+	o.Id.Unset()
 }
 
 // GetExtractConfig returns the ExtractConfig field value if set, zero value otherwise.
@@ -179,8 +179,8 @@ func (o *Context) SetLoadConfig(v ILoadConfig) {
 
 func (o Context) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name.IsSet() {
-		toSerialize["name"] = o.Name.Get()
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
 	if o.ExtractConfig != nil {
 		toSerialize["extractConfig"] = o.ExtractConfig

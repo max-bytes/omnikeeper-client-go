@@ -32,13 +32,13 @@ type TraitApiService service
 type ApiGetEffectiveTraitsForTraitNameRequest struct {
 	ctx _context.Context
 	ApiService *TraitApiService
-	layerIDs *[]int64
+	layerIDs *[]string
 	traitName *string
 	version string
 	atTime *time.Time
 }
 
-func (r ApiGetEffectiveTraitsForTraitNameRequest) LayerIDs(layerIDs []int64) ApiGetEffectiveTraitsForTraitNameRequest {
+func (r ApiGetEffectiveTraitsForTraitNameRequest) LayerIDs(layerIDs []string) ApiGetEffectiveTraitsForTraitNameRequest {
 	r.layerIDs = &layerIDs
 	return r
 }

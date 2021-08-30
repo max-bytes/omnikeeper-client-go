@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Id** | **int64** |  | 
+**Id** | **string** |  | 
+**Description** | **string** |  | 
 
 ## Methods
 
 ### NewLayerDTO
 
-`func NewLayerDTO(name string, id int64, ) *LayerDTO`
+`func NewLayerDTO(id string, description string, ) *LayerDTO`
 
 NewLayerDTO instantiates a new LayerDTO object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +26,44 @@ NewLayerDTOWithDefaults instantiates a new LayerDTO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
-
-`func (o *LayerDTO) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *LayerDTO) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *LayerDTO) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
 ### GetId
 
-`func (o *LayerDTO) GetId() int64`
+`func (o *LayerDTO) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *LayerDTO) GetIdOk() (*int64, bool)`
+`func (o *LayerDTO) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *LayerDTO) SetId(v int64)`
+`func (o *LayerDTO) SetId(v string)`
 
 SetId sets Id field to given value.
+
+
+### GetDescription
+
+`func (o *LayerDTO) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *LayerDTO) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *LayerDTO) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
 
 
 

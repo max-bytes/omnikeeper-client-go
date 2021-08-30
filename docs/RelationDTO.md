@@ -7,15 +7,14 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **FromCIID** | **string** |  | 
 **ToCIID** | **string** |  | 
-**PredicateID** | **string** |  | [readonly] 
-**Predicate** | [**PredicateDTO**](PredicateDTO.md) |  | 
+**PredicateID** | **string** |  | 
 **State** | [**RelationState**](RelationState.md) |  | 
 
 ## Methods
 
 ### NewRelationDTO
 
-`func NewRelationDTO(id string, fromCIID string, toCIID string, predicateID string, predicate PredicateDTO, state RelationState, ) *RelationDTO`
+`func NewRelationDTO(id string, fromCIID string, toCIID string, predicateID string, state RelationState, ) *RelationDTO`
 
 NewRelationDTO instantiates a new RelationDTO object
 This constructor will assign default values to properties that have it defined,
@@ -108,26 +107,6 @@ and a boolean to check if the value has been set.
 `func (o *RelationDTO) SetPredicateID(v string)`
 
 SetPredicateID sets PredicateID field to given value.
-
-
-### GetPredicate
-
-`func (o *RelationDTO) GetPredicate() PredicateDTO`
-
-GetPredicate returns the Predicate field if non-nil, zero value otherwise.
-
-### GetPredicateOk
-
-`func (o *RelationDTO) GetPredicateOk() (*PredicateDTO, bool)`
-
-GetPredicateOk returns a tuple with the Predicate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPredicate
-
-`func (o *RelationDTO) SetPredicate(v PredicateDTO)`
-
-SetPredicate sets Predicate field to given value.
 
 
 ### GetState

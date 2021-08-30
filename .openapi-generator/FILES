@@ -41,7 +41,6 @@ docs/ILoadConfig.md
 docs/LayerApi.md
 docs/LayerDTO.md
 docs/OKPluginGenericJSONIngestApi.md
-docs/PredicateDTO.md
 docs/ProblemDetails.md
 docs/RelatedCIDTO.md
 docs/RelationApi.md
@@ -71,7 +70,6 @@ model_grid_view_column.go
 model_grid_view_configuration.go
 model_i_load_config.go
 model_layer_dto.go
-model_predicate_dto.go
 model_problem_details.go
 model_related_cidto.go
 model_relation_dto.go

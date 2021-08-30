@@ -32,7 +32,7 @@ import (
 
 func main() {
     version := "version_example" // string | 
-    bulkCIAttributeLayerScopeDTO := *openapiclient.NewBulkCIAttributeLayerScopeDTO("NamePrefix_example", int64(123), []openapiclient.FragmentDTO{*openapiclient.NewFragmentDTO("Name_example", *openapiclient.NewAttributeValueDTO(openapiclient.AttributeValueType("Text"), false, []string{"Values_example"}), "Ciid_example")}) // BulkCIAttributeLayerScopeDTO | 
+    bulkCIAttributeLayerScopeDTO := *openapiclient.NewBulkCIAttributeLayerScopeDTO("NamePrefix_example", "LayerID_example", []openapiclient.FragmentDTO{*openapiclient.NewFragmentDTO("Name_example", *openapiclient.NewAttributeValueDTO(openapiclient.AttributeValueType("Text"), false, []string{"Values_example"}), "Ciid_example")}) // BulkCIAttributeLayerScopeDTO | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -101,7 +101,7 @@ import (
 
 func main() {
     regex := "regex_example" // string | 
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     ciids := []string{"Inner_example"} // []string |  (optional)
     atTime := time.Now() // time.Time |  (optional)
@@ -134,7 +134,7 @@ Other parameters are passed through a pointer to a apiFindMergedAttributesByName
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regex** | **string** |  | 
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
 
  **ciids** | **[]string** |  | 
  **atTime** | **time.Time** |  | 
@@ -179,7 +179,7 @@ import (
 func main() {
     ciid := TODO // string | 
     name := "name_example" // string | 
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ciid** | [**string**](string.md) |  | 
  **name** | **string** |  | 
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 
 
@@ -255,7 +255,7 @@ import (
 
 func main() {
     ciids := []string{"Inner_example"} // []string | 
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
 
@@ -287,7 +287,7 @@ Other parameters are passed through a pointer to a apiGetMergedAttributesRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ciids** | **[]string** |  | 
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 
 
@@ -330,7 +330,7 @@ import (
 
 func main() {
     name := "name_example" // string | 
-    layerIDs := []int64{int64(123)} // []int64 | 
+    layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
 
@@ -362,7 +362,7 @@ Other parameters are passed through a pointer to a apiGetMergedAttributesWithNam
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string** |  | 
- **layerIDs** | **[]int64** |  | 
+ **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 
 
