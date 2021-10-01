@@ -25,7 +25,8 @@ const (
 	RELATIONSTATE_RENEWED RelationState = "Renewed"
 )
 
-var allowedRelationStateEnumValues = []RelationState{
+// All allowed values of RelationState enum
+var AllowedRelationStateEnumValues = []RelationState{
 	"New",
 	"Removed",
 	"Renewed",
@@ -38,7 +39,7 @@ func (v *RelationState) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := RelationState(value)
-	for _, existing := range allowedRelationStateEnumValues {
+	for _, existing := range AllowedRelationStateEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -55,13 +56,13 @@ func NewRelationStateFromValue(v string) (*RelationState, error) {
 	if ev.IsValid() {
 		return &ev, nil
 	} else {
-		return nil, fmt.Errorf("invalid value '%v' for RelationState: valid values are %v", v, allowedRelationStateEnumValues)
+		return nil, fmt.Errorf("invalid value '%v' for RelationState: valid values are %v", v, AllowedRelationStateEnumValues)
 	}
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
 func (v RelationState) IsValid() bool {
-	for _, existing := range allowedRelationStateEnumValues {
+	for _, existing := range AllowedRelationStateEnumValues {
 		if existing == v {
 			return true
 		}

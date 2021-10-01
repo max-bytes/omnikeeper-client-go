@@ -99,7 +99,7 @@ import (
 
 func main() {
     layerIDs := []string{"Inner_example"} // []string | Specifies which layers contribute to the result, and in which order
-    cIID := TODO // string | 
+    cIID := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
 
@@ -131,7 +131,7 @@ Other parameters are passed through a pointer to a apiGetCIByIDRequest struct vi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **layerIDs** | **[]string** | Specifies which layers contribute to the result, and in which order | 
- **cIID** | [**string**](string.md) |  | 
+ **cIID** | **string** |  | 
 
  **atTime** | **time.Time** | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) | 
 

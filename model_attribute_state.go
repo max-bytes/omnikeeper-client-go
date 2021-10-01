@@ -26,7 +26,8 @@ const (
 	ATTRIBUTESTATE_RENEWED AttributeState = "Renewed"
 )
 
-var allowedAttributeStateEnumValues = []AttributeState{
+// All allowed values of AttributeState enum
+var AllowedAttributeStateEnumValues = []AttributeState{
 	"New",
 	"Changed",
 	"Removed",
@@ -40,7 +41,7 @@ func (v *AttributeState) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := AttributeState(value)
-	for _, existing := range allowedAttributeStateEnumValues {
+	for _, existing := range AllowedAttributeStateEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -57,13 +58,13 @@ func NewAttributeStateFromValue(v string) (*AttributeState, error) {
 	if ev.IsValid() {
 		return &ev, nil
 	} else {
-		return nil, fmt.Errorf("invalid value '%v' for AttributeState: valid values are %v", v, allowedAttributeStateEnumValues)
+		return nil, fmt.Errorf("invalid value '%v' for AttributeState: valid values are %v", v, AllowedAttributeStateEnumValues)
 	}
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
 func (v AttributeState) IsValid() bool {
-	for _, existing := range allowedAttributeStateEnumValues {
+	for _, existing := range AllowedAttributeStateEnumValues {
 		if existing == v {
 			return true
 		}

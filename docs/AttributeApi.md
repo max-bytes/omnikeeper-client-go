@@ -177,7 +177,7 @@ import (
 )
 
 func main() {
-    ciid := TODO // string | 
+    ciid := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     name := "name_example" // string | 
     layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
@@ -210,7 +210,7 @@ Other parameters are passed through a pointer to a apiGetMergedAttributeRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ciid** | [**string**](string.md) |  | 
+ **ciid** | **string** |  | 
  **name** | **string** |  | 
  **layerIDs** | **[]string** |  | 
 

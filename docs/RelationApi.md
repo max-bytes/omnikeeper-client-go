@@ -105,8 +105,8 @@ import (
 )
 
 func main() {
-    fromCIID := TODO // string | 
-    toCIID := TODO // string | 
+    fromCIID := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
+    toCIID := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     predicateID := "predicateID_example" // string | 
     layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
@@ -139,8 +139,8 @@ Other parameters are passed through a pointer to a apiGetMergedRelationRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fromCIID** | [**string**](string.md) |  | 
- **toCIID** | [**string**](string.md) |  | 
+ **fromCIID** | **string** |  | 
+ **toCIID** | **string** |  | 
  **predicateID** | **string** |  | 
  **layerIDs** | **[]string** |  | 
 
@@ -184,7 +184,7 @@ import (
 )
 
 func main() {
-    ciid := TODO // string | 
+    ciid := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
@@ -216,7 +216,7 @@ Other parameters are passed through a pointer to a apiGetMergedRelationsFromOrTo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ciid** | [**string**](string.md) |  | 
+ **ciid** | **string** |  | 
  **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 
@@ -259,7 +259,7 @@ import (
 )
 
 func main() {
-    fromCIID := TODO // string | 
+    fromCIID := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     layerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
     atTime := time.Now() // time.Time |  (optional)
@@ -291,7 +291,7 @@ Other parameters are passed through a pointer to a apiGetMergedRelationsOutgoing
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fromCIID** | [**string**](string.md) |  | 
+ **fromCIID** | **string** |  | 
  **layerIDs** | **[]string** |  | 
 
  **atTime** | **time.Time** |  | 

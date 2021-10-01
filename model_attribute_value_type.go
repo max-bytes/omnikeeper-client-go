@@ -28,7 +28,8 @@ const (
 	ATTRIBUTEVALUETYPE_IMAGE AttributeValueType = "Image"
 )
 
-var allowedAttributeValueTypeEnumValues = []AttributeValueType{
+// All allowed values of AttributeValueType enum
+var AllowedAttributeValueTypeEnumValues = []AttributeValueType{
 	"Text",
 	"MultilineText",
 	"Integer",
@@ -44,7 +45,7 @@ func (v *AttributeValueType) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := AttributeValueType(value)
-	for _, existing := range allowedAttributeValueTypeEnumValues {
+	for _, existing := range AllowedAttributeValueTypeEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -61,13 +62,13 @@ func NewAttributeValueTypeFromValue(v string) (*AttributeValueType, error) {
 	if ev.IsValid() {
 		return &ev, nil
 	} else {
-		return nil, fmt.Errorf("invalid value '%v' for AttributeValueType: valid values are %v", v, allowedAttributeValueTypeEnumValues)
+		return nil, fmt.Errorf("invalid value '%v' for AttributeValueType: valid values are %v", v, AllowedAttributeValueTypeEnumValues)
 	}
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
 func (v AttributeValueType) IsValid() bool {
-	for _, existing := range allowedAttributeValueTypeEnumValues {
+	for _, existing := range AllowedAttributeValueTypeEnumValues {
 		if existing == v {
 			return true
 		}
