@@ -59,9 +59,7 @@ func (a *GraphQLApiService) DebugExecute(r ApiDebugRequest) (*_nethttp.Response,
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLApiService.Debug")
@@ -94,7 +92,7 @@ func (a *GraphQLApiService) DebugExecute(r ApiDebugRequest) (*_nethttp.Response,
 	}
 	// body params
 	localVarPostBody = r.graphQLQuery
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -155,9 +153,7 @@ func (a *GraphQLApiService) IndexExecute(r ApiIndexRequest) (*_nethttp.Response,
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLApiService.Index")
@@ -190,7 +186,7 @@ func (a *GraphQLApiService) IndexExecute(r ApiIndexRequest) (*_nethttp.Response,
 	}
 	// body params
 	localVarPostBody = r.graphQLQuery
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
