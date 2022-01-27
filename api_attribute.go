@@ -12,10 +12,10 @@ package okclient
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strings"
 	"reflect"
 	"time"
@@ -23,14 +23,14 @@ import (
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // AttributeApiService AttributeApi service
 type AttributeApiService service
 
 type ApiBulkReplaceAttributesInLayerRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *AttributeApiService
 	version string
 	bulkCIAttributeLayerScopeDTO *BulkCIAttributeLayerScopeDTO
@@ -41,18 +41,18 @@ func (r ApiBulkReplaceAttributesInLayerRequest) BulkCIAttributeLayerScopeDTO(bul
 	return r
 }
 
-func (r ApiBulkReplaceAttributesInLayerRequest) Execute() (*_nethttp.Response, error) {
+func (r ApiBulkReplaceAttributesInLayerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.BulkReplaceAttributesInLayerExecute(r)
 }
 
 /*
 BulkReplaceAttributesInLayer bulk replace all attributes in specified layer
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiBulkReplaceAttributesInLayerRequest
 */
-func (a *AttributeApiService) BulkReplaceAttributesInLayer(ctx _context.Context, version string) ApiBulkReplaceAttributesInLayerRequest {
+func (a *AttributeApiService) BulkReplaceAttributesInLayer(ctx context.Context, version string) ApiBulkReplaceAttributesInLayerRequest {
 	return ApiBulkReplaceAttributesInLayerRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -61,24 +61,24 @@ func (a *AttributeApiService) BulkReplaceAttributesInLayer(ctx _context.Context,
 }
 
 // Execute executes the request
-func (a *AttributeApiService) BulkReplaceAttributesInLayerExecute(r ApiBulkReplaceAttributesInLayerRequest) (*_nethttp.Response, error) {
+func (a *AttributeApiService) BulkReplaceAttributesInLayerExecute(r ApiBulkReplaceAttributesInLayerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeApiService.BulkReplaceAttributesInLayer")
 	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Attribute/bulkReplaceAttributesInLayer"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.bulkCIAttributeLayerScopeDTO == nil {
 		return nil, reportError("bulkCIAttributeLayerScopeDTO is required and must be specified")
 	}
@@ -112,15 +112,15 @@ func (a *AttributeApiService) BulkReplaceAttributesInLayerExecute(r ApiBulkRepla
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -131,7 +131,7 @@ func (a *AttributeApiService) BulkReplaceAttributesInLayerExecute(r ApiBulkRepla
 }
 
 type ApiFindMergedAttributesByNameRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *AttributeApiService
 	regex *string
 	layerIDs *[]string
@@ -157,18 +157,18 @@ func (r ApiFindMergedAttributesByNameRequest) AtTime(atTime time.Time) ApiFindMe
 	return r
 }
 
-func (r ApiFindMergedAttributesByNameRequest) Execute() ([]CIAttributeDTO, *_nethttp.Response, error) {
+func (r ApiFindMergedAttributesByNameRequest) Execute() ([]CIAttributeDTO, *http.Response, error) {
 	return r.ApiService.FindMergedAttributesByNameExecute(r)
 }
 
 /*
 FindMergedAttributesByName Method for FindMergedAttributesByName
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiFindMergedAttributesByNameRequest
 */
-func (a *AttributeApiService) FindMergedAttributesByName(ctx _context.Context, version string) ApiFindMergedAttributesByNameRequest {
+func (a *AttributeApiService) FindMergedAttributesByName(ctx context.Context, version string) ApiFindMergedAttributesByNameRequest {
 	return ApiFindMergedAttributesByNameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -178,9 +178,9 @@ func (a *AttributeApiService) FindMergedAttributesByName(ctx _context.Context, v
 
 // Execute executes the request
 //  @return []CIAttributeDTO
-func (a *AttributeApiService) FindMergedAttributesByNameExecute(r ApiFindMergedAttributesByNameRequest) ([]CIAttributeDTO, *_nethttp.Response, error) {
+func (a *AttributeApiService) FindMergedAttributesByNameExecute(r ApiFindMergedAttributesByNameRequest) ([]CIAttributeDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []CIAttributeDTO
@@ -188,15 +188,15 @@ func (a *AttributeApiService) FindMergedAttributesByNameExecute(r ApiFindMergedA
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeApiService.FindMergedAttributesByName")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Attribute/findMergedAttributesByName"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.regex == nil {
 		return localVarReturnValue, nil, reportError("regex is required and must be specified")
 	}
@@ -257,15 +257,15 @@ func (a *AttributeApiService) FindMergedAttributesByNameExecute(r ApiFindMergedA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -274,7 +274,7 @@ func (a *AttributeApiService) FindMergedAttributesByNameExecute(r ApiFindMergedA
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -285,7 +285,7 @@ func (a *AttributeApiService) FindMergedAttributesByNameExecute(r ApiFindMergedA
 }
 
 type ApiGetMergedAttributeRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *AttributeApiService
 	ciid *string
 	name *string
@@ -311,18 +311,18 @@ func (r ApiGetMergedAttributeRequest) AtTime(atTime time.Time) ApiGetMergedAttri
 	return r
 }
 
-func (r ApiGetMergedAttributeRequest) Execute() (CIAttributeDTO, *_nethttp.Response, error) {
+func (r ApiGetMergedAttributeRequest) Execute() (*CIAttributeDTO, *http.Response, error) {
 	return r.ApiService.GetMergedAttributeExecute(r)
 }
 
 /*
 GetMergedAttribute Method for GetMergedAttribute
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetMergedAttributeRequest
 */
-func (a *AttributeApiService) GetMergedAttribute(ctx _context.Context, version string) ApiGetMergedAttributeRequest {
+func (a *AttributeApiService) GetMergedAttribute(ctx context.Context, version string) ApiGetMergedAttributeRequest {
 	return ApiGetMergedAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -332,25 +332,25 @@ func (a *AttributeApiService) GetMergedAttribute(ctx _context.Context, version s
 
 // Execute executes the request
 //  @return CIAttributeDTO
-func (a *AttributeApiService) GetMergedAttributeExecute(r ApiGetMergedAttributeRequest) (CIAttributeDTO, *_nethttp.Response, error) {
+func (a *AttributeApiService) GetMergedAttributeExecute(r ApiGetMergedAttributeRequest) (*CIAttributeDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  CIAttributeDTO
+		localVarReturnValue  *CIAttributeDTO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeApiService.GetMergedAttribute")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Attribute/getMergedAttribute"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.ciid == nil {
 		return localVarReturnValue, nil, reportError("ciid is required and must be specified")
 	}
@@ -404,15 +404,15 @@ func (a *AttributeApiService) GetMergedAttributeExecute(r ApiGetMergedAttributeR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -421,7 +421,7 @@ func (a *AttributeApiService) GetMergedAttributeExecute(r ApiGetMergedAttributeR
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -432,7 +432,7 @@ func (a *AttributeApiService) GetMergedAttributeExecute(r ApiGetMergedAttributeR
 }
 
 type ApiGetMergedAttributesRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *AttributeApiService
 	ciids *[]string
 	layerIDs *[]string
@@ -453,18 +453,18 @@ func (r ApiGetMergedAttributesRequest) AtTime(atTime time.Time) ApiGetMergedAttr
 	return r
 }
 
-func (r ApiGetMergedAttributesRequest) Execute() ([]CIAttributeDTO, *_nethttp.Response, error) {
+func (r ApiGetMergedAttributesRequest) Execute() ([]CIAttributeDTO, *http.Response, error) {
 	return r.ApiService.GetMergedAttributesExecute(r)
 }
 
 /*
 GetMergedAttributes Method for GetMergedAttributes
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetMergedAttributesRequest
 */
-func (a *AttributeApiService) GetMergedAttributes(ctx _context.Context, version string) ApiGetMergedAttributesRequest {
+func (a *AttributeApiService) GetMergedAttributes(ctx context.Context, version string) ApiGetMergedAttributesRequest {
 	return ApiGetMergedAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -474,9 +474,9 @@ func (a *AttributeApiService) GetMergedAttributes(ctx _context.Context, version 
 
 // Execute executes the request
 //  @return []CIAttributeDTO
-func (a *AttributeApiService) GetMergedAttributesExecute(r ApiGetMergedAttributesRequest) ([]CIAttributeDTO, *_nethttp.Response, error) {
+func (a *AttributeApiService) GetMergedAttributesExecute(r ApiGetMergedAttributesRequest) ([]CIAttributeDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []CIAttributeDTO
@@ -484,15 +484,15 @@ func (a *AttributeApiService) GetMergedAttributesExecute(r ApiGetMergedAttribute
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeApiService.GetMergedAttributes")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Attribute/getMergedAttributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.ciids == nil {
 		return localVarReturnValue, nil, reportError("ciids is required and must be specified")
 	}
@@ -552,15 +552,15 @@ func (a *AttributeApiService) GetMergedAttributesExecute(r ApiGetMergedAttribute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -569,7 +569,7 @@ func (a *AttributeApiService) GetMergedAttributesExecute(r ApiGetMergedAttribute
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -580,7 +580,7 @@ func (a *AttributeApiService) GetMergedAttributesExecute(r ApiGetMergedAttribute
 }
 
 type ApiGetMergedAttributesWithNameRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *AttributeApiService
 	name *string
 	layerIDs *[]string
@@ -601,18 +601,18 @@ func (r ApiGetMergedAttributesWithNameRequest) AtTime(atTime time.Time) ApiGetMe
 	return r
 }
 
-func (r ApiGetMergedAttributesWithNameRequest) Execute() ([]CIAttributeDTO, *_nethttp.Response, error) {
+func (r ApiGetMergedAttributesWithNameRequest) Execute() ([]CIAttributeDTO, *http.Response, error) {
 	return r.ApiService.GetMergedAttributesWithNameExecute(r)
 }
 
 /*
 GetMergedAttributesWithName Method for GetMergedAttributesWithName
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetMergedAttributesWithNameRequest
 */
-func (a *AttributeApiService) GetMergedAttributesWithName(ctx _context.Context, version string) ApiGetMergedAttributesWithNameRequest {
+func (a *AttributeApiService) GetMergedAttributesWithName(ctx context.Context, version string) ApiGetMergedAttributesWithNameRequest {
 	return ApiGetMergedAttributesWithNameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -622,9 +622,9 @@ func (a *AttributeApiService) GetMergedAttributesWithName(ctx _context.Context, 
 
 // Execute executes the request
 //  @return []CIAttributeDTO
-func (a *AttributeApiService) GetMergedAttributesWithNameExecute(r ApiGetMergedAttributesWithNameRequest) ([]CIAttributeDTO, *_nethttp.Response, error) {
+func (a *AttributeApiService) GetMergedAttributesWithNameExecute(r ApiGetMergedAttributesWithNameRequest) ([]CIAttributeDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []CIAttributeDTO
@@ -632,15 +632,15 @@ func (a *AttributeApiService) GetMergedAttributesWithNameExecute(r ApiGetMergedA
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeApiService.GetMergedAttributesWithName")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Attribute/getMergedAttributesWithName"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.name == nil {
 		return localVarReturnValue, nil, reportError("name is required and must be specified")
 	}
@@ -690,15 +690,15 @@ func (a *AttributeApiService) GetMergedAttributesWithNameExecute(r ApiGetMergedA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -707,7 +707,7 @@ func (a *AttributeApiService) GetMergedAttributesWithNameExecute(r ApiGetMergedA
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

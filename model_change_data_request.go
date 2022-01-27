@@ -48,11 +48,11 @@ func (o *ChangeDataRequest) GetSparseRows() []SparseRow {
 // GetSparseRowsOk returns a tuple with the SparseRows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ChangeDataRequest) GetSparseRowsOk() (*[]SparseRow, bool) {
+func (o *ChangeDataRequest) GetSparseRowsOk() ([]SparseRow, bool) {
 	if o == nil || o.SparseRows == nil {
 		return nil, false
 	}
-	return &o.SparseRows, true
+	return o.SparseRows, true
 }
 
 // HasSparseRows returns a boolean if a field has been set.

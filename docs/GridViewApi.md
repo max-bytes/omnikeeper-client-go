@@ -38,8 +38,8 @@ func main() {
     addContextRequest := *openapiclient.NewAddContextRequest() // AddContextRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.AddContext(context.Background(), version).AddContextRequest(addContextRequest).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GridViewApi.AddContext(context.Background(), version).AddContextRequest(addContextRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.AddContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -107,8 +107,8 @@ func main() {
     changeDataRequest := *openapiclient.NewChangeDataRequest() // ChangeDataRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.ChangeData(context.Background(), context, version).ChangeDataRequest(changeDataRequest).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GridViewApi.ChangeData(context.Background(), context, version).ChangeDataRequest(changeDataRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.ChangeData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -177,8 +177,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.DeleteContext(context.Background(), name, version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GridViewApi.DeleteContext(context.Background(), name, version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.DeleteContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -247,8 +247,8 @@ func main() {
     editContextRequest := *openapiclient.NewEditContextRequest() // EditContextRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.EditContext(context.Background(), name, version).EditContextRequest(editContextRequest).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GridViewApi.EditContext(context.Background(), name, version).EditContextRequest(editContextRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.EditContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -317,8 +317,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.GetData(context.Background(), context, version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GridViewApi.GetData(context.Background(), context, version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -386,8 +386,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.GetGridViewContext(context.Background(), name, version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GridViewApi.GetGridViewContext(context.Background(), name, version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetGridViewContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -454,8 +454,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.GetGridViewContexts(context.Background(), version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GridViewApi.GetGridViewContexts(context.Background(), version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetGridViewContexts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -521,8 +521,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GridViewApi.GetSchema(context.Background(), context, version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GridViewApi.GetSchema(context.Background(), context, version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -12,10 +12,10 @@ package okclient
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strings"
 	"reflect"
 	"time"
@@ -23,14 +23,14 @@ import (
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // RelationApiService RelationApi service
 type RelationApiService service
 
 type ApiGetAllMergedRelationsRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *RelationApiService
 	layerIDs *[]string
 	version string
@@ -46,18 +46,18 @@ func (r ApiGetAllMergedRelationsRequest) AtTime(atTime time.Time) ApiGetAllMerge
 	return r
 }
 
-func (r ApiGetAllMergedRelationsRequest) Execute() ([]RelationDTO, *_nethttp.Response, error) {
+func (r ApiGetAllMergedRelationsRequest) Execute() ([]RelationDTO, *http.Response, error) {
 	return r.ApiService.GetAllMergedRelationsExecute(r)
 }
 
 /*
 GetAllMergedRelations Method for GetAllMergedRelations
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetAllMergedRelationsRequest
 */
-func (a *RelationApiService) GetAllMergedRelations(ctx _context.Context, version string) ApiGetAllMergedRelationsRequest {
+func (a *RelationApiService) GetAllMergedRelations(ctx context.Context, version string) ApiGetAllMergedRelationsRequest {
 	return ApiGetAllMergedRelationsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -67,9 +67,9 @@ func (a *RelationApiService) GetAllMergedRelations(ctx _context.Context, version
 
 // Execute executes the request
 //  @return []RelationDTO
-func (a *RelationApiService) GetAllMergedRelationsExecute(r ApiGetAllMergedRelationsRequest) ([]RelationDTO, *_nethttp.Response, error) {
+func (a *RelationApiService) GetAllMergedRelationsExecute(r ApiGetAllMergedRelationsRequest) ([]RelationDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []RelationDTO
@@ -77,15 +77,15 @@ func (a *RelationApiService) GetAllMergedRelationsExecute(r ApiGetAllMergedRelat
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationApiService.GetAllMergedRelations")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Relation/getAllMergedRelations"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.layerIDs == nil {
 		return localVarReturnValue, nil, reportError("layerIDs is required and must be specified")
 	}
@@ -131,15 +131,15 @@ func (a *RelationApiService) GetAllMergedRelationsExecute(r ApiGetAllMergedRelat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -148,7 +148,7 @@ func (a *RelationApiService) GetAllMergedRelationsExecute(r ApiGetAllMergedRelat
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -159,7 +159,7 @@ func (a *RelationApiService) GetAllMergedRelationsExecute(r ApiGetAllMergedRelat
 }
 
 type ApiGetMergedRelationRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *RelationApiService
 	fromCIID *string
 	toCIID *string
@@ -190,18 +190,18 @@ func (r ApiGetMergedRelationRequest) AtTime(atTime time.Time) ApiGetMergedRelati
 	return r
 }
 
-func (r ApiGetMergedRelationRequest) Execute() (RelationDTO, *_nethttp.Response, error) {
+func (r ApiGetMergedRelationRequest) Execute() (*RelationDTO, *http.Response, error) {
 	return r.ApiService.GetMergedRelationExecute(r)
 }
 
 /*
 GetMergedRelation Method for GetMergedRelation
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetMergedRelationRequest
 */
-func (a *RelationApiService) GetMergedRelation(ctx _context.Context, version string) ApiGetMergedRelationRequest {
+func (a *RelationApiService) GetMergedRelation(ctx context.Context, version string) ApiGetMergedRelationRequest {
 	return ApiGetMergedRelationRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -211,25 +211,25 @@ func (a *RelationApiService) GetMergedRelation(ctx _context.Context, version str
 
 // Execute executes the request
 //  @return RelationDTO
-func (a *RelationApiService) GetMergedRelationExecute(r ApiGetMergedRelationRequest) (RelationDTO, *_nethttp.Response, error) {
+func (a *RelationApiService) GetMergedRelationExecute(r ApiGetMergedRelationRequest) (*RelationDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  RelationDTO
+		localVarReturnValue  *RelationDTO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationApiService.GetMergedRelation")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Relation/getMergedRelation"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.fromCIID == nil {
 		return localVarReturnValue, nil, reportError("fromCIID is required and must be specified")
 	}
@@ -287,15 +287,15 @@ func (a *RelationApiService) GetMergedRelationExecute(r ApiGetMergedRelationRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -304,7 +304,7 @@ func (a *RelationApiService) GetMergedRelationExecute(r ApiGetMergedRelationRequ
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -315,7 +315,7 @@ func (a *RelationApiService) GetMergedRelationExecute(r ApiGetMergedRelationRequ
 }
 
 type ApiGetMergedRelationsFromOrToCIRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *RelationApiService
 	ciid *string
 	layerIDs *[]string
@@ -336,18 +336,18 @@ func (r ApiGetMergedRelationsFromOrToCIRequest) AtTime(atTime time.Time) ApiGetM
 	return r
 }
 
-func (r ApiGetMergedRelationsFromOrToCIRequest) Execute() ([]RelationDTO, *_nethttp.Response, error) {
+func (r ApiGetMergedRelationsFromOrToCIRequest) Execute() ([]RelationDTO, *http.Response, error) {
 	return r.ApiService.GetMergedRelationsFromOrToCIExecute(r)
 }
 
 /*
 GetMergedRelationsFromOrToCI Method for GetMergedRelationsFromOrToCI
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetMergedRelationsFromOrToCIRequest
 */
-func (a *RelationApiService) GetMergedRelationsFromOrToCI(ctx _context.Context, version string) ApiGetMergedRelationsFromOrToCIRequest {
+func (a *RelationApiService) GetMergedRelationsFromOrToCI(ctx context.Context, version string) ApiGetMergedRelationsFromOrToCIRequest {
 	return ApiGetMergedRelationsFromOrToCIRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -357,9 +357,9 @@ func (a *RelationApiService) GetMergedRelationsFromOrToCI(ctx _context.Context, 
 
 // Execute executes the request
 //  @return []RelationDTO
-func (a *RelationApiService) GetMergedRelationsFromOrToCIExecute(r ApiGetMergedRelationsFromOrToCIRequest) ([]RelationDTO, *_nethttp.Response, error) {
+func (a *RelationApiService) GetMergedRelationsFromOrToCIExecute(r ApiGetMergedRelationsFromOrToCIRequest) ([]RelationDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []RelationDTO
@@ -367,15 +367,15 @@ func (a *RelationApiService) GetMergedRelationsFromOrToCIExecute(r ApiGetMergedR
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationApiService.GetMergedRelationsFromOrToCI")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Relation/getMergedRelationsFromOrToCI"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.ciid == nil {
 		return localVarReturnValue, nil, reportError("ciid is required and must be specified")
 	}
@@ -425,15 +425,15 @@ func (a *RelationApiService) GetMergedRelationsFromOrToCIExecute(r ApiGetMergedR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -442,7 +442,7 @@ func (a *RelationApiService) GetMergedRelationsFromOrToCIExecute(r ApiGetMergedR
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -453,7 +453,7 @@ func (a *RelationApiService) GetMergedRelationsFromOrToCIExecute(r ApiGetMergedR
 }
 
 type ApiGetMergedRelationsOutgoingFromCIRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *RelationApiService
 	fromCIID *string
 	layerIDs *[]string
@@ -474,18 +474,18 @@ func (r ApiGetMergedRelationsOutgoingFromCIRequest) AtTime(atTime time.Time) Api
 	return r
 }
 
-func (r ApiGetMergedRelationsOutgoingFromCIRequest) Execute() ([]RelationDTO, *_nethttp.Response, error) {
+func (r ApiGetMergedRelationsOutgoingFromCIRequest) Execute() ([]RelationDTO, *http.Response, error) {
 	return r.ApiService.GetMergedRelationsOutgoingFromCIExecute(r)
 }
 
 /*
 GetMergedRelationsOutgoingFromCI Method for GetMergedRelationsOutgoingFromCI
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetMergedRelationsOutgoingFromCIRequest
 */
-func (a *RelationApiService) GetMergedRelationsOutgoingFromCI(ctx _context.Context, version string) ApiGetMergedRelationsOutgoingFromCIRequest {
+func (a *RelationApiService) GetMergedRelationsOutgoingFromCI(ctx context.Context, version string) ApiGetMergedRelationsOutgoingFromCIRequest {
 	return ApiGetMergedRelationsOutgoingFromCIRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -495,9 +495,9 @@ func (a *RelationApiService) GetMergedRelationsOutgoingFromCI(ctx _context.Conte
 
 // Execute executes the request
 //  @return []RelationDTO
-func (a *RelationApiService) GetMergedRelationsOutgoingFromCIExecute(r ApiGetMergedRelationsOutgoingFromCIRequest) ([]RelationDTO, *_nethttp.Response, error) {
+func (a *RelationApiService) GetMergedRelationsOutgoingFromCIExecute(r ApiGetMergedRelationsOutgoingFromCIRequest) ([]RelationDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []RelationDTO
@@ -505,15 +505,15 @@ func (a *RelationApiService) GetMergedRelationsOutgoingFromCIExecute(r ApiGetMer
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationApiService.GetMergedRelationsOutgoingFromCI")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Relation/getMergedRelationsOutgoingFromCI"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.fromCIID == nil {
 		return localVarReturnValue, nil, reportError("fromCIID is required and must be specified")
 	}
@@ -563,15 +563,15 @@ func (a *RelationApiService) GetMergedRelationsOutgoingFromCIExecute(r ApiGetMer
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -580,7 +580,7 @@ func (a *RelationApiService) GetMergedRelationsOutgoingFromCIExecute(r ApiGetMer
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -591,7 +591,7 @@ func (a *RelationApiService) GetMergedRelationsOutgoingFromCIExecute(r ApiGetMer
 }
 
 type ApiGetMergedRelationsWithPredicateRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *RelationApiService
 	predicateID *string
 	layerIDs *[]string
@@ -612,18 +612,18 @@ func (r ApiGetMergedRelationsWithPredicateRequest) AtTime(atTime time.Time) ApiG
 	return r
 }
 
-func (r ApiGetMergedRelationsWithPredicateRequest) Execute() ([]RelationDTO, *_nethttp.Response, error) {
+func (r ApiGetMergedRelationsWithPredicateRequest) Execute() ([]RelationDTO, *http.Response, error) {
 	return r.ApiService.GetMergedRelationsWithPredicateExecute(r)
 }
 
 /*
 GetMergedRelationsWithPredicate Method for GetMergedRelationsWithPredicate
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetMergedRelationsWithPredicateRequest
 */
-func (a *RelationApiService) GetMergedRelationsWithPredicate(ctx _context.Context, version string) ApiGetMergedRelationsWithPredicateRequest {
+func (a *RelationApiService) GetMergedRelationsWithPredicate(ctx context.Context, version string) ApiGetMergedRelationsWithPredicateRequest {
 	return ApiGetMergedRelationsWithPredicateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -633,9 +633,9 @@ func (a *RelationApiService) GetMergedRelationsWithPredicate(ctx _context.Contex
 
 // Execute executes the request
 //  @return []RelationDTO
-func (a *RelationApiService) GetMergedRelationsWithPredicateExecute(r ApiGetMergedRelationsWithPredicateRequest) ([]RelationDTO, *_nethttp.Response, error) {
+func (a *RelationApiService) GetMergedRelationsWithPredicateExecute(r ApiGetMergedRelationsWithPredicateRequest) ([]RelationDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []RelationDTO
@@ -643,15 +643,15 @@ func (a *RelationApiService) GetMergedRelationsWithPredicateExecute(r ApiGetMerg
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationApiService.GetMergedRelationsWithPredicate")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Relation/getMergedRelationsWithPredicate"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.predicateID == nil {
 		return localVarReturnValue, nil, reportError("predicateID is required and must be specified")
 	}
@@ -701,15 +701,15 @@ func (a *RelationApiService) GetMergedRelationsWithPredicateExecute(r ApiGetMerg
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -718,7 +718,7 @@ func (a *RelationApiService) GetMergedRelationsWithPredicateExecute(r ApiGetMerg
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

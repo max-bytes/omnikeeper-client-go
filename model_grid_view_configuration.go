@@ -126,11 +126,11 @@ func (o *GridViewConfiguration) GetReadLayerset() []string {
 // GetReadLayersetOk returns a tuple with the ReadLayerset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GridViewConfiguration) GetReadLayersetOk() (*[]string, bool) {
+func (o *GridViewConfiguration) GetReadLayersetOk() ([]string, bool) {
 	if o == nil || o.ReadLayerset == nil {
 		return nil, false
 	}
-	return &o.ReadLayerset, true
+	return o.ReadLayerset, true
 }
 
 // HasReadLayerset returns a boolean if a field has been set.
@@ -159,11 +159,11 @@ func (o *GridViewConfiguration) GetColumns() []GridViewColumn {
 // GetColumnsOk returns a tuple with the Columns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GridViewConfiguration) GetColumnsOk() (*[]GridViewColumn, bool) {
+func (o *GridViewConfiguration) GetColumnsOk() ([]GridViewColumn, bool) {
 	if o == nil || o.Columns == nil {
 		return nil, false
 	}
-	return &o.Columns, true
+	return o.Columns, true
 }
 
 // HasColumns returns a boolean if a field has been set.

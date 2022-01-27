@@ -12,40 +12,40 @@ package okclient
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strings"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // OKPluginGenericJSONIngestApiService OKPluginGenericJSONIngestApi service
 type OKPluginGenericJSONIngestApiService service
 
 type ApiGetAllContextsRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *OKPluginGenericJSONIngestApiService
 	version string
 }
 
 
-func (r ApiGetAllContextsRequest) Execute() ([]Context, *_nethttp.Response, error) {
+func (r ApiGetAllContextsRequest) Execute() ([]Context, *http.Response, error) {
 	return r.ApiService.GetAllContextsExecute(r)
 }
 
 /*
 GetAllContexts Method for GetAllContexts
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetAllContextsRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) GetAllContexts(ctx _context.Context, version string) ApiGetAllContextsRequest {
+func (a *OKPluginGenericJSONIngestApiService) GetAllContexts(ctx context.Context, version string) ApiGetAllContextsRequest {
 	return ApiGetAllContextsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -55,9 +55,9 @@ func (a *OKPluginGenericJSONIngestApiService) GetAllContexts(ctx _context.Contex
 
 // Execute executes the request
 //  @return []Context
-func (a *OKPluginGenericJSONIngestApiService) GetAllContextsExecute(r ApiGetAllContextsRequest) ([]Context, *_nethttp.Response, error) {
+func (a *OKPluginGenericJSONIngestApiService) GetAllContextsExecute(r ApiGetAllContextsRequest) ([]Context, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []Context
@@ -65,15 +65,15 @@ func (a *OKPluginGenericJSONIngestApiService) GetAllContextsExecute(r ApiGetAllC
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.GetAllContexts")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/manage/context"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -102,15 +102,15 @@ func (a *OKPluginGenericJSONIngestApiService) GetAllContextsExecute(r ApiGetAllC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -119,7 +119,7 @@ func (a *OKPluginGenericJSONIngestApiService) GetAllContextsExecute(r ApiGetAllC
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -130,26 +130,26 @@ func (a *OKPluginGenericJSONIngestApiService) GetAllContextsExecute(r ApiGetAllC
 }
 
 type ApiGetContextRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *OKPluginGenericJSONIngestApiService
 	id string
 	version string
 }
 
 
-func (r ApiGetContextRequest) Execute() (Context, *_nethttp.Response, error) {
+func (r ApiGetContextRequest) Execute() (*Context, *http.Response, error) {
 	return r.ApiService.GetContextExecute(r)
 }
 
 /*
 GetContext Method for GetContext
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
  @param version
  @return ApiGetContextRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) GetContext(ctx _context.Context, id string, version string) ApiGetContextRequest {
+func (a *OKPluginGenericJSONIngestApiService) GetContext(ctx context.Context, id string, version string) ApiGetContextRequest {
 	return ApiGetContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -160,26 +160,26 @@ func (a *OKPluginGenericJSONIngestApiService) GetContext(ctx _context.Context, i
 
 // Execute executes the request
 //  @return Context
-func (a *OKPluginGenericJSONIngestApiService) GetContextExecute(r ApiGetContextRequest) (Context, *_nethttp.Response, error) {
+func (a *OKPluginGenericJSONIngestApiService) GetContextExecute(r ApiGetContextRequest) (*Context, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Context
+		localVarReturnValue  *Context
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.GetContext")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/manage/context/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.PathEscape(parameterToString(r.id, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -208,15 +208,15 @@ func (a *OKPluginGenericJSONIngestApiService) GetContextExecute(r ApiGetContextR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -225,7 +225,7 @@ func (a *OKPluginGenericJSONIngestApiService) GetContextExecute(r ApiGetContextR
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -236,26 +236,26 @@ func (a *OKPluginGenericJSONIngestApiService) GetContextExecute(r ApiGetContextR
 }
 
 type ApiRemoveContextRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *OKPluginGenericJSONIngestApiService
 	id string
 	version string
 }
 
 
-func (r ApiRemoveContextRequest) Execute() (Context, *_nethttp.Response, error) {
+func (r ApiRemoveContextRequest) Execute() (*Context, *http.Response, error) {
 	return r.ApiService.RemoveContextExecute(r)
 }
 
 /*
 RemoveContext Method for RemoveContext
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
  @param version
  @return ApiRemoveContextRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) RemoveContext(ctx _context.Context, id string, version string) ApiRemoveContextRequest {
+func (a *OKPluginGenericJSONIngestApiService) RemoveContext(ctx context.Context, id string, version string) ApiRemoveContextRequest {
 	return ApiRemoveContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -266,26 +266,26 @@ func (a *OKPluginGenericJSONIngestApiService) RemoveContext(ctx _context.Context
 
 // Execute executes the request
 //  @return Context
-func (a *OKPluginGenericJSONIngestApiService) RemoveContextExecute(r ApiRemoveContextRequest) (Context, *_nethttp.Response, error) {
+func (a *OKPluginGenericJSONIngestApiService) RemoveContextExecute(r ApiRemoveContextRequest) (*Context, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodDelete
+		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Context
+		localVarReturnValue  *Context
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.RemoveContext")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/manage/context/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.PathEscape(parameterToString(r.id, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -314,15 +314,15 @@ func (a *OKPluginGenericJSONIngestApiService) RemoveContextExecute(r ApiRemoveCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -331,7 +331,7 @@ func (a *OKPluginGenericJSONIngestApiService) RemoveContextExecute(r ApiRemoveCo
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -342,7 +342,7 @@ func (a *OKPluginGenericJSONIngestApiService) RemoveContextExecute(r ApiRemoveCo
 }
 
 type ApiUpsertContextRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *OKPluginGenericJSONIngestApiService
 	version string
 	context *Context
@@ -353,18 +353,18 @@ func (r ApiUpsertContextRequest) Context(context Context) ApiUpsertContextReques
 	return r
 }
 
-func (r ApiUpsertContextRequest) Execute() (Context, *_nethttp.Response, error) {
+func (r ApiUpsertContextRequest) Execute() (*Context, *http.Response, error) {
 	return r.ApiService.UpsertContextExecute(r)
 }
 
 /*
 UpsertContext Method for UpsertContext
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiUpsertContextRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) UpsertContext(ctx _context.Context, version string) ApiUpsertContextRequest {
+func (a *OKPluginGenericJSONIngestApiService) UpsertContext(ctx context.Context, version string) ApiUpsertContextRequest {
 	return ApiUpsertContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -374,25 +374,25 @@ func (a *OKPluginGenericJSONIngestApiService) UpsertContext(ctx _context.Context
 
 // Execute executes the request
 //  @return Context
-func (a *OKPluginGenericJSONIngestApiService) UpsertContextExecute(r ApiUpsertContextRequest) (Context, *_nethttp.Response, error) {
+func (a *OKPluginGenericJSONIngestApiService) UpsertContextExecute(r ApiUpsertContextRequest) (*Context, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  Context
+		localVarReturnValue  *Context
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.UpsertContext")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/manage/context"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.context == nil {
 		return localVarReturnValue, nil, reportError("context is required and must be specified")
 	}
@@ -426,15 +426,15 @@ func (a *OKPluginGenericJSONIngestApiService) UpsertContextExecute(r ApiUpsertCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -443,7 +443,7 @@ func (a *OKPluginGenericJSONIngestApiService) UpsertContextExecute(r ApiUpsertCo
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

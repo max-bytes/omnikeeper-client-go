@@ -32,8 +32,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CIApi.GetAllCIIDs(context.Background(), version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CIApi.GetAllCIIDs(context.Background(), version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CIApi.GetAllCIIDs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -104,8 +104,8 @@ func main() {
     atTime := time.Now() // time.Time | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CIApi.GetCIByID(context.Background(), version).LayerIDs(layerIDs).CIID(cIID).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CIApi.GetCIByID(context.Background(), version).LayerIDs(layerIDs).CIID(cIID).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CIApi.GetCIByID``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -179,8 +179,8 @@ func main() {
     atTime := time.Now() // time.Time | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CIApi.GetCIsByID(context.Background(), version).LayerIDs(layerIDs).CIIDs(cIIDs).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CIApi.GetCIsByID(context.Background(), version).LayerIDs(layerIDs).CIIDs(cIIDs).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CIApi.GetCIsByID``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

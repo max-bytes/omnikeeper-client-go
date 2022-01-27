@@ -101,11 +101,11 @@ func (o *AttributeValueDTO) GetValues() []string {
 
 // GetValuesOk returns a tuple with the Values field value
 // and a boolean to check if the value has been set.
-func (o *AttributeValueDTO) GetValuesOk() (*[]string, bool) {
+func (o *AttributeValueDTO) GetValuesOk() ([]string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Values, true
+	return o.Values, true
 }
 
 // SetValues sets field value

@@ -81,11 +81,11 @@ func (o *SparseRow) GetCells() []ChangeDataCell {
 // GetCellsOk returns a tuple with the Cells field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SparseRow) GetCellsOk() (*[]ChangeDataCell, bool) {
+func (o *SparseRow) GetCellsOk() ([]ChangeDataCell, bool) {
 	if o == nil || o.Cells == nil {
 		return nil, false
 	}
-	return &o.Cells, true
+	return o.Cells, true
 }
 
 // HasCells returns a boolean if a field has been set.

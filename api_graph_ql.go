@@ -12,22 +12,22 @@ package okclient
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // GraphQLApiService GraphQLApi service
 type GraphQLApiService service
 
 type ApiDebugRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *GraphQLApiService
 	graphQLQuery *GraphQLQuery
 }
@@ -37,17 +37,17 @@ func (r ApiDebugRequest) GraphQLQuery(graphQLQuery GraphQLQuery) ApiDebugRequest
 	return r
 }
 
-func (r ApiDebugRequest) Execute() (*_nethttp.Response, error) {
+func (r ApiDebugRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DebugExecute(r)
 }
 
 /*
 Debug Method for Debug
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDebugRequest
 */
-func (a *GraphQLApiService) Debug(ctx _context.Context) ApiDebugRequest {
+func (a *GraphQLApiService) Debug(ctx context.Context) ApiDebugRequest {
 	return ApiDebugRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -55,23 +55,23 @@ func (a *GraphQLApiService) Debug(ctx _context.Context) ApiDebugRequest {
 }
 
 // Execute executes the request
-func (a *GraphQLApiService) DebugExecute(r ApiDebugRequest) (*_nethttp.Response, error) {
+func (a *GraphQLApiService) DebugExecute(r ApiDebugRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLApiService.Debug")
 	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/graphql-debug"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "application/json-patch+json", "text/json", "application/_*+json"}
@@ -102,15 +102,15 @@ func (a *GraphQLApiService) DebugExecute(r ApiDebugRequest) (*_nethttp.Response,
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -121,7 +121,7 @@ func (a *GraphQLApiService) DebugExecute(r ApiDebugRequest) (*_nethttp.Response,
 }
 
 type ApiIndexRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *GraphQLApiService
 	graphQLQuery *GraphQLQuery
 }
@@ -131,17 +131,17 @@ func (r ApiIndexRequest) GraphQLQuery(graphQLQuery GraphQLQuery) ApiIndexRequest
 	return r
 }
 
-func (r ApiIndexRequest) Execute() (*_nethttp.Response, error) {
+func (r ApiIndexRequest) Execute() (*http.Response, error) {
 	return r.ApiService.IndexExecute(r)
 }
 
 /*
 Index Method for Index
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIndexRequest
 */
-func (a *GraphQLApiService) Index(ctx _context.Context) ApiIndexRequest {
+func (a *GraphQLApiService) Index(ctx context.Context) ApiIndexRequest {
 	return ApiIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -149,23 +149,23 @@ func (a *GraphQLApiService) Index(ctx _context.Context) ApiIndexRequest {
 }
 
 // Execute executes the request
-func (a *GraphQLApiService) IndexExecute(r ApiIndexRequest) (*_nethttp.Response, error) {
+func (a *GraphQLApiService) IndexExecute(r ApiIndexRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLApiService.Index")
 	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/graphql"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "application/json-patch+json", "text/json", "application/_*+json"}
@@ -196,15 +196,15 @@ func (a *GraphQLApiService) IndexExecute(r ApiIndexRequest) (*_nethttp.Response,
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}

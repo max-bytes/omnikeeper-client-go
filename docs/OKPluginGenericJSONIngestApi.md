@@ -33,8 +33,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OKPluginGenericJSONIngestApi.GetAllContexts(context.Background(), version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OKPluginGenericJSONIngestApi.GetAllContexts(context.Background(), version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestApi.GetAllContexts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -102,8 +102,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OKPluginGenericJSONIngestApi.GetContext(context.Background(), id, version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OKPluginGenericJSONIngestApi.GetContext(context.Background(), id, version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestApi.GetContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -173,8 +173,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OKPluginGenericJSONIngestApi.RemoveContext(context.Background(), id, version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OKPluginGenericJSONIngestApi.RemoveContext(context.Background(), id, version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestApi.RemoveContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -244,8 +244,8 @@ func main() {
     context := *openapiclient.NewContext() // Context | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OKPluginGenericJSONIngestApi.UpsertContext(context.Background(), version).Context(context).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OKPluginGenericJSONIngestApi.UpsertContext(context.Background(), version).Context(context).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestApi.UpsertContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

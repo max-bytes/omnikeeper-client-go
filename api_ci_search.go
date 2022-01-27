@@ -12,10 +12,10 @@ package okclient
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strings"
 	"reflect"
 	"time"
@@ -23,14 +23,14 @@ import (
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // CISearchApiService CISearchApi service
 type CISearchApiService service
 
 type ApiSearchCIsByTraitsRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *CISearchApiService
 	layerIDs *[]string
 	withTraits *[]string
@@ -56,18 +56,18 @@ func (r ApiSearchCIsByTraitsRequest) AtTime(atTime time.Time) ApiSearchCIsByTrai
 	return r
 }
 
-func (r ApiSearchCIsByTraitsRequest) Execute() ([]CIDTO, *_nethttp.Response, error) {
+func (r ApiSearchCIsByTraitsRequest) Execute() ([]CIDTO, *http.Response, error) {
 	return r.ApiService.SearchCIsByTraitsExecute(r)
 }
 
 /*
 SearchCIsByTraits Method for SearchCIsByTraits
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiSearchCIsByTraitsRequest
 */
-func (a *CISearchApiService) SearchCIsByTraits(ctx _context.Context, version string) ApiSearchCIsByTraitsRequest {
+func (a *CISearchApiService) SearchCIsByTraits(ctx context.Context, version string) ApiSearchCIsByTraitsRequest {
 	return ApiSearchCIsByTraitsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -77,9 +77,9 @@ func (a *CISearchApiService) SearchCIsByTraits(ctx _context.Context, version str
 
 // Execute executes the request
 //  @return []CIDTO
-func (a *CISearchApiService) SearchCIsByTraitsExecute(r ApiSearchCIsByTraitsRequest) ([]CIDTO, *_nethttp.Response, error) {
+func (a *CISearchApiService) SearchCIsByTraitsExecute(r ApiSearchCIsByTraitsRequest) ([]CIDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []CIDTO
@@ -87,15 +87,15 @@ func (a *CISearchApiService) SearchCIsByTraitsExecute(r ApiSearchCIsByTraitsRequ
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CISearchApiService.SearchCIsByTraits")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/CISearch/searchCIsByTraits"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.layerIDs == nil {
 		return localVarReturnValue, nil, reportError("layerIDs is required and must be specified")
 	}
@@ -169,15 +169,15 @@ func (a *CISearchApiService) SearchCIsByTraitsExecute(r ApiSearchCIsByTraitsRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -186,7 +186,7 @@ func (a *CISearchApiService) SearchCIsByTraitsExecute(r ApiSearchCIsByTraitsRequ
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

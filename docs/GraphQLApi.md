@@ -31,8 +31,8 @@ func main() {
     graphQLQuery := *openapiclient.NewGraphQLQuery() // GraphQLQuery |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GraphQLApi.Debug(context.Background()).GraphQLQuery(graphQLQuery).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GraphQLApi.Debug(context.Background()).GraphQLQuery(graphQLQuery).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GraphQLApi.Debug``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -93,8 +93,8 @@ func main() {
     graphQLQuery := *openapiclient.NewGraphQLQuery() // GraphQLQuery |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GraphQLApi.Index(context.Background()).GraphQLQuery(graphQLQuery).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GraphQLApi.Index(context.Background()).GraphQLQuery(graphQLQuery).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GraphQLApi.Index``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

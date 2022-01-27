@@ -32,8 +32,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LayerApi.GetAllLayers(context.Background(), version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LayerApi.GetAllLayers(context.Background(), version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LayerApi.GetAllLayers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -101,8 +101,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LayerApi.GetLayerByName(context.Background(), version).LayerName(layerName).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LayerApi.GetLayerByName(context.Background(), version).LayerName(layerName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LayerApi.GetLayerByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -171,8 +171,8 @@ func main() {
     version := "version_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LayerApi.GetLayersByName(context.Background(), version).LayerNames(layerNames).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LayerApi.GetLayersByName(context.Background(), version).LayerNames(layerNames).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LayerApi.GetLayersByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -35,8 +35,8 @@ func main() {
     bulkCIAttributeLayerScopeDTO := *openapiclient.NewBulkCIAttributeLayerScopeDTO("NamePrefix_example", "LayerID_example", []openapiclient.FragmentDTO{*openapiclient.NewFragmentDTO("Name_example", *openapiclient.NewAttributeValueDTO(openapiclient.AttributeValueType("Text"), false, []string{"Values_example"}), "Ciid_example")}) // BulkCIAttributeLayerScopeDTO | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AttributeApi.BulkReplaceAttributesInLayer(context.Background(), version).BulkCIAttributeLayerScopeDTO(bulkCIAttributeLayerScopeDTO).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttributeApi.BulkReplaceAttributesInLayer(context.Background(), version).BulkCIAttributeLayerScopeDTO(bulkCIAttributeLayerScopeDTO).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttributeApi.BulkReplaceAttributesInLayer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -107,8 +107,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AttributeApi.FindMergedAttributesByName(context.Background(), version).Regex(regex).LayerIDs(layerIDs).Ciids(ciids).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttributeApi.FindMergedAttributesByName(context.Background(), version).Regex(regex).LayerIDs(layerIDs).Ciids(ciids).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttributeApi.FindMergedAttributesByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -184,8 +184,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AttributeApi.GetMergedAttribute(context.Background(), version).Ciid(ciid).Name(name).LayerIDs(layerIDs).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttributeApi.GetMergedAttribute(context.Background(), version).Ciid(ciid).Name(name).LayerIDs(layerIDs).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttributeApi.GetMergedAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -260,8 +260,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AttributeApi.GetMergedAttributes(context.Background(), version).Ciids(ciids).LayerIDs(layerIDs).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttributeApi.GetMergedAttributes(context.Background(), version).Ciids(ciids).LayerIDs(layerIDs).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttributeApi.GetMergedAttributes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -335,8 +335,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AttributeApi.GetMergedAttributesWithName(context.Background(), version).Name(name).LayerIDs(layerIDs).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttributeApi.GetMergedAttributesWithName(context.Background(), version).Name(name).LayerIDs(layerIDs).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttributeApi.GetMergedAttributesWithName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

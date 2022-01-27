@@ -101,11 +101,11 @@ func (o *BulkCIAttributeLayerScopeDTO) GetFragments() []FragmentDTO {
 
 // GetFragmentsOk returns a tuple with the Fragments field value
 // and a boolean to check if the value has been set.
-func (o *BulkCIAttributeLayerScopeDTO) GetFragmentsOk() (*[]FragmentDTO, bool) {
+func (o *BulkCIAttributeLayerScopeDTO) GetFragmentsOk() ([]FragmentDTO, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Fragments, true
+	return o.Fragments, true
 }
 
 // SetFragments sets field value

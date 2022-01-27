@@ -12,24 +12,24 @@ package okclient
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strings"
 	"reflect"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // AnsibleInventoryScanIngestApiService AnsibleInventoryScanIngestApi service
 type AnsibleInventoryScanIngestApiService service
 
 type ApiIngestAnsibleInventoryScanRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *AnsibleInventoryScanIngestApiService
 	writeLayerID *string
 	searchLayerIDs *[]string
@@ -50,18 +50,18 @@ func (r ApiIngestAnsibleInventoryScanRequest) AnsibleInventoryScanDTO(ansibleInv
 	return r
 }
 
-func (r ApiIngestAnsibleInventoryScanRequest) Execute() (*_nethttp.Response, error) {
+func (r ApiIngestAnsibleInventoryScanRequest) Execute() (*http.Response, error) {
 	return r.ApiService.IngestAnsibleInventoryScanExecute(r)
 }
 
 /*
 IngestAnsibleInventoryScan Method for IngestAnsibleInventoryScan
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiIngestAnsibleInventoryScanRequest
 */
-func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScan(ctx _context.Context, version string) ApiIngestAnsibleInventoryScanRequest {
+func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScan(ctx context.Context, version string) ApiIngestAnsibleInventoryScanRequest {
 	return ApiIngestAnsibleInventoryScanRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -70,24 +70,24 @@ func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScan(ctx _c
 }
 
 // Execute executes the request
-func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScanExecute(r ApiIngestAnsibleInventoryScanRequest) (*_nethttp.Response, error) {
+func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScanExecute(r ApiIngestAnsibleInventoryScanRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnsibleInventoryScanIngestApiService.IngestAnsibleInventoryScan")
 	if err != nil {
-		return nil, GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Ingest/AnsibleInventoryScan"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.writeLayerID == nil {
 		return nil, reportError("writeLayerID is required and must be specified")
 	}
@@ -139,15 +139,15 @@ func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScanExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}

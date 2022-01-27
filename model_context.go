@@ -17,8 +17,8 @@ import (
 // Context struct for Context
 type Context struct {
 	Id NullableString `json:"id,omitempty"`
-	ExtractConfig *map[string]interface{} `json:"extractConfig,omitempty"`
-	TransformConfig *map[string]interface{} `json:"transformConfig,omitempty"`
+	ExtractConfig map[string]interface{} `json:"extractConfig,omitempty"`
+	TransformConfig map[string]interface{} `json:"transformConfig,omitempty"`
 	LoadConfig *ILoadConfig `json:"loadConfig,omitempty"`
 }
 
@@ -87,12 +87,12 @@ func (o *Context) GetExtractConfig() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.ExtractConfig
+	return o.ExtractConfig
 }
 
 // GetExtractConfigOk returns a tuple with the ExtractConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Context) GetExtractConfigOk() (*map[string]interface{}, bool) {
+func (o *Context) GetExtractConfigOk() (map[string]interface{}, bool) {
 	if o == nil || o.ExtractConfig == nil {
 		return nil, false
 	}
@@ -110,7 +110,7 @@ func (o *Context) HasExtractConfig() bool {
 
 // SetExtractConfig gets a reference to the given map[string]interface{} and assigns it to the ExtractConfig field.
 func (o *Context) SetExtractConfig(v map[string]interface{}) {
-	o.ExtractConfig = &v
+	o.ExtractConfig = v
 }
 
 // GetTransformConfig returns the TransformConfig field value if set, zero value otherwise.
@@ -119,12 +119,12 @@ func (o *Context) GetTransformConfig() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.TransformConfig
+	return o.TransformConfig
 }
 
 // GetTransformConfigOk returns a tuple with the TransformConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Context) GetTransformConfigOk() (*map[string]interface{}, bool) {
+func (o *Context) GetTransformConfigOk() (map[string]interface{}, bool) {
 	if o == nil || o.TransformConfig == nil {
 		return nil, false
 	}
@@ -142,7 +142,7 @@ func (o *Context) HasTransformConfig() bool {
 
 // SetTransformConfig gets a reference to the given map[string]interface{} and assigns it to the TransformConfig field.
 func (o *Context) SetTransformConfig(v map[string]interface{}) {
-	o.TransformConfig = &v
+	o.TransformConfig = v
 }
 
 // GetLoadConfig returns the LoadConfig field value if set, zero value otherwise.

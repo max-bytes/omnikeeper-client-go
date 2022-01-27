@@ -35,8 +35,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CISearchApi.SearchCIsByTraits(context.Background(), version).LayerIDs(layerIDs).WithTraits(withTraits).WithoutTraits(withoutTraits).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CISearchApi.SearchCIsByTraits(context.Background(), version).LayerIDs(layerIDs).WithTraits(withTraits).WithoutTraits(withoutTraits).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CISearchApi.SearchCIsByTraits``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

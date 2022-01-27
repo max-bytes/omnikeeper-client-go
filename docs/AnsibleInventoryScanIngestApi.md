@@ -33,8 +33,8 @@ func main() {
     ansibleInventoryScanDTO := *openapiclient.NewAnsibleInventoryScanDTO(map[string]interface{}{"key": interface{}(123)}, map[string]interface{}{"key": interface{}(123)}, map[string]interface{}{"key": interface{}(123)}, map[string]interface{}{"key": interface{}(123)}) // AnsibleInventoryScanDTO | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AnsibleInventoryScanIngestApi.IngestAnsibleInventoryScan(context.Background(), version).WriteLayerID(writeLayerID).SearchLayerIDs(searchLayerIDs).AnsibleInventoryScanDTO(ansibleInventoryScanDTO).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AnsibleInventoryScanIngestApi.IngestAnsibleInventoryScan(context.Background(), version).WriteLayerID(writeLayerID).SearchLayerIDs(searchLayerIDs).AnsibleInventoryScanDTO(ansibleInventoryScanDTO).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AnsibleInventoryScanIngestApi.IngestAnsibleInventoryScan``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

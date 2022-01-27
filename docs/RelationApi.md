@@ -37,8 +37,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RelationApi.GetAllMergedRelations(context.Background(), version).LayerIDs(layerIDs).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RelationApi.GetAllMergedRelations(context.Background(), version).LayerIDs(layerIDs).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RelationApi.GetAllMergedRelations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -113,8 +113,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RelationApi.GetMergedRelation(context.Background(), version).FromCIID(fromCIID).ToCIID(toCIID).PredicateID(predicateID).LayerIDs(layerIDs).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RelationApi.GetMergedRelation(context.Background(), version).FromCIID(fromCIID).ToCIID(toCIID).PredicateID(predicateID).LayerIDs(layerIDs).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RelationApi.GetMergedRelation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -190,8 +190,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RelationApi.GetMergedRelationsFromOrToCI(context.Background(), version).Ciid(ciid).LayerIDs(layerIDs).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RelationApi.GetMergedRelationsFromOrToCI(context.Background(), version).Ciid(ciid).LayerIDs(layerIDs).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RelationApi.GetMergedRelationsFromOrToCI``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -265,8 +265,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RelationApi.GetMergedRelationsOutgoingFromCI(context.Background(), version).FromCIID(fromCIID).LayerIDs(layerIDs).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RelationApi.GetMergedRelationsOutgoingFromCI(context.Background(), version).FromCIID(fromCIID).LayerIDs(layerIDs).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RelationApi.GetMergedRelationsOutgoingFromCI``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -340,8 +340,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RelationApi.GetMergedRelationsWithPredicate(context.Background(), version).PredicateID(predicateID).LayerIDs(layerIDs).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RelationApi.GetMergedRelationsWithPredicate(context.Background(), version).PredicateID(predicateID).LayerIDs(layerIDs).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RelationApi.GetMergedRelationsWithPredicate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

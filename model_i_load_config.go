@@ -49,11 +49,11 @@ func (o *ILoadConfig) GetSearchLayerIDs() []string {
 // GetSearchLayerIDsOk returns a tuple with the SearchLayerIDs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ILoadConfig) GetSearchLayerIDsOk() (*[]string, bool) {
+func (o *ILoadConfig) GetSearchLayerIDsOk() ([]string, bool) {
 	if o == nil || o.SearchLayerIDs == nil {
 		return nil, false
 	}
-	return &o.SearchLayerIDs, true
+	return o.SearchLayerIDs, true
 }
 
 // HasSearchLayerIDs returns a boolean if a field has been set.

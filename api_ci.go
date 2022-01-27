@@ -12,10 +12,10 @@ package okclient
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strings"
 	"reflect"
 	"time"
@@ -23,31 +23,31 @@ import (
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // CIApiService CIApi service
 type CIApiService service
 
 type ApiGetAllCIIDsRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *CIApiService
 	version string
 }
 
 
-func (r ApiGetAllCIIDsRequest) Execute() ([]string, *_nethttp.Response, error) {
+func (r ApiGetAllCIIDsRequest) Execute() ([]string, *http.Response, error) {
 	return r.ApiService.GetAllCIIDsExecute(r)
 }
 
 /*
 GetAllCIIDs list of all CI-IDs
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetAllCIIDsRequest
 */
-func (a *CIApiService) GetAllCIIDs(ctx _context.Context, version string) ApiGetAllCIIDsRequest {
+func (a *CIApiService) GetAllCIIDs(ctx context.Context, version string) ApiGetAllCIIDsRequest {
 	return ApiGetAllCIIDsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,9 +57,9 @@ func (a *CIApiService) GetAllCIIDs(ctx _context.Context, version string) ApiGetA
 
 // Execute executes the request
 //  @return []string
-func (a *CIApiService) GetAllCIIDsExecute(r ApiGetAllCIIDsRequest) ([]string, *_nethttp.Response, error) {
+func (a *CIApiService) GetAllCIIDsExecute(r ApiGetAllCIIDsRequest) ([]string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []string
@@ -67,15 +67,15 @@ func (a *CIApiService) GetAllCIIDsExecute(r ApiGetAllCIIDsRequest) ([]string, *_
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CIApiService.GetAllCIIDs")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/CI/getAllCIIDs"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -104,15 +104,15 @@ func (a *CIApiService) GetAllCIIDsExecute(r ApiGetAllCIIDsRequest) ([]string, *_
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -121,7 +121,7 @@ func (a *CIApiService) GetAllCIIDsExecute(r ApiGetAllCIIDsRequest) ([]string, *_
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -132,7 +132,7 @@ func (a *CIApiService) GetAllCIIDsExecute(r ApiGetAllCIIDsRequest) ([]string, *_
 }
 
 type ApiGetCIByIDRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *CIApiService
 	layerIDs *[]string
 	cIID *string
@@ -155,18 +155,18 @@ func (r ApiGetCIByIDRequest) AtTime(atTime time.Time) ApiGetCIByIDRequest {
 	return r
 }
 
-func (r ApiGetCIByIDRequest) Execute() (CIDTO, *_nethttp.Response, error) {
+func (r ApiGetCIByIDRequest) Execute() (*CIDTO, *http.Response, error) {
 	return r.ApiService.GetCIByIDExecute(r)
 }
 
 /*
 GetCIByID single CI by CI-ID
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetCIByIDRequest
 */
-func (a *CIApiService) GetCIByID(ctx _context.Context, version string) ApiGetCIByIDRequest {
+func (a *CIApiService) GetCIByID(ctx context.Context, version string) ApiGetCIByIDRequest {
 	return ApiGetCIByIDRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -176,25 +176,25 @@ func (a *CIApiService) GetCIByID(ctx _context.Context, version string) ApiGetCIB
 
 // Execute executes the request
 //  @return CIDTO
-func (a *CIApiService) GetCIByIDExecute(r ApiGetCIByIDRequest) (CIDTO, *_nethttp.Response, error) {
+func (a *CIApiService) GetCIByIDExecute(r ApiGetCIByIDRequest) (*CIDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  CIDTO
+		localVarReturnValue  *CIDTO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CIApiService.GetCIByID")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/CI/getCIByID"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.layerIDs == nil {
 		return localVarReturnValue, nil, reportError("layerIDs is required and must be specified")
 	}
@@ -244,15 +244,15 @@ func (a *CIApiService) GetCIByIDExecute(r ApiGetCIByIDRequest) (CIDTO, *_nethttp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -261,7 +261,7 @@ func (a *CIApiService) GetCIByIDExecute(r ApiGetCIByIDRequest) (CIDTO, *_nethttp
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -272,7 +272,7 @@ func (a *CIApiService) GetCIByIDExecute(r ApiGetCIByIDRequest) (CIDTO, *_nethttp
 }
 
 type ApiGetCIsByIDRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *CIApiService
 	layerIDs *[]string
 	cIIDs *[]string
@@ -295,18 +295,18 @@ func (r ApiGetCIsByIDRequest) AtTime(atTime time.Time) ApiGetCIsByIDRequest {
 	return r
 }
 
-func (r ApiGetCIsByIDRequest) Execute() ([]CIDTO, *_nethttp.Response, error) {
+func (r ApiGetCIsByIDRequest) Execute() ([]CIDTO, *http.Response, error) {
 	return r.ApiService.GetCIsByIDExecute(r)
 }
 
 /*
 GetCIsByID multiple CIs by CI-ID  !Watch out for the query URL getting too long because of a lot of CIIDs!  TODO: consider using POST
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetCIsByIDRequest
 */
-func (a *CIApiService) GetCIsByID(ctx _context.Context, version string) ApiGetCIsByIDRequest {
+func (a *CIApiService) GetCIsByID(ctx context.Context, version string) ApiGetCIsByIDRequest {
 	return ApiGetCIsByIDRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -316,9 +316,9 @@ func (a *CIApiService) GetCIsByID(ctx _context.Context, version string) ApiGetCI
 
 // Execute executes the request
 //  @return []CIDTO
-func (a *CIApiService) GetCIsByIDExecute(r ApiGetCIsByIDRequest) ([]CIDTO, *_nethttp.Response, error) {
+func (a *CIApiService) GetCIsByIDExecute(r ApiGetCIsByIDRequest) ([]CIDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []CIDTO
@@ -326,15 +326,15 @@ func (a *CIApiService) GetCIsByIDExecute(r ApiGetCIsByIDRequest) ([]CIDTO, *_net
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CIApiService.GetCIsByID")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/CI/getCIsByID"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.layerIDs == nil {
 		return localVarReturnValue, nil, reportError("layerIDs is required and must be specified")
 	}
@@ -394,15 +394,15 @@ func (a *CIApiService) GetCIsByIDExecute(r ApiGetCIsByIDRequest) ([]CIDTO, *_net
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -411,7 +411,7 @@ func (a *CIApiService) GetCIsByIDExecute(r ApiGetCIsByIDRequest) ([]CIDTO, *_net
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

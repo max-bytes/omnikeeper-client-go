@@ -12,41 +12,41 @@ package okclient
 
 import (
 	"bytes"
-	_context "context"
-	_ioutil "io/ioutil"
-	_nethttp "net/http"
-	_neturl "net/url"
+	"context"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strings"
 	"reflect"
 )
 
 // Linger please
 var (
-	_ _context.Context
+	_ context.Context
 )
 
 // LayerApiService LayerApi service
 type LayerApiService service
 
 type ApiGetAllLayersRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *LayerApiService
 	version string
 }
 
 
-func (r ApiGetAllLayersRequest) Execute() ([]LayerDTO, *_nethttp.Response, error) {
+func (r ApiGetAllLayersRequest) Execute() ([]LayerDTO, *http.Response, error) {
 	return r.ApiService.GetAllLayersExecute(r)
 }
 
 /*
 GetAllLayers list of all layers
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetAllLayersRequest
 */
-func (a *LayerApiService) GetAllLayers(ctx _context.Context, version string) ApiGetAllLayersRequest {
+func (a *LayerApiService) GetAllLayers(ctx context.Context, version string) ApiGetAllLayersRequest {
 	return ApiGetAllLayersRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -56,9 +56,9 @@ func (a *LayerApiService) GetAllLayers(ctx _context.Context, version string) Api
 
 // Execute executes the request
 //  @return []LayerDTO
-func (a *LayerApiService) GetAllLayersExecute(r ApiGetAllLayersRequest) ([]LayerDTO, *_nethttp.Response, error) {
+func (a *LayerApiService) GetAllLayersExecute(r ApiGetAllLayersRequest) ([]LayerDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []LayerDTO
@@ -66,15 +66,15 @@ func (a *LayerApiService) GetAllLayersExecute(r ApiGetAllLayersRequest) ([]Layer
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LayerApiService.GetAllLayers")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Layer/getAllLayers"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -103,15 +103,15 @@ func (a *LayerApiService) GetAllLayersExecute(r ApiGetAllLayersRequest) ([]Layer
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -120,7 +120,7 @@ func (a *LayerApiService) GetAllLayersExecute(r ApiGetAllLayersRequest) ([]Layer
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -131,7 +131,7 @@ func (a *LayerApiService) GetAllLayersExecute(r ApiGetAllLayersRequest) ([]Layer
 }
 
 type ApiGetLayerByNameRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *LayerApiService
 	layerName *string
 	version string
@@ -142,18 +142,18 @@ func (r ApiGetLayerByNameRequest) LayerName(layerName string) ApiGetLayerByNameR
 	return r
 }
 
-func (r ApiGetLayerByNameRequest) Execute() (LayerDTO, *_nethttp.Response, error) {
+func (r ApiGetLayerByNameRequest) Execute() (*LayerDTO, *http.Response, error) {
 	return r.ApiService.GetLayerByNameExecute(r)
 }
 
 /*
 GetLayerByName get a layer by name
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetLayerByNameRequest
 */
-func (a *LayerApiService) GetLayerByName(ctx _context.Context, version string) ApiGetLayerByNameRequest {
+func (a *LayerApiService) GetLayerByName(ctx context.Context, version string) ApiGetLayerByNameRequest {
 	return ApiGetLayerByNameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -163,25 +163,25 @@ func (a *LayerApiService) GetLayerByName(ctx _context.Context, version string) A
 
 // Execute executes the request
 //  @return LayerDTO
-func (a *LayerApiService) GetLayerByNameExecute(r ApiGetLayerByNameRequest) (LayerDTO, *_nethttp.Response, error) {
+func (a *LayerApiService) GetLayerByNameExecute(r ApiGetLayerByNameRequest) (*LayerDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  LayerDTO
+		localVarReturnValue  *LayerDTO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LayerApiService.GetLayerByName")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Layer/getLayerByName"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.layerName == nil {
 		return localVarReturnValue, nil, reportError("layerName is required and must be specified")
 	}
@@ -214,15 +214,15 @@ func (a *LayerApiService) GetLayerByNameExecute(r ApiGetLayerByNameRequest) (Lay
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -231,7 +231,7 @@ func (a *LayerApiService) GetLayerByNameExecute(r ApiGetLayerByNameRequest) (Lay
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}
@@ -242,7 +242,7 @@ func (a *LayerApiService) GetLayerByNameExecute(r ApiGetLayerByNameRequest) (Lay
 }
 
 type ApiGetLayersByNameRequest struct {
-	ctx _context.Context
+	ctx context.Context
 	ApiService *LayerApiService
 	layerNames *[]string
 	version string
@@ -253,18 +253,18 @@ func (r ApiGetLayersByNameRequest) LayerNames(layerNames []string) ApiGetLayersB
 	return r
 }
 
-func (r ApiGetLayersByNameRequest) Execute() ([]LayerDTO, *_nethttp.Response, error) {
+func (r ApiGetLayersByNameRequest) Execute() ([]LayerDTO, *http.Response, error) {
 	return r.ApiService.GetLayersByNameExecute(r)
 }
 
 /*
 GetLayersByName get layers by name
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
  @return ApiGetLayersByNameRequest
 */
-func (a *LayerApiService) GetLayersByName(ctx _context.Context, version string) ApiGetLayersByNameRequest {
+func (a *LayerApiService) GetLayersByName(ctx context.Context, version string) ApiGetLayersByNameRequest {
 	return ApiGetLayersByNameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -274,9 +274,9 @@ func (a *LayerApiService) GetLayersByName(ctx _context.Context, version string) 
 
 // Execute executes the request
 //  @return []LayerDTO
-func (a *LayerApiService) GetLayersByNameExecute(r ApiGetLayersByNameRequest) ([]LayerDTO, *_nethttp.Response, error) {
+func (a *LayerApiService) GetLayersByNameExecute(r ApiGetLayersByNameRequest) ([]LayerDTO, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  []LayerDTO
@@ -284,15 +284,15 @@ func (a *LayerApiService) GetLayersByNameExecute(r ApiGetLayersByNameRequest) ([
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LayerApiService.GetLayersByName")
 	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Layer/getLayersByName"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", _neturl.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	if r.layerNames == nil {
 		return localVarReturnValue, nil, reportError("layerNames is required and must be specified")
 	}
@@ -335,15 +335,15 @@ func (a *LayerApiService) GetLayersByNameExecute(r ApiGetLayersByNameRequest) ([
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
@@ -352,7 +352,7 @@ func (a *LayerApiService) GetLayersByNameExecute(r ApiGetLayersByNameRequest) ([
 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := GenericOpenAPIError{
+		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
 		}

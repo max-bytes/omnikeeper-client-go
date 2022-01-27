@@ -34,8 +34,8 @@ func main() {
     atTime := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TraitApi.GetEffectiveTraitsForTraitName(context.Background(), version).LayerIDs(layerIDs).TraitName(traitName).AtTime(atTime).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TraitApi.GetEffectiveTraitsForTraitName(context.Background(), version).LayerIDs(layerIDs).TraitName(traitName).AtTime(atTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TraitApi.GetEffectiveTraitsForTraitName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
