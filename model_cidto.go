@@ -52,7 +52,7 @@ func (o *CIDTO) GetId() string {
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *CIDTO) GetIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -76,7 +76,7 @@ func (o *CIDTO) GetAttributes() map[string]CIAttributeDTO {
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
 func (o *CIDTO) GetAttributesOk() (*map[string]CIAttributeDTO, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Attributes, true

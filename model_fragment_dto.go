@@ -54,7 +54,7 @@ func (o *FragmentDTO) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *FragmentDTO) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -78,7 +78,7 @@ func (o *FragmentDTO) GetValue() AttributeValueDTO {
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
 func (o *FragmentDTO) GetValueOk() (*AttributeValueDTO, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Value, true
@@ -102,7 +102,7 @@ func (o *FragmentDTO) GetCiid() string {
 // GetCiidOk returns a tuple with the Ciid field value
 // and a boolean to check if the value has been set.
 func (o *FragmentDTO) GetCiidOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Ciid, true

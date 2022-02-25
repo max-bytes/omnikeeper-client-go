@@ -71,7 +71,7 @@ func (o *SparseRow) SetCiid(v string) {
 
 // GetCells returns the Cells field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SparseRow) GetCells() []ChangeDataCell {
-	if o == nil  {
+	if o == nil {
 		var ret []ChangeDataCell
 		return ret
 	}

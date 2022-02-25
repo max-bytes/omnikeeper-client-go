@@ -52,7 +52,7 @@ func (o *EffectiveTraitDTO) GetTraitAttributes() map[string]CIAttributeDTO {
 // GetTraitAttributesOk returns a tuple with the TraitAttributes field value
 // and a boolean to check if the value has been set.
 func (o *EffectiveTraitDTO) GetTraitAttributesOk() (*map[string]CIAttributeDTO, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TraitAttributes, true
@@ -76,7 +76,7 @@ func (o *EffectiveTraitDTO) GetTraitRelations() map[string][]RelatedCIDTO {
 // GetTraitRelationsOk returns a tuple with the TraitRelations field value
 // and a boolean to check if the value has been set.
 func (o *EffectiveTraitDTO) GetTraitRelationsOk() (*map[string][]RelatedCIDTO, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.TraitRelations, true

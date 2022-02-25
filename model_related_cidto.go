@@ -54,7 +54,7 @@ func (o *RelatedCIDTO) GetFromCIID() string {
 // GetFromCIIDOk returns a tuple with the FromCIID field value
 // and a boolean to check if the value has been set.
 func (o *RelatedCIDTO) GetFromCIIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.FromCIID, true
@@ -78,7 +78,7 @@ func (o *RelatedCIDTO) GetToCIID() string {
 // GetToCIIDOk returns a tuple with the ToCIID field value
 // and a boolean to check if the value has been set.
 func (o *RelatedCIDTO) GetToCIIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ToCIID, true
@@ -102,7 +102,7 @@ func (o *RelatedCIDTO) GetPredicateID() string {
 // GetPredicateIDOk returns a tuple with the PredicateID field value
 // and a boolean to check if the value has been set.
 func (o *RelatedCIDTO) GetPredicateIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PredicateID, true

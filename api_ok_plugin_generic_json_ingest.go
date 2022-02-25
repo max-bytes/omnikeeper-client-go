@@ -19,10 +19,6 @@ import (
 	"strings"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // OKPluginGenericJSONIngestApiService OKPluginGenericJSONIngestApi service
 type OKPluginGenericJSONIngestApiService service
@@ -32,7 +28,6 @@ type ApiGetAllContextsRequest struct {
 	ApiService *OKPluginGenericJSONIngestApiService
 	version string
 }
-
 
 func (r ApiGetAllContextsRequest) Execute() ([]Context, *http.Response, error) {
 	return r.ApiService.GetAllContextsExecute(r)
@@ -135,7 +130,6 @@ type ApiGetContextRequest struct {
 	id string
 	version string
 }
-
 
 func (r ApiGetContextRequest) Execute() (*Context, *http.Response, error) {
 	return r.ApiService.GetContextExecute(r)
@@ -241,7 +235,6 @@ type ApiRemoveContextRequest struct {
 	id string
 	version string
 }
-
 
 func (r ApiRemoveContextRequest) Execute() (*Context, *http.Response, error) {
 	return r.ApiService.RemoveContextExecute(r)

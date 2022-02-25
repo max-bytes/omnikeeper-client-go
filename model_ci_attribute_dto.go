@@ -58,7 +58,7 @@ func (o *CIAttributeDTO) GetId() string {
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *CIAttributeDTO) GetIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -82,7 +82,7 @@ func (o *CIAttributeDTO) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *CIAttributeDTO) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -106,7 +106,7 @@ func (o *CIAttributeDTO) GetValue() AttributeValueDTO {
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
 func (o *CIAttributeDTO) GetValueOk() (*AttributeValueDTO, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Value, true
@@ -130,7 +130,7 @@ func (o *CIAttributeDTO) GetCiid() string {
 // GetCiidOk returns a tuple with the Ciid field value
 // and a boolean to check if the value has been set.
 func (o *CIAttributeDTO) GetCiidOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Ciid, true
@@ -154,7 +154,7 @@ func (o *CIAttributeDTO) GetState() AttributeState {
 // GetStateOk returns a tuple with the State field value
 // and a boolean to check if the value has been set.
 func (o *CIAttributeDTO) GetStateOk() (*AttributeState, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.State, true

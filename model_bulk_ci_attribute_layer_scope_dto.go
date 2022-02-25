@@ -54,7 +54,7 @@ func (o *BulkCIAttributeLayerScopeDTO) GetNamePrefix() string {
 // GetNamePrefixOk returns a tuple with the NamePrefix field value
 // and a boolean to check if the value has been set.
 func (o *BulkCIAttributeLayerScopeDTO) GetNamePrefixOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.NamePrefix, true
@@ -78,7 +78,7 @@ func (o *BulkCIAttributeLayerScopeDTO) GetLayerID() string {
 // GetLayerIDOk returns a tuple with the LayerID field value
 // and a boolean to check if the value has been set.
 func (o *BulkCIAttributeLayerScopeDTO) GetLayerIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LayerID, true
@@ -102,7 +102,7 @@ func (o *BulkCIAttributeLayerScopeDTO) GetFragments() []FragmentDTO {
 // GetFragmentsOk returns a tuple with the Fragments field value
 // and a boolean to check if the value has been set.
 func (o *BulkCIAttributeLayerScopeDTO) GetFragmentsOk() ([]FragmentDTO, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Fragments, true

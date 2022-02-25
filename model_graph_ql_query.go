@@ -52,7 +52,7 @@ func (o *GraphQLQuery) GetOperationName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GraphQLQuery) GetOperationNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OperationName.Get(), o.OperationName.IsSet()
@@ -94,7 +94,7 @@ func (o *GraphQLQuery) GetNamedQuery() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GraphQLQuery) GetNamedQueryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NamedQuery.Get(), o.NamedQuery.IsSet()
@@ -136,7 +136,7 @@ func (o *GraphQLQuery) GetQuery() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GraphQLQuery) GetQueryOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Query.Get(), o.Query.IsSet()
@@ -167,7 +167,7 @@ func (o *GraphQLQuery) UnsetQuery() {
 
 // GetVariables returns the Variables field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GraphQLQuery) GetVariables() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}

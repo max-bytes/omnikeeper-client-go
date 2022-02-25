@@ -58,7 +58,7 @@ func (o *RelationDTO) GetId() string {
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *RelationDTO) GetIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -82,7 +82,7 @@ func (o *RelationDTO) GetFromCIID() string {
 // GetFromCIIDOk returns a tuple with the FromCIID field value
 // and a boolean to check if the value has been set.
 func (o *RelationDTO) GetFromCIIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.FromCIID, true
@@ -106,7 +106,7 @@ func (o *RelationDTO) GetToCIID() string {
 // GetToCIIDOk returns a tuple with the ToCIID field value
 // and a boolean to check if the value has been set.
 func (o *RelationDTO) GetToCIIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ToCIID, true
@@ -130,7 +130,7 @@ func (o *RelationDTO) GetPredicateID() string {
 // GetPredicateIDOk returns a tuple with the PredicateID field value
 // and a boolean to check if the value has been set.
 func (o *RelationDTO) GetPredicateIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PredicateID, true
@@ -154,7 +154,7 @@ func (o *RelationDTO) GetState() RelationState {
 // GetStateOk returns a tuple with the State field value
 // and a boolean to check if the value has been set.
 func (o *RelationDTO) GetStateOk() (*RelationState, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.State, true

@@ -21,10 +21,6 @@ import (
 	"time"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // RelationApiService RelationApi service
 type RelationApiService service
@@ -37,10 +33,13 @@ type ApiGetAllMergedRelationsRequest struct {
 	atTime *time.Time
 }
 
+// 
 func (r ApiGetAllMergedRelationsRequest) LayerIDs(layerIDs []string) ApiGetAllMergedRelationsRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetAllMergedRelationsRequest) AtTime(atTime time.Time) ApiGetAllMergedRelationsRequest {
 	r.atTime = &atTime
 	return r
@@ -51,7 +50,7 @@ func (r ApiGetAllMergedRelationsRequest) Execute() ([]RelationDTO, *http.Respons
 }
 
 /*
-GetAllMergedRelations Method for GetAllMergedRelations
+GetAllMergedRelations 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
@@ -169,22 +168,31 @@ type ApiGetMergedRelationRequest struct {
 	atTime *time.Time
 }
 
+// 
 func (r ApiGetMergedRelationRequest) FromCIID(fromCIID string) ApiGetMergedRelationRequest {
 	r.fromCIID = &fromCIID
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationRequest) ToCIID(toCIID string) ApiGetMergedRelationRequest {
 	r.toCIID = &toCIID
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationRequest) PredicateID(predicateID string) ApiGetMergedRelationRequest {
 	r.predicateID = &predicateID
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationRequest) LayerIDs(layerIDs []string) ApiGetMergedRelationRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationRequest) AtTime(atTime time.Time) ApiGetMergedRelationRequest {
 	r.atTime = &atTime
 	return r
@@ -195,7 +203,7 @@ func (r ApiGetMergedRelationRequest) Execute() (*RelationDTO, *http.Response, er
 }
 
 /*
-GetMergedRelation Method for GetMergedRelation
+GetMergedRelation 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
@@ -323,14 +331,19 @@ type ApiGetMergedRelationsFromOrToCIRequest struct {
 	atTime *time.Time
 }
 
+// 
 func (r ApiGetMergedRelationsFromOrToCIRequest) Ciid(ciid string) ApiGetMergedRelationsFromOrToCIRequest {
 	r.ciid = &ciid
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationsFromOrToCIRequest) LayerIDs(layerIDs []string) ApiGetMergedRelationsFromOrToCIRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationsFromOrToCIRequest) AtTime(atTime time.Time) ApiGetMergedRelationsFromOrToCIRequest {
 	r.atTime = &atTime
 	return r
@@ -341,7 +354,7 @@ func (r ApiGetMergedRelationsFromOrToCIRequest) Execute() ([]RelationDTO, *http.
 }
 
 /*
-GetMergedRelationsFromOrToCI Method for GetMergedRelationsFromOrToCI
+GetMergedRelationsFromOrToCI 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
@@ -461,14 +474,19 @@ type ApiGetMergedRelationsOutgoingFromCIRequest struct {
 	atTime *time.Time
 }
 
+// 
 func (r ApiGetMergedRelationsOutgoingFromCIRequest) FromCIID(fromCIID string) ApiGetMergedRelationsOutgoingFromCIRequest {
 	r.fromCIID = &fromCIID
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationsOutgoingFromCIRequest) LayerIDs(layerIDs []string) ApiGetMergedRelationsOutgoingFromCIRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationsOutgoingFromCIRequest) AtTime(atTime time.Time) ApiGetMergedRelationsOutgoingFromCIRequest {
 	r.atTime = &atTime
 	return r
@@ -479,7 +497,7 @@ func (r ApiGetMergedRelationsOutgoingFromCIRequest) Execute() ([]RelationDTO, *h
 }
 
 /*
-GetMergedRelationsOutgoingFromCI Method for GetMergedRelationsOutgoingFromCI
+GetMergedRelationsOutgoingFromCI 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
@@ -599,14 +617,19 @@ type ApiGetMergedRelationsWithPredicateRequest struct {
 	atTime *time.Time
 }
 
+// 
 func (r ApiGetMergedRelationsWithPredicateRequest) PredicateID(predicateID string) ApiGetMergedRelationsWithPredicateRequest {
 	r.predicateID = &predicateID
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationsWithPredicateRequest) LayerIDs(layerIDs []string) ApiGetMergedRelationsWithPredicateRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetMergedRelationsWithPredicateRequest) AtTime(atTime time.Time) ApiGetMergedRelationsWithPredicateRequest {
 	r.atTime = &atTime
 	return r
@@ -617,7 +640,7 @@ func (r ApiGetMergedRelationsWithPredicateRequest) Execute() ([]RelationDTO, *ht
 }
 
 /*
-GetMergedRelationsWithPredicate Method for GetMergedRelationsWithPredicate
+GetMergedRelationsWithPredicate 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version

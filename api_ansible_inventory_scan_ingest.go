@@ -20,10 +20,6 @@ import (
 	"reflect"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // AnsibleInventoryScanIngestApiService AnsibleInventoryScanIngestApi service
 type AnsibleInventoryScanIngestApiService service
@@ -41,10 +37,12 @@ func (r ApiIngestAnsibleInventoryScanRequest) WriteLayerID(writeLayerID string) 
 	r.writeLayerID = &writeLayerID
 	return r
 }
+
 func (r ApiIngestAnsibleInventoryScanRequest) SearchLayerIDs(searchLayerIDs []string) ApiIngestAnsibleInventoryScanRequest {
 	r.searchLayerIDs = &searchLayerIDs
 	return r
 }
+
 func (r ApiIngestAnsibleInventoryScanRequest) AnsibleInventoryScanDTO(ansibleInventoryScanDTO AnsibleInventoryScanDTO) ApiIngestAnsibleInventoryScanRequest {
 	r.ansibleInventoryScanDTO = &ansibleInventoryScanDTO
 	return r

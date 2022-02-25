@@ -38,7 +38,7 @@ func NewChangeDataRequestWithDefaults() *ChangeDataRequest {
 
 // GetSparseRows returns the SparseRows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ChangeDataRequest) GetSparseRows() []SparseRow {
-	if o == nil  {
+	if o == nil {
 		var ret []SparseRow
 		return ret
 	}

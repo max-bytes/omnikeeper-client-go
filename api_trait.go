@@ -21,10 +21,6 @@ import (
 	"time"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // TraitApiService TraitApi service
 type TraitApiService service
@@ -42,10 +38,12 @@ func (r ApiGetEffectiveTraitsForTraitNameRequest) LayerIDs(layerIDs []string) Ap
 	r.layerIDs = &layerIDs
 	return r
 }
+
 func (r ApiGetEffectiveTraitsForTraitNameRequest) TraitName(traitName string) ApiGetEffectiveTraitsForTraitNameRequest {
 	r.traitName = &traitName
 	return r
 }
+
 func (r ApiGetEffectiveTraitsForTraitNameRequest) AtTime(atTime time.Time) ApiGetEffectiveTraitsForTraitNameRequest {
 	r.atTime = &atTime
 	return r

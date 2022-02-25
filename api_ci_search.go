@@ -21,10 +21,6 @@ import (
 	"time"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // CISearchApiService CISearchApi service
 type CISearchApiService service
@@ -43,14 +39,17 @@ func (r ApiSearchCIsByTraitsRequest) LayerIDs(layerIDs []string) ApiSearchCIsByT
 	r.layerIDs = &layerIDs
 	return r
 }
+
 func (r ApiSearchCIsByTraitsRequest) WithTraits(withTraits []string) ApiSearchCIsByTraitsRequest {
 	r.withTraits = &withTraits
 	return r
 }
+
 func (r ApiSearchCIsByTraitsRequest) WithoutTraits(withoutTraits []string) ApiSearchCIsByTraitsRequest {
 	r.withoutTraits = &withoutTraits
 	return r
 }
+
 func (r ApiSearchCIsByTraitsRequest) AtTime(atTime time.Time) ApiSearchCIsByTraitsRequest {
 	r.atTime = &atTime
 	return r

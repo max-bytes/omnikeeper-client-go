@@ -39,7 +39,7 @@ func NewILoadConfigWithDefaults() *ILoadConfig {
 
 // GetSearchLayerIDs returns the SearchLayerIDs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ILoadConfig) GetSearchLayerIDs() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *ILoadConfig) GetWriteLayerID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ILoadConfig) GetWriteLayerIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.WriteLayerID.Get(), o.WriteLayerID.IsSet()

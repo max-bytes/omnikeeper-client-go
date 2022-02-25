@@ -21,10 +21,6 @@ import (
 	"time"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // CIApiService CIApi service
 type CIApiService service
@@ -34,7 +30,6 @@ type ApiGetAllCIIDsRequest struct {
 	ApiService *CIApiService
 	version string
 }
-
 
 func (r ApiGetAllCIIDsRequest) Execute() ([]string, *http.Response, error) {
 	return r.ApiService.GetAllCIIDsExecute(r)
@@ -145,10 +140,13 @@ func (r ApiGetCIByIDRequest) LayerIDs(layerIDs []string) ApiGetCIByIDRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetCIByIDRequest) CIID(cIID string) ApiGetCIByIDRequest {
 	r.cIID = &cIID
 	return r
 }
+
 // Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm)
 func (r ApiGetCIByIDRequest) AtTime(atTime time.Time) ApiGetCIByIDRequest {
 	r.atTime = &atTime
@@ -285,10 +283,13 @@ func (r ApiGetCIsByIDRequest) LayerIDs(layerIDs []string) ApiGetCIsByIDRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetCIsByIDRequest) CIIDs(cIIDs []string) ApiGetCIsByIDRequest {
 	r.cIIDs = &cIIDs
 	return r
 }
+
 // Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm)
 func (r ApiGetCIsByIDRequest) AtTime(atTime time.Time) ApiGetCIsByIDRequest {
 	r.atTime = &atTime

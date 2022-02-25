@@ -85,7 +85,7 @@ func (o *GridViewConfiguration) GetWriteLayer() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GridViewConfiguration) GetWriteLayerOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.WriteLayer.Get(), o.WriteLayer.IsSet()
@@ -116,7 +116,7 @@ func (o *GridViewConfiguration) UnsetWriteLayer() {
 
 // GetReadLayerset returns the ReadLayerset field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GridViewConfiguration) GetReadLayerset() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *GridViewConfiguration) SetReadLayerset(v []string) {
 
 // GetColumns returns the Columns field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GridViewConfiguration) GetColumns() []GridViewColumn {
-	if o == nil  {
+	if o == nil {
 		var ret []GridViewColumn
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *GridViewConfiguration) GetTrait() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GridViewConfiguration) GetTraitOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Trait.Get(), o.Trait.IsSet()

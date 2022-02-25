@@ -20,10 +20,6 @@ import (
 	"reflect"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // LayerApiService LayerApi service
 type LayerApiService service
@@ -33,7 +29,6 @@ type ApiGetAllLayersRequest struct {
 	ApiService *LayerApiService
 	version string
 }
-
 
 func (r ApiGetAllLayersRequest) Execute() ([]LayerDTO, *http.Response, error) {
 	return r.ApiService.GetAllLayersExecute(r)

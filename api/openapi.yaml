@@ -97,14 +97,16 @@ paths:
     get:
       operationId: GetMergedAttributesWithName
       parameters:
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: name
         required: true
         schema:
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: layerIDs
         required: true
@@ -113,7 +115,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: atTime
         required: false
@@ -214,13 +217,15 @@ paths:
           description: Success
       security:
       - oauth2: []
+      summary: ""
       tags:
       - Attribute
   /api/v{version}/Attribute/getMergedAttributes:
     get:
       operationId: GetMergedAttributes
       parameters:
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: ciids
         required: true
@@ -230,7 +235,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: layerIDs
         required: true
@@ -239,7 +245,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: atTime
         required: false
@@ -340,13 +347,15 @@ paths:
           description: Success
       security:
       - oauth2: []
+      summary: ""
       tags:
       - Attribute
   /api/v{version}/Attribute/getMergedAttribute:
     get:
       operationId: GetMergedAttribute
       parameters:
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: ciid
         required: true
@@ -354,14 +363,16 @@ paths:
           format: uuid
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: name
         required: true
         schema:
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: layerIDs
         required: true
@@ -370,7 +381,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: atTime
         required: false
@@ -439,20 +451,23 @@ paths:
           description: Success
       security:
       - oauth2: []
+      summary: ""
       tags:
       - Attribute
   /api/v{version}/Attribute/findMergedAttributesByName:
     get:
       operationId: FindMergedAttributesByName
       parameters:
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: regex
         required: true
         schema:
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: ciids
         required: false
@@ -462,7 +477,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: layerIDs
         required: true
@@ -471,7 +487,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: atTime
         required: false
@@ -572,6 +589,7 @@ paths:
           description: Success
       security:
       - oauth2: []
+      summary: ""
       tags:
       - Attribute
   /api/v{version}/Attribute/bulkReplaceAttributesInLayer:
@@ -638,6 +656,7 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/BulkCIAttributeLayerScopeDTO'
+        description: ""
         required: true
       responses:
         "200":
@@ -778,7 +797,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: CIID
         required: true
@@ -875,7 +895,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: CIIDs
         required: true
@@ -1275,7 +1296,8 @@ paths:
     delete:
       operationId: DeleteContext
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: name
         required: true
@@ -1378,7 +1400,8 @@ paths:
     put:
       operationId: EditContext
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: name
         required: true
@@ -1445,6 +1468,7 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/EditContextRequest'
+        description: ""
       responses:
         "200":
           description: If request is successful
@@ -1568,6 +1592,7 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/AddContextRequest'
+        description: ""
       responses:
         "201":
           description: Returns the newly created context
@@ -1631,7 +1656,8 @@ paths:
     get:
       operationId: GetSchema
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: context
         required: true
@@ -1646,7 +1672,8 @@ paths:
           type: string
         style: simple
       responses:
-        "200": {}
+        "200":
+          description: ""
       security:
       - oauth2: []
       summary: Returns grid view schema for specific context
@@ -1656,7 +1683,8 @@ paths:
     get:
       operationId: GetData
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: context
         required: true
@@ -1684,7 +1712,8 @@ paths:
     post:
       operationId: ChangeData
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: context
         required: true
@@ -1751,6 +1780,7 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/ChangeDataRequest'
+        description: ""
       responses:
         "200":
           description: If request is successful
@@ -2466,7 +2496,8 @@ paths:
     get:
       operationId: GetMergedRelation
       parameters:
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: fromCIID
         required: true
@@ -2474,7 +2505,8 @@ paths:
           format: uuid
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: toCIID
         required: true
@@ -2482,14 +2514,16 @@ paths:
           format: uuid
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: predicateID
         required: true
         schema:
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: layerIDs
         required: true
@@ -2498,7 +2532,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: atTime
         required: false
@@ -2567,20 +2602,23 @@ paths:
           description: Success
       security:
       - oauth2: []
+      summary: ""
       tags:
       - Relation
   /api/v{version}/Relation/getMergedRelationsWithPredicate:
     get:
       operationId: GetMergedRelationsWithPredicate
       parameters:
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: predicateID
         required: true
         schema:
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: layerIDs
         required: true
@@ -2589,7 +2627,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: atTime
         required: false
@@ -2690,13 +2729,15 @@ paths:
           description: Success
       security:
       - oauth2: []
+      summary: ""
       tags:
       - Relation
   /api/v{version}/Relation/getAllMergedRelations:
     get:
       operationId: GetAllMergedRelations
       parameters:
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: layerIDs
         required: true
@@ -2705,7 +2746,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: atTime
         required: false
@@ -2806,13 +2848,15 @@ paths:
           description: Success
       security:
       - oauth2: []
+      summary: ""
       tags:
       - Relation
   /api/v{version}/Relation/getMergedRelationsOutgoingFromCI:
     get:
       operationId: GetMergedRelationsOutgoingFromCI
       parameters:
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: fromCIID
         required: true
@@ -2820,7 +2864,8 @@ paths:
           format: uuid
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: layerIDs
         required: true
@@ -2829,7 +2874,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: atTime
         required: false
@@ -2930,13 +2976,15 @@ paths:
           description: Success
       security:
       - oauth2: []
+      summary: ""
       tags:
       - Relation
   /api/v{version}/Relation/getMergedRelationsFromOrToCI:
     get:
       operationId: GetMergedRelationsFromOrToCI
       parameters:
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: ciid
         required: true
@@ -2944,7 +2992,8 @@ paths:
           format: uuid
           type: string
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: layerIDs
         required: true
@@ -2953,7 +3002,8 @@ paths:
             type: string
           type: array
         style: form
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: atTime
         required: false
@@ -3054,6 +3104,7 @@ paths:
           description: Success
       security:
       - oauth2: []
+      summary: ""
       tags:
       - Relation
   /api/v{version}/Trait/getEffectiveTraitsForTraitName:

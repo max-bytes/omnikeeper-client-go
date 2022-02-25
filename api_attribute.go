@@ -21,10 +21,6 @@ import (
 	"time"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // AttributeApiService AttributeApi service
 type AttributeApiService service
@@ -36,6 +32,7 @@ type ApiBulkReplaceAttributesInLayerRequest struct {
 	bulkCIAttributeLayerScopeDTO *BulkCIAttributeLayerScopeDTO
 }
 
+// 
 func (r ApiBulkReplaceAttributesInLayerRequest) BulkCIAttributeLayerScopeDTO(bulkCIAttributeLayerScopeDTO BulkCIAttributeLayerScopeDTO) ApiBulkReplaceAttributesInLayerRequest {
 	r.bulkCIAttributeLayerScopeDTO = &bulkCIAttributeLayerScopeDTO
 	return r
@@ -140,18 +137,25 @@ type ApiFindMergedAttributesByNameRequest struct {
 	atTime *time.Time
 }
 
+// 
 func (r ApiFindMergedAttributesByNameRequest) Regex(regex string) ApiFindMergedAttributesByNameRequest {
 	r.regex = &regex
 	return r
 }
+
+// 
 func (r ApiFindMergedAttributesByNameRequest) LayerIDs(layerIDs []string) ApiFindMergedAttributesByNameRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiFindMergedAttributesByNameRequest) Ciids(ciids []string) ApiFindMergedAttributesByNameRequest {
 	r.ciids = &ciids
 	return r
 }
+
+// 
 func (r ApiFindMergedAttributesByNameRequest) AtTime(atTime time.Time) ApiFindMergedAttributesByNameRequest {
 	r.atTime = &atTime
 	return r
@@ -162,7 +166,7 @@ func (r ApiFindMergedAttributesByNameRequest) Execute() ([]CIAttributeDTO, *http
 }
 
 /*
-FindMergedAttributesByName Method for FindMergedAttributesByName
+FindMergedAttributesByName 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
@@ -294,18 +298,25 @@ type ApiGetMergedAttributeRequest struct {
 	atTime *time.Time
 }
 
+// 
 func (r ApiGetMergedAttributeRequest) Ciid(ciid string) ApiGetMergedAttributeRequest {
 	r.ciid = &ciid
 	return r
 }
+
+// 
 func (r ApiGetMergedAttributeRequest) Name(name string) ApiGetMergedAttributeRequest {
 	r.name = &name
 	return r
 }
+
+// 
 func (r ApiGetMergedAttributeRequest) LayerIDs(layerIDs []string) ApiGetMergedAttributeRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetMergedAttributeRequest) AtTime(atTime time.Time) ApiGetMergedAttributeRequest {
 	r.atTime = &atTime
 	return r
@@ -316,7 +327,7 @@ func (r ApiGetMergedAttributeRequest) Execute() (*CIAttributeDTO, *http.Response
 }
 
 /*
-GetMergedAttribute Method for GetMergedAttribute
+GetMergedAttribute 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
@@ -440,14 +451,19 @@ type ApiGetMergedAttributesRequest struct {
 	atTime *time.Time
 }
 
+// 
 func (r ApiGetMergedAttributesRequest) Ciids(ciids []string) ApiGetMergedAttributesRequest {
 	r.ciids = &ciids
 	return r
 }
+
+// 
 func (r ApiGetMergedAttributesRequest) LayerIDs(layerIDs []string) ApiGetMergedAttributesRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetMergedAttributesRequest) AtTime(atTime time.Time) ApiGetMergedAttributesRequest {
 	r.atTime = &atTime
 	return r
@@ -458,7 +474,7 @@ func (r ApiGetMergedAttributesRequest) Execute() ([]CIAttributeDTO, *http.Respon
 }
 
 /*
-GetMergedAttributes Method for GetMergedAttributes
+GetMergedAttributes 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
@@ -588,14 +604,19 @@ type ApiGetMergedAttributesWithNameRequest struct {
 	atTime *time.Time
 }
 
+// 
 func (r ApiGetMergedAttributesWithNameRequest) Name(name string) ApiGetMergedAttributesWithNameRequest {
 	r.name = &name
 	return r
 }
+
+// 
 func (r ApiGetMergedAttributesWithNameRequest) LayerIDs(layerIDs []string) ApiGetMergedAttributesWithNameRequest {
 	r.layerIDs = &layerIDs
 	return r
 }
+
+// 
 func (r ApiGetMergedAttributesWithNameRequest) AtTime(atTime time.Time) ApiGetMergedAttributesWithNameRequest {
 	r.atTime = &atTime
 	return r
@@ -606,7 +627,7 @@ func (r ApiGetMergedAttributesWithNameRequest) Execute() ([]CIAttributeDTO, *htt
 }
 
 /*
-GetMergedAttributesWithName Method for GetMergedAttributesWithName
+GetMergedAttributesWithName 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version

@@ -19,10 +19,6 @@ import (
 	"strings"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
 
 // GridViewApiService GridViewApi service
 type GridViewApiService service
@@ -34,6 +30,7 @@ type ApiAddContextRequest struct {
 	addContextRequest *AddContextRequest
 }
 
+// 
 func (r ApiAddContextRequest) AddContextRequest(addContextRequest AddContextRequest) ApiAddContextRequest {
 	r.addContextRequest = &addContextRequest
 	return r
@@ -142,6 +139,7 @@ type ApiChangeDataRequest struct {
 	changeDataRequest *ChangeDataRequest
 }
 
+// 
 func (r ApiChangeDataRequest) ChangeDataRequest(changeDataRequest ChangeDataRequest) ApiChangeDataRequest {
 	r.changeDataRequest = &changeDataRequest
 	return r
@@ -155,7 +153,7 @@ func (r ApiChangeDataRequest) Execute() (*http.Response, error) {
 ChangeData Saves grid view row changes and returns change results
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param context
+ @param context 
  @param version
  @return ApiChangeDataRequest
 */
@@ -253,7 +251,6 @@ type ApiDeleteContextRequest struct {
 	version string
 }
 
-
 func (r ApiDeleteContextRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteContextExecute(r)
 }
@@ -262,7 +259,7 @@ func (r ApiDeleteContextRequest) Execute() (*http.Response, error) {
 DeleteContext Deletes specific context
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
+ @param name 
  @param version
  @return ApiDeleteContextRequest
 */
@@ -358,6 +355,7 @@ type ApiEditContextRequest struct {
 	editContextRequest *EditContextRequest
 }
 
+// 
 func (r ApiEditContextRequest) EditContextRequest(editContextRequest EditContextRequest) ApiEditContextRequest {
 	r.editContextRequest = &editContextRequest
 	return r
@@ -371,7 +369,7 @@ func (r ApiEditContextRequest) Execute() (*http.Response, error) {
 EditContext Edits specific context
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
+ @param name 
  @param version
  @return ApiEditContextRequest
 */
@@ -468,7 +466,6 @@ type ApiGetDataRequest struct {
 	version string
 }
 
-
 func (r ApiGetDataRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetDataExecute(r)
 }
@@ -477,7 +474,7 @@ func (r ApiGetDataRequest) Execute() (*http.Response, error) {
 GetData Returns grid view data for specific context
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param context
+ @param context 
  @param version
  @return ApiGetDataRequest
 */
@@ -562,7 +559,6 @@ type ApiGetGridViewContextRequest struct {
 	name string
 	version string
 }
-
 
 func (r ApiGetGridViewContextRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGridViewContextExecute(r)
@@ -657,7 +653,6 @@ type ApiGetGridViewContextsRequest struct {
 	version string
 }
 
-
 func (r ApiGetGridViewContextsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGridViewContextsExecute(r)
 }
@@ -749,7 +744,6 @@ type ApiGetSchemaRequest struct {
 	version string
 }
 
-
 func (r ApiGetSchemaRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSchemaExecute(r)
 }
@@ -758,7 +752,7 @@ func (r ApiGetSchemaRequest) Execute() (*http.Response, error) {
 GetSchema Returns grid view schema for specific context
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param context
+ @param context 
  @param version
  @return ApiGetSchemaRequest
 */
