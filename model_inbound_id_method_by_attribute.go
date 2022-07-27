@@ -16,7 +16,6 @@ import (
 
 // InboundIDMethodByAttribute struct for InboundIDMethodByAttribute
 type InboundIDMethodByAttribute struct {
-	Type NullableString `json:"type,omitempty"`
 	Attribute *GenericInboundAttribute `json:"attribute,omitempty"`
 	Modifiers *InboundIDMethodByAttributeModifiers `json:"modifiers,omitempty"`
 }
@@ -37,48 +36,6 @@ func NewInboundIDMethodByAttribute(type_ NullableString) *InboundIDMethodByAttri
 func NewInboundIDMethodByAttributeWithDefaults() *InboundIDMethodByAttribute {
 	this := InboundIDMethodByAttribute{}
 	return &this
-}
-
-// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InboundIDMethodByAttribute) GetType() string {
-	if o == nil || o.Type.Get() == nil {
-		var ret string
-		return ret
-	}
-	return *o.Type.Get()
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InboundIDMethodByAttribute) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Type.Get(), o.Type.IsSet()
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *InboundIDMethodByAttribute) HasType() bool {
-	if o != nil && o.Type.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given NullableString and assigns it to the Type field.
-func (o *InboundIDMethodByAttribute) SetType(v string) {
-	o.Type.Set(&v)
-}
-// SetTypeNil sets the value for Type to be an explicit nil
-func (o *InboundIDMethodByAttribute) SetTypeNil() {
-	o.Type.Set(nil)
-}
-
-// UnsetType ensures that no value is present for Type, not even an explicit nil
-func (o *InboundIDMethodByAttribute) UnsetType() {
-	o.Type.Unset()
 }
 
 // GetAttribute returns the Attribute field value if set, zero value otherwise.
@@ -147,9 +104,6 @@ func (o *InboundIDMethodByAttribute) SetModifiers(v InboundIDMethodByAttributeMo
 
 func (o InboundIDMethodByAttribute) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Type.IsSet() {
-		toSerialize["type"] = o.Type.Get()
-	}
 	if o.Attribute != nil {
 		toSerialize["attribute"] = o.Attribute
 	}

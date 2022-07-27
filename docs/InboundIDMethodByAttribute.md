@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to **NullableString** |  | [optional] [readonly] 
 **Attribute** | Pointer to [**GenericInboundAttribute**](GenericInboundAttribute.md) |  | [optional] 
 **Modifiers** | Pointer to [**InboundIDMethodByAttributeModifiers**](InboundIDMethodByAttributeModifiers.md) |  | [optional] 
 
@@ -27,41 +26,6 @@ NewInboundIDMethodByAttributeWithDefaults instantiates a new InboundIDMethodByAt
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
-
-`func (o *InboundIDMethodByAttribute) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *InboundIDMethodByAttribute) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *InboundIDMethodByAttribute) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *InboundIDMethodByAttribute) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### SetTypeNil
-
-`func (o *InboundIDMethodByAttribute) SetTypeNil(b bool)`
-
- SetTypeNil sets the value for Type to be an explicit nil
-
-### UnsetType
-`func (o *InboundIDMethodByAttribute) UnsetType()`
-
-UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttribute
 
 `func (o *InboundIDMethodByAttribute) GetAttribute() GenericInboundAttribute`

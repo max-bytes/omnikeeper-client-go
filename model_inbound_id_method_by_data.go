@@ -16,7 +16,6 @@ import (
 
 // InboundIDMethodByData struct for InboundIDMethodByData
 type InboundIDMethodByData struct {
-	Type NullableString `json:"type,omitempty"`
 	Attributes []string `json:"attributes,omitempty"`
 }
 
@@ -36,48 +35,6 @@ func NewInboundIDMethodByData(type_ NullableString) *InboundIDMethodByData {
 func NewInboundIDMethodByDataWithDefaults() *InboundIDMethodByData {
 	this := InboundIDMethodByData{}
 	return &this
-}
-
-// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InboundIDMethodByData) GetType() string {
-	if o == nil || o.Type.Get() == nil {
-		var ret string
-		return ret
-	}
-	return *o.Type.Get()
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InboundIDMethodByData) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Type.Get(), o.Type.IsSet()
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *InboundIDMethodByData) HasType() bool {
-	if o != nil && o.Type.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given NullableString and assigns it to the Type field.
-func (o *InboundIDMethodByData) SetType(v string) {
-	o.Type.Set(&v)
-}
-// SetTypeNil sets the value for Type to be an explicit nil
-func (o *InboundIDMethodByData) SetTypeNil() {
-	o.Type.Set(nil)
-}
-
-// UnsetType ensures that no value is present for Type, not even an explicit nil
-func (o *InboundIDMethodByData) UnsetType() {
-	o.Type.Unset()
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -115,9 +72,6 @@ func (o *InboundIDMethodByData) SetAttributes(v []string) {
 
 func (o InboundIDMethodByData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Type.IsSet() {
-		toSerialize["type"] = o.Type.Get()
-	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
 	}

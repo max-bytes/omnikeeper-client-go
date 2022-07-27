@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to **NullableString** |  | [optional] [readonly] 
 **Inner** | Pointer to [**[]OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect**](OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect.md) |  | [optional] 
 
 ## Methods
@@ -26,41 +25,6 @@ NewInboundIDMethodByByUnionWithDefaults instantiates a new InboundIDMethodByByUn
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
-
-`func (o *InboundIDMethodByByUnion) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *InboundIDMethodByByUnion) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *InboundIDMethodByByUnion) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *InboundIDMethodByByUnion) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### SetTypeNil
-
-`func (o *InboundIDMethodByByUnion) SetTypeNil(b bool)`
-
- SetTypeNil sets the value for Type to be an explicit nil
-
-### UnsetType
-`func (o *InboundIDMethodByByUnion) UnsetType()`
-
-UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetInner
 
 `func (o *InboundIDMethodByByUnion) GetInner() []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect`

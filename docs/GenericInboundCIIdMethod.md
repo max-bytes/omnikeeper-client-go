@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CaseInsensitive** | Pointer to **bool** |  | [optional] 
-**Type** | **NullableString** |  | [readonly] 
+**Type** | **NullableString** |  | 
 
 ## Methods
 
