@@ -1613,6 +1613,18 @@ paths:
       - UsageStats
 components:
   schemas:
+    AbstractInboundIDMethod:
+      additionalProperties: false
+      discriminator:
+        propertyName: type
+      properties:
+        type:
+          nullable: true
+          readOnly: true
+          type: string
+      required:
+      - type
+      type: object
     AddContextRequest:
       additionalProperties: false
       example:
@@ -2370,6 +2382,8 @@ components:
       type: object
     InboundIDMethodByAttribute:
       additionalProperties: false
+      allOf:
+      - $ref: '#/components/schemas/AbstractInboundIDMethod'
       properties:
         type:
           nullable: true
@@ -2388,6 +2402,8 @@ components:
       type: object
     InboundIDMethodByByUnion:
       additionalProperties: false
+      allOf:
+      - $ref: '#/components/schemas/AbstractInboundIDMethod'
       properties:
         type:
           nullable: true
@@ -2395,12 +2411,21 @@ components:
           type: string
         inner:
           items:
-            $ref: '#/components/schemas/InboundIDMethodByByUnion_inner_inner'
+            oneOf:
+            - $ref: '#/components/schemas/InboundIDMethodByData'
+            - $ref: '#/components/schemas/InboundIDMethodByAttributeModifiers'
+            - $ref: '#/components/schemas/InboundIDMethodByAttribute'
+            - $ref: '#/components/schemas/InboundIDMethodByRelatedTempID'
+            - $ref: '#/components/schemas/InboundIDMethodByTemporaryCIID'
+            - $ref: '#/components/schemas/InboundIDMethodByByUnion'
+            - $ref: '#/components/schemas/InboundIDMethodByIntersect'
           nullable: true
           type: array
       type: object
     InboundIDMethodByData:
       additionalProperties: false
+      allOf:
+      - $ref: '#/components/schemas/AbstractInboundIDMethod'
       properties:
         type:
           nullable: true
@@ -2414,6 +2439,8 @@ components:
       type: object
     InboundIDMethodByIntersect:
       additionalProperties: false
+      allOf:
+      - $ref: '#/components/schemas/AbstractInboundIDMethod'
       properties:
         type:
           nullable: true
@@ -2421,12 +2448,21 @@ components:
           type: string
         inner:
           items:
-            $ref: '#/components/schemas/InboundIDMethodByByUnion_inner_inner'
+            oneOf:
+            - $ref: '#/components/schemas/InboundIDMethodByData'
+            - $ref: '#/components/schemas/InboundIDMethodByAttributeModifiers'
+            - $ref: '#/components/schemas/InboundIDMethodByAttribute'
+            - $ref: '#/components/schemas/InboundIDMethodByRelatedTempID'
+            - $ref: '#/components/schemas/InboundIDMethodByTemporaryCIID'
+            - $ref: '#/components/schemas/InboundIDMethodByByUnion'
+            - $ref: '#/components/schemas/InboundIDMethodByIntersect'
           nullable: true
           type: array
       type: object
     InboundIDMethodByRelatedTempID:
       additionalProperties: false
+      allOf:
+      - $ref: '#/components/schemas/AbstractInboundIDMethod'
       properties:
         type:
           nullable: true
@@ -2443,6 +2479,8 @@ components:
       type: object
     InboundIDMethodByTemporaryCIID:
       additionalProperties: false
+      allOf:
+      - $ref: '#/components/schemas/AbstractInboundIDMethod'
       properties:
         type:
           nullable: true
@@ -2658,15 +2696,6 @@ components:
       type: object
     GenericInboundCI_idMethod:
       nullable: true
-      oneOf:
-      - $ref: '#/components/schemas/InboundIDMethodByData'
-      - $ref: '#/components/schemas/InboundIDMethodByAttributeModifiers'
-      - $ref: '#/components/schemas/InboundIDMethodByAttribute'
-      - $ref: '#/components/schemas/InboundIDMethodByRelatedTempID'
-      - $ref: '#/components/schemas/InboundIDMethodByTemporaryCIID'
-      - $ref: '#/components/schemas/InboundIDMethodByByUnion'
-      - $ref: '#/components/schemas/InboundIDMethodByIntersect'
-    InboundIDMethodByByUnion_inner_inner:
       oneOf:
       - $ref: '#/components/schemas/InboundIDMethodByData'
       - $ref: '#/components/schemas/InboundIDMethodByAttributeModifiers'

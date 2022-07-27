@@ -17,15 +17,16 @@ import (
 // InboundIDMethodByByUnion struct for InboundIDMethodByByUnion
 type InboundIDMethodByByUnion struct {
 	Type NullableString `json:"type,omitempty"`
-	Inner []InboundIDMethodByByUnionInnerInner `json:"inner,omitempty"`
+	Inner []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect `json:"inner,omitempty"`
 }
 
 // NewInboundIDMethodByByUnion instantiates a new InboundIDMethodByByUnion object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInboundIDMethodByByUnion() *InboundIDMethodByByUnion {
+func NewInboundIDMethodByByUnion(type_ NullableString) *InboundIDMethodByByUnion {
 	this := InboundIDMethodByByUnion{}
+	this.Type = type_
 	return &this
 }
 
@@ -80,9 +81,9 @@ func (o *InboundIDMethodByByUnion) UnsetType() {
 }
 
 // GetInner returns the Inner field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InboundIDMethodByByUnion) GetInner() []InboundIDMethodByByUnionInnerInner {
+func (o *InboundIDMethodByByUnion) GetInner() []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect {
 	if o == nil {
-		var ret []InboundIDMethodByByUnionInnerInner
+		var ret []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect
 		return ret
 	}
 	return o.Inner
@@ -91,7 +92,7 @@ func (o *InboundIDMethodByByUnion) GetInner() []InboundIDMethodByByUnionInnerInn
 // GetInnerOk returns a tuple with the Inner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InboundIDMethodByByUnion) GetInnerOk() ([]InboundIDMethodByByUnionInnerInner, bool) {
+func (o *InboundIDMethodByByUnion) GetInnerOk() ([]OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect, bool) {
 	if o == nil || o.Inner == nil {
 		return nil, false
 	}
@@ -107,8 +108,8 @@ func (o *InboundIDMethodByByUnion) HasInner() bool {
 	return false
 }
 
-// SetInner gets a reference to the given []InboundIDMethodByByUnionInnerInner and assigns it to the Inner field.
-func (o *InboundIDMethodByByUnion) SetInner(v []InboundIDMethodByByUnionInnerInner) {
+// SetInner gets a reference to the given []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect and assigns it to the Inner field.
+func (o *InboundIDMethodByByUnion) SetInner(v []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect) {
 	o.Inner = v
 }
 

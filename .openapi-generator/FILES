@@ -15,6 +15,7 @@ api_restart_application.go
 api_usage_stats.go
 client.go
 configuration.go
+docs/AbstractInboundIDMethod.md
 docs/AddContextRequest.md
 docs/AnsibleInventoryScanDTO.md
 docs/AnsibleInventoryScanIngestApi.md
@@ -53,7 +54,6 @@ docs/ImportExportLayerApi.md
 docs/InboundIDMethodByAttribute.md
 docs/InboundIDMethodByAttributeModifiers.md
 docs/InboundIDMethodByByUnion.md
-docs/InboundIDMethodByByUnionInnerInner.md
 docs/InboundIDMethodByData.md
 docs/InboundIDMethodByIntersect.md
 docs/InboundIDMethodByRelatedTempID.md
@@ -75,6 +75,7 @@ docs/UsageStatsApi.md
 git_push.sh
 go.mod
 go.sum
+model_abstract_inbound_id_method.go
 model_add_context_request.go
 model_ansible_inventory_scan_dto.go
 model_attribute_value_dto.go
@@ -106,7 +107,6 @@ model_i_edm_vocabulary_annotation.go
 model_inbound_id_method_by_attribute.go
 model_inbound_id_method_by_attribute_modifiers.go
 model_inbound_id_method_by_by_union.go
-model_inbound_id_method_by_by_union_inner_inner.go
 model_inbound_id_method_by_data.go
 model_inbound_id_method_by_intersect.go
 model_inbound_id_method_by_related_temp_id.go

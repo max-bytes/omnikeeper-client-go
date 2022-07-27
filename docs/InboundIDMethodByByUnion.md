@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to **NullableString** |  | [optional] [readonly] 
-**Inner** | Pointer to [**[]InboundIDMethodByByUnionInnerInner**](InboundIDMethodByByUnionInnerInner.md) |  | [optional] 
+**Inner** | Pointer to [**[]OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect**](OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect.md) |  | [optional] 
 
 ## Methods
 
@@ -63,20 +63,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetInner
 
-`func (o *InboundIDMethodByByUnion) GetInner() []InboundIDMethodByByUnionInnerInner`
+`func (o *InboundIDMethodByByUnion) GetInner() []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect`
 
 GetInner returns the Inner field if non-nil, zero value otherwise.
 
 ### GetInnerOk
 
-`func (o *InboundIDMethodByByUnion) GetInnerOk() (*[]InboundIDMethodByByUnionInnerInner, bool)`
+`func (o *InboundIDMethodByByUnion) GetInnerOk() (*[]OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect, bool)`
 
 GetInnerOk returns a tuple with the Inner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInner
 
-`func (o *InboundIDMethodByByUnion) SetInner(v []InboundIDMethodByByUnionInnerInner)`
+`func (o *InboundIDMethodByByUnion) SetInner(v []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect)`
 
 SetInner sets Inner field to given value.
 
