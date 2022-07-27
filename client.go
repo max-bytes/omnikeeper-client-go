@@ -51,23 +51,25 @@ type APIClient struct {
 
 	AnsibleInventoryScanIngestApi *AnsibleInventoryScanIngestApiService
 
-	AttributeApi *AttributeApiService
+	AuthRedirectApi *AuthRedirectApiService
 
-	CIApi *CIApiService
-
-	CISearchApi *CISearchApiService
+	CytoscapeApi *CytoscapeApiService
 
 	GraphQLApi *GraphQLApiService
 
+	GraphvizDotApi *GraphvizDotApiService
+
 	GridViewApi *GridViewApiService
 
-	LayerApi *LayerApiService
+	ImportExportLayerApi *ImportExportLayerApiService
+
+	MetadataApi *MetadataApiService
 
 	OKPluginGenericJSONIngestApi *OKPluginGenericJSONIngestApiService
 
-	RelationApi *RelationApiService
+	RestartApplicationApi *RestartApplicationApiService
 
-	TraitApi *TraitApiService
+	UsageStatsApi *UsageStatsApiService
 }
 
 type service struct {
@@ -87,15 +89,16 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 
 	// API Services
 	c.AnsibleInventoryScanIngestApi = (*AnsibleInventoryScanIngestApiService)(&c.common)
-	c.AttributeApi = (*AttributeApiService)(&c.common)
-	c.CIApi = (*CIApiService)(&c.common)
-	c.CISearchApi = (*CISearchApiService)(&c.common)
+	c.AuthRedirectApi = (*AuthRedirectApiService)(&c.common)
+	c.CytoscapeApi = (*CytoscapeApiService)(&c.common)
 	c.GraphQLApi = (*GraphQLApiService)(&c.common)
+	c.GraphvizDotApi = (*GraphvizDotApiService)(&c.common)
 	c.GridViewApi = (*GridViewApiService)(&c.common)
-	c.LayerApi = (*LayerApiService)(&c.common)
+	c.ImportExportLayerApi = (*ImportExportLayerApiService)(&c.common)
+	c.MetadataApi = (*MetadataApiService)(&c.common)
 	c.OKPluginGenericJSONIngestApi = (*OKPluginGenericJSONIngestApiService)(&c.common)
-	c.RelationApi = (*RelationApiService)(&c.common)
-	c.TraitApi = (*TraitApiService)(&c.common)
+	c.RestartApplicationApi = (*RestartApplicationApiService)(&c.common)
+	c.UsageStatsApi = (*UsageStatsApiService)(&c.common)
 
 	return c
 }

@@ -17,9 +17,8 @@ import (
 // GraphQLQuery struct for GraphQLQuery
 type GraphQLQuery struct {
 	OperationName NullableString `json:"operationName,omitempty"`
-	NamedQuery NullableString `json:"namedQuery,omitempty"`
 	Query NullableString `json:"query,omitempty"`
-	Variables interface{} `json:"variables,omitempty"`
+	Variables map[string]interface{} `json:"variables,omitempty"`
 }
 
 // NewGraphQLQuery instantiates a new GraphQLQuery object
@@ -81,48 +80,6 @@ func (o *GraphQLQuery) UnsetOperationName() {
 	o.OperationName.Unset()
 }
 
-// GetNamedQuery returns the NamedQuery field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GraphQLQuery) GetNamedQuery() string {
-	if o == nil || o.NamedQuery.Get() == nil {
-		var ret string
-		return ret
-	}
-	return *o.NamedQuery.Get()
-}
-
-// GetNamedQueryOk returns a tuple with the NamedQuery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GraphQLQuery) GetNamedQueryOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.NamedQuery.Get(), o.NamedQuery.IsSet()
-}
-
-// HasNamedQuery returns a boolean if a field has been set.
-func (o *GraphQLQuery) HasNamedQuery() bool {
-	if o != nil && o.NamedQuery.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetNamedQuery gets a reference to the given NullableString and assigns it to the NamedQuery field.
-func (o *GraphQLQuery) SetNamedQuery(v string) {
-	o.NamedQuery.Set(&v)
-}
-// SetNamedQueryNil sets the value for NamedQuery to be an explicit nil
-func (o *GraphQLQuery) SetNamedQueryNil() {
-	o.NamedQuery.Set(nil)
-}
-
-// UnsetNamedQuery ensures that no value is present for NamedQuery, not even an explicit nil
-func (o *GraphQLQuery) UnsetNamedQuery() {
-	o.NamedQuery.Unset()
-}
-
 // GetQuery returns the Query field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GraphQLQuery) GetQuery() string {
 	if o == nil || o.Query.Get() == nil {
@@ -166,9 +123,9 @@ func (o *GraphQLQuery) UnsetQuery() {
 }
 
 // GetVariables returns the Variables field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GraphQLQuery) GetVariables() interface{} {
+func (o *GraphQLQuery) GetVariables() map[string]interface{} {
 	if o == nil {
-		var ret interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Variables
@@ -177,11 +134,11 @@ func (o *GraphQLQuery) GetVariables() interface{} {
 // GetVariablesOk returns a tuple with the Variables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GraphQLQuery) GetVariablesOk() (*interface{}, bool) {
+func (o *GraphQLQuery) GetVariablesOk() (map[string]interface{}, bool) {
 	if o == nil || o.Variables == nil {
 		return nil, false
 	}
-	return &o.Variables, true
+	return o.Variables, true
 }
 
 // HasVariables returns a boolean if a field has been set.
@@ -193,8 +150,8 @@ func (o *GraphQLQuery) HasVariables() bool {
 	return false
 }
 
-// SetVariables gets a reference to the given interface{} and assigns it to the Variables field.
-func (o *GraphQLQuery) SetVariables(v interface{}) {
+// SetVariables gets a reference to the given map[string]interface{} and assigns it to the Variables field.
+func (o *GraphQLQuery) SetVariables(v map[string]interface{}) {
 	o.Variables = v
 }
 
@@ -202,9 +159,6 @@ func (o GraphQLQuery) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.OperationName.IsSet() {
 		toSerialize["operationName"] = o.OperationName.Get()
-	}
-	if o.NamedQuery.IsSet() {
-		toSerialize["namedQuery"] = o.NamedQuery.Get()
 	}
 	if o.Query.IsSet() {
 		toSerialize["query"] = o.Query.Get()

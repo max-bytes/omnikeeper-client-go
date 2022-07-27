@@ -24,7 +24,7 @@ import (
 // AnsibleInventoryScanIngestApiService AnsibleInventoryScanIngestApi service
 type AnsibleInventoryScanIngestApiService service
 
-type ApiIngestAnsibleInventoryScanRequest struct {
+type ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest struct {
 	ctx context.Context
 	ApiService *AnsibleInventoryScanIngestApiService
 	writeLayerID *string
@@ -33,34 +33,34 @@ type ApiIngestAnsibleInventoryScanRequest struct {
 	ansibleInventoryScanDTO *AnsibleInventoryScanDTO
 }
 
-func (r ApiIngestAnsibleInventoryScanRequest) WriteLayerID(writeLayerID string) ApiIngestAnsibleInventoryScanRequest {
+func (r ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest) WriteLayerID(writeLayerID string) ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest {
 	r.writeLayerID = &writeLayerID
 	return r
 }
 
-func (r ApiIngestAnsibleInventoryScanRequest) SearchLayerIDs(searchLayerIDs []string) ApiIngestAnsibleInventoryScanRequest {
+func (r ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest) SearchLayerIDs(searchLayerIDs []string) ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest {
 	r.searchLayerIDs = &searchLayerIDs
 	return r
 }
 
-func (r ApiIngestAnsibleInventoryScanRequest) AnsibleInventoryScanDTO(ansibleInventoryScanDTO AnsibleInventoryScanDTO) ApiIngestAnsibleInventoryScanRequest {
+func (r ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest) AnsibleInventoryScanDTO(ansibleInventoryScanDTO AnsibleInventoryScanDTO) ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest {
 	r.ansibleInventoryScanDTO = &ansibleInventoryScanDTO
 	return r
 }
 
-func (r ApiIngestAnsibleInventoryScanRequest) Execute() (*http.Response, error) {
-	return r.ApiService.IngestAnsibleInventoryScanExecute(r)
+func (r ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest) Execute() (*http.Response, error) {
+	return r.ApiService.AnsibleInventoryScanIngestIngestAnsibleInventoryScanExecute(r)
 }
 
 /*
-IngestAnsibleInventoryScan Method for IngestAnsibleInventoryScan
+AnsibleInventoryScanIngestIngestAnsibleInventoryScan Method for AnsibleInventoryScanIngestIngestAnsibleInventoryScan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
- @return ApiIngestAnsibleInventoryScanRequest
+ @return ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest
 */
-func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScan(ctx context.Context, version string) ApiIngestAnsibleInventoryScanRequest {
-	return ApiIngestAnsibleInventoryScanRequest{
+func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestAnsibleInventoryScan(ctx context.Context, version string) ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest {
+	return ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest{
 		ApiService: a,
 		ctx: ctx,
 		version: version,
@@ -68,14 +68,14 @@ func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScan(ctx co
 }
 
 // Execute executes the request
-func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScanExecute(r ApiIngestAnsibleInventoryScanRequest) (*http.Response, error) {
+func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestAnsibleInventoryScanExecute(r ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnsibleInventoryScanIngestApiService.IngestAnsibleInventoryScan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnsibleInventoryScanIngestApiService.AnsibleInventoryScanIngestIngestAnsibleInventoryScan")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -109,7 +109,7 @@ func (a *AnsibleInventoryScanIngestApiService) IngestAnsibleInventoryScanExecute
 		}
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "application/json-patch+json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/xml", "text/plain", "text/json", "application/*+json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)

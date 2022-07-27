@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | [**AttributeValueType**](AttributeValueType.md) |  | 
-**IsArray** | **bool** |  | 
-**Values** | **[]string** |  | 
+**Type** | Pointer to [**AttributeValueType**](AttributeValueType.md) |  | [optional] 
+**IsArray** | Pointer to **bool** |  | [optional] 
+**Values** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
 ### NewAttributeValueDTO
 
-`func NewAttributeValueDTO(type_ AttributeValueType, isArray bool, values []string, ) *AttributeValueDTO`
+`func NewAttributeValueDTO() *AttributeValueDTO`
 
 NewAttributeValueDTO instantiates a new AttributeValueDTO object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *AttributeValueDTO) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetIsArray
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetIsArray sets IsArray field to given value.
 
+### HasIsArray
+
+`func (o *AttributeValueDTO) HasIsArray() bool`
+
+HasIsArray returns a boolean if a field has been set.
 
 ### GetValues
 
@@ -86,7 +96,22 @@ and a boolean to check if the value has been set.
 
 SetValues sets Values field to given value.
 
+### HasValues
 
+`func (o *AttributeValueDTO) HasValues() bool`
+
+HasValues returns a boolean if a field has been set.
+
+### SetValuesNil
+
+`func (o *AttributeValueDTO) SetValuesNil(b bool)`
+
+ SetValuesNil sets the value for Values to be an explicit nil
+
+### UnsetValues
+`func (o *AttributeValueDTO) UnsetValues()`
+
+UnsetValues ensures that no value is present for Values, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

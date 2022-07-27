@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **NullableString** |  | [optional] 
+**Id** | Pointer to **NullableString** |  | [optional] 
 **Value** | Pointer to [**AttributeValueDTO**](AttributeValueDTO.md) |  | [optional] 
 **Changeable** | Pointer to **bool** |  | [optional] 
 
@@ -27,41 +27,41 @@ NewChangeDataCellWithDefaults instantiates a new ChangeDataCell object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
+### GetId
 
-`func (o *ChangeDataCell) GetName() string`
+`func (o *ChangeDataCell) GetId() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetIdOk
 
-`func (o *ChangeDataCell) GetNameOk() (*string, bool)`
+`func (o *ChangeDataCell) GetIdOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetId
 
-`func (o *ChangeDataCell) SetName(v string)`
+`func (o *ChangeDataCell) SetId(v string)`
 
-SetName sets Name field to given value.
+SetId sets Id field to given value.
 
-### HasName
+### HasId
 
-`func (o *ChangeDataCell) HasName() bool`
+`func (o *ChangeDataCell) HasId() bool`
 
-HasName returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
-### SetNameNil
+### SetIdNil
 
-`func (o *ChangeDataCell) SetNameNil(b bool)`
+`func (o *ChangeDataCell) SetIdNil(b bool)`
 
- SetNameNil sets the value for Name to be an explicit nil
+ SetIdNil sets the value for Id to be an explicit nil
 
-### UnsetName
-`func (o *ChangeDataCell) UnsetName()`
+### UnsetId
+`func (o *ChangeDataCell) UnsetId()`
 
-UnsetName ensures that no value is present for Name, not even an explicit nil
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetValue
 
 `func (o *ChangeDataCell) GetValue() AttributeValueDTO`

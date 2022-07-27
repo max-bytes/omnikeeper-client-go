@@ -23,7 +23,7 @@ import (
 // GridViewApiService GridViewApi service
 type GridViewApiService service
 
-type ApiAddContextRequest struct {
+type ApiGridViewAddContextRequest struct {
 	ctx context.Context
 	ApiService *GridViewApiService
 	version string
@@ -31,24 +31,24 @@ type ApiAddContextRequest struct {
 }
 
 // 
-func (r ApiAddContextRequest) AddContextRequest(addContextRequest AddContextRequest) ApiAddContextRequest {
+func (r ApiGridViewAddContextRequest) AddContextRequest(addContextRequest AddContextRequest) ApiGridViewAddContextRequest {
 	r.addContextRequest = &addContextRequest
 	return r
 }
 
-func (r ApiAddContextRequest) Execute() (*http.Response, error) {
-	return r.ApiService.AddContextExecute(r)
+func (r ApiGridViewAddContextRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GridViewAddContextExecute(r)
 }
 
 /*
-AddContext Adds new context
+GridViewAddContext Adds new context
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
- @return ApiAddContextRequest
+ @return ApiGridViewAddContextRequest
 */
-func (a *GridViewApiService) AddContext(ctx context.Context, version string) ApiAddContextRequest {
-	return ApiAddContextRequest{
+func (a *GridViewApiService) GridViewAddContext(ctx context.Context, version string) ApiGridViewAddContextRequest {
+	return ApiGridViewAddContextRequest{
 		ApiService: a,
 		ctx: ctx,
 		version: version,
@@ -56,14 +56,14 @@ func (a *GridViewApiService) AddContext(ctx context.Context, version string) Api
 }
 
 // Execute executes the request
-func (a *GridViewApiService) AddContextExecute(r ApiAddContextRequest) (*http.Response, error) {
+func (a *GridViewApiService) GridViewAddContextExecute(r ApiGridViewAddContextRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.AddContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewAddContext")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -76,7 +76,7 @@ func (a *GridViewApiService) AddContextExecute(r ApiAddContextRequest) (*http.Re
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "application/json-patch+json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/xml", "text/plain", "text/json", "application/*+json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -85,7 +85,7 @@ func (a *GridViewApiService) AddContextExecute(r ApiAddContextRequest) (*http.Re
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -131,7 +131,7 @@ func (a *GridViewApiService) AddContextExecute(r ApiAddContextRequest) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiChangeDataRequest struct {
+type ApiGridViewChangeDataRequest struct {
 	ctx context.Context
 	ApiService *GridViewApiService
 	context string
@@ -140,25 +140,25 @@ type ApiChangeDataRequest struct {
 }
 
 // 
-func (r ApiChangeDataRequest) ChangeDataRequest(changeDataRequest ChangeDataRequest) ApiChangeDataRequest {
+func (r ApiGridViewChangeDataRequest) ChangeDataRequest(changeDataRequest ChangeDataRequest) ApiGridViewChangeDataRequest {
 	r.changeDataRequest = &changeDataRequest
 	return r
 }
 
-func (r ApiChangeDataRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ChangeDataExecute(r)
+func (r ApiGridViewChangeDataRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GridViewChangeDataExecute(r)
 }
 
 /*
-ChangeData Saves grid view row changes and returns change results
+GridViewChangeData Saves grid view row changes and returns change results
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param context 
  @param version
- @return ApiChangeDataRequest
+ @return ApiGridViewChangeDataRequest
 */
-func (a *GridViewApiService) ChangeData(ctx context.Context, context string, version string) ApiChangeDataRequest {
-	return ApiChangeDataRequest{
+func (a *GridViewApiService) GridViewChangeData(ctx context.Context, context string, version string) ApiGridViewChangeDataRequest {
+	return ApiGridViewChangeDataRequest{
 		ApiService: a,
 		ctx: ctx,
 		context: context,
@@ -167,14 +167,14 @@ func (a *GridViewApiService) ChangeData(ctx context.Context, context string, ver
 }
 
 // Execute executes the request
-func (a *GridViewApiService) ChangeDataExecute(r ApiChangeDataRequest) (*http.Response, error) {
+func (a *GridViewApiService) GridViewChangeDataExecute(r ApiGridViewChangeDataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.ChangeData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewChangeData")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -188,7 +188,7 @@ func (a *GridViewApiService) ChangeDataExecute(r ApiChangeDataRequest) (*http.Re
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "application/json-patch+json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/xml", "text/plain", "text/json", "application/*+json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -197,7 +197,7 @@ func (a *GridViewApiService) ChangeDataExecute(r ApiChangeDataRequest) (*http.Re
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -244,27 +244,27 @@ func (a *GridViewApiService) ChangeDataExecute(r ApiChangeDataRequest) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteContextRequest struct {
+type ApiGridViewDeleteContextRequest struct {
 	ctx context.Context
 	ApiService *GridViewApiService
 	name string
 	version string
 }
 
-func (r ApiDeleteContextRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteContextExecute(r)
+func (r ApiGridViewDeleteContextRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GridViewDeleteContextExecute(r)
 }
 
 /*
-DeleteContext Deletes specific context
+GridViewDeleteContext Deletes specific context
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name 
  @param version
- @return ApiDeleteContextRequest
+ @return ApiGridViewDeleteContextRequest
 */
-func (a *GridViewApiService) DeleteContext(ctx context.Context, name string, version string) ApiDeleteContextRequest {
-	return ApiDeleteContextRequest{
+func (a *GridViewApiService) GridViewDeleteContext(ctx context.Context, name string, version string) ApiGridViewDeleteContextRequest {
+	return ApiGridViewDeleteContextRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -273,14 +273,14 @@ func (a *GridViewApiService) DeleteContext(ctx context.Context, name string, ver
 }
 
 // Execute executes the request
-func (a *GridViewApiService) DeleteContextExecute(r ApiDeleteContextRequest) (*http.Response, error) {
+func (a *GridViewApiService) GridViewDeleteContextExecute(r ApiGridViewDeleteContextRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.DeleteContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewDeleteContext")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -303,7 +303,7 @@ func (a *GridViewApiService) DeleteContextExecute(r ApiDeleteContextRequest) (*h
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -347,7 +347,7 @@ func (a *GridViewApiService) DeleteContextExecute(r ApiDeleteContextRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiEditContextRequest struct {
+type ApiGridViewEditContextRequest struct {
 	ctx context.Context
 	ApiService *GridViewApiService
 	name string
@@ -356,25 +356,25 @@ type ApiEditContextRequest struct {
 }
 
 // 
-func (r ApiEditContextRequest) EditContextRequest(editContextRequest EditContextRequest) ApiEditContextRequest {
+func (r ApiGridViewEditContextRequest) EditContextRequest(editContextRequest EditContextRequest) ApiGridViewEditContextRequest {
 	r.editContextRequest = &editContextRequest
 	return r
 }
 
-func (r ApiEditContextRequest) Execute() (*http.Response, error) {
-	return r.ApiService.EditContextExecute(r)
+func (r ApiGridViewEditContextRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GridViewEditContextExecute(r)
 }
 
 /*
-EditContext Edits specific context
+GridViewEditContext Edits specific context
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name 
  @param version
- @return ApiEditContextRequest
+ @return ApiGridViewEditContextRequest
 */
-func (a *GridViewApiService) EditContext(ctx context.Context, name string, version string) ApiEditContextRequest {
-	return ApiEditContextRequest{
+func (a *GridViewApiService) GridViewEditContext(ctx context.Context, name string, version string) ApiGridViewEditContextRequest {
+	return ApiGridViewEditContextRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -383,14 +383,14 @@ func (a *GridViewApiService) EditContext(ctx context.Context, name string, versi
 }
 
 // Execute executes the request
-func (a *GridViewApiService) EditContextExecute(r ApiEditContextRequest) (*http.Response, error) {
+func (a *GridViewApiService) GridViewEditContextExecute(r ApiGridViewEditContextRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.EditContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewEditContext")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -404,7 +404,7 @@ func (a *GridViewApiService) EditContextExecute(r ApiEditContextRequest) (*http.
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "application/json-patch+json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/xml", "text/plain", "text/json", "application/*+json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -413,7 +413,7 @@ func (a *GridViewApiService) EditContextExecute(r ApiEditContextRequest) (*http.
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -459,27 +459,27 @@ func (a *GridViewApiService) EditContextExecute(r ApiEditContextRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetDataRequest struct {
+type ApiGridViewGetDataRequest struct {
 	ctx context.Context
 	ApiService *GridViewApiService
 	context string
 	version string
 }
 
-func (r ApiGetDataRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetDataExecute(r)
+func (r ApiGridViewGetDataRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GridViewGetDataExecute(r)
 }
 
 /*
-GetData Returns grid view data for specific context
+GridViewGetData Returns grid view data for specific context
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param context 
  @param version
- @return ApiGetDataRequest
+ @return ApiGridViewGetDataRequest
 */
-func (a *GridViewApiService) GetData(ctx context.Context, context string, version string) ApiGetDataRequest {
-	return ApiGetDataRequest{
+func (a *GridViewApiService) GridViewGetData(ctx context.Context, context string, version string) ApiGridViewGetDataRequest {
+	return ApiGridViewGetDataRequest{
 		ApiService: a,
 		ctx: ctx,
 		context: context,
@@ -488,14 +488,14 @@ func (a *GridViewApiService) GetData(ctx context.Context, context string, versio
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GetDataExecute(r ApiGetDataRequest) (*http.Response, error) {
+func (a *GridViewApiService) GridViewGetDataExecute(r ApiGridViewGetDataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewGetData")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -553,27 +553,27 @@ func (a *GridViewApiService) GetDataExecute(r ApiGetDataRequest) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetGridViewContextRequest struct {
+type ApiGridViewGetGridViewContextRequest struct {
 	ctx context.Context
 	ApiService *GridViewApiService
 	name string
 	version string
 }
 
-func (r ApiGetGridViewContextRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetGridViewContextExecute(r)
+func (r ApiGridViewGetGridViewContextRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GridViewGetGridViewContextExecute(r)
 }
 
 /*
-GetGridViewContext Returns a single context in full
+GridViewGetGridViewContext Returns a single context in full
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
  @param version
- @return ApiGetGridViewContextRequest
+ @return ApiGridViewGetGridViewContextRequest
 */
-func (a *GridViewApiService) GetGridViewContext(ctx context.Context, name string, version string) ApiGetGridViewContextRequest {
-	return ApiGetGridViewContextRequest{
+func (a *GridViewApiService) GridViewGetGridViewContext(ctx context.Context, name string, version string) ApiGridViewGetGridViewContextRequest {
+	return ApiGridViewGetGridViewContextRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -582,14 +582,14 @@ func (a *GridViewApiService) GetGridViewContext(ctx context.Context, name string
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GetGridViewContextExecute(r ApiGetGridViewContextRequest) (*http.Response, error) {
+func (a *GridViewApiService) GridViewGetGridViewContextExecute(r ApiGridViewGetGridViewContextRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetGridViewContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewGetGridViewContext")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -647,25 +647,25 @@ func (a *GridViewApiService) GetGridViewContextExecute(r ApiGetGridViewContextRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetGridViewContextsRequest struct {
+type ApiGridViewGetGridViewContextsRequest struct {
 	ctx context.Context
 	ApiService *GridViewApiService
 	version string
 }
 
-func (r ApiGetGridViewContextsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetGridViewContextsExecute(r)
+func (r ApiGridViewGetGridViewContextsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GridViewGetGridViewContextsExecute(r)
 }
 
 /*
-GetGridViewContexts Returns a list of contexts for grid view.
+GridViewGetGridViewContexts Returns a list of contexts for grid view.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
- @return ApiGetGridViewContextsRequest
+ @return ApiGridViewGetGridViewContextsRequest
 */
-func (a *GridViewApiService) GetGridViewContexts(ctx context.Context, version string) ApiGetGridViewContextsRequest {
-	return ApiGetGridViewContextsRequest{
+func (a *GridViewApiService) GridViewGetGridViewContexts(ctx context.Context, version string) ApiGridViewGetGridViewContextsRequest {
+	return ApiGridViewGetGridViewContextsRequest{
 		ApiService: a,
 		ctx: ctx,
 		version: version,
@@ -673,14 +673,14 @@ func (a *GridViewApiService) GetGridViewContexts(ctx context.Context, version st
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GetGridViewContextsExecute(r ApiGetGridViewContextsRequest) (*http.Response, error) {
+func (a *GridViewApiService) GridViewGetGridViewContextsExecute(r ApiGridViewGetGridViewContextsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetGridViewContexts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewGetGridViewContexts")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -737,27 +737,27 @@ func (a *GridViewApiService) GetGridViewContextsExecute(r ApiGetGridViewContexts
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSchemaRequest struct {
+type ApiGridViewGetSchemaRequest struct {
 	ctx context.Context
 	ApiService *GridViewApiService
 	context string
 	version string
 }
 
-func (r ApiGetSchemaRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSchemaExecute(r)
+func (r ApiGridViewGetSchemaRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GridViewGetSchemaExecute(r)
 }
 
 /*
-GetSchema Returns grid view schema for specific context
+GridViewGetSchema Returns grid view schema for specific context
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param context 
  @param version
- @return ApiGetSchemaRequest
+ @return ApiGridViewGetSchemaRequest
 */
-func (a *GridViewApiService) GetSchema(ctx context.Context, context string, version string) ApiGetSchemaRequest {
-	return ApiGetSchemaRequest{
+func (a *GridViewApiService) GridViewGetSchema(ctx context.Context, context string, version string) ApiGridViewGetSchemaRequest {
+	return ApiGridViewGetSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 		context: context,
@@ -766,14 +766,14 @@ func (a *GridViewApiService) GetSchema(ctx context.Context, context string, vers
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GetSchemaExecute(r ApiGetSchemaRequest) (*http.Response, error) {
+func (a *GridViewApiService) GridViewGetSchemaExecute(r ApiGridViewGetSchemaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GetSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewGetSchema")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

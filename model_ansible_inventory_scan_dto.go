@@ -16,17 +16,17 @@ import (
 
 // AnsibleInventoryScanDTO struct for AnsibleInventoryScanDTO
 type AnsibleInventoryScanDTO struct {
-	SetupFacts map[string]interface{} `json:"setupFacts"`
-	YumInstalled map[string]interface{} `json:"yumInstalled"`
-	YumRepos map[string]interface{} `json:"yumRepos"`
-	YumUpdates map[string]interface{} `json:"yumUpdates"`
+	SetupFacts map[string]string `json:"setupFacts"`
+	YumInstalled map[string]string `json:"yumInstalled"`
+	YumRepos map[string]string `json:"yumRepos"`
+	YumUpdates map[string]string `json:"yumUpdates"`
 }
 
 // NewAnsibleInventoryScanDTO instantiates a new AnsibleInventoryScanDTO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAnsibleInventoryScanDTO(setupFacts map[string]interface{}, yumInstalled map[string]interface{}, yumRepos map[string]interface{}, yumUpdates map[string]interface{}) *AnsibleInventoryScanDTO {
+func NewAnsibleInventoryScanDTO(setupFacts map[string]string, yumInstalled map[string]string, yumRepos map[string]string, yumUpdates map[string]string) *AnsibleInventoryScanDTO {
 	this := AnsibleInventoryScanDTO{}
 	this.SetupFacts = setupFacts
 	this.YumInstalled = yumInstalled
@@ -44,9 +44,9 @@ func NewAnsibleInventoryScanDTOWithDefaults() *AnsibleInventoryScanDTO {
 }
 
 // GetSetupFacts returns the SetupFacts field value
-func (o *AnsibleInventoryScanDTO) GetSetupFacts() map[string]interface{} {
+func (o *AnsibleInventoryScanDTO) GetSetupFacts() map[string]string {
 	if o == nil {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
 
@@ -55,22 +55,22 @@ func (o *AnsibleInventoryScanDTO) GetSetupFacts() map[string]interface{} {
 
 // GetSetupFactsOk returns a tuple with the SetupFacts field value
 // and a boolean to check if the value has been set.
-func (o *AnsibleInventoryScanDTO) GetSetupFactsOk() (map[string]interface{}, bool) {
+func (o *AnsibleInventoryScanDTO) GetSetupFactsOk() (*map[string]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.SetupFacts, true
+	return &o.SetupFacts, true
 }
 
 // SetSetupFacts sets field value
-func (o *AnsibleInventoryScanDTO) SetSetupFacts(v map[string]interface{}) {
+func (o *AnsibleInventoryScanDTO) SetSetupFacts(v map[string]string) {
 	o.SetupFacts = v
 }
 
 // GetYumInstalled returns the YumInstalled field value
-func (o *AnsibleInventoryScanDTO) GetYumInstalled() map[string]interface{} {
+func (o *AnsibleInventoryScanDTO) GetYumInstalled() map[string]string {
 	if o == nil {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
 
@@ -79,22 +79,22 @@ func (o *AnsibleInventoryScanDTO) GetYumInstalled() map[string]interface{} {
 
 // GetYumInstalledOk returns a tuple with the YumInstalled field value
 // and a boolean to check if the value has been set.
-func (o *AnsibleInventoryScanDTO) GetYumInstalledOk() (map[string]interface{}, bool) {
+func (o *AnsibleInventoryScanDTO) GetYumInstalledOk() (*map[string]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.YumInstalled, true
+	return &o.YumInstalled, true
 }
 
 // SetYumInstalled sets field value
-func (o *AnsibleInventoryScanDTO) SetYumInstalled(v map[string]interface{}) {
+func (o *AnsibleInventoryScanDTO) SetYumInstalled(v map[string]string) {
 	o.YumInstalled = v
 }
 
 // GetYumRepos returns the YumRepos field value
-func (o *AnsibleInventoryScanDTO) GetYumRepos() map[string]interface{} {
+func (o *AnsibleInventoryScanDTO) GetYumRepos() map[string]string {
 	if o == nil {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
 
@@ -103,22 +103,22 @@ func (o *AnsibleInventoryScanDTO) GetYumRepos() map[string]interface{} {
 
 // GetYumReposOk returns a tuple with the YumRepos field value
 // and a boolean to check if the value has been set.
-func (o *AnsibleInventoryScanDTO) GetYumReposOk() (map[string]interface{}, bool) {
+func (o *AnsibleInventoryScanDTO) GetYumReposOk() (*map[string]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.YumRepos, true
+	return &o.YumRepos, true
 }
 
 // SetYumRepos sets field value
-func (o *AnsibleInventoryScanDTO) SetYumRepos(v map[string]interface{}) {
+func (o *AnsibleInventoryScanDTO) SetYumRepos(v map[string]string) {
 	o.YumRepos = v
 }
 
 // GetYumUpdates returns the YumUpdates field value
-func (o *AnsibleInventoryScanDTO) GetYumUpdates() map[string]interface{} {
+func (o *AnsibleInventoryScanDTO) GetYumUpdates() map[string]string {
 	if o == nil {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
 
@@ -127,15 +127,15 @@ func (o *AnsibleInventoryScanDTO) GetYumUpdates() map[string]interface{} {
 
 // GetYumUpdatesOk returns a tuple with the YumUpdates field value
 // and a boolean to check if the value has been set.
-func (o *AnsibleInventoryScanDTO) GetYumUpdatesOk() (map[string]interface{}, bool) {
+func (o *AnsibleInventoryScanDTO) GetYumUpdatesOk() (*map[string]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.YumUpdates, true
+	return &o.YumUpdates, true
 }
 
 // SetYumUpdates sets field value
-func (o *AnsibleInventoryScanDTO) SetYumUpdates(v map[string]interface{}) {
+func (o *AnsibleInventoryScanDTO) SetYumUpdates(v map[string]string) {
 	o.YumUpdates = v
 }
 

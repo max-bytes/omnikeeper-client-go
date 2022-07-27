@@ -17,31 +17,32 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"reflect"
 )
 
 
 // OKPluginGenericJSONIngestApiService OKPluginGenericJSONIngestApi service
 type OKPluginGenericJSONIngestApiService service
 
-type ApiGetAllContextsRequest struct {
+type ApiManageContextGetAllContextsRequest struct {
 	ctx context.Context
 	ApiService *OKPluginGenericJSONIngestApiService
 	version string
 }
 
-func (r ApiGetAllContextsRequest) Execute() ([]Context, *http.Response, error) {
-	return r.ApiService.GetAllContextsExecute(r)
+func (r ApiManageContextGetAllContextsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+	return r.ApiService.ManageContextGetAllContextsExecute(r)
 }
 
 /*
-GetAllContexts Method for GetAllContexts
+ManageContextGetAllContexts Method for ManageContextGetAllContexts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
- @return ApiGetAllContextsRequest
+ @return ApiManageContextGetAllContextsRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) GetAllContexts(ctx context.Context, version string) ApiGetAllContextsRequest {
-	return ApiGetAllContextsRequest{
+func (a *OKPluginGenericJSONIngestApiService) ManageContextGetAllContexts(ctx context.Context, version string) ApiManageContextGetAllContextsRequest {
+	return ApiManageContextGetAllContextsRequest{
 		ApiService: a,
 		ctx: ctx,
 		version: version,
@@ -49,16 +50,16 @@ func (a *OKPluginGenericJSONIngestApiService) GetAllContexts(ctx context.Context
 }
 
 // Execute executes the request
-//  @return []Context
-func (a *OKPluginGenericJSONIngestApiService) GetAllContextsExecute(r ApiGetAllContextsRequest) ([]Context, *http.Response, error) {
+//  @return []map[string]interface{}
+func (a *OKPluginGenericJSONIngestApiService) ManageContextGetAllContextsExecute(r ApiManageContextGetAllContextsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []Context
+		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.GetAllContexts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.ManageContextGetAllContexts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -80,7 +81,7 @@ func (a *OKPluginGenericJSONIngestApiService) GetAllContextsExecute(r ApiGetAllC
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -124,27 +125,27 @@ func (a *OKPluginGenericJSONIngestApiService) GetAllContextsExecute(r ApiGetAllC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetContextRequest struct {
+type ApiManageContextGetContextRequest struct {
 	ctx context.Context
 	ApiService *OKPluginGenericJSONIngestApiService
 	id string
 	version string
 }
 
-func (r ApiGetContextRequest) Execute() (*Context, *http.Response, error) {
-	return r.ApiService.GetContextExecute(r)
+func (r ApiManageContextGetContextRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.ManageContextGetContextExecute(r)
 }
 
 /*
-GetContext Method for GetContext
+ManageContextGetContext Method for ManageContextGetContext
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
  @param version
- @return ApiGetContextRequest
+ @return ApiManageContextGetContextRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) GetContext(ctx context.Context, id string, version string) ApiGetContextRequest {
-	return ApiGetContextRequest{
+func (a *OKPluginGenericJSONIngestApiService) ManageContextGetContext(ctx context.Context, id string, version string) ApiManageContextGetContextRequest {
+	return ApiManageContextGetContextRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -153,16 +154,16 @@ func (a *OKPluginGenericJSONIngestApiService) GetContext(ctx context.Context, id
 }
 
 // Execute executes the request
-//  @return Context
-func (a *OKPluginGenericJSONIngestApiService) GetContextExecute(r ApiGetContextRequest) (*Context, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *OKPluginGenericJSONIngestApiService) ManageContextGetContextExecute(r ApiManageContextGetContextRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Context
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.GetContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.ManageContextGetContext")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -185,7 +186,7 @@ func (a *OKPluginGenericJSONIngestApiService) GetContextExecute(r ApiGetContextR
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -229,27 +230,27 @@ func (a *OKPluginGenericJSONIngestApiService) GetContextExecute(r ApiGetContextR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRemoveContextRequest struct {
+type ApiManageContextRemoveContextRequest struct {
 	ctx context.Context
 	ApiService *OKPluginGenericJSONIngestApiService
 	id string
 	version string
 }
 
-func (r ApiRemoveContextRequest) Execute() (*Context, *http.Response, error) {
-	return r.ApiService.RemoveContextExecute(r)
+func (r ApiManageContextRemoveContextRequest) Execute() (bool, *http.Response, error) {
+	return r.ApiService.ManageContextRemoveContextExecute(r)
 }
 
 /*
-RemoveContext Method for RemoveContext
+ManageContextRemoveContext Method for ManageContextRemoveContext
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
  @param version
- @return ApiRemoveContextRequest
+ @return ApiManageContextRemoveContextRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) RemoveContext(ctx context.Context, id string, version string) ApiRemoveContextRequest {
-	return ApiRemoveContextRequest{
+func (a *OKPluginGenericJSONIngestApiService) ManageContextRemoveContext(ctx context.Context, id string, version string) ApiManageContextRemoveContextRequest {
+	return ApiManageContextRemoveContextRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -258,16 +259,16 @@ func (a *OKPluginGenericJSONIngestApiService) RemoveContext(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return Context
-func (a *OKPluginGenericJSONIngestApiService) RemoveContextExecute(r ApiRemoveContextRequest) (*Context, *http.Response, error) {
+//  @return bool
+func (a *OKPluginGenericJSONIngestApiService) ManageContextRemoveContextExecute(r ApiManageContextRemoveContextRequest) (bool, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Context
+		localVarReturnValue  bool
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.RemoveContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.ManageContextRemoveContext")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -290,7 +291,7 @@ func (a *OKPluginGenericJSONIngestApiService) RemoveContextExecute(r ApiRemoveCo
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -334,31 +335,31 @@ func (a *OKPluginGenericJSONIngestApiService) RemoveContextExecute(r ApiRemoveCo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpsertContextRequest struct {
+type ApiManageContextUpsertContextRequest struct {
 	ctx context.Context
 	ApiService *OKPluginGenericJSONIngestApiService
 	version string
-	context *Context
+	body *map[string]interface{}
 }
 
-func (r ApiUpsertContextRequest) Context(context Context) ApiUpsertContextRequest {
-	r.context = &context
+func (r ApiManageContextUpsertContextRequest) Body(body map[string]interface{}) ApiManageContextUpsertContextRequest {
+	r.body = &body
 	return r
 }
 
-func (r ApiUpsertContextRequest) Execute() (*Context, *http.Response, error) {
-	return r.ApiService.UpsertContextExecute(r)
+func (r ApiManageContextUpsertContextRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.ManageContextUpsertContextExecute(r)
 }
 
 /*
-UpsertContext Method for UpsertContext
+ManageContextUpsertContext Method for ManageContextUpsertContext
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param version
- @return ApiUpsertContextRequest
+ @return ApiManageContextUpsertContextRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) UpsertContext(ctx context.Context, version string) ApiUpsertContextRequest {
-	return ApiUpsertContextRequest{
+func (a *OKPluginGenericJSONIngestApiService) ManageContextUpsertContext(ctx context.Context, version string) ApiManageContextUpsertContextRequest {
+	return ApiManageContextUpsertContextRequest{
 		ApiService: a,
 		ctx: ctx,
 		version: version,
@@ -366,16 +367,16 @@ func (a *OKPluginGenericJSONIngestApiService) UpsertContext(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return Context
-func (a *OKPluginGenericJSONIngestApiService) UpsertContextExecute(r ApiUpsertContextRequest) (*Context, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *OKPluginGenericJSONIngestApiService) ManageContextUpsertContextExecute(r ApiManageContextUpsertContextRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Context
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.UpsertContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.ManageContextUpsertContext")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -386,12 +387,12 @@ func (a *OKPluginGenericJSONIngestApiService) UpsertContextExecute(r ApiUpsertCo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.context == nil {
-		return localVarReturnValue, nil, reportError("context is required and must be specified")
+	if r.body == nil {
+		return localVarReturnValue, nil, reportError("body is required and must be specified")
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "application/json-patch+json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/xml", "text/plain", "text/json", "application/*+json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -400,7 +401,7 @@ func (a *OKPluginGenericJSONIngestApiService) UpsertContextExecute(r ApiUpsertCo
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -408,7 +409,7 @@ func (a *OKPluginGenericJSONIngestApiService) UpsertContextExecute(r ApiUpsertCo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.context
+	localVarPostBody = r.body
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -444,4 +445,135 @@ func (a *OKPluginGenericJSONIngestApiService) UpsertContextExecute(r ApiUpsertCo
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiPassiveDataIngestRequest struct {
+	ctx context.Context
+	ApiService *OKPluginGenericJSONIngestApiService
+	readLayerIDs *[]string
+	writeLayerID *string
+	version string
+	genericInboundData *GenericInboundData
+}
+
+func (r ApiPassiveDataIngestRequest) ReadLayerIDs(readLayerIDs []string) ApiPassiveDataIngestRequest {
+	r.readLayerIDs = &readLayerIDs
+	return r
+}
+
+func (r ApiPassiveDataIngestRequest) WriteLayerID(writeLayerID string) ApiPassiveDataIngestRequest {
+	r.writeLayerID = &writeLayerID
+	return r
+}
+
+func (r ApiPassiveDataIngestRequest) GenericInboundData(genericInboundData GenericInboundData) ApiPassiveDataIngestRequest {
+	r.genericInboundData = &genericInboundData
+	return r
+}
+
+func (r ApiPassiveDataIngestRequest) Execute() (*http.Response, error) {
+	return r.ApiService.PassiveDataIngestExecute(r)
+}
+
+/*
+PassiveDataIngest Method for PassiveDataIngest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param version
+ @return ApiPassiveDataIngestRequest
+*/
+func (a *OKPluginGenericJSONIngestApiService) PassiveDataIngest(ctx context.Context, version string) ApiPassiveDataIngestRequest {
+	return ApiPassiveDataIngestRequest{
+		ApiService: a,
+		ctx: ctx,
+		version: version,
+	}
+}
+
+// Execute executes the request
+func (a *OKPluginGenericJSONIngestApiService) PassiveDataIngestExecute(r ApiPassiveDataIngestRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.PassiveDataIngest")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/data"
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.readLayerIDs == nil {
+		return nil, reportError("readLayerIDs is required and must be specified")
+	}
+	if r.writeLayerID == nil {
+		return nil, reportError("writeLayerID is required and must be specified")
+	}
+	if r.genericInboundData == nil {
+		return nil, reportError("genericInboundData is required and must be specified")
+	}
+
+	{
+		t := *r.readLayerIDs
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("readLayerIDs", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("readLayerIDs", parameterToString(t, "multi"))
+		}
+	}
+	localVarQueryParams.Add("writeLayerID", parameterToString(*r.writeLayerID, ""))
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/xml", "text/plain", "text/json", "application/*+json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.genericInboundData
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }

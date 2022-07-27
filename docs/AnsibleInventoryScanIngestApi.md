@@ -1,16 +1,16 @@
 # \AnsibleInventoryScanIngestApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost:44378*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**IngestAnsibleInventoryScan**](AnsibleInventoryScanIngestApi.md#IngestAnsibleInventoryScan) | **Post** /api/v{version}/Ingest/AnsibleInventoryScan | 
+[**AnsibleInventoryScanIngestIngestAnsibleInventoryScan**](AnsibleInventoryScanIngestApi.md#AnsibleInventoryScanIngestIngestAnsibleInventoryScan) | **Post** /api/v{version}/Ingest/AnsibleInventoryScan | 
 
 
 
-## IngestAnsibleInventoryScan
+## AnsibleInventoryScanIngestIngestAnsibleInventoryScan
 
-> IngestAnsibleInventoryScan(ctx, version).WriteLayerID(writeLayerID).SearchLayerIDs(searchLayerIDs).AnsibleInventoryScanDTO(ansibleInventoryScanDTO).Execute()
+> AnsibleInventoryScanIngestIngestAnsibleInventoryScan(ctx, version).WriteLayerID(writeLayerID).SearchLayerIDs(searchLayerIDs).AnsibleInventoryScanDTO(ansibleInventoryScanDTO).Execute()
 
 
 
@@ -30,13 +30,13 @@ func main() {
     writeLayerID := "writeLayerID_example" // string | 
     searchLayerIDs := []string{"Inner_example"} // []string | 
     version := "version_example" // string | 
-    ansibleInventoryScanDTO := *openapiclient.NewAnsibleInventoryScanDTO(map[string]interface{}{"key": interface{}(123)}, map[string]interface{}{"key": interface{}(123)}, map[string]interface{}{"key": interface{}(123)}, map[string]interface{}{"key": interface{}(123)}) // AnsibleInventoryScanDTO | 
+    ansibleInventoryScanDTO := *openapiclient.NewAnsibleInventoryScanDTO(map[string]string{"key": "Inner_example"}, map[string]string{"key": "Inner_example"}, map[string]string{"key": "Inner_example"}, map[string]string{"key": "Inner_example"}) // AnsibleInventoryScanDTO | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AnsibleInventoryScanIngestApi.IngestAnsibleInventoryScan(context.Background(), version).WriteLayerID(writeLayerID).SearchLayerIDs(searchLayerIDs).AnsibleInventoryScanDTO(ansibleInventoryScanDTO).Execute()
+    resp, r, err := apiClient.AnsibleInventoryScanIngestApi.AnsibleInventoryScanIngestIngestAnsibleInventoryScan(context.Background(), version).WriteLayerID(writeLayerID).SearchLayerIDs(searchLayerIDs).AnsibleInventoryScanDTO(ansibleInventoryScanDTO).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AnsibleInventoryScanIngestApi.IngestAnsibleInventoryScan``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AnsibleInventoryScanIngestApi.AnsibleInventoryScanIngestIngestAnsibleInventoryScan``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiIngestAnsibleInventoryScanRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
+- **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

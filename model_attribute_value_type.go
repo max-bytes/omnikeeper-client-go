@@ -26,6 +26,10 @@ const (
 	ATTRIBUTEVALUETYPE_JSON AttributeValueType = "JSON"
 	ATTRIBUTEVALUETYPE_YAML AttributeValueType = "YAML"
 	ATTRIBUTEVALUETYPE_IMAGE AttributeValueType = "Image"
+	ATTRIBUTEVALUETYPE_MASK AttributeValueType = "Mask"
+	ATTRIBUTEVALUETYPE_DOUBLE AttributeValueType = "Double"
+	ATTRIBUTEVALUETYPE_BOOLEAN AttributeValueType = "Boolean"
+	ATTRIBUTEVALUETYPE_DATE_TIME_WITH_OFFSET AttributeValueType = "DateTimeWithOffset"
 )
 
 // All allowed values of AttributeValueType enum
@@ -36,6 +40,10 @@ var AllowedAttributeValueTypeEnumValues = []AttributeValueType{
 	"JSON",
 	"YAML",
 	"Image",
+	"Mask",
+	"Double",
+	"Boolean",
+	"DateTimeWithOffset",
 }
 
 func (v *AttributeValueType) UnmarshalJSON(src []byte) error {

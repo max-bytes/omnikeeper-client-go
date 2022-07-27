@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SourceAttributeName** | Pointer to **NullableString** |  | [optional] 
+**SourceAttributePath** | Pointer to **[]string** |  | [optional] 
 **ColumnDescription** | Pointer to **NullableString** |  | [optional] 
 **ValueType** | Pointer to [**AttributeValueType**](AttributeValueType.md) |  | [optional] 
 **WriteLayer** | Pointer to **NullableString** |  | [optional] 
@@ -63,6 +64,41 @@ HasSourceAttributeName returns a boolean if a field has been set.
 `func (o *GridViewColumn) UnsetSourceAttributeName()`
 
 UnsetSourceAttributeName ensures that no value is present for SourceAttributeName, not even an explicit nil
+### GetSourceAttributePath
+
+`func (o *GridViewColumn) GetSourceAttributePath() []string`
+
+GetSourceAttributePath returns the SourceAttributePath field if non-nil, zero value otherwise.
+
+### GetSourceAttributePathOk
+
+`func (o *GridViewColumn) GetSourceAttributePathOk() (*[]string, bool)`
+
+GetSourceAttributePathOk returns a tuple with the SourceAttributePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceAttributePath
+
+`func (o *GridViewColumn) SetSourceAttributePath(v []string)`
+
+SetSourceAttributePath sets SourceAttributePath field to given value.
+
+### HasSourceAttributePath
+
+`func (o *GridViewColumn) HasSourceAttributePath() bool`
+
+HasSourceAttributePath returns a boolean if a field has been set.
+
+### SetSourceAttributePathNil
+
+`func (o *GridViewColumn) SetSourceAttributePathNil(b bool)`
+
+ SetSourceAttributePathNil sets the value for SourceAttributePath to be an explicit nil
+
+### UnsetSourceAttributePath
+`func (o *GridViewColumn) UnsetSourceAttributePath()`
+
+UnsetSourceAttributePath ensures that no value is present for SourceAttributePath, not even an explicit nil
 ### GetColumnDescription
 
 `func (o *GridViewColumn) GetColumnDescription() string`

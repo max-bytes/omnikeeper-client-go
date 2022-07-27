@@ -17,6 +17,7 @@ import (
 // GridViewColumn struct for GridViewColumn
 type GridViewColumn struct {
 	SourceAttributeName NullableString `json:"sourceAttributeName,omitempty"`
+	SourceAttributePath []string `json:"sourceAttributePath,omitempty"`
 	ColumnDescription NullableString `json:"columnDescription,omitempty"`
 	ValueType *AttributeValueType `json:"valueType,omitempty"`
 	WriteLayer NullableString `json:"writeLayer,omitempty"`
@@ -79,6 +80,39 @@ func (o *GridViewColumn) SetSourceAttributeNameNil() {
 // UnsetSourceAttributeName ensures that no value is present for SourceAttributeName, not even an explicit nil
 func (o *GridViewColumn) UnsetSourceAttributeName() {
 	o.SourceAttributeName.Unset()
+}
+
+// GetSourceAttributePath returns the SourceAttributePath field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GridViewColumn) GetSourceAttributePath() []string {
+	if o == nil {
+		var ret []string
+		return ret
+	}
+	return o.SourceAttributePath
+}
+
+// GetSourceAttributePathOk returns a tuple with the SourceAttributePath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GridViewColumn) GetSourceAttributePathOk() ([]string, bool) {
+	if o == nil || o.SourceAttributePath == nil {
+		return nil, false
+	}
+	return o.SourceAttributePath, true
+}
+
+// HasSourceAttributePath returns a boolean if a field has been set.
+func (o *GridViewColumn) HasSourceAttributePath() bool {
+	if o != nil && o.SourceAttributePath != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceAttributePath gets a reference to the given []string and assigns it to the SourceAttributePath field.
+func (o *GridViewColumn) SetSourceAttributePath(v []string) {
+	o.SourceAttributePath = v
 }
 
 // GetColumnDescription returns the ColumnDescription field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -201,6 +235,9 @@ func (o GridViewColumn) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.SourceAttributeName.IsSet() {
 		toSerialize["sourceAttributeName"] = o.SourceAttributeName.Get()
+	}
+	if o.SourceAttributePath != nil {
+		toSerialize["sourceAttributePath"] = o.SourceAttributePath
 	}
 	if o.ColumnDescription.IsSet() {
 		toSerialize["columnDescription"] = o.ColumnDescription.Get()

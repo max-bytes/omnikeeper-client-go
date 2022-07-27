@@ -1,23 +1,23 @@
 # \GridViewApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost:44378*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddContext**](GridViewApi.md#AddContext) | **Post** /api/v{version}/GridView/context | Adds new context
-[**ChangeData**](GridViewApi.md#ChangeData) | **Post** /api/v{version}/GridView/contexts/{context}/change | Saves grid view row changes and returns change results
-[**DeleteContext**](GridViewApi.md#DeleteContext) | **Delete** /api/v{version}/GridView/context/{name} | Deletes specific context
-[**EditContext**](GridViewApi.md#EditContext) | **Put** /api/v{version}/GridView/context/{name} | Edits specific context
-[**GetData**](GridViewApi.md#GetData) | **Get** /api/v{version}/GridView/contexts/{context}/data | Returns grid view data for specific context
-[**GetGridViewContext**](GridViewApi.md#GetGridViewContext) | **Get** /api/v{version}/GridView/context/{name} | Returns a single context in full
-[**GetGridViewContexts**](GridViewApi.md#GetGridViewContexts) | **Get** /api/v{version}/GridView/contexts | Returns a list of contexts for grid view.
-[**GetSchema**](GridViewApi.md#GetSchema) | **Get** /api/v{version}/GridView/contexts/{context}/schema | Returns grid view schema for specific context
+[**GridViewAddContext**](GridViewApi.md#GridViewAddContext) | **Post** /api/v{version}/GridView/context | Adds new context
+[**GridViewChangeData**](GridViewApi.md#GridViewChangeData) | **Post** /api/v{version}/GridView/contexts/{context}/change | Saves grid view row changes and returns change results
+[**GridViewDeleteContext**](GridViewApi.md#GridViewDeleteContext) | **Delete** /api/v{version}/GridView/context/{name} | Deletes specific context
+[**GridViewEditContext**](GridViewApi.md#GridViewEditContext) | **Put** /api/v{version}/GridView/context/{name} | Edits specific context
+[**GridViewGetData**](GridViewApi.md#GridViewGetData) | **Get** /api/v{version}/GridView/contexts/{context}/data | Returns grid view data for specific context
+[**GridViewGetGridViewContext**](GridViewApi.md#GridViewGetGridViewContext) | **Get** /api/v{version}/GridView/context/{name} | Returns a single context in full
+[**GridViewGetGridViewContexts**](GridViewApi.md#GridViewGetGridViewContexts) | **Get** /api/v{version}/GridView/contexts | Returns a list of contexts for grid view.
+[**GridViewGetSchema**](GridViewApi.md#GridViewGetSchema) | **Get** /api/v{version}/GridView/contexts/{context}/schema | Returns grid view schema for specific context
 
 
 
-## AddContext
+## GridViewAddContext
 
-> AddContext(ctx, version).AddContextRequest(addContextRequest).Execute()
+> GridViewAddContext(ctx, version).AddContextRequest(addContextRequest).Execute()
 
 Adds new context
 
@@ -39,9 +39,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GridViewApi.AddContext(context.Background(), version).AddContextRequest(addContextRequest).Execute()
+    resp, r, err := apiClient.GridViewApi.GridViewAddContext(context.Background(), version).AddContextRequest(addContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.AddContext``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GridViewAddContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAddContextRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGridViewAddContextRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -75,17 +75,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
-- **Accept**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+- **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
+- **Accept**: application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## ChangeData
+## GridViewChangeData
 
-> ChangeData(ctx, context, version).ChangeDataRequest(changeDataRequest).Execute()
+> GridViewChangeData(ctx, context, version).ChangeDataRequest(changeDataRequest).Execute()
 
 Saves grid view row changes and returns change results
 
@@ -108,9 +108,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GridViewApi.ChangeData(context.Background(), context, version).ChangeDataRequest(changeDataRequest).Execute()
+    resp, r, err := apiClient.GridViewApi.GridViewChangeData(context.Background(), context, version).ChangeDataRequest(changeDataRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.ChangeData``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GridViewChangeData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiChangeDataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGridViewChangeDataRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -146,17 +146,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
-- **Accept**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+- **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
+- **Accept**: application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## DeleteContext
+## GridViewDeleteContext
 
-> DeleteContext(ctx, name, version).Execute()
+> GridViewDeleteContext(ctx, name, version).Execute()
 
 Deletes specific context
 
@@ -178,9 +178,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GridViewApi.DeleteContext(context.Background(), name, version).Execute()
+    resp, r, err := apiClient.GridViewApi.GridViewDeleteContext(context.Background(), name, version).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.DeleteContext``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GridViewDeleteContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteContextRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGridViewDeleteContextRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -216,16 +216,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+- **Accept**: application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## EditContext
+## GridViewEditContext
 
-> EditContext(ctx, name, version).EditContextRequest(editContextRequest).Execute()
+> GridViewEditContext(ctx, name, version).EditContextRequest(editContextRequest).Execute()
 
 Edits specific context
 
@@ -248,9 +248,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GridViewApi.EditContext(context.Background(), name, version).EditContextRequest(editContextRequest).Execute()
+    resp, r, err := apiClient.GridViewApi.GridViewEditContext(context.Background(), name, version).EditContextRequest(editContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.EditContext``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GridViewEditContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEditContextRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGridViewEditContextRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -286,17 +286,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
-- **Accept**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+- **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
+- **Accept**: application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## GetData
+## GridViewGetData
 
-> GetData(ctx, context, version).Execute()
+> GridViewGetData(ctx, context, version).Execute()
 
 Returns grid view data for specific context
 
@@ -318,9 +318,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GridViewApi.GetData(context.Background(), context, version).Execute()
+    resp, r, err := apiClient.GridViewApi.GridViewGetData(context.Background(), context, version).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetData``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GridViewGetData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGridViewGetDataRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -363,9 +363,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetGridViewContext
+## GridViewGetGridViewContext
 
-> GetGridViewContext(ctx, name, version).Execute()
+> GridViewGetGridViewContext(ctx, name, version).Execute()
 
 Returns a single context in full
 
@@ -387,9 +387,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GridViewApi.GetGridViewContext(context.Background(), name, version).Execute()
+    resp, r, err := apiClient.GridViewApi.GridViewGetGridViewContext(context.Background(), name, version).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetGridViewContext``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GridViewGetGridViewContext``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetGridViewContextRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGridViewGetGridViewContextRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -432,9 +432,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetGridViewContexts
+## GridViewGetGridViewContexts
 
-> GetGridViewContexts(ctx, version).Execute()
+> GridViewGetGridViewContexts(ctx, version).Execute()
 
 Returns a list of contexts for grid view.
 
@@ -455,9 +455,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GridViewApi.GetGridViewContexts(context.Background(), version).Execute()
+    resp, r, err := apiClient.GridViewApi.GridViewGetGridViewContexts(context.Background(), version).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetGridViewContexts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GridViewGetGridViewContexts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetGridViewContextsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGridViewGetGridViewContextsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -498,9 +498,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSchema
+## GridViewGetSchema
 
-> GetSchema(ctx, context, version).Execute()
+> GridViewGetSchema(ctx, context, version).Execute()
 
 Returns grid view schema for specific context
 
@@ -522,9 +522,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GridViewApi.GetSchema(context.Background(), context, version).Execute()
+    resp, r, err := apiClient.GridViewApi.GridViewGetSchema(context.Background(), context, version).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GetSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GridViewApi.GridViewGetSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGridViewGetSchemaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

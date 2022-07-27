@@ -16,7 +16,7 @@ import (
 
 // ChangeDataCell struct for ChangeDataCell
 type ChangeDataCell struct {
-	Name NullableString `json:"name,omitempty"`
+	Id NullableString `json:"id,omitempty"`
 	Value *AttributeValueDTO `json:"value,omitempty"`
 	Changeable *bool `json:"changeable,omitempty"`
 }
@@ -38,46 +38,46 @@ func NewChangeDataCellWithDefaults() *ChangeDataCell {
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ChangeDataCell) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ChangeDataCell) GetId() string {
+	if o == nil || o.Id.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name.Get()
+	return *o.Id.Get()
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ChangeDataCell) GetNameOk() (*string, bool) {
+func (o *ChangeDataCell) GetIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Name.Get(), o.Name.IsSet()
+	return o.Id.Get(), o.Id.IsSet()
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *ChangeDataCell) HasName() bool {
-	if o != nil && o.Name.IsSet() {
+// HasId returns a boolean if a field has been set.
+func (o *ChangeDataCell) HasId() bool {
+	if o != nil && o.Id.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *ChangeDataCell) SetName(v string) {
-	o.Name.Set(&v)
+// SetId gets a reference to the given NullableString and assigns it to the Id field.
+func (o *ChangeDataCell) SetId(v string) {
+	o.Id.Set(&v)
 }
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *ChangeDataCell) SetNameNil() {
-	o.Name.Set(nil)
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *ChangeDataCell) SetIdNil() {
+	o.Id.Set(nil)
 }
 
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *ChangeDataCell) UnsetName() {
-	o.Name.Unset()
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *ChangeDataCell) UnsetId() {
+	o.Id.Unset()
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -146,8 +146,8 @@ func (o *ChangeDataCell) SetChangeable(v bool) {
 
 func (o ChangeDataCell) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name.IsSet() {
-		toSerialize["name"] = o.Name.Get()
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value

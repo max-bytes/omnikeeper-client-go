@@ -16,20 +16,17 @@ import (
 
 // AttributeValueDTO struct for AttributeValueDTO
 type AttributeValueDTO struct {
-	Type AttributeValueType `json:"type"`
-	IsArray bool `json:"isArray"`
-	Values []string `json:"values"`
+	Type *AttributeValueType `json:"type,omitempty"`
+	IsArray *bool `json:"isArray,omitempty"`
+	Values []string `json:"values,omitempty"`
 }
 
 // NewAttributeValueDTO instantiates a new AttributeValueDTO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttributeValueDTO(type_ AttributeValueType, isArray bool, values []string) *AttributeValueDTO {
+func NewAttributeValueDTO() *AttributeValueDTO {
 	this := AttributeValueDTO{}
-	this.Type = type_
-	this.IsArray = isArray
-	this.Values = values
 	return &this
 }
 
@@ -41,87 +38,112 @@ func NewAttributeValueDTOWithDefaults() *AttributeValueDTO {
 	return &this
 }
 
-// GetType returns the Type field value
+// GetType returns the Type field value if set, zero value otherwise.
 func (o *AttributeValueDTO) GetType() AttributeValueType {
-	if o == nil {
+	if o == nil || o.Type == nil {
 		var ret AttributeValueType
 		return ret
 	}
-
-	return o.Type
+	return *o.Type
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValueDTO) GetTypeOk() (*AttributeValueType, bool) {
-	if o == nil {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return o.Type, true
 }
 
-// SetType sets field value
+// HasType returns a boolean if a field has been set.
+func (o *AttributeValueDTO) HasType() bool {
+	if o != nil && o.Type != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given AttributeValueType and assigns it to the Type field.
 func (o *AttributeValueDTO) SetType(v AttributeValueType) {
-	o.Type = v
+	o.Type = &v
 }
 
-// GetIsArray returns the IsArray field value
+// GetIsArray returns the IsArray field value if set, zero value otherwise.
 func (o *AttributeValueDTO) GetIsArray() bool {
-	if o == nil {
+	if o == nil || o.IsArray == nil {
 		var ret bool
 		return ret
 	}
-
-	return o.IsArray
+	return *o.IsArray
 }
 
-// GetIsArrayOk returns a tuple with the IsArray field value
+// GetIsArrayOk returns a tuple with the IsArray field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValueDTO) GetIsArrayOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || o.IsArray == nil {
 		return nil, false
 	}
-	return &o.IsArray, true
+	return o.IsArray, true
 }
 
-// SetIsArray sets field value
+// HasIsArray returns a boolean if a field has been set.
+func (o *AttributeValueDTO) HasIsArray() bool {
+	if o != nil && o.IsArray != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsArray gets a reference to the given bool and assigns it to the IsArray field.
 func (o *AttributeValueDTO) SetIsArray(v bool) {
-	o.IsArray = v
+	o.IsArray = &v
 }
 
-// GetValues returns the Values field value
+// GetValues returns the Values field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AttributeValueDTO) GetValues() []string {
 	if o == nil {
 		var ret []string
 		return ret
 	}
-
 	return o.Values
 }
 
-// GetValuesOk returns a tuple with the Values field value
+// GetValuesOk returns a tuple with the Values field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AttributeValueDTO) GetValuesOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || o.Values == nil {
 		return nil, false
 	}
 	return o.Values, true
 }
 
-// SetValues sets field value
+// HasValues returns a boolean if a field has been set.
+func (o *AttributeValueDTO) HasValues() bool {
+	if o != nil && o.Values != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValues gets a reference to the given []string and assigns it to the Values field.
 func (o *AttributeValueDTO) SetValues(v []string) {
 	o.Values = v
 }
 
 func (o AttributeValueDTO) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
+	if o.IsArray != nil {
 		toSerialize["isArray"] = o.IsArray
 	}
-	if true {
+	if o.Values != nil {
 		toSerialize["values"] = o.Values
 	}
 	return json.Marshal(toSerialize)

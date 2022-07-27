@@ -1,17 +1,18 @@
 # \GraphQLApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost:44378*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Debug**](GraphQLApi.md#Debug) | **Post** /graphql-debug | 
-[**Index**](GraphQLApi.md#Index) | **Post** /graphql | 
+[**GraphQLDebug**](GraphQLApi.md#GraphQLDebug) | **Post** /graphql-debug | 
+[**GraphQLGet**](GraphQLApi.md#GraphQLGet) | **Get** /graphql | 
+[**GraphQLIndex**](GraphQLApi.md#GraphQLIndex) | **Post** /graphql | 
 
 
 
-## Debug
+## GraphQLDebug
 
-> Debug(ctx).GraphQLQuery(graphQLQuery).Execute()
+> GraphQLDebug(ctx).GraphQLQuery(graphQLQuery).Execute()
 
 
 
@@ -32,9 +33,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GraphQLApi.Debug(context.Background()).GraphQLQuery(graphQLQuery).Execute()
+    resp, r, err := apiClient.GraphQLApi.GraphQLDebug(context.Background()).GraphQLQuery(graphQLQuery).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GraphQLApi.Debug``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GraphQLApi.GraphQLDebug``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -46,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDebugRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGraphQLDebugRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -63,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
+- **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -71,9 +72,75 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Index
+## GraphQLGet
 
-> Index(ctx).GraphQLQuery(graphQLQuery).Execute()
+> GraphQLGet(ctx).OperationName(operationName).Query(query).Variables(variables).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    operationName := "operationName_example" // string |  (optional)
+    query := "query_example" // string |  (optional)
+    variables := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GraphQLApi.GraphQLGet(context.Background()).OperationName(operationName).Query(query).Variables(variables).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `GraphQLApi.GraphQLGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGraphQLGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **operationName** | **string** |  | 
+ **query** | **string** |  | 
+ **variables** | **map[string]interface{}** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GraphQLIndex
+
+> GraphQLIndex(ctx).GraphQLQuery(graphQLQuery).Execute()
 
 
 
@@ -94,9 +161,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GraphQLApi.Index(context.Background()).GraphQLQuery(graphQLQuery).Execute()
+    resp, r, err := apiClient.GraphQLApi.GraphQLIndex(context.Background()).GraphQLQuery(graphQLQuery).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GraphQLApi.Index``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GraphQLApi.GraphQLIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -108,7 +175,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiIndexRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGraphQLIndexRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -125,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
+- **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
