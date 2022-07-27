@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
-**Value** | Pointer to [**IAttributeValue**](IAttributeValue.md) |  | [optional] 
+**Value** | Pointer to [**AttributeValueDTO**](AttributeValueDTO.md) |  | [optional] 
 
 ## Methods
 
@@ -63,20 +63,20 @@ HasName returns a boolean if a field has been set.
 UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetValue
 
-`func (o *GenericInboundAttribute) GetValue() IAttributeValue`
+`func (o *GenericInboundAttribute) GetValue() AttributeValueDTO`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *GenericInboundAttribute) GetValueOk() (*IAttributeValue, bool)`
+`func (o *GenericInboundAttribute) GetValueOk() (*AttributeValueDTO, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *GenericInboundAttribute) SetValue(v IAttributeValue)`
+`func (o *GenericInboundAttribute) SetValue(v AttributeValueDTO)`
 
 SetValue sets Value field to given value.
 

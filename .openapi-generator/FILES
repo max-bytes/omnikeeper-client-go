@@ -40,7 +40,6 @@ docs/GraphvizDotApi.md
 docs/GridViewApi.md
 docs/GridViewColumn.md
 docs/GridViewConfiguration.md
-docs/IAttributeValue.md
 docs/IEdmEntityContainer.md
 docs/IEdmEntityContainerElement.md
 docs/IEdmExpression.md
@@ -95,7 +94,6 @@ model_generic_inbound_relation.go
 model_graph_ql_query.go
 model_grid_view_column.go
 model_grid_view_configuration.go
-model_i_attribute_value.go
 model_i_edm_entity_container.go
 model_i_edm_entity_container_element.go
 model_i_edm_expression.go

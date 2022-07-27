@@ -17,7 +17,7 @@ import (
 // GenericInboundAttribute struct for GenericInboundAttribute
 type GenericInboundAttribute struct {
 	Name NullableString `json:"name,omitempty"`
-	Value *IAttributeValue `json:"value,omitempty"`
+	Value *AttributeValueDTO `json:"value,omitempty"`
 }
 
 // NewGenericInboundAttribute instantiates a new GenericInboundAttribute object
@@ -80,9 +80,9 @@ func (o *GenericInboundAttribute) UnsetName() {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *GenericInboundAttribute) GetValue() IAttributeValue {
+func (o *GenericInboundAttribute) GetValue() AttributeValueDTO {
 	if o == nil || o.Value == nil {
-		var ret IAttributeValue
+		var ret AttributeValueDTO
 		return ret
 	}
 	return *o.Value
@@ -90,7 +90,7 @@ func (o *GenericInboundAttribute) GetValue() IAttributeValue {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericInboundAttribute) GetValueOk() (*IAttributeValue, bool) {
+func (o *GenericInboundAttribute) GetValueOk() (*AttributeValueDTO, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -106,8 +106,8 @@ func (o *GenericInboundAttribute) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given IAttributeValue and assigns it to the Value field.
-func (o *GenericInboundAttribute) SetValue(v IAttributeValue) {
+// SetValue gets a reference to the given AttributeValueDTO and assigns it to the Value field.
+func (o *GenericInboundAttribute) SetValue(v AttributeValueDTO) {
 	o.Value = &v
 }
 
