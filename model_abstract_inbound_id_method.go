@@ -16,14 +16,14 @@ import (
 
 // AbstractInboundIDMethod struct for AbstractInboundIDMethod
 type AbstractInboundIDMethod struct {
-	Type NullableString `json:"type"`
+	Type string `json:"type"`
 }
 
 // NewAbstractInboundIDMethod instantiates a new AbstractInboundIDMethod object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAbstractInboundIDMethod(type_ NullableString) *AbstractInboundIDMethod {
+func NewAbstractInboundIDMethod(type_ string) *AbstractInboundIDMethod {
 	this := AbstractInboundIDMethod{}
 	this.Type = type_
 	return &this
@@ -38,35 +38,33 @@ func NewAbstractInboundIDMethodWithDefaults() *AbstractInboundIDMethod {
 }
 
 // GetType returns the Type field value
-// If the value is explicit nil, the zero value for string will be returned
 func (o *AbstractInboundIDMethod) GetType() string {
-	if o == nil || o.Type.Get() == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.Type.Get()
+	return o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AbstractInboundIDMethod) GetTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Type.Get(), o.Type.IsSet()
+	return &o.Type, true
 }
 
 // SetType sets field value
 func (o *AbstractInboundIDMethod) SetType(v string) {
-	o.Type.Set(&v)
+	o.Type = v
 }
 
 func (o AbstractInboundIDMethod) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type.Get()
+		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
 }

@@ -16,8 +16,8 @@ import (
 
 // GenericInboundCI struct for GenericInboundCI
 type GenericInboundCI struct {
-	TempID NullableString `json:"tempID,omitempty"`
-	IdMethod NullableGenericInboundCIIdMethod `json:"idMethod,omitempty"`
+	TempID *string `json:"tempID,omitempty"`
+	IdMethod *GenericInboundCIIdMethod `json:"idMethod,omitempty"`
 	SameTempIDHandling *SameTempIDHandling `json:"sameTempIDHandling,omitempty"`
 	SameTargetCIHandling *SameTargetCIHandling `json:"sameTargetCIHandling,omitempty"`
 	NoFoundTargetCIHandling *NoFoundTargetCIHandling `json:"noFoundTargetCIHandling,omitempty"`
@@ -41,88 +41,68 @@ func NewGenericInboundCIWithDefaults() *GenericInboundCI {
 	return &this
 }
 
-// GetTempID returns the TempID field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetTempID returns the TempID field value if set, zero value otherwise.
 func (o *GenericInboundCI) GetTempID() string {
-	if o == nil || o.TempID.Get() == nil {
+	if o == nil || o.TempID == nil {
 		var ret string
 		return ret
 	}
-	return *o.TempID.Get()
+	return *o.TempID
 }
 
 // GetTempIDOk returns a tuple with the TempID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GenericInboundCI) GetTempIDOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.TempID == nil {
 		return nil, false
 	}
-	return o.TempID.Get(), o.TempID.IsSet()
+	return o.TempID, true
 }
 
 // HasTempID returns a boolean if a field has been set.
 func (o *GenericInboundCI) HasTempID() bool {
-	if o != nil && o.TempID.IsSet() {
+	if o != nil && o.TempID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTempID gets a reference to the given NullableString and assigns it to the TempID field.
+// SetTempID gets a reference to the given string and assigns it to the TempID field.
 func (o *GenericInboundCI) SetTempID(v string) {
-	o.TempID.Set(&v)
-}
-// SetTempIDNil sets the value for TempID to be an explicit nil
-func (o *GenericInboundCI) SetTempIDNil() {
-	o.TempID.Set(nil)
+	o.TempID = &v
 }
 
-// UnsetTempID ensures that no value is present for TempID, not even an explicit nil
-func (o *GenericInboundCI) UnsetTempID() {
-	o.TempID.Unset()
-}
-
-// GetIdMethod returns the IdMethod field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetIdMethod returns the IdMethod field value if set, zero value otherwise.
 func (o *GenericInboundCI) GetIdMethod() GenericInboundCIIdMethod {
-	if o == nil || o.IdMethod.Get() == nil {
+	if o == nil || o.IdMethod == nil {
 		var ret GenericInboundCIIdMethod
 		return ret
 	}
-	return *o.IdMethod.Get()
+	return *o.IdMethod
 }
 
 // GetIdMethodOk returns a tuple with the IdMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GenericInboundCI) GetIdMethodOk() (*GenericInboundCIIdMethod, bool) {
-	if o == nil {
+	if o == nil || o.IdMethod == nil {
 		return nil, false
 	}
-	return o.IdMethod.Get(), o.IdMethod.IsSet()
+	return o.IdMethod, true
 }
 
 // HasIdMethod returns a boolean if a field has been set.
 func (o *GenericInboundCI) HasIdMethod() bool {
-	if o != nil && o.IdMethod.IsSet() {
+	if o != nil && o.IdMethod != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIdMethod gets a reference to the given NullableGenericInboundCIIdMethod and assigns it to the IdMethod field.
+// SetIdMethod gets a reference to the given GenericInboundCIIdMethod and assigns it to the IdMethod field.
 func (o *GenericInboundCI) SetIdMethod(v GenericInboundCIIdMethod) {
-	o.IdMethod.Set(&v)
-}
-// SetIdMethodNil sets the value for IdMethod to be an explicit nil
-func (o *GenericInboundCI) SetIdMethodNil() {
-	o.IdMethod.Set(nil)
-}
-
-// UnsetIdMethod ensures that no value is present for IdMethod, not even an explicit nil
-func (o *GenericInboundCI) UnsetIdMethod() {
-	o.IdMethod.Unset()
+	o.IdMethod = &v
 }
 
 // GetSameTempIDHandling returns the SameTempIDHandling field value if set, zero value otherwise.
@@ -221,9 +201,9 @@ func (o *GenericInboundCI) SetNoFoundTargetCIHandling(v NoFoundTargetCIHandling)
 	o.NoFoundTargetCIHandling = &v
 }
 
-// GetAttributes returns the Attributes field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *GenericInboundCI) GetAttributes() []GenericInboundAttribute {
-	if o == nil {
+	if o == nil || o.Attributes == nil {
 		var ret []GenericInboundAttribute
 		return ret
 	}
@@ -232,7 +212,6 @@ func (o *GenericInboundCI) GetAttributes() []GenericInboundAttribute {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GenericInboundCI) GetAttributesOk() ([]GenericInboundAttribute, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false
@@ -256,11 +235,11 @@ func (o *GenericInboundCI) SetAttributes(v []GenericInboundAttribute) {
 
 func (o GenericInboundCI) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TempID.IsSet() {
-		toSerialize["tempID"] = o.TempID.Get()
+	if o.TempID != nil {
+		toSerialize["tempID"] = o.TempID
 	}
-	if o.IdMethod.IsSet() {
-		toSerialize["idMethod"] = o.IdMethod.Get()
+	if o.IdMethod != nil {
+		toSerialize["idMethod"] = o.IdMethod
 	}
 	if o.SameTempIDHandling != nil {
 		toSerialize["sameTempIDHandling"] = o.SameTempIDHandling

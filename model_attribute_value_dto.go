@@ -102,9 +102,9 @@ func (o *AttributeValueDTO) SetIsArray(v bool) {
 	o.IsArray = &v
 }
 
-// GetValues returns the Values field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetValues returns the Values field value if set, zero value otherwise.
 func (o *AttributeValueDTO) GetValues() []string {
-	if o == nil {
+	if o == nil || o.Values == nil {
 		var ret []string
 		return ret
 	}
@@ -113,7 +113,6 @@ func (o *AttributeValueDTO) GetValues() []string {
 
 // GetValuesOk returns a tuple with the Values field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AttributeValueDTO) GetValuesOk() ([]string, bool) {
 	if o == nil || o.Values == nil {
 		return nil, false

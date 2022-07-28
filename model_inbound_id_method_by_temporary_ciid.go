@@ -16,14 +16,14 @@ import (
 
 // InboundIDMethodByTemporaryCIID struct for InboundIDMethodByTemporaryCIID
 type InboundIDMethodByTemporaryCIID struct {
-	TempID NullableString `json:"tempID,omitempty"`
+	TempID *string `json:"tempID,omitempty"`
 }
 
 // NewInboundIDMethodByTemporaryCIID instantiates a new InboundIDMethodByTemporaryCIID object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInboundIDMethodByTemporaryCIID(type_ NullableString) *InboundIDMethodByTemporaryCIID {
+func NewInboundIDMethodByTemporaryCIID(type_ string) *InboundIDMethodByTemporaryCIID {
 	this := InboundIDMethodByTemporaryCIID{}
 	this.Type = type_
 	return &this
@@ -37,52 +37,42 @@ func NewInboundIDMethodByTemporaryCIIDWithDefaults() *InboundIDMethodByTemporary
 	return &this
 }
 
-// GetTempID returns the TempID field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetTempID returns the TempID field value if set, zero value otherwise.
 func (o *InboundIDMethodByTemporaryCIID) GetTempID() string {
-	if o == nil || o.TempID.Get() == nil {
+	if o == nil || o.TempID == nil {
 		var ret string
 		return ret
 	}
-	return *o.TempID.Get()
+	return *o.TempID
 }
 
 // GetTempIDOk returns a tuple with the TempID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InboundIDMethodByTemporaryCIID) GetTempIDOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.TempID == nil {
 		return nil, false
 	}
-	return o.TempID.Get(), o.TempID.IsSet()
+	return o.TempID, true
 }
 
 // HasTempID returns a boolean if a field has been set.
 func (o *InboundIDMethodByTemporaryCIID) HasTempID() bool {
-	if o != nil && o.TempID.IsSet() {
+	if o != nil && o.TempID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTempID gets a reference to the given NullableString and assigns it to the TempID field.
+// SetTempID gets a reference to the given string and assigns it to the TempID field.
 func (o *InboundIDMethodByTemporaryCIID) SetTempID(v string) {
-	o.TempID.Set(&v)
-}
-// SetTempIDNil sets the value for TempID to be an explicit nil
-func (o *InboundIDMethodByTemporaryCIID) SetTempIDNil() {
-	o.TempID.Set(nil)
-}
-
-// UnsetTempID ensures that no value is present for TempID, not even an explicit nil
-func (o *InboundIDMethodByTemporaryCIID) UnsetTempID() {
-	o.TempID.Unset()
+	o.TempID = &v
 }
 
 func (o InboundIDMethodByTemporaryCIID) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TempID.IsSet() {
-		toSerialize["tempID"] = o.TempID.Get()
+	if o.TempID != nil {
+		toSerialize["tempID"] = o.TempID
 	}
 	return json.Marshal(toSerialize)
 }

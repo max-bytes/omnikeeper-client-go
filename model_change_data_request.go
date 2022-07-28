@@ -36,9 +36,9 @@ func NewChangeDataRequestWithDefaults() *ChangeDataRequest {
 	return &this
 }
 
-// GetSparseRows returns the SparseRows field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSparseRows returns the SparseRows field value if set, zero value otherwise.
 func (o *ChangeDataRequest) GetSparseRows() []SparseRow {
-	if o == nil {
+	if o == nil || o.SparseRows == nil {
 		var ret []SparseRow
 		return ret
 	}
@@ -47,7 +47,6 @@ func (o *ChangeDataRequest) GetSparseRows() []SparseRow {
 
 // GetSparseRowsOk returns a tuple with the SparseRows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ChangeDataRequest) GetSparseRowsOk() ([]SparseRow, bool) {
 	if o == nil || o.SparseRows == nil {
 		return nil, false

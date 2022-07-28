@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TempID** | Pointer to **NullableString** |  | [optional] 
+**TempID** | Pointer to **string** |  | [optional] 
 **OutgoingRelation** | Pointer to **bool** |  | [optional] 
-**PredicateID** | Pointer to **NullableString** |  | [optional] 
+**PredicateID** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -52,16 +52,6 @@ SetTempID sets TempID field to given value.
 
 HasTempID returns a boolean if a field has been set.
 
-### SetTempIDNil
-
-`func (o *InboundIDMethodByRelatedTempID) SetTempIDNil(b bool)`
-
- SetTempIDNil sets the value for TempID to be an explicit nil
-
-### UnsetTempID
-`func (o *InboundIDMethodByRelatedTempID) UnsetTempID()`
-
-UnsetTempID ensures that no value is present for TempID, not even an explicit nil
 ### GetOutgoingRelation
 
 `func (o *InboundIDMethodByRelatedTempID) GetOutgoingRelation() bool`
@@ -112,16 +102,6 @@ SetPredicateID sets PredicateID field to given value.
 
 HasPredicateID returns a boolean if a field has been set.
 
-### SetPredicateIDNil
-
-`func (o *InboundIDMethodByRelatedTempID) SetPredicateIDNil(b bool)`
-
- SetPredicateIDNil sets the value for PredicateID to be an explicit nil
-
-### UnsetPredicateID
-`func (o *InboundIDMethodByRelatedTempID) UnsetPredicateID()`
-
-UnsetPredicateID ensures that no value is present for PredicateID, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

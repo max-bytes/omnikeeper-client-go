@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SpeakingName** | Pointer to **NullableString** |  | [optional] 
-**Description** | Pointer to **NullableString** |  | [optional] 
+**SpeakingName** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **Configuration** | Pointer to [**GridViewConfiguration**](GridViewConfiguration.md) |  | [optional] 
 
 ## Methods
@@ -52,16 +52,6 @@ SetSpeakingName sets SpeakingName field to given value.
 
 HasSpeakingName returns a boolean if a field has been set.
 
-### SetSpeakingNameNil
-
-`func (o *EditContextRequest) SetSpeakingNameNil(b bool)`
-
- SetSpeakingNameNil sets the value for SpeakingName to be an explicit nil
-
-### UnsetSpeakingName
-`func (o *EditContextRequest) UnsetSpeakingName()`
-
-UnsetSpeakingName ensures that no value is present for SpeakingName, not even an explicit nil
 ### GetDescription
 
 `func (o *EditContextRequest) GetDescription() string`
@@ -87,16 +77,6 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### SetDescriptionNil
-
-`func (o *EditContextRequest) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *EditContextRequest) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetConfiguration
 
 `func (o *EditContextRequest) GetConfiguration() GridViewConfiguration`

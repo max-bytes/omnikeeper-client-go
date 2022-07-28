@@ -37,9 +37,9 @@ func NewGenericInboundDataWithDefaults() *GenericInboundData {
 	return &this
 }
 
-// GetCis returns the Cis field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCis returns the Cis field value if set, zero value otherwise.
 func (o *GenericInboundData) GetCis() []GenericInboundCI {
-	if o == nil {
+	if o == nil || o.Cis == nil {
 		var ret []GenericInboundCI
 		return ret
 	}
@@ -48,7 +48,6 @@ func (o *GenericInboundData) GetCis() []GenericInboundCI {
 
 // GetCisOk returns a tuple with the Cis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GenericInboundData) GetCisOk() ([]GenericInboundCI, bool) {
 	if o == nil || o.Cis == nil {
 		return nil, false
@@ -70,9 +69,9 @@ func (o *GenericInboundData) SetCis(v []GenericInboundCI) {
 	o.Cis = v
 }
 
-// GetRelations returns the Relations field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetRelations returns the Relations field value if set, zero value otherwise.
 func (o *GenericInboundData) GetRelations() []GenericInboundRelation {
-	if o == nil {
+	if o == nil || o.Relations == nil {
 		var ret []GenericInboundRelation
 		return ret
 	}
@@ -81,7 +80,6 @@ func (o *GenericInboundData) GetRelations() []GenericInboundRelation {
 
 // GetRelationsOk returns a tuple with the Relations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GenericInboundData) GetRelationsOk() ([]GenericInboundRelation, bool) {
 	if o == nil || o.Relations == nil {
 		return nil, false

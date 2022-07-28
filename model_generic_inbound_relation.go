@@ -16,9 +16,9 @@ import (
 
 // GenericInboundRelation struct for GenericInboundRelation
 type GenericInboundRelation struct {
-	From NullableString `json:"from,omitempty"`
-	Predicate NullableString `json:"predicate,omitempty"`
-	To NullableString `json:"to,omitempty"`
+	From *string `json:"from,omitempty"`
+	Predicate *string `json:"predicate,omitempty"`
+	To *string `json:"to,omitempty"`
 }
 
 // NewGenericInboundRelation instantiates a new GenericInboundRelation object
@@ -38,142 +38,112 @@ func NewGenericInboundRelationWithDefaults() *GenericInboundRelation {
 	return &this
 }
 
-// GetFrom returns the From field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetFrom returns the From field value if set, zero value otherwise.
 func (o *GenericInboundRelation) GetFrom() string {
-	if o == nil || o.From.Get() == nil {
+	if o == nil || o.From == nil {
 		var ret string
 		return ret
 	}
-	return *o.From.Get()
+	return *o.From
 }
 
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GenericInboundRelation) GetFromOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.From == nil {
 		return nil, false
 	}
-	return o.From.Get(), o.From.IsSet()
+	return o.From, true
 }
 
 // HasFrom returns a boolean if a field has been set.
 func (o *GenericInboundRelation) HasFrom() bool {
-	if o != nil && o.From.IsSet() {
+	if o != nil && o.From != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetFrom gets a reference to the given NullableString and assigns it to the From field.
+// SetFrom gets a reference to the given string and assigns it to the From field.
 func (o *GenericInboundRelation) SetFrom(v string) {
-	o.From.Set(&v)
-}
-// SetFromNil sets the value for From to be an explicit nil
-func (o *GenericInboundRelation) SetFromNil() {
-	o.From.Set(nil)
+	o.From = &v
 }
 
-// UnsetFrom ensures that no value is present for From, not even an explicit nil
-func (o *GenericInboundRelation) UnsetFrom() {
-	o.From.Unset()
-}
-
-// GetPredicate returns the Predicate field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetPredicate returns the Predicate field value if set, zero value otherwise.
 func (o *GenericInboundRelation) GetPredicate() string {
-	if o == nil || o.Predicate.Get() == nil {
+	if o == nil || o.Predicate == nil {
 		var ret string
 		return ret
 	}
-	return *o.Predicate.Get()
+	return *o.Predicate
 }
 
 // GetPredicateOk returns a tuple with the Predicate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GenericInboundRelation) GetPredicateOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.Predicate == nil {
 		return nil, false
 	}
-	return o.Predicate.Get(), o.Predicate.IsSet()
+	return o.Predicate, true
 }
 
 // HasPredicate returns a boolean if a field has been set.
 func (o *GenericInboundRelation) HasPredicate() bool {
-	if o != nil && o.Predicate.IsSet() {
+	if o != nil && o.Predicate != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPredicate gets a reference to the given NullableString and assigns it to the Predicate field.
+// SetPredicate gets a reference to the given string and assigns it to the Predicate field.
 func (o *GenericInboundRelation) SetPredicate(v string) {
-	o.Predicate.Set(&v)
-}
-// SetPredicateNil sets the value for Predicate to be an explicit nil
-func (o *GenericInboundRelation) SetPredicateNil() {
-	o.Predicate.Set(nil)
+	o.Predicate = &v
 }
 
-// UnsetPredicate ensures that no value is present for Predicate, not even an explicit nil
-func (o *GenericInboundRelation) UnsetPredicate() {
-	o.Predicate.Unset()
-}
-
-// GetTo returns the To field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetTo returns the To field value if set, zero value otherwise.
 func (o *GenericInboundRelation) GetTo() string {
-	if o == nil || o.To.Get() == nil {
+	if o == nil || o.To == nil {
 		var ret string
 		return ret
 	}
-	return *o.To.Get()
+	return *o.To
 }
 
 // GetToOk returns a tuple with the To field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GenericInboundRelation) GetToOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.To == nil {
 		return nil, false
 	}
-	return o.To.Get(), o.To.IsSet()
+	return o.To, true
 }
 
 // HasTo returns a boolean if a field has been set.
 func (o *GenericInboundRelation) HasTo() bool {
-	if o != nil && o.To.IsSet() {
+	if o != nil && o.To != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTo gets a reference to the given NullableString and assigns it to the To field.
+// SetTo gets a reference to the given string and assigns it to the To field.
 func (o *GenericInboundRelation) SetTo(v string) {
-	o.To.Set(&v)
-}
-// SetToNil sets the value for To to be an explicit nil
-func (o *GenericInboundRelation) SetToNil() {
-	o.To.Set(nil)
-}
-
-// UnsetTo ensures that no value is present for To, not even an explicit nil
-func (o *GenericInboundRelation) UnsetTo() {
-	o.To.Unset()
+	o.To = &v
 }
 
 func (o GenericInboundRelation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.From.IsSet() {
-		toSerialize["from"] = o.From.Get()
+	if o.From != nil {
+		toSerialize["from"] = o.From
 	}
-	if o.Predicate.IsSet() {
-		toSerialize["predicate"] = o.Predicate.Get()
+	if o.Predicate != nil {
+		toSerialize["predicate"] = o.Predicate
 	}
-	if o.To.IsSet() {
-		toSerialize["to"] = o.To.Get()
+	if o.To != nil {
+		toSerialize["to"] = o.To
 	}
 	return json.Marshal(toSerialize)
 }

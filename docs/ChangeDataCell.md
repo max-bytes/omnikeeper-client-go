@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableString** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to [**AttributeValueDTO**](AttributeValueDTO.md) |  | [optional] 
 **Changeable** | Pointer to **bool** |  | [optional] 
 
@@ -52,16 +52,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### SetIdNil
-
-`func (o *ChangeDataCell) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *ChangeDataCell) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetValue
 
 `func (o *ChangeDataCell) GetValue() AttributeValueDTO`

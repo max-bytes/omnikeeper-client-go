@@ -16,9 +16,9 @@ import (
 
 // AddContextRequest struct for AddContextRequest
 type AddContextRequest struct {
-	Id NullableString `json:"id,omitempty"`
-	SpeakingName NullableString `json:"speakingName,omitempty"`
-	Description NullableString `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	SpeakingName *string `json:"speakingName,omitempty"`
+	Description *string `json:"description,omitempty"`
 	Configuration *GridViewConfiguration `json:"configuration,omitempty"`
 }
 
@@ -39,130 +39,100 @@ func NewAddContextRequestWithDefaults() *AddContextRequest {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *AddContextRequest) GetId() string {
-	if o == nil || o.Id.Get() == nil {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id.Get()
+	return *o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddContextRequest) GetIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.Id.Get(), o.Id.IsSet()
+	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *AddContextRequest) HasId() bool {
-	if o != nil && o.Id.IsSet() {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given NullableString and assigns it to the Id field.
+// SetId gets a reference to the given string and assigns it to the Id field.
 func (o *AddContextRequest) SetId(v string) {
-	o.Id.Set(&v)
-}
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *AddContextRequest) SetIdNil() {
-	o.Id.Set(nil)
+	o.Id = &v
 }
 
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *AddContextRequest) UnsetId() {
-	o.Id.Unset()
-}
-
-// GetSpeakingName returns the SpeakingName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSpeakingName returns the SpeakingName field value if set, zero value otherwise.
 func (o *AddContextRequest) GetSpeakingName() string {
-	if o == nil || o.SpeakingName.Get() == nil {
+	if o == nil || o.SpeakingName == nil {
 		var ret string
 		return ret
 	}
-	return *o.SpeakingName.Get()
+	return *o.SpeakingName
 }
 
 // GetSpeakingNameOk returns a tuple with the SpeakingName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddContextRequest) GetSpeakingNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.SpeakingName == nil {
 		return nil, false
 	}
-	return o.SpeakingName.Get(), o.SpeakingName.IsSet()
+	return o.SpeakingName, true
 }
 
 // HasSpeakingName returns a boolean if a field has been set.
 func (o *AddContextRequest) HasSpeakingName() bool {
-	if o != nil && o.SpeakingName.IsSet() {
+	if o != nil && o.SpeakingName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSpeakingName gets a reference to the given NullableString and assigns it to the SpeakingName field.
+// SetSpeakingName gets a reference to the given string and assigns it to the SpeakingName field.
 func (o *AddContextRequest) SetSpeakingName(v string) {
-	o.SpeakingName.Set(&v)
-}
-// SetSpeakingNameNil sets the value for SpeakingName to be an explicit nil
-func (o *AddContextRequest) SetSpeakingNameNil() {
-	o.SpeakingName.Set(nil)
+	o.SpeakingName = &v
 }
 
-// UnsetSpeakingName ensures that no value is present for SpeakingName, not even an explicit nil
-func (o *AddContextRequest) UnsetSpeakingName() {
-	o.SpeakingName.Unset()
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddContextRequest) GetDescription() string {
-	if o == nil || o.Description.Get() == nil {
+	if o == nil || o.Description == nil {
 		var ret string
 		return ret
 	}
-	return *o.Description.Get()
+	return *o.Description
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddContextRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.Description == nil {
 		return nil, false
 	}
-	return o.Description.Get(), o.Description.IsSet()
+	return o.Description, true
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddContextRequest) HasDescription() bool {
-	if o != nil && o.Description.IsSet() {
+	if o != nil && o.Description != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
+// SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddContextRequest) SetDescription(v string) {
-	o.Description.Set(&v)
-}
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddContextRequest) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddContextRequest) UnsetDescription() {
-	o.Description.Unset()
+	o.Description = &v
 }
 
 // GetConfiguration returns the Configuration field value if set, zero value otherwise.
@@ -199,14 +169,14 @@ func (o *AddContextRequest) SetConfiguration(v GridViewConfiguration) {
 
 func (o AddContextRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id.IsSet() {
-		toSerialize["id"] = o.Id.Get()
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
-	if o.SpeakingName.IsSet() {
-		toSerialize["speakingName"] = o.SpeakingName.Get()
+	if o.SpeakingName != nil {
+		toSerialize["speakingName"] = o.SpeakingName
 	}
-	if o.Description.IsSet() {
-		toSerialize["description"] = o.Description.Get()
+	if o.Description != nil {
+		toSerialize["description"] = o.Description
 	}
 	if o.Configuration != nil {
 		toSerialize["configuration"] = o.Configuration

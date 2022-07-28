@@ -16,9 +16,9 @@ import (
 
 // GridViewColumn struct for GridViewColumn
 type GridViewColumn struct {
-	SourceAttributeName NullableString `json:"sourceAttributeName,omitempty"`
+	SourceAttributeName *string `json:"sourceAttributeName,omitempty"`
 	SourceAttributePath []string `json:"sourceAttributePath,omitempty"`
-	ColumnDescription NullableString `json:"columnDescription,omitempty"`
+	ColumnDescription *string `json:"columnDescription,omitempty"`
 	ValueType *AttributeValueType `json:"valueType,omitempty"`
 	WriteLayer NullableString `json:"writeLayer,omitempty"`
 }
@@ -40,46 +40,36 @@ func NewGridViewColumnWithDefaults() *GridViewColumn {
 	return &this
 }
 
-// GetSourceAttributeName returns the SourceAttributeName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSourceAttributeName returns the SourceAttributeName field value if set, zero value otherwise.
 func (o *GridViewColumn) GetSourceAttributeName() string {
-	if o == nil || o.SourceAttributeName.Get() == nil {
+	if o == nil || o.SourceAttributeName == nil {
 		var ret string
 		return ret
 	}
-	return *o.SourceAttributeName.Get()
+	return *o.SourceAttributeName
 }
 
 // GetSourceAttributeNameOk returns a tuple with the SourceAttributeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GridViewColumn) GetSourceAttributeNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.SourceAttributeName == nil {
 		return nil, false
 	}
-	return o.SourceAttributeName.Get(), o.SourceAttributeName.IsSet()
+	return o.SourceAttributeName, true
 }
 
 // HasSourceAttributeName returns a boolean if a field has been set.
 func (o *GridViewColumn) HasSourceAttributeName() bool {
-	if o != nil && o.SourceAttributeName.IsSet() {
+	if o != nil && o.SourceAttributeName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSourceAttributeName gets a reference to the given NullableString and assigns it to the SourceAttributeName field.
+// SetSourceAttributeName gets a reference to the given string and assigns it to the SourceAttributeName field.
 func (o *GridViewColumn) SetSourceAttributeName(v string) {
-	o.SourceAttributeName.Set(&v)
-}
-// SetSourceAttributeNameNil sets the value for SourceAttributeName to be an explicit nil
-func (o *GridViewColumn) SetSourceAttributeNameNil() {
-	o.SourceAttributeName.Set(nil)
-}
-
-// UnsetSourceAttributeName ensures that no value is present for SourceAttributeName, not even an explicit nil
-func (o *GridViewColumn) UnsetSourceAttributeName() {
-	o.SourceAttributeName.Unset()
+	o.SourceAttributeName = &v
 }
 
 // GetSourceAttributePath returns the SourceAttributePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -115,46 +105,36 @@ func (o *GridViewColumn) SetSourceAttributePath(v []string) {
 	o.SourceAttributePath = v
 }
 
-// GetColumnDescription returns the ColumnDescription field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetColumnDescription returns the ColumnDescription field value if set, zero value otherwise.
 func (o *GridViewColumn) GetColumnDescription() string {
-	if o == nil || o.ColumnDescription.Get() == nil {
+	if o == nil || o.ColumnDescription == nil {
 		var ret string
 		return ret
 	}
-	return *o.ColumnDescription.Get()
+	return *o.ColumnDescription
 }
 
 // GetColumnDescriptionOk returns a tuple with the ColumnDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GridViewColumn) GetColumnDescriptionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.ColumnDescription == nil {
 		return nil, false
 	}
-	return o.ColumnDescription.Get(), o.ColumnDescription.IsSet()
+	return o.ColumnDescription, true
 }
 
 // HasColumnDescription returns a boolean if a field has been set.
 func (o *GridViewColumn) HasColumnDescription() bool {
-	if o != nil && o.ColumnDescription.IsSet() {
+	if o != nil && o.ColumnDescription != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetColumnDescription gets a reference to the given NullableString and assigns it to the ColumnDescription field.
+// SetColumnDescription gets a reference to the given string and assigns it to the ColumnDescription field.
 func (o *GridViewColumn) SetColumnDescription(v string) {
-	o.ColumnDescription.Set(&v)
-}
-// SetColumnDescriptionNil sets the value for ColumnDescription to be an explicit nil
-func (o *GridViewColumn) SetColumnDescriptionNil() {
-	o.ColumnDescription.Set(nil)
-}
-
-// UnsetColumnDescription ensures that no value is present for ColumnDescription, not even an explicit nil
-func (o *GridViewColumn) UnsetColumnDescription() {
-	o.ColumnDescription.Unset()
+	o.ColumnDescription = &v
 }
 
 // GetValueType returns the ValueType field value if set, zero value otherwise.
@@ -233,14 +213,14 @@ func (o *GridViewColumn) UnsetWriteLayer() {
 
 func (o GridViewColumn) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SourceAttributeName.IsSet() {
-		toSerialize["sourceAttributeName"] = o.SourceAttributeName.Get()
+	if o.SourceAttributeName != nil {
+		toSerialize["sourceAttributeName"] = o.SourceAttributeName
 	}
 	if o.SourceAttributePath != nil {
 		toSerialize["sourceAttributePath"] = o.SourceAttributePath
 	}
-	if o.ColumnDescription.IsSet() {
-		toSerialize["columnDescription"] = o.ColumnDescription.Get()
+	if o.ColumnDescription != nil {
+		toSerialize["columnDescription"] = o.ColumnDescription
 	}
 	if o.ValueType != nil {
 		toSerialize["valueType"] = o.ValueType

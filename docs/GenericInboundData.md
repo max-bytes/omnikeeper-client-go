@@ -51,16 +51,6 @@ SetCis sets Cis field to given value.
 
 HasCis returns a boolean if a field has been set.
 
-### SetCisNil
-
-`func (o *GenericInboundData) SetCisNil(b bool)`
-
- SetCisNil sets the value for Cis to be an explicit nil
-
-### UnsetCis
-`func (o *GenericInboundData) UnsetCis()`
-
-UnsetCis ensures that no value is present for Cis, not even an explicit nil
 ### GetRelations
 
 `func (o *GenericInboundData) GetRelations() []GenericInboundRelation`
@@ -86,16 +76,6 @@ SetRelations sets Relations field to given value.
 
 HasRelations returns a boolean if a field has been set.
 
-### SetRelationsNil
-
-`func (o *GenericInboundData) SetRelationsNil(b bool)`
-
- SetRelationsNil sets the value for Relations to be an explicit nil
-
-### UnsetRelations
-`func (o *GenericInboundData) UnsetRelations()`
-
-UnsetRelations ensures that no value is present for Relations, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

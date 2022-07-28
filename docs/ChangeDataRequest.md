@@ -50,16 +50,6 @@ SetSparseRows sets SparseRows field to given value.
 
 HasSparseRows returns a boolean if a field has been set.
 
-### SetSparseRowsNil
-
-`func (o *ChangeDataRequest) SetSparseRowsNil(b bool)`
-
- SetSparseRowsNil sets the value for SparseRows to be an explicit nil
-
-### UnsetSparseRows
-`func (o *ChangeDataRequest) UnsetSparseRows()`
-
-UnsetSparseRows ensures that no value is present for SparseRows, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

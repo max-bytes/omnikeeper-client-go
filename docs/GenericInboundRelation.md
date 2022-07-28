@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**From** | Pointer to **NullableString** |  | [optional] 
-**Predicate** | Pointer to **NullableString** |  | [optional] 
-**To** | Pointer to **NullableString** |  | [optional] 
+**From** | Pointer to **string** |  | [optional] 
+**Predicate** | Pointer to **string** |  | [optional] 
+**To** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -52,16 +52,6 @@ SetFrom sets From field to given value.
 
 HasFrom returns a boolean if a field has been set.
 
-### SetFromNil
-
-`func (o *GenericInboundRelation) SetFromNil(b bool)`
-
- SetFromNil sets the value for From to be an explicit nil
-
-### UnsetFrom
-`func (o *GenericInboundRelation) UnsetFrom()`
-
-UnsetFrom ensures that no value is present for From, not even an explicit nil
 ### GetPredicate
 
 `func (o *GenericInboundRelation) GetPredicate() string`
@@ -87,16 +77,6 @@ SetPredicate sets Predicate field to given value.
 
 HasPredicate returns a boolean if a field has been set.
 
-### SetPredicateNil
-
-`func (o *GenericInboundRelation) SetPredicateNil(b bool)`
-
- SetPredicateNil sets the value for Predicate to be an explicit nil
-
-### UnsetPredicate
-`func (o *GenericInboundRelation) UnsetPredicate()`
-
-UnsetPredicate ensures that no value is present for Predicate, not even an explicit nil
 ### GetTo
 
 `func (o *GenericInboundRelation) GetTo() string`
@@ -122,16 +102,6 @@ SetTo sets To field to given value.
 
 HasTo returns a boolean if a field has been set.
 
-### SetToNil
-
-`func (o *GenericInboundRelation) SetToNil(b bool)`
-
- SetToNil sets the value for To to be an explicit nil
-
-### UnsetTo
-`func (o *GenericInboundRelation) UnsetTo()`
-
-UnsetTo ensures that no value is present for To, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

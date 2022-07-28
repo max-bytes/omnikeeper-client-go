@@ -50,16 +50,6 @@ SetInner sets Inner field to given value.
 
 HasInner returns a boolean if a field has been set.
 
-### SetInnerNil
-
-`func (o *InboundIDMethodByIntersect) SetInnerNil(b bool)`
-
- SetInnerNil sets the value for Inner to be an explicit nil
-
-### UnsetInner
-`func (o *InboundIDMethodByIntersect) UnsetInner()`
-
-UnsetInner ensures that no value is present for Inner, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

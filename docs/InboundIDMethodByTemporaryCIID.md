@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TempID** | Pointer to **NullableString** |  | [optional] 
+**TempID** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -50,16 +50,6 @@ SetTempID sets TempID field to given value.
 
 HasTempID returns a boolean if a field has been set.
 
-### SetTempIDNil
-
-`func (o *InboundIDMethodByTemporaryCIID) SetTempIDNil(b bool)`
-
- SetTempIDNil sets the value for TempID to be an explicit nil
-
-### UnsetTempID
-`func (o *InboundIDMethodByTemporaryCIID) UnsetTempID()`
-
-UnsetTempID ensures that no value is present for TempID, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

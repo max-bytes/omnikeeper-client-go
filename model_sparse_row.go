@@ -69,9 +69,9 @@ func (o *SparseRow) SetCiid(v string) {
 	o.Ciid = &v
 }
 
-// GetCells returns the Cells field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCells returns the Cells field value if set, zero value otherwise.
 func (o *SparseRow) GetCells() []ChangeDataCell {
-	if o == nil {
+	if o == nil || o.Cells == nil {
 		var ret []ChangeDataCell
 		return ret
 	}
@@ -80,7 +80,6 @@ func (o *SparseRow) GetCells() []ChangeDataCell {
 
 // GetCellsOk returns a tuple with the Cells field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SparseRow) GetCellsOk() ([]ChangeDataCell, bool) {
 	if o == nil || o.Cells == nil {
 		return nil, false

@@ -76,16 +76,6 @@ SetCells sets Cells field to given value.
 
 HasCells returns a boolean if a field has been set.
 
-### SetCellsNil
-
-`func (o *SparseRow) SetCellsNil(b bool)`
-
- SetCellsNil sets the value for Cells to be an explicit nil
-
-### UnsetCells
-`func (o *SparseRow) UnsetCells()`
-
-UnsetCells ensures that no value is present for Cells, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,7 +23,7 @@ type InboundIDMethodByData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInboundIDMethodByData(type_ NullableString) *InboundIDMethodByData {
+func NewInboundIDMethodByData(type_ string) *InboundIDMethodByData {
 	this := InboundIDMethodByData{}
 	this.Type = type_
 	return &this
@@ -37,9 +37,9 @@ func NewInboundIDMethodByDataWithDefaults() *InboundIDMethodByData {
 	return &this
 }
 
-// GetAttributes returns the Attributes field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *InboundIDMethodByData) GetAttributes() []string {
-	if o == nil {
+	if o == nil || o.Attributes == nil {
 		var ret []string
 		return ret
 	}
@@ -48,7 +48,6 @@ func (o *InboundIDMethodByData) GetAttributes() []string {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InboundIDMethodByData) GetAttributesOk() ([]string, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false

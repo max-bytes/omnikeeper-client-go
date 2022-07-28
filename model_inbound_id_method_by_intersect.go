@@ -23,7 +23,7 @@ type InboundIDMethodByIntersect struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInboundIDMethodByIntersect(type_ NullableString) *InboundIDMethodByIntersect {
+func NewInboundIDMethodByIntersect(type_ string) *InboundIDMethodByIntersect {
 	this := InboundIDMethodByIntersect{}
 	this.Type = type_
 	return &this
@@ -37,9 +37,9 @@ func NewInboundIDMethodByIntersectWithDefaults() *InboundIDMethodByIntersect {
 	return &this
 }
 
-// GetInner returns the Inner field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetInner returns the Inner field value if set, zero value otherwise.
 func (o *InboundIDMethodByIntersect) GetInner() []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect {
-	if o == nil {
+	if o == nil || o.Inner == nil {
 		var ret []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect
 		return ret
 	}
@@ -48,7 +48,6 @@ func (o *InboundIDMethodByIntersect) GetInner() []OneOfInboundIDMethodByDataInbo
 
 // GetInnerOk returns a tuple with the Inner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InboundIDMethodByIntersect) GetInnerOk() ([]OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect, bool) {
 	if o == nil || o.Inner == nil {
 		return nil, false

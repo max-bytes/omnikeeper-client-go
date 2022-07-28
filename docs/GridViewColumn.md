@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SourceAttributeName** | Pointer to **NullableString** |  | [optional] 
+**SourceAttributeName** | Pointer to **string** |  | [optional] 
 **SourceAttributePath** | Pointer to **[]string** |  | [optional] 
-**ColumnDescription** | Pointer to **NullableString** |  | [optional] 
+**ColumnDescription** | Pointer to **string** |  | [optional] 
 **ValueType** | Pointer to [**AttributeValueType**](AttributeValueType.md) |  | [optional] 
 **WriteLayer** | Pointer to **NullableString** |  | [optional] 
 
@@ -54,16 +54,6 @@ SetSourceAttributeName sets SourceAttributeName field to given value.
 
 HasSourceAttributeName returns a boolean if a field has been set.
 
-### SetSourceAttributeNameNil
-
-`func (o *GridViewColumn) SetSourceAttributeNameNil(b bool)`
-
- SetSourceAttributeNameNil sets the value for SourceAttributeName to be an explicit nil
-
-### UnsetSourceAttributeName
-`func (o *GridViewColumn) UnsetSourceAttributeName()`
-
-UnsetSourceAttributeName ensures that no value is present for SourceAttributeName, not even an explicit nil
 ### GetSourceAttributePath
 
 `func (o *GridViewColumn) GetSourceAttributePath() []string`
@@ -124,16 +114,6 @@ SetColumnDescription sets ColumnDescription field to given value.
 
 HasColumnDescription returns a boolean if a field has been set.
 
-### SetColumnDescriptionNil
-
-`func (o *GridViewColumn) SetColumnDescriptionNil(b bool)`
-
- SetColumnDescriptionNil sets the value for ColumnDescription to be an explicit nil
-
-### UnsetColumnDescription
-`func (o *GridViewColumn) UnsetColumnDescription()`
-
-UnsetColumnDescription ensures that no value is present for ColumnDescription, not even an explicit nil
 ### GetValueType
 
 `func (o *GridViewColumn) GetValueType() AttributeValueType`

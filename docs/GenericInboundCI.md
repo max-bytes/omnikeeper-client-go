@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TempID** | Pointer to **NullableString** |  | [optional] 
-**IdMethod** | Pointer to [**NullableGenericInboundCIIdMethod**](GenericInboundCIIdMethod.md) |  | [optional] 
+**TempID** | Pointer to **string** |  | [optional] 
+**IdMethod** | Pointer to [**GenericInboundCIIdMethod**](GenericInboundCIIdMethod.md) |  | [optional] 
 **SameTempIDHandling** | Pointer to [**SameTempIDHandling**](SameTempIDHandling.md) |  | [optional] 
 **SameTargetCIHandling** | Pointer to [**SameTargetCIHandling**](SameTargetCIHandling.md) |  | [optional] 
 **NoFoundTargetCIHandling** | Pointer to [**NoFoundTargetCIHandling**](NoFoundTargetCIHandling.md) |  | [optional] 
@@ -55,16 +55,6 @@ SetTempID sets TempID field to given value.
 
 HasTempID returns a boolean if a field has been set.
 
-### SetTempIDNil
-
-`func (o *GenericInboundCI) SetTempIDNil(b bool)`
-
- SetTempIDNil sets the value for TempID to be an explicit nil
-
-### UnsetTempID
-`func (o *GenericInboundCI) UnsetTempID()`
-
-UnsetTempID ensures that no value is present for TempID, not even an explicit nil
 ### GetIdMethod
 
 `func (o *GenericInboundCI) GetIdMethod() GenericInboundCIIdMethod`
@@ -90,16 +80,6 @@ SetIdMethod sets IdMethod field to given value.
 
 HasIdMethod returns a boolean if a field has been set.
 
-### SetIdMethodNil
-
-`func (o *GenericInboundCI) SetIdMethodNil(b bool)`
-
- SetIdMethodNil sets the value for IdMethod to be an explicit nil
-
-### UnsetIdMethod
-`func (o *GenericInboundCI) UnsetIdMethod()`
-
-UnsetIdMethod ensures that no value is present for IdMethod, not even an explicit nil
 ### GetSameTempIDHandling
 
 `func (o *GenericInboundCI) GetSameTempIDHandling() SameTempIDHandling`
@@ -200,16 +180,6 @@ SetAttributes sets Attributes field to given value.
 
 HasAttributes returns a boolean if a field has been set.
 
-### SetAttributesNil
-
-`func (o *GenericInboundCI) SetAttributesNil(b bool)`
-
- SetAttributesNil sets the value for Attributes to be an explicit nil
-
-### UnsetAttributes
-`func (o *GenericInboundCI) UnsetAttributes()`
-
-UnsetAttributes ensures that no value is present for Attributes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

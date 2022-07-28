@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ShowCIIDColumn** | Pointer to **bool** |  | [optional] 
-**WriteLayer** | Pointer to **NullableString** |  | [optional] 
+**WriteLayer** | Pointer to **string** |  | [optional] 
 **ReadLayerset** | Pointer to **[]string** |  | [optional] 
 **Columns** | Pointer to [**[]GridViewColumn**](GridViewColumn.md) |  | [optional] 
-**Trait** | Pointer to **NullableString** |  | [optional] 
+**Trait** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -79,16 +79,6 @@ SetWriteLayer sets WriteLayer field to given value.
 
 HasWriteLayer returns a boolean if a field has been set.
 
-### SetWriteLayerNil
-
-`func (o *GridViewConfiguration) SetWriteLayerNil(b bool)`
-
- SetWriteLayerNil sets the value for WriteLayer to be an explicit nil
-
-### UnsetWriteLayer
-`func (o *GridViewConfiguration) UnsetWriteLayer()`
-
-UnsetWriteLayer ensures that no value is present for WriteLayer, not even an explicit nil
 ### GetReadLayerset
 
 `func (o *GridViewConfiguration) GetReadLayerset() []string`
@@ -114,16 +104,6 @@ SetReadLayerset sets ReadLayerset field to given value.
 
 HasReadLayerset returns a boolean if a field has been set.
 
-### SetReadLayersetNil
-
-`func (o *GridViewConfiguration) SetReadLayersetNil(b bool)`
-
- SetReadLayersetNil sets the value for ReadLayerset to be an explicit nil
-
-### UnsetReadLayerset
-`func (o *GridViewConfiguration) UnsetReadLayerset()`
-
-UnsetReadLayerset ensures that no value is present for ReadLayerset, not even an explicit nil
 ### GetColumns
 
 `func (o *GridViewConfiguration) GetColumns() []GridViewColumn`
@@ -149,16 +129,6 @@ SetColumns sets Columns field to given value.
 
 HasColumns returns a boolean if a field has been set.
 
-### SetColumnsNil
-
-`func (o *GridViewConfiguration) SetColumnsNil(b bool)`
-
- SetColumnsNil sets the value for Columns to be an explicit nil
-
-### UnsetColumns
-`func (o *GridViewConfiguration) UnsetColumns()`
-
-UnsetColumns ensures that no value is present for Columns, not even an explicit nil
 ### GetTrait
 
 `func (o *GridViewConfiguration) GetTrait() string`
@@ -184,16 +154,6 @@ SetTrait sets Trait field to given value.
 
 HasTrait returns a boolean if a field has been set.
 
-### SetTraitNil
-
-`func (o *GridViewConfiguration) SetTraitNil(b bool)`
-
- SetTraitNil sets the value for Trait to be an explicit nil
-
-### UnsetTrait
-`func (o *GridViewConfiguration) UnsetTrait()`
-
-UnsetTrait ensures that no value is present for Trait, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

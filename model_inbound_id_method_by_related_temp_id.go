@@ -16,16 +16,16 @@ import (
 
 // InboundIDMethodByRelatedTempID struct for InboundIDMethodByRelatedTempID
 type InboundIDMethodByRelatedTempID struct {
-	TempID NullableString `json:"tempID,omitempty"`
+	TempID *string `json:"tempID,omitempty"`
 	OutgoingRelation *bool `json:"outgoingRelation,omitempty"`
-	PredicateID NullableString `json:"predicateID,omitempty"`
+	PredicateID *string `json:"predicateID,omitempty"`
 }
 
 // NewInboundIDMethodByRelatedTempID instantiates a new InboundIDMethodByRelatedTempID object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInboundIDMethodByRelatedTempID(type_ NullableString) *InboundIDMethodByRelatedTempID {
+func NewInboundIDMethodByRelatedTempID(type_ string) *InboundIDMethodByRelatedTempID {
 	this := InboundIDMethodByRelatedTempID{}
 	this.Type = type_
 	return &this
@@ -39,46 +39,36 @@ func NewInboundIDMethodByRelatedTempIDWithDefaults() *InboundIDMethodByRelatedTe
 	return &this
 }
 
-// GetTempID returns the TempID field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetTempID returns the TempID field value if set, zero value otherwise.
 func (o *InboundIDMethodByRelatedTempID) GetTempID() string {
-	if o == nil || o.TempID.Get() == nil {
+	if o == nil || o.TempID == nil {
 		var ret string
 		return ret
 	}
-	return *o.TempID.Get()
+	return *o.TempID
 }
 
 // GetTempIDOk returns a tuple with the TempID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InboundIDMethodByRelatedTempID) GetTempIDOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.TempID == nil {
 		return nil, false
 	}
-	return o.TempID.Get(), o.TempID.IsSet()
+	return o.TempID, true
 }
 
 // HasTempID returns a boolean if a field has been set.
 func (o *InboundIDMethodByRelatedTempID) HasTempID() bool {
-	if o != nil && o.TempID.IsSet() {
+	if o != nil && o.TempID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTempID gets a reference to the given NullableString and assigns it to the TempID field.
+// SetTempID gets a reference to the given string and assigns it to the TempID field.
 func (o *InboundIDMethodByRelatedTempID) SetTempID(v string) {
-	o.TempID.Set(&v)
-}
-// SetTempIDNil sets the value for TempID to be an explicit nil
-func (o *InboundIDMethodByRelatedTempID) SetTempIDNil() {
-	o.TempID.Set(nil)
-}
-
-// UnsetTempID ensures that no value is present for TempID, not even an explicit nil
-func (o *InboundIDMethodByRelatedTempID) UnsetTempID() {
-	o.TempID.Unset()
+	o.TempID = &v
 }
 
 // GetOutgoingRelation returns the OutgoingRelation field value if set, zero value otherwise.
@@ -113,58 +103,48 @@ func (o *InboundIDMethodByRelatedTempID) SetOutgoingRelation(v bool) {
 	o.OutgoingRelation = &v
 }
 
-// GetPredicateID returns the PredicateID field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetPredicateID returns the PredicateID field value if set, zero value otherwise.
 func (o *InboundIDMethodByRelatedTempID) GetPredicateID() string {
-	if o == nil || o.PredicateID.Get() == nil {
+	if o == nil || o.PredicateID == nil {
 		var ret string
 		return ret
 	}
-	return *o.PredicateID.Get()
+	return *o.PredicateID
 }
 
 // GetPredicateIDOk returns a tuple with the PredicateID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InboundIDMethodByRelatedTempID) GetPredicateIDOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.PredicateID == nil {
 		return nil, false
 	}
-	return o.PredicateID.Get(), o.PredicateID.IsSet()
+	return o.PredicateID, true
 }
 
 // HasPredicateID returns a boolean if a field has been set.
 func (o *InboundIDMethodByRelatedTempID) HasPredicateID() bool {
-	if o != nil && o.PredicateID.IsSet() {
+	if o != nil && o.PredicateID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPredicateID gets a reference to the given NullableString and assigns it to the PredicateID field.
+// SetPredicateID gets a reference to the given string and assigns it to the PredicateID field.
 func (o *InboundIDMethodByRelatedTempID) SetPredicateID(v string) {
-	o.PredicateID.Set(&v)
-}
-// SetPredicateIDNil sets the value for PredicateID to be an explicit nil
-func (o *InboundIDMethodByRelatedTempID) SetPredicateIDNil() {
-	o.PredicateID.Set(nil)
-}
-
-// UnsetPredicateID ensures that no value is present for PredicateID, not even an explicit nil
-func (o *InboundIDMethodByRelatedTempID) UnsetPredicateID() {
-	o.PredicateID.Unset()
+	o.PredicateID = &v
 }
 
 func (o InboundIDMethodByRelatedTempID) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TempID.IsSet() {
-		toSerialize["tempID"] = o.TempID.Get()
+	if o.TempID != nil {
+		toSerialize["tempID"] = o.TempID
 	}
 	if o.OutgoingRelation != nil {
 		toSerialize["outgoingRelation"] = o.OutgoingRelation
 	}
-	if o.PredicateID.IsSet() {
-		toSerialize["predicateID"] = o.PredicateID.Get()
+	if o.PredicateID != nil {
+		toSerialize["predicateID"] = o.PredicateID
 	}
 	return json.Marshal(toSerialize)
 }

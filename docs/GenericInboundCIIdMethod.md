@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CaseInsensitive** | Pointer to **bool** |  | [optional] 
-**Type** | **NullableString** |  | 
+**Type** | **string** |  | 
 
 ## Methods
 
 ### NewGenericInboundCIIdMethod
 
-`func NewGenericInboundCIIdMethod(type_ NullableString, ) *GenericInboundCIIdMethod`
+`func NewGenericInboundCIIdMethod(type_ string, ) *GenericInboundCIIdMethod`
 
 NewGenericInboundCIIdMethod instantiates a new GenericInboundCIIdMethod object
 This constructor will assign default values to properties that have it defined,
@@ -71,16 +71,6 @@ and a boolean to check if the value has been set.
 SetType sets Type field to given value.
 
 
-### SetTypeNil
-
-`func (o *GenericInboundCIIdMethod) SetTypeNil(b bool)`
-
- SetTypeNil sets the value for Type to be an explicit nil
-
-### UnsetType
-`func (o *GenericInboundCIIdMethod) UnsetType()`
-
-UnsetType ensures that no value is present for Type, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

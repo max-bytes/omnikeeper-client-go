@@ -24,7 +24,7 @@ type InboundIDMethodByAttribute struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInboundIDMethodByAttribute(type_ NullableString) *InboundIDMethodByAttribute {
+func NewInboundIDMethodByAttribute(type_ string) *InboundIDMethodByAttribute {
 	this := InboundIDMethodByAttribute{}
 	this.Type = type_
 	return &this

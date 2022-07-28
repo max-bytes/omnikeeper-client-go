@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableString** |  | [optional] 
-**SpeakingName** | Pointer to **NullableString** |  | [optional] 
-**Description** | Pointer to **NullableString** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
+**SpeakingName** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **Configuration** | Pointer to [**GridViewConfiguration**](GridViewConfiguration.md) |  | [optional] 
 
 ## Methods
@@ -53,16 +53,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### SetIdNil
-
-`func (o *AddContextRequest) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *AddContextRequest) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetSpeakingName
 
 `func (o *AddContextRequest) GetSpeakingName() string`
@@ -88,16 +78,6 @@ SetSpeakingName sets SpeakingName field to given value.
 
 HasSpeakingName returns a boolean if a field has been set.
 
-### SetSpeakingNameNil
-
-`func (o *AddContextRequest) SetSpeakingNameNil(b bool)`
-
- SetSpeakingNameNil sets the value for SpeakingName to be an explicit nil
-
-### UnsetSpeakingName
-`func (o *AddContextRequest) UnsetSpeakingName()`
-
-UnsetSpeakingName ensures that no value is present for SpeakingName, not even an explicit nil
 ### GetDescription
 
 `func (o *AddContextRequest) GetDescription() string`
@@ -123,16 +103,6 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### SetDescriptionNil
-
-`func (o *AddContextRequest) SetDescriptionNil(b bool)`
-
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *AddContextRequest) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetConfiguration
 
 `func (o *AddContextRequest) GetConfiguration() GridViewConfiguration`

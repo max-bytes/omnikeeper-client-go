@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **NullableString** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to [**AttributeValueDTO**](AttributeValueDTO.md) |  | [optional] 
 
 ## Methods
@@ -51,16 +51,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### SetNameNil
-
-`func (o *GenericInboundAttribute) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *GenericInboundAttribute) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetValue
 
 `func (o *GenericInboundAttribute) GetValue() AttributeValueDTO`

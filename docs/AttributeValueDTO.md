@@ -102,16 +102,6 @@ SetValues sets Values field to given value.
 
 HasValues returns a boolean if a field has been set.
 
-### SetValuesNil
-
-`func (o *AttributeValueDTO) SetValuesNil(b bool)`
-
- SetValuesNil sets the value for Values to be an explicit nil
-
-### UnsetValues
-`func (o *AttributeValueDTO) UnsetValues()`
-
-UnsetValues ensures that no value is present for Values, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
