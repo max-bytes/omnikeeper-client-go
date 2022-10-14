@@ -122,15 +122,4 @@ model_same_target_ci_handling.go
 model_same_temp_id_handling.go
 model_sparse_row.go
 response.go
-test/api_ansible_inventory_scan_ingest_test.go
-test/api_auth_redirect_test.go
-test/api_cytoscape_test.go
-test/api_graph_ql_test.go
-test/api_graphviz_dot_test.go
-test/api_grid_view_test.go
-test/api_import_export_layer_test.go
-test/api_metadata_test.go
-test/api_ok_plugin_generic_json_ingest_test.go
-test/api_restart_application_test.go
-test/api_usage_stats_test.go
 utils.go
