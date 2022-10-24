@@ -181,11 +181,11 @@ func (dst *GenericInboundCIIdMethod) UnmarshalJSON(data []byte) error {
 		dst.InboundIDMethodByRelatedTempID = nil
 		dst.InboundIDMethodByTemporaryCIID = nil
 
-		return fmt.Errorf("Data matches more than one schema in oneOf(GenericInboundCIIdMethod)")
+		return fmt.Errorf("data matches more than one schema in oneOf(GenericInboundCIIdMethod)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("Data failed to match schemas in oneOf(GenericInboundCIIdMethod)")
+		return fmt.Errorf("data failed to match schemas in oneOf(GenericInboundCIIdMethod)")
 	}
 }
 
