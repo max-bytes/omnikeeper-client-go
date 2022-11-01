@@ -40,7 +40,7 @@ func NewInboundIDMethodByAttributeWithDefaults() *InboundIDMethodByAttribute {
 
 // GetAttribute returns the Attribute field value if set, zero value otherwise.
 func (o *InboundIDMethodByAttribute) GetAttribute() GenericInboundAttribute {
-	if o == nil || o.Attribute == nil {
+	if o == nil || isNil(o.Attribute) {
 		var ret GenericInboundAttribute
 		return ret
 	}
@@ -50,15 +50,15 @@ func (o *InboundIDMethodByAttribute) GetAttribute() GenericInboundAttribute {
 // GetAttributeOk returns a tuple with the Attribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByAttribute) GetAttributeOk() (*GenericInboundAttribute, bool) {
-	if o == nil || o.Attribute == nil {
-		return nil, false
+	if o == nil || isNil(o.Attribute) {
+    return nil, false
 	}
 	return o.Attribute, true
 }
 
 // HasAttribute returns a boolean if a field has been set.
 func (o *InboundIDMethodByAttribute) HasAttribute() bool {
-	if o != nil && o.Attribute != nil {
+	if o != nil && !isNil(o.Attribute) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *InboundIDMethodByAttribute) SetAttribute(v GenericInboundAttribute) {
 
 // GetModifiers returns the Modifiers field value if set, zero value otherwise.
 func (o *InboundIDMethodByAttribute) GetModifiers() InboundIDMethodByAttributeModifiers {
-	if o == nil || o.Modifiers == nil {
+	if o == nil || isNil(o.Modifiers) {
 		var ret InboundIDMethodByAttributeModifiers
 		return ret
 	}
@@ -82,15 +82,15 @@ func (o *InboundIDMethodByAttribute) GetModifiers() InboundIDMethodByAttributeMo
 // GetModifiersOk returns a tuple with the Modifiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByAttribute) GetModifiersOk() (*InboundIDMethodByAttributeModifiers, bool) {
-	if o == nil || o.Modifiers == nil {
-		return nil, false
+	if o == nil || isNil(o.Modifiers) {
+    return nil, false
 	}
 	return o.Modifiers, true
 }
 
 // HasModifiers returns a boolean if a field has been set.
 func (o *InboundIDMethodByAttribute) HasModifiers() bool {
-	if o != nil && o.Modifiers != nil {
+	if o != nil && !isNil(o.Modifiers) {
 		return true
 	}
 
@@ -104,10 +104,10 @@ func (o *InboundIDMethodByAttribute) SetModifiers(v InboundIDMethodByAttributeMo
 
 func (o InboundIDMethodByAttribute) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Attribute != nil {
+	if !isNil(o.Attribute) {
 		toSerialize["attribute"] = o.Attribute
 	}
-	if o.Modifiers != nil {
+	if !isNil(o.Modifiers) {
 		toSerialize["modifiers"] = o.Modifiers
 	}
 	return json.Marshal(toSerialize)

@@ -39,7 +39,7 @@ func NewInboundIDMethodByDataWithDefaults() *InboundIDMethodByData {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *InboundIDMethodByData) GetAttributes() []string {
-	if o == nil || o.Attributes == nil {
+	if o == nil || isNil(o.Attributes) {
 		var ret []string
 		return ret
 	}
@@ -49,15 +49,15 @@ func (o *InboundIDMethodByData) GetAttributes() []string {
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByData) GetAttributesOk() ([]string, bool) {
-	if o == nil || o.Attributes == nil {
-		return nil, false
+	if o == nil || isNil(o.Attributes) {
+    return nil, false
 	}
 	return o.Attributes, true
 }
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *InboundIDMethodByData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -71,7 +71,7 @@ func (o *InboundIDMethodByData) SetAttributes(v []string) {
 
 func (o InboundIDMethodByData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Attributes != nil {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return json.Marshal(toSerialize)

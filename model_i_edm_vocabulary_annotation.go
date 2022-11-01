@@ -41,7 +41,7 @@ func NewIEdmVocabularyAnnotationWithDefaults() *IEdmVocabularyAnnotation {
 
 // GetQualifier returns the Qualifier field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmVocabularyAnnotation) GetQualifier() string {
-	if o == nil || o.Qualifier.Get() == nil {
+	if o == nil || isNil(o.Qualifier.Get()) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IEdmVocabularyAnnotation) GetQualifier() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmVocabularyAnnotation) GetQualifierOk() (*string, bool) {
 	if o == nil {
-		return nil, false
+    return nil, false
 	}
 	return o.Qualifier.Get(), o.Qualifier.IsSet()
 }
@@ -83,7 +83,7 @@ func (o *IEdmVocabularyAnnotation) UnsetQualifier() {
 
 // GetTerm returns the Term field value if set, zero value otherwise.
 func (o *IEdmVocabularyAnnotation) GetTerm() IEdmTerm {
-	if o == nil || o.Term == nil {
+	if o == nil || isNil(o.Term) {
 		var ret IEdmTerm
 		return ret
 	}
@@ -93,15 +93,15 @@ func (o *IEdmVocabularyAnnotation) GetTerm() IEdmTerm {
 // GetTermOk returns a tuple with the Term field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmVocabularyAnnotation) GetTermOk() (*IEdmTerm, bool) {
-	if o == nil || o.Term == nil {
-		return nil, false
+	if o == nil || isNil(o.Term) {
+    return nil, false
 	}
 	return o.Term, true
 }
 
 // HasTerm returns a boolean if a field has been set.
 func (o *IEdmVocabularyAnnotation) HasTerm() bool {
-	if o != nil && o.Term != nil {
+	if o != nil && !isNil(o.Term) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *IEdmVocabularyAnnotation) SetTerm(v IEdmTerm) {
 
 // GetTarget returns the Target field value if set, zero value otherwise.
 func (o *IEdmVocabularyAnnotation) GetTarget() map[string]interface{} {
-	if o == nil || o.Target == nil {
+	if o == nil || isNil(o.Target) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -125,15 +125,15 @@ func (o *IEdmVocabularyAnnotation) GetTarget() map[string]interface{} {
 // GetTargetOk returns a tuple with the Target field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmVocabularyAnnotation) GetTargetOk() (map[string]interface{}, bool) {
-	if o == nil || o.Target == nil {
-		return nil, false
+	if o == nil || isNil(o.Target) {
+    return map[string]interface{}{}, false
 	}
 	return o.Target, true
 }
 
 // HasTarget returns a boolean if a field has been set.
 func (o *IEdmVocabularyAnnotation) HasTarget() bool {
-	if o != nil && o.Target != nil {
+	if o != nil && !isNil(o.Target) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *IEdmVocabularyAnnotation) SetTarget(v map[string]interface{}) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *IEdmVocabularyAnnotation) GetValue() IEdmExpression {
-	if o == nil || o.Value == nil {
+	if o == nil || isNil(o.Value) {
 		var ret IEdmExpression
 		return ret
 	}
@@ -157,15 +157,15 @@ func (o *IEdmVocabularyAnnotation) GetValue() IEdmExpression {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmVocabularyAnnotation) GetValueOk() (*IEdmExpression, bool) {
-	if o == nil || o.Value == nil {
-		return nil, false
+	if o == nil || isNil(o.Value) {
+    return nil, false
 	}
 	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *IEdmVocabularyAnnotation) HasValue() bool {
-	if o != nil && o.Value != nil {
+	if o != nil && !isNil(o.Value) {
 		return true
 	}
 
@@ -182,13 +182,13 @@ func (o IEdmVocabularyAnnotation) MarshalJSON() ([]byte, error) {
 	if o.Qualifier.IsSet() {
 		toSerialize["qualifier"] = o.Qualifier.Get()
 	}
-	if o.Term != nil {
+	if !isNil(o.Term) {
 		toSerialize["term"] = o.Term
 	}
-	if o.Target != nil {
+	if !isNil(o.Target) {
 		toSerialize["target"] = o.Target
 	}
-	if o.Value != nil {
+	if !isNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
 	return json.Marshal(toSerialize)

@@ -43,7 +43,7 @@ func NewIEdmTermWithDefaults() *IEdmTerm {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *IEdmTerm) GetType() IEdmTypeReference {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		var ret IEdmTypeReference
 		return ret
 	}
@@ -53,15 +53,15 @@ func (o *IEdmTerm) GetType() IEdmTypeReference {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmTerm) GetTypeOk() (*IEdmTypeReference, bool) {
-	if o == nil || o.Type == nil {
-		return nil, false
+	if o == nil || isNil(o.Type) {
+    return nil, false
 	}
 	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *IEdmTerm) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *IEdmTerm) SetType(v IEdmTypeReference) {
 
 // GetAppliesTo returns the AppliesTo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmTerm) GetAppliesTo() string {
-	if o == nil || o.AppliesTo.Get() == nil {
+	if o == nil || isNil(o.AppliesTo.Get()) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *IEdmTerm) GetAppliesTo() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmTerm) GetAppliesToOk() (*string, bool) {
 	if o == nil {
-		return nil, false
+    return nil, false
 	}
 	return o.AppliesTo.Get(), o.AppliesTo.IsSet()
 }
@@ -117,7 +117,7 @@ func (o *IEdmTerm) UnsetAppliesTo() {
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmTerm) GetDefaultValue() string {
-	if o == nil || o.DefaultValue.Get() == nil {
+	if o == nil || isNil(o.DefaultValue.Get()) {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *IEdmTerm) GetDefaultValue() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmTerm) GetDefaultValueOk() (*string, bool) {
 	if o == nil {
-		return nil, false
+    return nil, false
 	}
 	return o.DefaultValue.Get(), o.DefaultValue.IsSet()
 }
@@ -159,7 +159,7 @@ func (o *IEdmTerm) UnsetDefaultValue() {
 
 // GetSchemaElementKind returns the SchemaElementKind field value if set, zero value otherwise.
 func (o *IEdmTerm) GetSchemaElementKind() EdmSchemaElementKind {
-	if o == nil || o.SchemaElementKind == nil {
+	if o == nil || isNil(o.SchemaElementKind) {
 		var ret EdmSchemaElementKind
 		return ret
 	}
@@ -169,15 +169,15 @@ func (o *IEdmTerm) GetSchemaElementKind() EdmSchemaElementKind {
 // GetSchemaElementKindOk returns a tuple with the SchemaElementKind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmTerm) GetSchemaElementKindOk() (*EdmSchemaElementKind, bool) {
-	if o == nil || o.SchemaElementKind == nil {
-		return nil, false
+	if o == nil || isNil(o.SchemaElementKind) {
+    return nil, false
 	}
 	return o.SchemaElementKind, true
 }
 
 // HasSchemaElementKind returns a boolean if a field has been set.
 func (o *IEdmTerm) HasSchemaElementKind() bool {
-	if o != nil && o.SchemaElementKind != nil {
+	if o != nil && !isNil(o.SchemaElementKind) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *IEdmTerm) SetSchemaElementKind(v EdmSchemaElementKind) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmTerm) GetNamespace() string {
-	if o == nil || o.Namespace.Get() == nil {
+	if o == nil || isNil(o.Namespace.Get()) {
 		var ret string
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *IEdmTerm) GetNamespace() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmTerm) GetNamespaceOk() (*string, bool) {
 	if o == nil {
-		return nil, false
+    return nil, false
 	}
 	return o.Namespace.Get(), o.Namespace.IsSet()
 }
@@ -233,7 +233,7 @@ func (o *IEdmTerm) UnsetNamespace() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmTerm) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || isNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *IEdmTerm) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmTerm) GetNameOk() (*string, bool) {
 	if o == nil {
-		return nil, false
+    return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -275,7 +275,7 @@ func (o *IEdmTerm) UnsetName() {
 
 func (o IEdmTerm) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Type != nil {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	if o.AppliesTo.IsSet() {
@@ -284,7 +284,7 @@ func (o IEdmTerm) MarshalJSON() ([]byte, error) {
 	if o.DefaultValue.IsSet() {
 		toSerialize["defaultValue"] = o.DefaultValue.Get()
 	}
-	if o.SchemaElementKind != nil {
+	if !isNil(o.SchemaElementKind) {
 		toSerialize["schemaElementKind"] = o.SchemaElementKind
 	}
 	if o.Namespace.IsSet() {

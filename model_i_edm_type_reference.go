@@ -39,7 +39,7 @@ func NewIEdmTypeReferenceWithDefaults() *IEdmTypeReference {
 
 // GetIsNullable returns the IsNullable field value if set, zero value otherwise.
 func (o *IEdmTypeReference) GetIsNullable() bool {
-	if o == nil || o.IsNullable == nil {
+	if o == nil || isNil(o.IsNullable) {
 		var ret bool
 		return ret
 	}
@@ -49,15 +49,15 @@ func (o *IEdmTypeReference) GetIsNullable() bool {
 // GetIsNullableOk returns a tuple with the IsNullable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmTypeReference) GetIsNullableOk() (*bool, bool) {
-	if o == nil || o.IsNullable == nil {
-		return nil, false
+	if o == nil || isNil(o.IsNullable) {
+    return nil, false
 	}
 	return o.IsNullable, true
 }
 
 // HasIsNullable returns a boolean if a field has been set.
 func (o *IEdmTypeReference) HasIsNullable() bool {
-	if o != nil && o.IsNullable != nil {
+	if o != nil && !isNil(o.IsNullable) {
 		return true
 	}
 
@@ -71,7 +71,7 @@ func (o *IEdmTypeReference) SetIsNullable(v bool) {
 
 // GetDefinition returns the Definition field value if set, zero value otherwise.
 func (o *IEdmTypeReference) GetDefinition() IEdmType {
-	if o == nil || o.Definition == nil {
+	if o == nil || isNil(o.Definition) {
 		var ret IEdmType
 		return ret
 	}
@@ -81,15 +81,15 @@ func (o *IEdmTypeReference) GetDefinition() IEdmType {
 // GetDefinitionOk returns a tuple with the Definition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmTypeReference) GetDefinitionOk() (*IEdmType, bool) {
-	if o == nil || o.Definition == nil {
-		return nil, false
+	if o == nil || isNil(o.Definition) {
+    return nil, false
 	}
 	return o.Definition, true
 }
 
 // HasDefinition returns a boolean if a field has been set.
 func (o *IEdmTypeReference) HasDefinition() bool {
-	if o != nil && o.Definition != nil {
+	if o != nil && !isNil(o.Definition) {
 		return true
 	}
 
@@ -103,10 +103,10 @@ func (o *IEdmTypeReference) SetDefinition(v IEdmType) {
 
 func (o IEdmTypeReference) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.IsNullable != nil {
+	if !isNil(o.IsNullable) {
 		toSerialize["isNullable"] = o.IsNullable
 	}
-	if o.Definition != nil {
+	if !isNil(o.Definition) {
 		toSerialize["definition"] = o.Definition
 	}
 	return json.Marshal(toSerialize)

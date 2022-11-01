@@ -38,7 +38,7 @@ func NewChangeDataRequestWithDefaults() *ChangeDataRequest {
 
 // GetSparseRows returns the SparseRows field value if set, zero value otherwise.
 func (o *ChangeDataRequest) GetSparseRows() []SparseRow {
-	if o == nil || o.SparseRows == nil {
+	if o == nil || isNil(o.SparseRows) {
 		var ret []SparseRow
 		return ret
 	}
@@ -48,15 +48,15 @@ func (o *ChangeDataRequest) GetSparseRows() []SparseRow {
 // GetSparseRowsOk returns a tuple with the SparseRows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeDataRequest) GetSparseRowsOk() ([]SparseRow, bool) {
-	if o == nil || o.SparseRows == nil {
-		return nil, false
+	if o == nil || isNil(o.SparseRows) {
+    return nil, false
 	}
 	return o.SparseRows, true
 }
 
 // HasSparseRows returns a boolean if a field has been set.
 func (o *ChangeDataRequest) HasSparseRows() bool {
-	if o != nil && o.SparseRows != nil {
+	if o != nil && !isNil(o.SparseRows) {
 		return true
 	}
 
@@ -70,7 +70,7 @@ func (o *ChangeDataRequest) SetSparseRows(v []SparseRow) {
 
 func (o ChangeDataRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SparseRows != nil {
+	if !isNil(o.SparseRows) {
 		toSerialize["sparseRows"] = o.SparseRows
 	}
 	return json.Marshal(toSerialize)

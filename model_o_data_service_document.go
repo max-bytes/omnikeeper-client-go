@@ -41,7 +41,7 @@ func NewODataServiceDocumentWithDefaults() *ODataServiceDocument {
 
 // GetTypeAnnotation returns the TypeAnnotation field value if set, zero value otherwise.
 func (o *ODataServiceDocument) GetTypeAnnotation() ODataTypeAnnotation {
-	if o == nil || o.TypeAnnotation == nil {
+	if o == nil || isNil(o.TypeAnnotation) {
 		var ret ODataTypeAnnotation
 		return ret
 	}
@@ -51,15 +51,15 @@ func (o *ODataServiceDocument) GetTypeAnnotation() ODataTypeAnnotation {
 // GetTypeAnnotationOk returns a tuple with the TypeAnnotation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ODataServiceDocument) GetTypeAnnotationOk() (*ODataTypeAnnotation, bool) {
-	if o == nil || o.TypeAnnotation == nil {
-		return nil, false
+	if o == nil || isNil(o.TypeAnnotation) {
+    return nil, false
 	}
 	return o.TypeAnnotation, true
 }
 
 // HasTypeAnnotation returns a boolean if a field has been set.
 func (o *ODataServiceDocument) HasTypeAnnotation() bool {
-	if o != nil && o.TypeAnnotation != nil {
+	if o != nil && !isNil(o.TypeAnnotation) {
 		return true
 	}
 
@@ -84,15 +84,15 @@ func (o *ODataServiceDocument) GetEntitySets() []ODataEntitySetInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataServiceDocument) GetEntitySetsOk() ([]ODataEntitySetInfo, bool) {
-	if o == nil || o.EntitySets == nil {
-		return nil, false
+	if o == nil || isNil(o.EntitySets) {
+    return nil, false
 	}
 	return o.EntitySets, true
 }
 
 // HasEntitySets returns a boolean if a field has been set.
 func (o *ODataServiceDocument) HasEntitySets() bool {
-	if o != nil && o.EntitySets != nil {
+	if o != nil && isNil(o.EntitySets) {
 		return true
 	}
 
@@ -117,15 +117,15 @@ func (o *ODataServiceDocument) GetSingletons() []ODataSingletonInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataServiceDocument) GetSingletonsOk() ([]ODataSingletonInfo, bool) {
-	if o == nil || o.Singletons == nil {
-		return nil, false
+	if o == nil || isNil(o.Singletons) {
+    return nil, false
 	}
 	return o.Singletons, true
 }
 
 // HasSingletons returns a boolean if a field has been set.
 func (o *ODataServiceDocument) HasSingletons() bool {
-	if o != nil && o.Singletons != nil {
+	if o != nil && isNil(o.Singletons) {
 		return true
 	}
 
@@ -150,15 +150,15 @@ func (o *ODataServiceDocument) GetFunctionImports() []ODataFunctionImportInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataServiceDocument) GetFunctionImportsOk() ([]ODataFunctionImportInfo, bool) {
-	if o == nil || o.FunctionImports == nil {
-		return nil, false
+	if o == nil || isNil(o.FunctionImports) {
+    return nil, false
 	}
 	return o.FunctionImports, true
 }
 
 // HasFunctionImports returns a boolean if a field has been set.
 func (o *ODataServiceDocument) HasFunctionImports() bool {
-	if o != nil && o.FunctionImports != nil {
+	if o != nil && isNil(o.FunctionImports) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *ODataServiceDocument) SetFunctionImports(v []ODataFunctionImportInfo) {
 
 func (o ODataServiceDocument) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TypeAnnotation != nil {
+	if !isNil(o.TypeAnnotation) {
 		toSerialize["typeAnnotation"] = o.TypeAnnotation
 	}
 	if o.EntitySets != nil {

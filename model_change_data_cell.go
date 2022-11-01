@@ -40,7 +40,7 @@ func NewChangeDataCellWithDefaults() *ChangeDataCell {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ChangeDataCell) GetId() string {
-	if o == nil || o.Id == nil {
+	if o == nil || isNil(o.Id) {
 		var ret string
 		return ret
 	}
@@ -50,15 +50,15 @@ func (o *ChangeDataCell) GetId() string {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeDataCell) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
+	if o == nil || isNil(o.Id) {
+    return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ChangeDataCell) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && !isNil(o.Id) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ChangeDataCell) SetId(v string) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *ChangeDataCell) GetValue() AttributeValueDTO {
-	if o == nil || o.Value == nil {
+	if o == nil || isNil(o.Value) {
 		var ret AttributeValueDTO
 		return ret
 	}
@@ -82,15 +82,15 @@ func (o *ChangeDataCell) GetValue() AttributeValueDTO {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeDataCell) GetValueOk() (*AttributeValueDTO, bool) {
-	if o == nil || o.Value == nil {
-		return nil, false
+	if o == nil || isNil(o.Value) {
+    return nil, false
 	}
 	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *ChangeDataCell) HasValue() bool {
-	if o != nil && o.Value != nil {
+	if o != nil && !isNil(o.Value) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *ChangeDataCell) SetValue(v AttributeValueDTO) {
 
 // GetChangeable returns the Changeable field value if set, zero value otherwise.
 func (o *ChangeDataCell) GetChangeable() bool {
-	if o == nil || o.Changeable == nil {
+	if o == nil || isNil(o.Changeable) {
 		var ret bool
 		return ret
 	}
@@ -114,15 +114,15 @@ func (o *ChangeDataCell) GetChangeable() bool {
 // GetChangeableOk returns a tuple with the Changeable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeDataCell) GetChangeableOk() (*bool, bool) {
-	if o == nil || o.Changeable == nil {
-		return nil, false
+	if o == nil || isNil(o.Changeable) {
+    return nil, false
 	}
 	return o.Changeable, true
 }
 
 // HasChangeable returns a boolean if a field has been set.
 func (o *ChangeDataCell) HasChangeable() bool {
-	if o != nil && o.Changeable != nil {
+	if o != nil && !isNil(o.Changeable) {
 		return true
 	}
 
@@ -136,13 +136,13 @@ func (o *ChangeDataCell) SetChangeable(v bool) {
 
 func (o ChangeDataCell) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
+	if !isNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if o.Value != nil {
+	if !isNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
-	if o.Changeable != nil {
+	if !isNil(o.Changeable) {
 		toSerialize["changeable"] = o.Changeable
 	}
 	return json.Marshal(toSerialize)

@@ -43,7 +43,7 @@ func NewGenericInboundCIWithDefaults() *GenericInboundCI {
 
 // GetTempID returns the TempID field value if set, zero value otherwise.
 func (o *GenericInboundCI) GetTempID() string {
-	if o == nil || o.TempID == nil {
+	if o == nil || isNil(o.TempID) {
 		var ret string
 		return ret
 	}
@@ -53,15 +53,15 @@ func (o *GenericInboundCI) GetTempID() string {
 // GetTempIDOk returns a tuple with the TempID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetTempIDOk() (*string, bool) {
-	if o == nil || o.TempID == nil {
-		return nil, false
+	if o == nil || isNil(o.TempID) {
+    return nil, false
 	}
 	return o.TempID, true
 }
 
 // HasTempID returns a boolean if a field has been set.
 func (o *GenericInboundCI) HasTempID() bool {
-	if o != nil && o.TempID != nil {
+	if o != nil && !isNil(o.TempID) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *GenericInboundCI) SetTempID(v string) {
 
 // GetIdMethod returns the IdMethod field value if set, zero value otherwise.
 func (o *GenericInboundCI) GetIdMethod() GenericInboundCIIdMethod {
-	if o == nil || o.IdMethod == nil {
+	if o == nil || isNil(o.IdMethod) {
 		var ret GenericInboundCIIdMethod
 		return ret
 	}
@@ -85,15 +85,15 @@ func (o *GenericInboundCI) GetIdMethod() GenericInboundCIIdMethod {
 // GetIdMethodOk returns a tuple with the IdMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetIdMethodOk() (*GenericInboundCIIdMethod, bool) {
-	if o == nil || o.IdMethod == nil {
-		return nil, false
+	if o == nil || isNil(o.IdMethod) {
+    return nil, false
 	}
 	return o.IdMethod, true
 }
 
 // HasIdMethod returns a boolean if a field has been set.
 func (o *GenericInboundCI) HasIdMethod() bool {
-	if o != nil && o.IdMethod != nil {
+	if o != nil && !isNil(o.IdMethod) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *GenericInboundCI) SetIdMethod(v GenericInboundCIIdMethod) {
 
 // GetSameTempIDHandling returns the SameTempIDHandling field value if set, zero value otherwise.
 func (o *GenericInboundCI) GetSameTempIDHandling() SameTempIDHandling {
-	if o == nil || o.SameTempIDHandling == nil {
+	if o == nil || isNil(o.SameTempIDHandling) {
 		var ret SameTempIDHandling
 		return ret
 	}
@@ -117,15 +117,15 @@ func (o *GenericInboundCI) GetSameTempIDHandling() SameTempIDHandling {
 // GetSameTempIDHandlingOk returns a tuple with the SameTempIDHandling field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetSameTempIDHandlingOk() (*SameTempIDHandling, bool) {
-	if o == nil || o.SameTempIDHandling == nil {
-		return nil, false
+	if o == nil || isNil(o.SameTempIDHandling) {
+    return nil, false
 	}
 	return o.SameTempIDHandling, true
 }
 
 // HasSameTempIDHandling returns a boolean if a field has been set.
 func (o *GenericInboundCI) HasSameTempIDHandling() bool {
-	if o != nil && o.SameTempIDHandling != nil {
+	if o != nil && !isNil(o.SameTempIDHandling) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *GenericInboundCI) SetSameTempIDHandling(v SameTempIDHandling) {
 
 // GetSameTargetCIHandling returns the SameTargetCIHandling field value if set, zero value otherwise.
 func (o *GenericInboundCI) GetSameTargetCIHandling() SameTargetCIHandling {
-	if o == nil || o.SameTargetCIHandling == nil {
+	if o == nil || isNil(o.SameTargetCIHandling) {
 		var ret SameTargetCIHandling
 		return ret
 	}
@@ -149,15 +149,15 @@ func (o *GenericInboundCI) GetSameTargetCIHandling() SameTargetCIHandling {
 // GetSameTargetCIHandlingOk returns a tuple with the SameTargetCIHandling field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetSameTargetCIHandlingOk() (*SameTargetCIHandling, bool) {
-	if o == nil || o.SameTargetCIHandling == nil {
-		return nil, false
+	if o == nil || isNil(o.SameTargetCIHandling) {
+    return nil, false
 	}
 	return o.SameTargetCIHandling, true
 }
 
 // HasSameTargetCIHandling returns a boolean if a field has been set.
 func (o *GenericInboundCI) HasSameTargetCIHandling() bool {
-	if o != nil && o.SameTargetCIHandling != nil {
+	if o != nil && !isNil(o.SameTargetCIHandling) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *GenericInboundCI) SetSameTargetCIHandling(v SameTargetCIHandling) {
 
 // GetNoFoundTargetCIHandling returns the NoFoundTargetCIHandling field value if set, zero value otherwise.
 func (o *GenericInboundCI) GetNoFoundTargetCIHandling() NoFoundTargetCIHandling {
-	if o == nil || o.NoFoundTargetCIHandling == nil {
+	if o == nil || isNil(o.NoFoundTargetCIHandling) {
 		var ret NoFoundTargetCIHandling
 		return ret
 	}
@@ -181,15 +181,15 @@ func (o *GenericInboundCI) GetNoFoundTargetCIHandling() NoFoundTargetCIHandling 
 // GetNoFoundTargetCIHandlingOk returns a tuple with the NoFoundTargetCIHandling field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetNoFoundTargetCIHandlingOk() (*NoFoundTargetCIHandling, bool) {
-	if o == nil || o.NoFoundTargetCIHandling == nil {
-		return nil, false
+	if o == nil || isNil(o.NoFoundTargetCIHandling) {
+    return nil, false
 	}
 	return o.NoFoundTargetCIHandling, true
 }
 
 // HasNoFoundTargetCIHandling returns a boolean if a field has been set.
 func (o *GenericInboundCI) HasNoFoundTargetCIHandling() bool {
-	if o != nil && o.NoFoundTargetCIHandling != nil {
+	if o != nil && !isNil(o.NoFoundTargetCIHandling) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *GenericInboundCI) SetNoFoundTargetCIHandling(v NoFoundTargetCIHandling)
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *GenericInboundCI) GetAttributes() []GenericInboundAttribute {
-	if o == nil || o.Attributes == nil {
+	if o == nil || isNil(o.Attributes) {
 		var ret []GenericInboundAttribute
 		return ret
 	}
@@ -213,15 +213,15 @@ func (o *GenericInboundCI) GetAttributes() []GenericInboundAttribute {
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetAttributesOk() ([]GenericInboundAttribute, bool) {
-	if o == nil || o.Attributes == nil {
-		return nil, false
+	if o == nil || isNil(o.Attributes) {
+    return nil, false
 	}
 	return o.Attributes, true
 }
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *GenericInboundCI) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -235,22 +235,22 @@ func (o *GenericInboundCI) SetAttributes(v []GenericInboundAttribute) {
 
 func (o GenericInboundCI) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TempID != nil {
+	if !isNil(o.TempID) {
 		toSerialize["tempID"] = o.TempID
 	}
-	if o.IdMethod != nil {
+	if !isNil(o.IdMethod) {
 		toSerialize["idMethod"] = o.IdMethod
 	}
-	if o.SameTempIDHandling != nil {
+	if !isNil(o.SameTempIDHandling) {
 		toSerialize["sameTempIDHandling"] = o.SameTempIDHandling
 	}
-	if o.SameTargetCIHandling != nil {
+	if !isNil(o.SameTargetCIHandling) {
 		toSerialize["sameTargetCIHandling"] = o.SameTargetCIHandling
 	}
-	if o.NoFoundTargetCIHandling != nil {
+	if !isNil(o.NoFoundTargetCIHandling) {
 		toSerialize["noFoundTargetCIHandling"] = o.NoFoundTargetCIHandling
 	}
-	if o.Attributes != nil {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return json.Marshal(toSerialize)

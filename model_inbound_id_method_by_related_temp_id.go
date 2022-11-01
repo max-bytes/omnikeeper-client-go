@@ -41,7 +41,7 @@ func NewInboundIDMethodByRelatedTempIDWithDefaults() *InboundIDMethodByRelatedTe
 
 // GetTempID returns the TempID field value if set, zero value otherwise.
 func (o *InboundIDMethodByRelatedTempID) GetTempID() string {
-	if o == nil || o.TempID == nil {
+	if o == nil || isNil(o.TempID) {
 		var ret string
 		return ret
 	}
@@ -51,15 +51,15 @@ func (o *InboundIDMethodByRelatedTempID) GetTempID() string {
 // GetTempIDOk returns a tuple with the TempID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByRelatedTempID) GetTempIDOk() (*string, bool) {
-	if o == nil || o.TempID == nil {
-		return nil, false
+	if o == nil || isNil(o.TempID) {
+    return nil, false
 	}
 	return o.TempID, true
 }
 
 // HasTempID returns a boolean if a field has been set.
 func (o *InboundIDMethodByRelatedTempID) HasTempID() bool {
-	if o != nil && o.TempID != nil {
+	if o != nil && !isNil(o.TempID) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *InboundIDMethodByRelatedTempID) SetTempID(v string) {
 
 // GetOutgoingRelation returns the OutgoingRelation field value if set, zero value otherwise.
 func (o *InboundIDMethodByRelatedTempID) GetOutgoingRelation() bool {
-	if o == nil || o.OutgoingRelation == nil {
+	if o == nil || isNil(o.OutgoingRelation) {
 		var ret bool
 		return ret
 	}
@@ -83,15 +83,15 @@ func (o *InboundIDMethodByRelatedTempID) GetOutgoingRelation() bool {
 // GetOutgoingRelationOk returns a tuple with the OutgoingRelation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByRelatedTempID) GetOutgoingRelationOk() (*bool, bool) {
-	if o == nil || o.OutgoingRelation == nil {
-		return nil, false
+	if o == nil || isNil(o.OutgoingRelation) {
+    return nil, false
 	}
 	return o.OutgoingRelation, true
 }
 
 // HasOutgoingRelation returns a boolean if a field has been set.
 func (o *InboundIDMethodByRelatedTempID) HasOutgoingRelation() bool {
-	if o != nil && o.OutgoingRelation != nil {
+	if o != nil && !isNil(o.OutgoingRelation) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *InboundIDMethodByRelatedTempID) SetOutgoingRelation(v bool) {
 
 // GetPredicateID returns the PredicateID field value if set, zero value otherwise.
 func (o *InboundIDMethodByRelatedTempID) GetPredicateID() string {
-	if o == nil || o.PredicateID == nil {
+	if o == nil || isNil(o.PredicateID) {
 		var ret string
 		return ret
 	}
@@ -115,15 +115,15 @@ func (o *InboundIDMethodByRelatedTempID) GetPredicateID() string {
 // GetPredicateIDOk returns a tuple with the PredicateID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByRelatedTempID) GetPredicateIDOk() (*string, bool) {
-	if o == nil || o.PredicateID == nil {
-		return nil, false
+	if o == nil || isNil(o.PredicateID) {
+    return nil, false
 	}
 	return o.PredicateID, true
 }
 
 // HasPredicateID returns a boolean if a field has been set.
 func (o *InboundIDMethodByRelatedTempID) HasPredicateID() bool {
-	if o != nil && o.PredicateID != nil {
+	if o != nil && !isNil(o.PredicateID) {
 		return true
 	}
 
@@ -137,13 +137,13 @@ func (o *InboundIDMethodByRelatedTempID) SetPredicateID(v string) {
 
 func (o InboundIDMethodByRelatedTempID) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TempID != nil {
+	if !isNil(o.TempID) {
 		toSerialize["tempID"] = o.TempID
 	}
-	if o.OutgoingRelation != nil {
+	if !isNil(o.OutgoingRelation) {
 		toSerialize["outgoingRelation"] = o.OutgoingRelation
 	}
-	if o.PredicateID != nil {
+	if !isNil(o.PredicateID) {
 		toSerialize["predicateID"] = o.PredicateID
 	}
 	return json.Marshal(toSerialize)

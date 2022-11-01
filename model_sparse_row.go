@@ -39,7 +39,7 @@ func NewSparseRowWithDefaults() *SparseRow {
 
 // GetCiid returns the Ciid field value if set, zero value otherwise.
 func (o *SparseRow) GetCiid() string {
-	if o == nil || o.Ciid == nil {
+	if o == nil || isNil(o.Ciid) {
 		var ret string
 		return ret
 	}
@@ -49,15 +49,15 @@ func (o *SparseRow) GetCiid() string {
 // GetCiidOk returns a tuple with the Ciid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SparseRow) GetCiidOk() (*string, bool) {
-	if o == nil || o.Ciid == nil {
-		return nil, false
+	if o == nil || isNil(o.Ciid) {
+    return nil, false
 	}
 	return o.Ciid, true
 }
 
 // HasCiid returns a boolean if a field has been set.
 func (o *SparseRow) HasCiid() bool {
-	if o != nil && o.Ciid != nil {
+	if o != nil && !isNil(o.Ciid) {
 		return true
 	}
 
@@ -71,7 +71,7 @@ func (o *SparseRow) SetCiid(v string) {
 
 // GetCells returns the Cells field value if set, zero value otherwise.
 func (o *SparseRow) GetCells() []ChangeDataCell {
-	if o == nil || o.Cells == nil {
+	if o == nil || isNil(o.Cells) {
 		var ret []ChangeDataCell
 		return ret
 	}
@@ -81,15 +81,15 @@ func (o *SparseRow) GetCells() []ChangeDataCell {
 // GetCellsOk returns a tuple with the Cells field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SparseRow) GetCellsOk() ([]ChangeDataCell, bool) {
-	if o == nil || o.Cells == nil {
-		return nil, false
+	if o == nil || isNil(o.Cells) {
+    return nil, false
 	}
 	return o.Cells, true
 }
 
 // HasCells returns a boolean if a field has been set.
 func (o *SparseRow) HasCells() bool {
-	if o != nil && o.Cells != nil {
+	if o != nil && !isNil(o.Cells) {
 		return true
 	}
 
@@ -103,10 +103,10 @@ func (o *SparseRow) SetCells(v []ChangeDataCell) {
 
 func (o SparseRow) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Ciid != nil {
+	if !isNil(o.Ciid) {
 		toSerialize["ciid"] = o.Ciid
 	}
-	if o.Cells != nil {
+	if !isNil(o.Cells) {
 		toSerialize["cells"] = o.Cells
 	}
 	return json.Marshal(toSerialize)

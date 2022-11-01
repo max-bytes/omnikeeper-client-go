@@ -40,7 +40,7 @@ func NewIEdmSchemaElementWithDefaults() *IEdmSchemaElement {
 
 // GetSchemaElementKind returns the SchemaElementKind field value if set, zero value otherwise.
 func (o *IEdmSchemaElement) GetSchemaElementKind() EdmSchemaElementKind {
-	if o == nil || o.SchemaElementKind == nil {
+	if o == nil || isNil(o.SchemaElementKind) {
 		var ret EdmSchemaElementKind
 		return ret
 	}
@@ -50,15 +50,15 @@ func (o *IEdmSchemaElement) GetSchemaElementKind() EdmSchemaElementKind {
 // GetSchemaElementKindOk returns a tuple with the SchemaElementKind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmSchemaElement) GetSchemaElementKindOk() (*EdmSchemaElementKind, bool) {
-	if o == nil || o.SchemaElementKind == nil {
-		return nil, false
+	if o == nil || isNil(o.SchemaElementKind) {
+    return nil, false
 	}
 	return o.SchemaElementKind, true
 }
 
 // HasSchemaElementKind returns a boolean if a field has been set.
 func (o *IEdmSchemaElement) HasSchemaElementKind() bool {
-	if o != nil && o.SchemaElementKind != nil {
+	if o != nil && !isNil(o.SchemaElementKind) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *IEdmSchemaElement) SetSchemaElementKind(v EdmSchemaElementKind) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmSchemaElement) GetNamespace() string {
-	if o == nil || o.Namespace.Get() == nil {
+	if o == nil || isNil(o.Namespace.Get()) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *IEdmSchemaElement) GetNamespace() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmSchemaElement) GetNamespaceOk() (*string, bool) {
 	if o == nil {
-		return nil, false
+    return nil, false
 	}
 	return o.Namespace.Get(), o.Namespace.IsSet()
 }
@@ -114,7 +114,7 @@ func (o *IEdmSchemaElement) UnsetNamespace() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmSchemaElement) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+	if o == nil || isNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *IEdmSchemaElement) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmSchemaElement) GetNameOk() (*string, bool) {
 	if o == nil {
-		return nil, false
+    return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -156,7 +156,7 @@ func (o *IEdmSchemaElement) UnsetName() {
 
 func (o IEdmSchemaElement) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SchemaElementKind != nil {
+	if !isNil(o.SchemaElementKind) {
 		toSerialize["schemaElementKind"] = o.SchemaElementKind
 	}
 	if o.Namespace.IsSet() {

@@ -39,7 +39,7 @@ func NewInboundIDMethodByTemporaryCIIDWithDefaults() *InboundIDMethodByTemporary
 
 // GetTempID returns the TempID field value if set, zero value otherwise.
 func (o *InboundIDMethodByTemporaryCIID) GetTempID() string {
-	if o == nil || o.TempID == nil {
+	if o == nil || isNil(o.TempID) {
 		var ret string
 		return ret
 	}
@@ -49,15 +49,15 @@ func (o *InboundIDMethodByTemporaryCIID) GetTempID() string {
 // GetTempIDOk returns a tuple with the TempID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByTemporaryCIID) GetTempIDOk() (*string, bool) {
-	if o == nil || o.TempID == nil {
-		return nil, false
+	if o == nil || isNil(o.TempID) {
+    return nil, false
 	}
 	return o.TempID, true
 }
 
 // HasTempID returns a boolean if a field has been set.
 func (o *InboundIDMethodByTemporaryCIID) HasTempID() bool {
-	if o != nil && o.TempID != nil {
+	if o != nil && !isNil(o.TempID) {
 		return true
 	}
 
@@ -71,7 +71,7 @@ func (o *InboundIDMethodByTemporaryCIID) SetTempID(v string) {
 
 func (o InboundIDMethodByTemporaryCIID) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TempID != nil {
+	if !isNil(o.TempID) {
 		toSerialize["tempID"] = o.TempID
 	}
 	return json.Marshal(toSerialize)

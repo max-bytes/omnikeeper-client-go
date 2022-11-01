@@ -40,7 +40,7 @@ func NewGenericInboundRelationWithDefaults() *GenericInboundRelation {
 
 // GetFrom returns the From field value if set, zero value otherwise.
 func (o *GenericInboundRelation) GetFrom() string {
-	if o == nil || o.From == nil {
+	if o == nil || isNil(o.From) {
 		var ret string
 		return ret
 	}
@@ -50,15 +50,15 @@ func (o *GenericInboundRelation) GetFrom() string {
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundRelation) GetFromOk() (*string, bool) {
-	if o == nil || o.From == nil {
-		return nil, false
+	if o == nil || isNil(o.From) {
+    return nil, false
 	}
 	return o.From, true
 }
 
 // HasFrom returns a boolean if a field has been set.
 func (o *GenericInboundRelation) HasFrom() bool {
-	if o != nil && o.From != nil {
+	if o != nil && !isNil(o.From) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *GenericInboundRelation) SetFrom(v string) {
 
 // GetPredicate returns the Predicate field value if set, zero value otherwise.
 func (o *GenericInboundRelation) GetPredicate() string {
-	if o == nil || o.Predicate == nil {
+	if o == nil || isNil(o.Predicate) {
 		var ret string
 		return ret
 	}
@@ -82,15 +82,15 @@ func (o *GenericInboundRelation) GetPredicate() string {
 // GetPredicateOk returns a tuple with the Predicate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundRelation) GetPredicateOk() (*string, bool) {
-	if o == nil || o.Predicate == nil {
-		return nil, false
+	if o == nil || isNil(o.Predicate) {
+    return nil, false
 	}
 	return o.Predicate, true
 }
 
 // HasPredicate returns a boolean if a field has been set.
 func (o *GenericInboundRelation) HasPredicate() bool {
-	if o != nil && o.Predicate != nil {
+	if o != nil && !isNil(o.Predicate) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *GenericInboundRelation) SetPredicate(v string) {
 
 // GetTo returns the To field value if set, zero value otherwise.
 func (o *GenericInboundRelation) GetTo() string {
-	if o == nil || o.To == nil {
+	if o == nil || isNil(o.To) {
 		var ret string
 		return ret
 	}
@@ -114,15 +114,15 @@ func (o *GenericInboundRelation) GetTo() string {
 // GetToOk returns a tuple with the To field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundRelation) GetToOk() (*string, bool) {
-	if o == nil || o.To == nil {
-		return nil, false
+	if o == nil || isNil(o.To) {
+    return nil, false
 	}
 	return o.To, true
 }
 
 // HasTo returns a boolean if a field has been set.
 func (o *GenericInboundRelation) HasTo() bool {
-	if o != nil && o.To != nil {
+	if o != nil && !isNil(o.To) {
 		return true
 	}
 
@@ -136,13 +136,13 @@ func (o *GenericInboundRelation) SetTo(v string) {
 
 func (o GenericInboundRelation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.From != nil {
+	if !isNil(o.From) {
 		toSerialize["from"] = o.From
 	}
-	if o.Predicate != nil {
+	if !isNil(o.Predicate) {
 		toSerialize["predicate"] = o.Predicate
 	}
-	if o.To != nil {
+	if !isNil(o.To) {
 		toSerialize["to"] = o.To
 	}
 	return json.Marshal(toSerialize)

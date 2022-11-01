@@ -38,7 +38,7 @@ func NewIEdmExpressionWithDefaults() *IEdmExpression {
 
 // GetExpressionKind returns the ExpressionKind field value if set, zero value otherwise.
 func (o *IEdmExpression) GetExpressionKind() EdmExpressionKind {
-	if o == nil || o.ExpressionKind == nil {
+	if o == nil || isNil(o.ExpressionKind) {
 		var ret EdmExpressionKind
 		return ret
 	}
@@ -48,15 +48,15 @@ func (o *IEdmExpression) GetExpressionKind() EdmExpressionKind {
 // GetExpressionKindOk returns a tuple with the ExpressionKind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmExpression) GetExpressionKindOk() (*EdmExpressionKind, bool) {
-	if o == nil || o.ExpressionKind == nil {
-		return nil, false
+	if o == nil || isNil(o.ExpressionKind) {
+    return nil, false
 	}
 	return o.ExpressionKind, true
 }
 
 // HasExpressionKind returns a boolean if a field has been set.
 func (o *IEdmExpression) HasExpressionKind() bool {
-	if o != nil && o.ExpressionKind != nil {
+	if o != nil && !isNil(o.ExpressionKind) {
 		return true
 	}
 
@@ -70,7 +70,7 @@ func (o *IEdmExpression) SetExpressionKind(v EdmExpressionKind) {
 
 func (o IEdmExpression) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ExpressionKind != nil {
+	if !isNil(o.ExpressionKind) {
 		toSerialize["expressionKind"] = o.ExpressionKind
 	}
 	return json.Marshal(toSerialize)

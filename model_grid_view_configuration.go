@@ -42,7 +42,7 @@ func NewGridViewConfigurationWithDefaults() *GridViewConfiguration {
 
 // GetShowCIIDColumn returns the ShowCIIDColumn field value if set, zero value otherwise.
 func (o *GridViewConfiguration) GetShowCIIDColumn() bool {
-	if o == nil || o.ShowCIIDColumn == nil {
+	if o == nil || isNil(o.ShowCIIDColumn) {
 		var ret bool
 		return ret
 	}
@@ -52,15 +52,15 @@ func (o *GridViewConfiguration) GetShowCIIDColumn() bool {
 // GetShowCIIDColumnOk returns a tuple with the ShowCIIDColumn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetShowCIIDColumnOk() (*bool, bool) {
-	if o == nil || o.ShowCIIDColumn == nil {
-		return nil, false
+	if o == nil || isNil(o.ShowCIIDColumn) {
+    return nil, false
 	}
 	return o.ShowCIIDColumn, true
 }
 
 // HasShowCIIDColumn returns a boolean if a field has been set.
 func (o *GridViewConfiguration) HasShowCIIDColumn() bool {
-	if o != nil && o.ShowCIIDColumn != nil {
+	if o != nil && !isNil(o.ShowCIIDColumn) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GridViewConfiguration) SetShowCIIDColumn(v bool) {
 
 // GetWriteLayer returns the WriteLayer field value if set, zero value otherwise.
 func (o *GridViewConfiguration) GetWriteLayer() string {
-	if o == nil || o.WriteLayer == nil {
+	if o == nil || isNil(o.WriteLayer) {
 		var ret string
 		return ret
 	}
@@ -84,15 +84,15 @@ func (o *GridViewConfiguration) GetWriteLayer() string {
 // GetWriteLayerOk returns a tuple with the WriteLayer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetWriteLayerOk() (*string, bool) {
-	if o == nil || o.WriteLayer == nil {
-		return nil, false
+	if o == nil || isNil(o.WriteLayer) {
+    return nil, false
 	}
 	return o.WriteLayer, true
 }
 
 // HasWriteLayer returns a boolean if a field has been set.
 func (o *GridViewConfiguration) HasWriteLayer() bool {
-	if o != nil && o.WriteLayer != nil {
+	if o != nil && !isNil(o.WriteLayer) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *GridViewConfiguration) SetWriteLayer(v string) {
 
 // GetReadLayerset returns the ReadLayerset field value if set, zero value otherwise.
 func (o *GridViewConfiguration) GetReadLayerset() []string {
-	if o == nil || o.ReadLayerset == nil {
+	if o == nil || isNil(o.ReadLayerset) {
 		var ret []string
 		return ret
 	}
@@ -116,15 +116,15 @@ func (o *GridViewConfiguration) GetReadLayerset() []string {
 // GetReadLayersetOk returns a tuple with the ReadLayerset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetReadLayersetOk() ([]string, bool) {
-	if o == nil || o.ReadLayerset == nil {
-		return nil, false
+	if o == nil || isNil(o.ReadLayerset) {
+    return nil, false
 	}
 	return o.ReadLayerset, true
 }
 
 // HasReadLayerset returns a boolean if a field has been set.
 func (o *GridViewConfiguration) HasReadLayerset() bool {
-	if o != nil && o.ReadLayerset != nil {
+	if o != nil && !isNil(o.ReadLayerset) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *GridViewConfiguration) SetReadLayerset(v []string) {
 
 // GetColumns returns the Columns field value if set, zero value otherwise.
 func (o *GridViewConfiguration) GetColumns() []GridViewColumn {
-	if o == nil || o.Columns == nil {
+	if o == nil || isNil(o.Columns) {
 		var ret []GridViewColumn
 		return ret
 	}
@@ -148,15 +148,15 @@ func (o *GridViewConfiguration) GetColumns() []GridViewColumn {
 // GetColumnsOk returns a tuple with the Columns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetColumnsOk() ([]GridViewColumn, bool) {
-	if o == nil || o.Columns == nil {
-		return nil, false
+	if o == nil || isNil(o.Columns) {
+    return nil, false
 	}
 	return o.Columns, true
 }
 
 // HasColumns returns a boolean if a field has been set.
 func (o *GridViewConfiguration) HasColumns() bool {
-	if o != nil && o.Columns != nil {
+	if o != nil && !isNil(o.Columns) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *GridViewConfiguration) SetColumns(v []GridViewColumn) {
 
 // GetTrait returns the Trait field value if set, zero value otherwise.
 func (o *GridViewConfiguration) GetTrait() string {
-	if o == nil || o.Trait == nil {
+	if o == nil || isNil(o.Trait) {
 		var ret string
 		return ret
 	}
@@ -180,15 +180,15 @@ func (o *GridViewConfiguration) GetTrait() string {
 // GetTraitOk returns a tuple with the Trait field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetTraitOk() (*string, bool) {
-	if o == nil || o.Trait == nil {
-		return nil, false
+	if o == nil || isNil(o.Trait) {
+    return nil, false
 	}
 	return o.Trait, true
 }
 
 // HasTrait returns a boolean if a field has been set.
 func (o *GridViewConfiguration) HasTrait() bool {
-	if o != nil && o.Trait != nil {
+	if o != nil && !isNil(o.Trait) {
 		return true
 	}
 
@@ -202,19 +202,19 @@ func (o *GridViewConfiguration) SetTrait(v string) {
 
 func (o GridViewConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ShowCIIDColumn != nil {
+	if !isNil(o.ShowCIIDColumn) {
 		toSerialize["showCIIDColumn"] = o.ShowCIIDColumn
 	}
-	if o.WriteLayer != nil {
+	if !isNil(o.WriteLayer) {
 		toSerialize["writeLayer"] = o.WriteLayer
 	}
-	if o.ReadLayerset != nil {
+	if !isNil(o.ReadLayerset) {
 		toSerialize["readLayerset"] = o.ReadLayerset
 	}
-	if o.Columns != nil {
+	if !isNil(o.Columns) {
 		toSerialize["columns"] = o.Columns
 	}
-	if o.Trait != nil {
+	if !isNil(o.Trait) {
 		toSerialize["trait"] = o.Trait
 	}
 	return json.Marshal(toSerialize)
