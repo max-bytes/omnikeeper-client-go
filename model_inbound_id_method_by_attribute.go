@@ -51,7 +51,7 @@ func (o *InboundIDMethodByAttribute) GetAttribute() GenericInboundAttribute {
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByAttribute) GetAttributeOk() (*GenericInboundAttribute, bool) {
 	if o == nil || isNil(o.Attribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.Attribute, true
 }
@@ -83,7 +83,7 @@ func (o *InboundIDMethodByAttribute) GetModifiers() InboundIDMethodByAttributeMo
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByAttribute) GetModifiersOk() (*InboundIDMethodByAttributeModifiers, bool) {
 	if o == nil || isNil(o.Modifiers) {
-    return nil, false
+		return nil, false
 	}
 	return o.Modifiers, true
 }

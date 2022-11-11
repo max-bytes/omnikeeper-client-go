@@ -50,7 +50,7 @@ func (o *InboundIDMethodByData) GetAttributes() []string {
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByData) GetAttributesOk() ([]string, bool) {
 	if o == nil || isNil(o.Attributes) {
-    return nil, false
+		return nil, false
 	}
 	return o.Attributes, true
 }

@@ -51,7 +51,7 @@ func (o *IEdmEntityContainerElement) GetContainerElementKind() EdmContainerEleme
 // and a boolean to check if the value has been set.
 func (o *IEdmEntityContainerElement) GetContainerElementKindOk() (*EdmContainerElementKind, bool) {
 	if o == nil || isNil(o.ContainerElementKind) {
-    return nil, false
+		return nil, false
 	}
 	return o.ContainerElementKind, true
 }
@@ -83,7 +83,7 @@ func (o *IEdmEntityContainerElement) GetContainer() IEdmEntityContainer {
 // and a boolean to check if the value has been set.
 func (o *IEdmEntityContainerElement) GetContainerOk() (*IEdmEntityContainer, bool) {
 	if o == nil || isNil(o.Container) {
-    return nil, false
+		return nil, false
 	}
 	return o.Container, true
 }
@@ -116,7 +116,7 @@ func (o *IEdmEntityContainerElement) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmEntityContainerElement) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }

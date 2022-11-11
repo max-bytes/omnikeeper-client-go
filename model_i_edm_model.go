@@ -55,7 +55,7 @@ func (o *IEdmModel) GetSchemaElements() []IEdmSchemaElement {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmModel) GetSchemaElementsOk() ([]IEdmSchemaElement, bool) {
 	if o == nil || isNil(o.SchemaElements) {
-    return nil, false
+		return nil, false
 	}
 	return o.SchemaElements, true
 }
@@ -88,7 +88,7 @@ func (o *IEdmModel) GetVocabularyAnnotations() []IEdmVocabularyAnnotation {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmModel) GetVocabularyAnnotationsOk() ([]IEdmVocabularyAnnotation, bool) {
 	if o == nil || isNil(o.VocabularyAnnotations) {
-    return nil, false
+		return nil, false
 	}
 	return o.VocabularyAnnotations, true
 }
@@ -121,7 +121,7 @@ func (o *IEdmModel) GetReferencedModels() []IEdmModel {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmModel) GetReferencedModelsOk() ([]IEdmModel, bool) {
 	if o == nil || isNil(o.ReferencedModels) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReferencedModels, true
 }
@@ -154,7 +154,7 @@ func (o *IEdmModel) GetDeclaredNamespaces() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmModel) GetDeclaredNamespacesOk() ([]string, bool) {
 	if o == nil || isNil(o.DeclaredNamespaces) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeclaredNamespaces, true
 }
@@ -186,7 +186,7 @@ func (o *IEdmModel) GetDirectValueAnnotationsManager() map[string]interface{} {
 // and a boolean to check if the value has been set.
 func (o *IEdmModel) GetDirectValueAnnotationsManagerOk() (map[string]interface{}, bool) {
 	if o == nil || isNil(o.DirectValueAnnotationsManager) {
-    return map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.DirectValueAnnotationsManager, true
 }
@@ -218,7 +218,7 @@ func (o *IEdmModel) GetEntityContainer() IEdmEntityContainer {
 // and a boolean to check if the value has been set.
 func (o *IEdmModel) GetEntityContainerOk() (*IEdmEntityContainer, bool) {
 	if o == nil || isNil(o.EntityContainer) {
-    return nil, false
+		return nil, false
 	}
 	return o.EntityContainer, true
 }

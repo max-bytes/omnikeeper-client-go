@@ -49,7 +49,7 @@ func (o *IEdmExpression) GetExpressionKind() EdmExpressionKind {
 // and a boolean to check if the value has been set.
 func (o *IEdmExpression) GetExpressionKindOk() (*EdmExpressionKind, bool) {
 	if o == nil || isNil(o.ExpressionKind) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExpressionKind, true
 }

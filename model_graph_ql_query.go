@@ -52,7 +52,7 @@ func (o *GraphQLQuery) GetOperationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GraphQLQuery) GetOperationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.OperationName.Get(), o.OperationName.IsSet()
 }
@@ -94,7 +94,7 @@ func (o *GraphQLQuery) GetQuery() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GraphQLQuery) GetQueryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Query.Get(), o.Query.IsSet()
 }
@@ -136,7 +136,7 @@ func (o *GraphQLQuery) GetVariables() map[string]interface{} {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GraphQLQuery) GetVariablesOk() (map[string]interface{}, bool) {
 	if o == nil || isNil(o.Variables) {
-    return map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Variables, true
 }

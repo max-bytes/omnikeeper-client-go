@@ -49,7 +49,7 @@ func (o *InboundIDMethodByAttributeModifiers) GetCaseInsensitive() bool {
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByAttributeModifiers) GetCaseInsensitiveOk() (*bool, bool) {
 	if o == nil || isNil(o.CaseInsensitive) {
-    return nil, false
+		return nil, false
 	}
 	return o.CaseInsensitive, true
 }

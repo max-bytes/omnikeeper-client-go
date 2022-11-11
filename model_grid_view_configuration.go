@@ -53,7 +53,7 @@ func (o *GridViewConfiguration) GetShowCIIDColumn() bool {
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetShowCIIDColumnOk() (*bool, bool) {
 	if o == nil || isNil(o.ShowCIIDColumn) {
-    return nil, false
+		return nil, false
 	}
 	return o.ShowCIIDColumn, true
 }
@@ -85,7 +85,7 @@ func (o *GridViewConfiguration) GetWriteLayer() string {
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetWriteLayerOk() (*string, bool) {
 	if o == nil || isNil(o.WriteLayer) {
-    return nil, false
+		return nil, false
 	}
 	return o.WriteLayer, true
 }
@@ -117,7 +117,7 @@ func (o *GridViewConfiguration) GetReadLayerset() []string {
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetReadLayersetOk() ([]string, bool) {
 	if o == nil || isNil(o.ReadLayerset) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReadLayerset, true
 }
@@ -149,7 +149,7 @@ func (o *GridViewConfiguration) GetColumns() []GridViewColumn {
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetColumnsOk() ([]GridViewColumn, bool) {
 	if o == nil || isNil(o.Columns) {
-    return nil, false
+		return nil, false
 	}
 	return o.Columns, true
 }
@@ -181,7 +181,7 @@ func (o *GridViewConfiguration) GetTrait() string {
 // and a boolean to check if the value has been set.
 func (o *GridViewConfiguration) GetTraitOk() (*string, bool) {
 	if o == nil || isNil(o.Trait) {
-    return nil, false
+		return nil, false
 	}
 	return o.Trait, true
 }

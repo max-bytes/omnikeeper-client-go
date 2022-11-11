@@ -50,7 +50,7 @@ func (o *GenericInboundData) GetCis() []GenericInboundCI {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundData) GetCisOk() ([]GenericInboundCI, bool) {
 	if o == nil || isNil(o.Cis) {
-    return nil, false
+		return nil, false
 	}
 	return o.Cis, true
 }
@@ -82,7 +82,7 @@ func (o *GenericInboundData) GetRelations() []GenericInboundRelation {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundData) GetRelationsOk() ([]GenericInboundRelation, bool) {
 	if o == nil || isNil(o.Relations) {
-    return nil, false
+		return nil, false
 	}
 	return o.Relations, true
 }

@@ -51,7 +51,7 @@ func (o *AbstractInboundIDMethod) GetType() string {
 // and a boolean to check if the value has been set.
 func (o *AbstractInboundIDMethod) GetTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Type, true
 }

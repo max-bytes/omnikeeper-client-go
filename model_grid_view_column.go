@@ -53,7 +53,7 @@ func (o *GridViewColumn) GetSourceAttributeName() string {
 // and a boolean to check if the value has been set.
 func (o *GridViewColumn) GetSourceAttributeNameOk() (*string, bool) {
 	if o == nil || isNil(o.SourceAttributeName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SourceAttributeName, true
 }
@@ -86,7 +86,7 @@ func (o *GridViewColumn) GetSourceAttributePath() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GridViewColumn) GetSourceAttributePathOk() ([]string, bool) {
 	if o == nil || isNil(o.SourceAttributePath) {
-    return nil, false
+		return nil, false
 	}
 	return o.SourceAttributePath, true
 }
@@ -118,7 +118,7 @@ func (o *GridViewColumn) GetColumnDescription() string {
 // and a boolean to check if the value has been set.
 func (o *GridViewColumn) GetColumnDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ColumnDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ColumnDescription, true
 }
@@ -150,7 +150,7 @@ func (o *GridViewColumn) GetValueType() AttributeValueType {
 // and a boolean to check if the value has been set.
 func (o *GridViewColumn) GetValueTypeOk() (*AttributeValueType, bool) {
 	if o == nil || isNil(o.ValueType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValueType, true
 }
@@ -183,7 +183,7 @@ func (o *GridViewColumn) GetWriteLayer() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GridViewColumn) GetWriteLayerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.WriteLayer.Get(), o.WriteLayer.IsSet()
 }

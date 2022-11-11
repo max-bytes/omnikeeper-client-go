@@ -50,7 +50,7 @@ func (o *SparseRow) GetCiid() string {
 // and a boolean to check if the value has been set.
 func (o *SparseRow) GetCiidOk() (*string, bool) {
 	if o == nil || isNil(o.Ciid) {
-    return nil, false
+		return nil, false
 	}
 	return o.Ciid, true
 }
@@ -82,7 +82,7 @@ func (o *SparseRow) GetCells() []ChangeDataCell {
 // and a boolean to check if the value has been set.
 func (o *SparseRow) GetCellsOk() ([]ChangeDataCell, bool) {
 	if o == nil || isNil(o.Cells) {
-    return nil, false
+		return nil, false
 	}
 	return o.Cells, true
 }

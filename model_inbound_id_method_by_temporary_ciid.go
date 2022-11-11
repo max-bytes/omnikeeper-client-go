@@ -50,7 +50,7 @@ func (o *InboundIDMethodByTemporaryCIID) GetTempID() string {
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByTemporaryCIID) GetTempIDOk() (*string, bool) {
 	if o == nil || isNil(o.TempID) {
-    return nil, false
+		return nil, false
 	}
 	return o.TempID, true
 }

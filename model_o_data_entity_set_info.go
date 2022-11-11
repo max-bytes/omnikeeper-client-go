@@ -52,7 +52,7 @@ func (o *ODataEntitySetInfo) GetTypeAnnotation() ODataTypeAnnotation {
 // and a boolean to check if the value has been set.
 func (o *ODataEntitySetInfo) GetTypeAnnotationOk() (*ODataTypeAnnotation, bool) {
 	if o == nil || isNil(o.TypeAnnotation) {
-    return nil, false
+		return nil, false
 	}
 	return o.TypeAnnotation, true
 }
@@ -85,7 +85,7 @@ func (o *ODataEntitySetInfo) GetUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataEntitySetInfo) GetUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Url.Get(), o.Url.IsSet()
 }
@@ -127,7 +127,7 @@ func (o *ODataEntitySetInfo) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataEntitySetInfo) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -169,7 +169,7 @@ func (o *ODataEntitySetInfo) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataEntitySetInfo) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }

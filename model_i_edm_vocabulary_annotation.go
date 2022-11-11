@@ -53,7 +53,7 @@ func (o *IEdmVocabularyAnnotation) GetQualifier() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmVocabularyAnnotation) GetQualifierOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Qualifier.Get(), o.Qualifier.IsSet()
 }
@@ -94,7 +94,7 @@ func (o *IEdmVocabularyAnnotation) GetTerm() IEdmTerm {
 // and a boolean to check if the value has been set.
 func (o *IEdmVocabularyAnnotation) GetTermOk() (*IEdmTerm, bool) {
 	if o == nil || isNil(o.Term) {
-    return nil, false
+		return nil, false
 	}
 	return o.Term, true
 }
@@ -126,7 +126,7 @@ func (o *IEdmVocabularyAnnotation) GetTarget() map[string]interface{} {
 // and a boolean to check if the value has been set.
 func (o *IEdmVocabularyAnnotation) GetTargetOk() (map[string]interface{}, bool) {
 	if o == nil || isNil(o.Target) {
-    return map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Target, true
 }
@@ -158,7 +158,7 @@ func (o *IEdmVocabularyAnnotation) GetValue() IEdmExpression {
 // and a boolean to check if the value has been set.
 func (o *IEdmVocabularyAnnotation) GetValueOk() (*IEdmExpression, bool) {
 	if o == nil || isNil(o.Value) {
-    return nil, false
+		return nil, false
 	}
 	return o.Value, true
 }

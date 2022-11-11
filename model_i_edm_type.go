@@ -49,7 +49,7 @@ func (o *IEdmType) GetTypeKind() EdmTypeKind {
 // and a boolean to check if the value has been set.
 func (o *IEdmType) GetTypeKindOk() (*EdmTypeKind, bool) {
 	if o == nil || isNil(o.TypeKind) {
-    return nil, false
+		return nil, false
 	}
 	return o.TypeKind, true
 }

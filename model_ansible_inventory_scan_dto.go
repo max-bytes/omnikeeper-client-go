@@ -57,7 +57,7 @@ func (o *AnsibleInventoryScanDTO) GetSetupFacts() map[string]string {
 // and a boolean to check if the value has been set.
 func (o *AnsibleInventoryScanDTO) GetSetupFactsOk() (*map[string]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SetupFacts, true
 }
@@ -81,7 +81,7 @@ func (o *AnsibleInventoryScanDTO) GetYumInstalled() map[string]string {
 // and a boolean to check if the value has been set.
 func (o *AnsibleInventoryScanDTO) GetYumInstalledOk() (*map[string]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.YumInstalled, true
 }
@@ -105,7 +105,7 @@ func (o *AnsibleInventoryScanDTO) GetYumRepos() map[string]string {
 // and a boolean to check if the value has been set.
 func (o *AnsibleInventoryScanDTO) GetYumReposOk() (*map[string]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.YumRepos, true
 }
@@ -129,7 +129,7 @@ func (o *AnsibleInventoryScanDTO) GetYumUpdates() map[string]string {
 // and a boolean to check if the value has been set.
 func (o *AnsibleInventoryScanDTO) GetYumUpdatesOk() (*map[string]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.YumUpdates, true
 }

@@ -51,7 +51,7 @@ func (o *ChangeDataCell) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ChangeDataCell) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id, true
 }
@@ -83,7 +83,7 @@ func (o *ChangeDataCell) GetValue() AttributeValueDTO {
 // and a boolean to check if the value has been set.
 func (o *ChangeDataCell) GetValueOk() (*AttributeValueDTO, bool) {
 	if o == nil || isNil(o.Value) {
-    return nil, false
+		return nil, false
 	}
 	return o.Value, true
 }
@@ -115,7 +115,7 @@ func (o *ChangeDataCell) GetChangeable() bool {
 // and a boolean to check if the value has been set.
 func (o *ChangeDataCell) GetChangeableOk() (*bool, bool) {
 	if o == nil || isNil(o.Changeable) {
-    return nil, false
+		return nil, false
 	}
 	return o.Changeable, true
 }

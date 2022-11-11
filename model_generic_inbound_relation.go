@@ -51,7 +51,7 @@ func (o *GenericInboundRelation) GetFrom() string {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundRelation) GetFromOk() (*string, bool) {
 	if o == nil || isNil(o.From) {
-    return nil, false
+		return nil, false
 	}
 	return o.From, true
 }
@@ -83,7 +83,7 @@ func (o *GenericInboundRelation) GetPredicate() string {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundRelation) GetPredicateOk() (*string, bool) {
 	if o == nil || isNil(o.Predicate) {
-    return nil, false
+		return nil, false
 	}
 	return o.Predicate, true
 }
@@ -115,7 +115,7 @@ func (o *GenericInboundRelation) GetTo() string {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundRelation) GetToOk() (*string, bool) {
 	if o == nil || isNil(o.To) {
-    return nil, false
+		return nil, false
 	}
 	return o.To, true
 }

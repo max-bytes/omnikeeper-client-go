@@ -51,7 +51,7 @@ func (o *IEdmSchemaElement) GetSchemaElementKind() EdmSchemaElementKind {
 // and a boolean to check if the value has been set.
 func (o *IEdmSchemaElement) GetSchemaElementKindOk() (*EdmSchemaElementKind, bool) {
 	if o == nil || isNil(o.SchemaElementKind) {
-    return nil, false
+		return nil, false
 	}
 	return o.SchemaElementKind, true
 }
@@ -84,7 +84,7 @@ func (o *IEdmSchemaElement) GetNamespace() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmSchemaElement) GetNamespaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace.Get(), o.Namespace.IsSet()
 }
@@ -126,7 +126,7 @@ func (o *IEdmSchemaElement) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmSchemaElement) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }

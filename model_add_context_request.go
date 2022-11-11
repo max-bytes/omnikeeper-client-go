@@ -52,7 +52,7 @@ func (o *AddContextRequest) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AddContextRequest) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id, true
 }
@@ -84,7 +84,7 @@ func (o *AddContextRequest) GetSpeakingName() string {
 // and a boolean to check if the value has been set.
 func (o *AddContextRequest) GetSpeakingNameOk() (*string, bool) {
 	if o == nil || isNil(o.SpeakingName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SpeakingName, true
 }
@@ -116,7 +116,7 @@ func (o *AddContextRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddContextRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -148,7 +148,7 @@ func (o *AddContextRequest) GetConfiguration() GridViewConfiguration {
 // and a boolean to check if the value has been set.
 func (o *AddContextRequest) GetConfigurationOk() (*GridViewConfiguration, bool) {
 	if o == nil || isNil(o.Configuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.Configuration, true
 }

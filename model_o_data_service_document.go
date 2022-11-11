@@ -52,7 +52,7 @@ func (o *ODataServiceDocument) GetTypeAnnotation() ODataTypeAnnotation {
 // and a boolean to check if the value has been set.
 func (o *ODataServiceDocument) GetTypeAnnotationOk() (*ODataTypeAnnotation, bool) {
 	if o == nil || isNil(o.TypeAnnotation) {
-    return nil, false
+		return nil, false
 	}
 	return o.TypeAnnotation, true
 }
@@ -85,7 +85,7 @@ func (o *ODataServiceDocument) GetEntitySets() []ODataEntitySetInfo {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataServiceDocument) GetEntitySetsOk() ([]ODataEntitySetInfo, bool) {
 	if o == nil || isNil(o.EntitySets) {
-    return nil, false
+		return nil, false
 	}
 	return o.EntitySets, true
 }
@@ -118,7 +118,7 @@ func (o *ODataServiceDocument) GetSingletons() []ODataSingletonInfo {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataServiceDocument) GetSingletonsOk() ([]ODataSingletonInfo, bool) {
 	if o == nil || isNil(o.Singletons) {
-    return nil, false
+		return nil, false
 	}
 	return o.Singletons, true
 }
@@ -151,7 +151,7 @@ func (o *ODataServiceDocument) GetFunctionImports() []ODataFunctionImportInfo {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataServiceDocument) GetFunctionImportsOk() ([]ODataFunctionImportInfo, bool) {
 	if o == nil || isNil(o.FunctionImports) {
-    return nil, false
+		return nil, false
 	}
 	return o.FunctionImports, true
 }

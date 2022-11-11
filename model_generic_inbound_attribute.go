@@ -50,7 +50,7 @@ func (o *GenericInboundAttribute) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundAttribute) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -82,7 +82,7 @@ func (o *GenericInboundAttribute) GetValue() AttributeValueDTO {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundAttribute) GetValueOk() (*AttributeValueDTO, bool) {
 	if o == nil || isNil(o.Value) {
-    return nil, false
+		return nil, false
 	}
 	return o.Value, true
 }

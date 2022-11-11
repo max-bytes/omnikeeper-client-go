@@ -52,7 +52,7 @@ func (o *InboundIDMethodByRelatedTempID) GetTempID() string {
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByRelatedTempID) GetTempIDOk() (*string, bool) {
 	if o == nil || isNil(o.TempID) {
-    return nil, false
+		return nil, false
 	}
 	return o.TempID, true
 }
@@ -84,7 +84,7 @@ func (o *InboundIDMethodByRelatedTempID) GetOutgoingRelation() bool {
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByRelatedTempID) GetOutgoingRelationOk() (*bool, bool) {
 	if o == nil || isNil(o.OutgoingRelation) {
-    return nil, false
+		return nil, false
 	}
 	return o.OutgoingRelation, true
 }
@@ -116,7 +116,7 @@ func (o *InboundIDMethodByRelatedTempID) GetPredicateID() string {
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByRelatedTempID) GetPredicateIDOk() (*string, bool) {
 	if o == nil || isNil(o.PredicateID) {
-    return nil, false
+		return nil, false
 	}
 	return o.PredicateID, true
 }

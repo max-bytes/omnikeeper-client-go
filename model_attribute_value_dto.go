@@ -51,7 +51,7 @@ func (o *AttributeValueDTO) GetType() AttributeValueType {
 // and a boolean to check if the value has been set.
 func (o *AttributeValueDTO) GetTypeOk() (*AttributeValueType, bool) {
 	if o == nil || isNil(o.Type) {
-    return nil, false
+		return nil, false
 	}
 	return o.Type, true
 }
@@ -83,7 +83,7 @@ func (o *AttributeValueDTO) GetIsArray() bool {
 // and a boolean to check if the value has been set.
 func (o *AttributeValueDTO) GetIsArrayOk() (*bool, bool) {
 	if o == nil || isNil(o.IsArray) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsArray, true
 }
@@ -115,7 +115,7 @@ func (o *AttributeValueDTO) GetValues() []string {
 // and a boolean to check if the value has been set.
 func (o *AttributeValueDTO) GetValuesOk() ([]string, bool) {
 	if o == nil || isNil(o.Values) {
-    return nil, false
+		return nil, false
 	}
 	return o.Values, true
 }

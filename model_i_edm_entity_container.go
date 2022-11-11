@@ -53,7 +53,7 @@ func (o *IEdmEntityContainer) GetElements() []IEdmEntityContainerElement {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmEntityContainer) GetElementsOk() ([]IEdmEntityContainerElement, bool) {
 	if o == nil || isNil(o.Elements) {
-    return nil, false
+		return nil, false
 	}
 	return o.Elements, true
 }
@@ -85,7 +85,7 @@ func (o *IEdmEntityContainer) GetSchemaElementKind() EdmSchemaElementKind {
 // and a boolean to check if the value has been set.
 func (o *IEdmEntityContainer) GetSchemaElementKindOk() (*EdmSchemaElementKind, bool) {
 	if o == nil || isNil(o.SchemaElementKind) {
-    return nil, false
+		return nil, false
 	}
 	return o.SchemaElementKind, true
 }
@@ -118,7 +118,7 @@ func (o *IEdmEntityContainer) GetNamespace() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmEntityContainer) GetNamespaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace.Get(), o.Namespace.IsSet()
 }
@@ -160,7 +160,7 @@ func (o *IEdmEntityContainer) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmEntityContainer) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }

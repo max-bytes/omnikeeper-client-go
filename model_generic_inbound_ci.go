@@ -54,7 +54,7 @@ func (o *GenericInboundCI) GetTempID() string {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetTempIDOk() (*string, bool) {
 	if o == nil || isNil(o.TempID) {
-    return nil, false
+		return nil, false
 	}
 	return o.TempID, true
 }
@@ -86,7 +86,7 @@ func (o *GenericInboundCI) GetIdMethod() GenericInboundCIIdMethod {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetIdMethodOk() (*GenericInboundCIIdMethod, bool) {
 	if o == nil || isNil(o.IdMethod) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdMethod, true
 }
@@ -118,7 +118,7 @@ func (o *GenericInboundCI) GetSameTempIDHandling() SameTempIDHandling {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetSameTempIDHandlingOk() (*SameTempIDHandling, bool) {
 	if o == nil || isNil(o.SameTempIDHandling) {
-    return nil, false
+		return nil, false
 	}
 	return o.SameTempIDHandling, true
 }
@@ -150,7 +150,7 @@ func (o *GenericInboundCI) GetSameTargetCIHandling() SameTargetCIHandling {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetSameTargetCIHandlingOk() (*SameTargetCIHandling, bool) {
 	if o == nil || isNil(o.SameTargetCIHandling) {
-    return nil, false
+		return nil, false
 	}
 	return o.SameTargetCIHandling, true
 }
@@ -182,7 +182,7 @@ func (o *GenericInboundCI) GetNoFoundTargetCIHandling() NoFoundTargetCIHandling 
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetNoFoundTargetCIHandlingOk() (*NoFoundTargetCIHandling, bool) {
 	if o == nil || isNil(o.NoFoundTargetCIHandling) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoFoundTargetCIHandling, true
 }
@@ -214,7 +214,7 @@ func (o *GenericInboundCI) GetAttributes() []GenericInboundAttribute {
 // and a boolean to check if the value has been set.
 func (o *GenericInboundCI) GetAttributesOk() ([]GenericInboundAttribute, bool) {
 	if o == nil || isNil(o.Attributes) {
-    return nil, false
+		return nil, false
 	}
 	return o.Attributes, true
 }

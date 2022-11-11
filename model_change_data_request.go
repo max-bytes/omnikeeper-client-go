@@ -49,7 +49,7 @@ func (o *ChangeDataRequest) GetSparseRows() []SparseRow {
 // and a boolean to check if the value has been set.
 func (o *ChangeDataRequest) GetSparseRowsOk() ([]SparseRow, bool) {
 	if o == nil || isNil(o.SparseRows) {
-    return nil, false
+		return nil, false
 	}
 	return o.SparseRows, true
 }

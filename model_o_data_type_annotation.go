@@ -50,7 +50,7 @@ func (o *ODataTypeAnnotation) GetTypeName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ODataTypeAnnotation) GetTypeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TypeName.Get(), o.TypeName.IsSet()
 }

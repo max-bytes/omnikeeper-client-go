@@ -51,7 +51,7 @@ func (o *EditContextRequest) GetSpeakingName() string {
 // and a boolean to check if the value has been set.
 func (o *EditContextRequest) GetSpeakingNameOk() (*string, bool) {
 	if o == nil || isNil(o.SpeakingName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SpeakingName, true
 }
@@ -83,7 +83,7 @@ func (o *EditContextRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *EditContextRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -115,7 +115,7 @@ func (o *EditContextRequest) GetConfiguration() GridViewConfiguration {
 // and a boolean to check if the value has been set.
 func (o *EditContextRequest) GetConfigurationOk() (*GridViewConfiguration, bool) {
 	if o == nil || isNil(o.Configuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.Configuration, true
 }

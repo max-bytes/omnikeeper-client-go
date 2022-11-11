@@ -50,7 +50,7 @@ func (o *IEdmTypeReference) GetIsNullable() bool {
 // and a boolean to check if the value has been set.
 func (o *IEdmTypeReference) GetIsNullableOk() (*bool, bool) {
 	if o == nil || isNil(o.IsNullable) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsNullable, true
 }
@@ -82,7 +82,7 @@ func (o *IEdmTypeReference) GetDefinition() IEdmType {
 // and a boolean to check if the value has been set.
 func (o *IEdmTypeReference) GetDefinitionOk() (*IEdmType, bool) {
 	if o == nil || isNil(o.Definition) {
-    return nil, false
+		return nil, false
 	}
 	return o.Definition, true
 }

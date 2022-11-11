@@ -50,7 +50,7 @@ func (o *InboundIDMethodByIntersect) GetInner() []OneOfInboundIDMethodByDataInbo
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByIntersect) GetInnerOk() ([]OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect, bool) {
 	if o == nil || isNil(o.Inner) {
-    return nil, false
+		return nil, false
 	}
 	return o.Inner, true
 }
