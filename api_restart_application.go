@@ -62,7 +62,7 @@ func (a *RestartApplicationApiService) RestartApplicationRestartExecute(r ApiRes
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/RestartApplication/restart"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

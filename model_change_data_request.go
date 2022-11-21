@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ChangeDataRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ChangeDataRequest{}
+
 // ChangeDataRequest struct for ChangeDataRequest
 type ChangeDataRequest struct {
 	SparseRows []SparseRow `json:"sparseRows,omitempty"`
@@ -69,11 +72,19 @@ func (o *ChangeDataRequest) SetSparseRows(v []SparseRow) {
 }
 
 func (o ChangeDataRequest) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ChangeDataRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.SparseRows) {
 		toSerialize["sparseRows"] = o.SparseRows
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableChangeDataRequest struct {

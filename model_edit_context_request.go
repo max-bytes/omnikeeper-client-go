@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the EditContextRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EditContextRequest{}
+
 // EditContextRequest struct for EditContextRequest
 type EditContextRequest struct {
 	SpeakingName *string `json:"speakingName,omitempty"`
@@ -135,6 +138,14 @@ func (o *EditContextRequest) SetConfiguration(v GridViewConfiguration) {
 }
 
 func (o EditContextRequest) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o EditContextRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.SpeakingName) {
 		toSerialize["speakingName"] = o.SpeakingName
@@ -145,7 +156,7 @@ func (o EditContextRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Configuration) {
 		toSerialize["configuration"] = o.Configuration
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableEditContextRequest struct {

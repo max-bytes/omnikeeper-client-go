@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IEdmTerm type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IEdmTerm{}
+
 // IEdmTerm struct for IEdmTerm
 type IEdmTerm struct {
 	Type *IEdmTypeReference `json:"type,omitempty"`
@@ -274,6 +277,14 @@ func (o *IEdmTerm) UnsetName() {
 }
 
 func (o IEdmTerm) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IEdmTerm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
@@ -293,7 +304,7 @@ func (o IEdmTerm) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIEdmTerm struct {

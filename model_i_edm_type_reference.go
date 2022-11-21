@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IEdmTypeReference type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IEdmTypeReference{}
+
 // IEdmTypeReference struct for IEdmTypeReference
 type IEdmTypeReference struct {
 	IsNullable *bool `json:"isNullable,omitempty"`
@@ -102,6 +105,14 @@ func (o *IEdmTypeReference) SetDefinition(v IEdmType) {
 }
 
 func (o IEdmTypeReference) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IEdmTypeReference) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.IsNullable) {
 		toSerialize["isNullable"] = o.IsNullable
@@ -109,7 +120,7 @@ func (o IEdmTypeReference) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Definition) {
 		toSerialize["definition"] = o.Definition
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIEdmTypeReference struct {

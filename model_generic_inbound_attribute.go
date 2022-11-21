@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GenericInboundAttribute type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GenericInboundAttribute{}
+
 // GenericInboundAttribute struct for GenericInboundAttribute
 type GenericInboundAttribute struct {
 	Name *string `json:"name,omitempty"`
@@ -102,6 +105,14 @@ func (o *GenericInboundAttribute) SetValue(v AttributeValueDTO) {
 }
 
 func (o GenericInboundAttribute) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GenericInboundAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -109,7 +120,7 @@ func (o GenericInboundAttribute) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGenericInboundAttribute struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the InboundIDMethodByByUnion type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InboundIDMethodByByUnion{}
+
 // InboundIDMethodByByUnion struct for InboundIDMethodByByUnion
 type InboundIDMethodByByUnion struct {
 	Inner []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect `json:"inner,omitempty"`
@@ -70,11 +73,19 @@ func (o *InboundIDMethodByByUnion) SetInner(v []OneOfInboundIDMethodByDataInboun
 }
 
 func (o InboundIDMethodByByUnion) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o InboundIDMethodByByUnion) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Inner) {
 		toSerialize["inner"] = o.Inner
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableInboundIDMethodByByUnion struct {

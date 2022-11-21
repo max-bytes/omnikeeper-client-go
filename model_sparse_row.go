@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SparseRow type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SparseRow{}
+
 // SparseRow struct for SparseRow
 type SparseRow struct {
 	Ciid *string `json:"ciid,omitempty"`
@@ -102,6 +105,14 @@ func (o *SparseRow) SetCells(v []ChangeDataCell) {
 }
 
 func (o SparseRow) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SparseRow) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Ciid) {
 		toSerialize["ciid"] = o.Ciid
@@ -109,7 +120,7 @@ func (o SparseRow) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Cells) {
 		toSerialize["cells"] = o.Cells
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSparseRow struct {

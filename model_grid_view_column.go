@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GridViewColumn type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GridViewColumn{}
+
 // GridViewColumn struct for GridViewColumn
 type GridViewColumn struct {
 	SourceAttributeName *string `json:"sourceAttributeName,omitempty"`
@@ -212,6 +215,14 @@ func (o *GridViewColumn) UnsetWriteLayer() {
 }
 
 func (o GridViewColumn) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GridViewColumn) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.SourceAttributeName) {
 		toSerialize["sourceAttributeName"] = o.SourceAttributeName
@@ -228,7 +239,7 @@ func (o GridViewColumn) MarshalJSON() ([]byte, error) {
 	if o.WriteLayer.IsSet() {
 		toSerialize["writeLayer"] = o.WriteLayer.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGridViewColumn struct {

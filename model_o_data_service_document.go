@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ODataServiceDocument type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ODataServiceDocument{}
+
 // ODataServiceDocument struct for ODataServiceDocument
 type ODataServiceDocument struct {
 	TypeAnnotation *ODataTypeAnnotation `json:"typeAnnotation,omitempty"`
@@ -171,6 +174,14 @@ func (o *ODataServiceDocument) SetFunctionImports(v []ODataFunctionImportInfo) {
 }
 
 func (o ODataServiceDocument) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ODataServiceDocument) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.TypeAnnotation) {
 		toSerialize["typeAnnotation"] = o.TypeAnnotation
@@ -184,7 +195,7 @@ func (o ODataServiceDocument) MarshalJSON() ([]byte, error) {
 	if o.FunctionImports != nil {
 		toSerialize["functionImports"] = o.FunctionImports
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableODataServiceDocument struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ODataEntitySetInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ODataEntitySetInfo{}
+
 // ODataEntitySetInfo struct for ODataEntitySetInfo
 type ODataEntitySetInfo struct {
 	TypeAnnotation *ODataTypeAnnotation `json:"typeAnnotation,omitempty"`
@@ -198,6 +201,14 @@ func (o *ODataEntitySetInfo) UnsetTitle() {
 }
 
 func (o ODataEntitySetInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ODataEntitySetInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.TypeAnnotation) {
 		toSerialize["typeAnnotation"] = o.TypeAnnotation
@@ -211,7 +222,7 @@ func (o ODataEntitySetInfo) MarshalJSON() ([]byte, error) {
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableODataEntitySetInfo struct {

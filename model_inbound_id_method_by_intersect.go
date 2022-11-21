@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the InboundIDMethodByIntersect type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InboundIDMethodByIntersect{}
+
 // InboundIDMethodByIntersect struct for InboundIDMethodByIntersect
 type InboundIDMethodByIntersect struct {
 	Inner []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect `json:"inner,omitempty"`
@@ -70,11 +73,19 @@ func (o *InboundIDMethodByIntersect) SetInner(v []OneOfInboundIDMethodByDataInbo
 }
 
 func (o InboundIDMethodByIntersect) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o InboundIDMethodByIntersect) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Inner) {
 		toSerialize["inner"] = o.Inner
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableInboundIDMethodByIntersect struct {

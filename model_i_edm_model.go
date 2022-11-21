@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IEdmModel type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IEdmModel{}
+
 // IEdmModel struct for IEdmModel
 type IEdmModel struct {
 	SchemaElements []IEdmSchemaElement `json:"schemaElements,omitempty"`
@@ -238,6 +241,14 @@ func (o *IEdmModel) SetEntityContainer(v IEdmEntityContainer) {
 }
 
 func (o IEdmModel) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IEdmModel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.SchemaElements != nil {
 		toSerialize["schemaElements"] = o.SchemaElements
@@ -257,7 +268,7 @@ func (o IEdmModel) MarshalJSON() ([]byte, error) {
 	if !isNil(o.EntityContainer) {
 		toSerialize["entityContainer"] = o.EntityContainer
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIEdmModel struct {

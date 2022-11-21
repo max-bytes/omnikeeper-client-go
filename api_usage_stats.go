@@ -75,7 +75,7 @@ func (a *UsageStatsApiService) UsageStatsFetchExecute(r ApiUsageStatsFetchReques
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/UsageStats/fetch"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -87,8 +87,8 @@ func (a *UsageStatsApiService) UsageStatsFetchExecute(r ApiUsageStatsFetchReques
 		return nil, reportError("to is required and must be specified")
 	}
 
-	localVarQueryParams.Add("from", parameterToString(*r.from, ""))
-	localVarQueryParams.Add("to", parameterToString(*r.to, ""))
+	parameterAddToQuery(localVarQueryParams, "from", r.from, "")
+	parameterAddToQuery(localVarQueryParams, "to", r.to, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

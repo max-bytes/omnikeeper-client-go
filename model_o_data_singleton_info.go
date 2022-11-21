@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ODataSingletonInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ODataSingletonInfo{}
+
 // ODataSingletonInfo struct for ODataSingletonInfo
 type ODataSingletonInfo struct {
 	TypeAnnotation *ODataTypeAnnotation `json:"typeAnnotation,omitempty"`
@@ -198,6 +201,14 @@ func (o *ODataSingletonInfo) UnsetTitle() {
 }
 
 func (o ODataSingletonInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ODataSingletonInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.TypeAnnotation) {
 		toSerialize["typeAnnotation"] = o.TypeAnnotation
@@ -211,7 +222,7 @@ func (o ODataSingletonInfo) MarshalJSON() ([]byte, error) {
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableODataSingletonInfo struct {

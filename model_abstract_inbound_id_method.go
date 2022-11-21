@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AbstractInboundIDMethod type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AbstractInboundIDMethod{}
+
 // AbstractInboundIDMethod struct for AbstractInboundIDMethod
 type AbstractInboundIDMethod struct {
 	Type string `json:"type"`
@@ -62,11 +65,17 @@ func (o *AbstractInboundIDMethod) SetType(v string) {
 }
 
 func (o AbstractInboundIDMethod) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AbstractInboundIDMethod) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["type"] = o.Type
+	return toSerialize, nil
 }
 
 type NullableAbstractInboundIDMethod struct {

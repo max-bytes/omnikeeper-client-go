@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ChangeDataCell type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ChangeDataCell{}
+
 // ChangeDataCell struct for ChangeDataCell
 type ChangeDataCell struct {
 	Id *string `json:"id,omitempty"`
@@ -135,6 +138,14 @@ func (o *ChangeDataCell) SetChangeable(v bool) {
 }
 
 func (o ChangeDataCell) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ChangeDataCell) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -145,7 +156,7 @@ func (o ChangeDataCell) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Changeable) {
 		toSerialize["changeable"] = o.Changeable
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableChangeDataCell struct {

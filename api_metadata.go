@@ -64,7 +64,7 @@ func (a *MetadataApiService) MetadataGetMetadataExecute(r ApiMetadataGetMetadata
 	}
 
 	localVarPath := localBasePath + "/api/odata/{context}/$metadata"
-	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterToString(r.context, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterValueToString(r.context, "context")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -165,7 +165,7 @@ func (a *MetadataApiService) MetadataGetServiceDocumentExecute(r ApiMetadataGetS
 	}
 
 	localVarPath := localBasePath + "/api/odata/{context}"
-	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterToString(r.context, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterValueToString(r.context, "context")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

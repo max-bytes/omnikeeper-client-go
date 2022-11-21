@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GridViewConfiguration type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GridViewConfiguration{}
+
 // GridViewConfiguration struct for GridViewConfiguration
 type GridViewConfiguration struct {
 	ShowCIIDColumn *bool `json:"showCIIDColumn,omitempty"`
@@ -201,6 +204,14 @@ func (o *GridViewConfiguration) SetTrait(v string) {
 }
 
 func (o GridViewConfiguration) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GridViewConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.ShowCIIDColumn) {
 		toSerialize["showCIIDColumn"] = o.ShowCIIDColumn
@@ -217,7 +228,7 @@ func (o GridViewConfiguration) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Trait) {
 		toSerialize["trait"] = o.Trait
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGridViewConfiguration struct {

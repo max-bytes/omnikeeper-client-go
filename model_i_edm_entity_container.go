@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IEdmEntityContainer type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IEdmEntityContainer{}
+
 // IEdmEntityContainer struct for IEdmEntityContainer
 type IEdmEntityContainer struct {
 	Elements []IEdmEntityContainerElement `json:"elements,omitempty"`
@@ -189,6 +192,14 @@ func (o *IEdmEntityContainer) UnsetName() {
 }
 
 func (o IEdmEntityContainer) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IEdmEntityContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Elements != nil {
 		toSerialize["elements"] = o.Elements
@@ -202,7 +213,7 @@ func (o IEdmEntityContainer) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIEdmEntityContainer struct {

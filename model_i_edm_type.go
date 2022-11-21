@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IEdmType type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IEdmType{}
+
 // IEdmType struct for IEdmType
 type IEdmType struct {
 	TypeKind *EdmTypeKind `json:"typeKind,omitempty"`
@@ -69,11 +72,19 @@ func (o *IEdmType) SetTypeKind(v EdmTypeKind) {
 }
 
 func (o IEdmType) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IEdmType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.TypeKind) {
 		toSerialize["typeKind"] = o.TypeKind
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIEdmType struct {

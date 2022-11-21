@@ -82,7 +82,7 @@ func (a *GraphvizDotApiService) GraphvizDotLayerCentricExecute(r ApiGraphvizDotL
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GraphvizDot/layerCentric"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -102,14 +102,14 @@ func (a *GraphvizDotApiService) GraphvizDotLayerCentricExecute(r ApiGraphvizDotL
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("layerIDs", parameterToString(s.Index(i), "multi"))
+				parameterAddToQuery(localVarQueryParams, "layerIDs", s.Index(i), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("layerIDs", parameterToString(t, "multi"))
+			parameterAddToQuery(localVarQueryParams, "layerIDs", t, "multi")
 		}
 	}
-	localVarQueryParams.Add("from", parameterToString(*r.from, ""))
-	localVarQueryParams.Add("to", parameterToString(*r.to, ""))
+	parameterAddToQuery(localVarQueryParams, "from", r.from, "")
+	parameterAddToQuery(localVarQueryParams, "to", r.to, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -212,7 +212,7 @@ func (a *GraphvizDotApiService) GraphvizDotTraitCentricExecute(r ApiGraphvizDotT
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GraphvizDot/traitCentric"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -226,10 +226,10 @@ func (a *GraphvizDotApiService) GraphvizDotTraitCentricExecute(r ApiGraphvizDotT
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("layerIDs", parameterToString(s.Index(i), "multi"))
+				parameterAddToQuery(localVarQueryParams, "layerIDs", s.Index(i), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("layerIDs", parameterToString(t, "multi"))
+			parameterAddToQuery(localVarQueryParams, "layerIDs", t, "multi")
 		}
 	}
 	if r.traitIDs != nil {
@@ -237,14 +237,14 @@ func (a *GraphvizDotApiService) GraphvizDotTraitCentricExecute(r ApiGraphvizDotT
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("traitIDs", parameterToString(s.Index(i), "multi"))
+				parameterAddToQuery(localVarQueryParams, "traitIDs", s.Index(i), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("traitIDs", parameterToString(t, "multi"))
+			parameterAddToQuery(localVarQueryParams, "traitIDs", t, "multi")
 		}
 	}
 	if r.traitIDsRegex != nil {
-		localVarQueryParams.Add("traitIDsRegex", parameterToString(*r.traitIDsRegex, ""))
+	    parameterAddToQuery(localVarQueryParams, "traitIDsRegex", r.traitIDsRegex, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

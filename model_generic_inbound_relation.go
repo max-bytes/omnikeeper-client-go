@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GenericInboundRelation type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GenericInboundRelation{}
+
 // GenericInboundRelation struct for GenericInboundRelation
 type GenericInboundRelation struct {
 	From *string `json:"from,omitempty"`
@@ -135,6 +138,14 @@ func (o *GenericInboundRelation) SetTo(v string) {
 }
 
 func (o GenericInboundRelation) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GenericInboundRelation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.From) {
 		toSerialize["from"] = o.From
@@ -145,7 +156,7 @@ func (o GenericInboundRelation) MarshalJSON() ([]byte, error) {
 	if !isNil(o.To) {
 		toSerialize["to"] = o.To
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGenericInboundRelation struct {

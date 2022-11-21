@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ProblemDetails type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ProblemDetails{}
+
 // ProblemDetails struct for ProblemDetails
 type ProblemDetails struct {
 	Type NullableString `json:"type,omitempty"`
@@ -251,6 +254,14 @@ func (o *ProblemDetails) UnsetInstance() {
 }
 
 func (o ProblemDetails) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ProblemDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type.IsSet() {
 		toSerialize["type"] = o.Type.Get()
@@ -267,7 +278,7 @@ func (o ProblemDetails) MarshalJSON() ([]byte, error) {
 	if o.Instance.IsSet() {
 		toSerialize["instance"] = o.Instance.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableProblemDetails struct {

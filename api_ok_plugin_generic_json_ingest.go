@@ -65,7 +65,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextGetAllContextsExecute
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/manage/context"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -169,8 +169,8 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextGetContextExecute(r A
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/manage/context/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,8 +274,8 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextRemoveContextExecute(
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/manage/context/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -382,7 +382,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextUpsertContextExecute(
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/manage/context"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -504,7 +504,7 @@ func (a *OKPluginGenericJSONIngestApiService) PassiveDataIngestExecute(r ApiPass
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ingest/genericJSON/data"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -524,13 +524,13 @@ func (a *OKPluginGenericJSONIngestApiService) PassiveDataIngestExecute(r ApiPass
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("readLayerIDs", parameterToString(s.Index(i), "multi"))
+				parameterAddToQuery(localVarQueryParams, "readLayerIDs", s.Index(i), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("readLayerIDs", parameterToString(t, "multi"))
+			parameterAddToQuery(localVarQueryParams, "readLayerIDs", t, "multi")
 		}
 	}
-	localVarQueryParams.Add("writeLayerID", parameterToString(*r.writeLayerID, ""))
+	parameterAddToQuery(localVarQueryParams, "writeLayerID", r.writeLayerID, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/xml", "text/plain", "text/json", "application/*+json"}
 

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AnsibleInventoryScanDTO type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AnsibleInventoryScanDTO{}
+
 // AnsibleInventoryScanDTO struct for AnsibleInventoryScanDTO
 type AnsibleInventoryScanDTO struct {
 	SetupFacts map[string]string `json:"setupFacts"`
@@ -140,20 +143,20 @@ func (o *AnsibleInventoryScanDTO) SetYumUpdates(v map[string]string) {
 }
 
 func (o AnsibleInventoryScanDTO) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["setupFacts"] = o.SetupFacts
-	}
-	if true {
-		toSerialize["yumInstalled"] = o.YumInstalled
-	}
-	if true {
-		toSerialize["yumRepos"] = o.YumRepos
-	}
-	if true {
-		toSerialize["yumUpdates"] = o.YumUpdates
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AnsibleInventoryScanDTO) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["setupFacts"] = o.SetupFacts
+	toSerialize["yumInstalled"] = o.YumInstalled
+	toSerialize["yumRepos"] = o.YumRepos
+	toSerialize["yumUpdates"] = o.YumUpdates
+	return toSerialize, nil
 }
 
 type NullableAnsibleInventoryScanDTO struct {

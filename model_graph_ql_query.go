@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GraphQLQuery type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GraphQLQuery{}
+
 // GraphQLQuery struct for GraphQLQuery
 type GraphQLQuery struct {
 	OperationName NullableString `json:"operationName,omitempty"`
@@ -156,6 +159,14 @@ func (o *GraphQLQuery) SetVariables(v map[string]interface{}) {
 }
 
 func (o GraphQLQuery) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GraphQLQuery) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.OperationName.IsSet() {
 		toSerialize["operationName"] = o.OperationName.Get()
@@ -166,7 +177,7 @@ func (o GraphQLQuery) MarshalJSON() ([]byte, error) {
 	if o.Variables != nil {
 		toSerialize["variables"] = o.Variables
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGraphQLQuery struct {

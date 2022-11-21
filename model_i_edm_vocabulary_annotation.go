@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IEdmVocabularyAnnotation type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IEdmVocabularyAnnotation{}
+
 // IEdmVocabularyAnnotation struct for IEdmVocabularyAnnotation
 type IEdmVocabularyAnnotation struct {
 	Qualifier NullableString `json:"qualifier,omitempty"`
@@ -178,6 +181,14 @@ func (o *IEdmVocabularyAnnotation) SetValue(v IEdmExpression) {
 }
 
 func (o IEdmVocabularyAnnotation) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IEdmVocabularyAnnotation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Qualifier.IsSet() {
 		toSerialize["qualifier"] = o.Qualifier.Get()
@@ -191,7 +202,7 @@ func (o IEdmVocabularyAnnotation) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIEdmVocabularyAnnotation struct {

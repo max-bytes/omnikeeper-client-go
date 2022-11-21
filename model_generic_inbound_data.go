@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GenericInboundData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GenericInboundData{}
+
 // GenericInboundData struct for GenericInboundData
 type GenericInboundData struct {
 	Cis []GenericInboundCI `json:"cis,omitempty"`
@@ -102,6 +105,14 @@ func (o *GenericInboundData) SetRelations(v []GenericInboundRelation) {
 }
 
 func (o GenericInboundData) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GenericInboundData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Cis) {
 		toSerialize["cis"] = o.Cis
@@ -109,7 +120,7 @@ func (o GenericInboundData) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Relations) {
 		toSerialize["relations"] = o.Relations
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGenericInboundData struct {

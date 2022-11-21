@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddContextRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddContextRequest{}
+
 // AddContextRequest struct for AddContextRequest
 type AddContextRequest struct {
 	Id *string `json:"id,omitempty"`
@@ -168,6 +171,14 @@ func (o *AddContextRequest) SetConfiguration(v GridViewConfiguration) {
 }
 
 func (o AddContextRequest) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AddContextRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -181,7 +192,7 @@ func (o AddContextRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Configuration) {
 		toSerialize["configuration"] = o.Configuration
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAddContextRequest struct {

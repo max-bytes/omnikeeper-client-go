@@ -81,7 +81,7 @@ func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestA
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/Ingest/AnsibleInventoryScan"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -96,16 +96,16 @@ func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestA
 		return nil, reportError("ansibleInventoryScanDTO is required and must be specified")
 	}
 
-	localVarQueryParams.Add("writeLayerID", parameterToString(*r.writeLayerID, ""))
+	parameterAddToQuery(localVarQueryParams, "writeLayerID", r.writeLayerID, "")
 	{
 		t := *r.searchLayerIDs
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("searchLayerIDs", parameterToString(s.Index(i), "multi"))
+				parameterAddToQuery(localVarQueryParams, "searchLayerIDs", s.Index(i), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("searchLayerIDs", parameterToString(t, "multi"))
+			parameterAddToQuery(localVarQueryParams, "searchLayerIDs", t, "multi")
 		}
 	}
 	// to determine the Content-Type header

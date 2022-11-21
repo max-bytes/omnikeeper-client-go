@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GenericInboundCI type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GenericInboundCI{}
+
 // GenericInboundCI struct for GenericInboundCI
 type GenericInboundCI struct {
 	TempID *string `json:"tempID,omitempty"`
@@ -234,6 +237,14 @@ func (o *GenericInboundCI) SetAttributes(v []GenericInboundAttribute) {
 }
 
 func (o GenericInboundCI) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GenericInboundCI) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.TempID) {
 		toSerialize["tempID"] = o.TempID
@@ -253,7 +264,7 @@ func (o GenericInboundCI) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGenericInboundCI struct {

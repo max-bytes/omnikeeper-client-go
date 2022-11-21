@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IEdmExpression type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IEdmExpression{}
+
 // IEdmExpression struct for IEdmExpression
 type IEdmExpression struct {
 	ExpressionKind *EdmExpressionKind `json:"expressionKind,omitempty"`
@@ -69,11 +72,19 @@ func (o *IEdmExpression) SetExpressionKind(v EdmExpressionKind) {
 }
 
 func (o IEdmExpression) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IEdmExpression) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.ExpressionKind) {
 		toSerialize["expressionKind"] = o.ExpressionKind
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIEdmExpression struct {

@@ -69,7 +69,7 @@ func (a *GridViewApiService) GridViewAddContextExecute(r ApiGridViewAddContextRe
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GridView/context"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -181,8 +181,8 @@ func (a *GridViewApiService) GridViewChangeDataExecute(r ApiGridViewChangeDataRe
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GridView/contexts/{context}/change"
-	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterToString(r.context, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterValueToString(r.context, "context")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -288,8 +288,8 @@ func (a *GridViewApiService) GridViewDeleteContextExecute(r ApiGridViewDeleteCon
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GridView/context/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,8 +399,8 @@ func (a *GridViewApiService) GridViewEditContextExecute(r ApiGridViewEditContext
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GridView/context/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -505,8 +505,8 @@ func (a *GridViewApiService) GridViewGetDataExecute(r ApiGridViewGetDataRequest)
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GridView/contexts/{context}/data"
-	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterToString(r.context, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterValueToString(r.context, "context")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -599,8 +599,8 @@ func (a *GridViewApiService) GridViewGetGridViewContextExecute(r ApiGridViewGetG
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GridView/context/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -690,7 +690,7 @@ func (a *GridViewApiService) GridViewGetGridViewContextsExecute(r ApiGridViewGet
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GridView/contexts"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -783,8 +783,8 @@ func (a *GridViewApiService) GridViewGetSchemaExecute(r ApiGridViewGetSchemaRequ
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/GridView/contexts/{context}/schema"
-	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterToString(r.context, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"context"+"}", url.PathEscape(parameterValueToString(r.context, "context")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the InboundIDMethodByData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InboundIDMethodByData{}
+
 // InboundIDMethodByData struct for InboundIDMethodByData
 type InboundIDMethodByData struct {
 	Attributes []string `json:"attributes,omitempty"`
@@ -70,11 +73,19 @@ func (o *InboundIDMethodByData) SetAttributes(v []string) {
 }
 
 func (o InboundIDMethodByData) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o InboundIDMethodByData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableInboundIDMethodByData struct {

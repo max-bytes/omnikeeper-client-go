@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the InboundIDMethodByRelatedTempID type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InboundIDMethodByRelatedTempID{}
+
 // InboundIDMethodByRelatedTempID struct for InboundIDMethodByRelatedTempID
 type InboundIDMethodByRelatedTempID struct {
 	TempID *string `json:"tempID,omitempty"`
@@ -136,6 +139,14 @@ func (o *InboundIDMethodByRelatedTempID) SetPredicateID(v string) {
 }
 
 func (o InboundIDMethodByRelatedTempID) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o InboundIDMethodByRelatedTempID) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.TempID) {
 		toSerialize["tempID"] = o.TempID
@@ -146,7 +157,7 @@ func (o InboundIDMethodByRelatedTempID) MarshalJSON() ([]byte, error) {
 	if !isNil(o.PredicateID) {
 		toSerialize["predicateID"] = o.PredicateID
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableInboundIDMethodByRelatedTempID struct {

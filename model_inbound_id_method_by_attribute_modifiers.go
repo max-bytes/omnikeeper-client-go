@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the InboundIDMethodByAttributeModifiers type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InboundIDMethodByAttributeModifiers{}
+
 // InboundIDMethodByAttributeModifiers struct for InboundIDMethodByAttributeModifiers
 type InboundIDMethodByAttributeModifiers struct {
 	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
@@ -69,11 +72,19 @@ func (o *InboundIDMethodByAttributeModifiers) SetCaseInsensitive(v bool) {
 }
 
 func (o InboundIDMethodByAttributeModifiers) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o InboundIDMethodByAttributeModifiers) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.CaseInsensitive) {
 		toSerialize["caseInsensitive"] = o.CaseInsensitive
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableInboundIDMethodByAttributeModifiers struct {

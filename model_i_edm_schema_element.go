@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IEdmSchemaElement type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IEdmSchemaElement{}
+
 // IEdmSchemaElement struct for IEdmSchemaElement
 type IEdmSchemaElement struct {
 	SchemaElementKind *EdmSchemaElementKind `json:"schemaElementKind,omitempty"`
@@ -155,6 +158,14 @@ func (o *IEdmSchemaElement) UnsetName() {
 }
 
 func (o IEdmSchemaElement) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IEdmSchemaElement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.SchemaElementKind) {
 		toSerialize["schemaElementKind"] = o.SchemaElementKind
@@ -165,7 +176,7 @@ func (o IEdmSchemaElement) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIEdmSchemaElement struct {

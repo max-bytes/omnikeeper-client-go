@@ -75,7 +75,7 @@ func (a *ImportExportLayerApiService) ImportExportLayerExportLayerExecute(r ApiI
 	}
 
 	localVarPath := localBasePath + "/api/v{version}/ImportExportLayer/exportLayer"
-	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(r.version, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -84,16 +84,16 @@ func (a *ImportExportLayerApiService) ImportExportLayerExportLayerExecute(r ApiI
 		return nil, reportError("layerID is required and must be specified")
 	}
 
-	localVarQueryParams.Add("layerID", parameterToString(*r.layerID, ""))
+	parameterAddToQuery(localVarQueryParams, "layerID", r.layerID, "")
 	if r.ciids != nil {
 		t := *r.ciids
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("ciids", parameterToString(s.Index(i), "multi"))
+				parameterAddToQuery(localVarQueryParams, "ciids", s.Index(i), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("ciids", parameterToString(t, "multi"))
+			parameterAddToQuery(localVarQueryParams, "ciids", t, "multi")
 		}
 	}
 	// to determine the Content-Type header

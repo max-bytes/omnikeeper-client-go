@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AttributeValueDTO type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AttributeValueDTO{}
+
 // AttributeValueDTO struct for AttributeValueDTO
 type AttributeValueDTO struct {
 	Type *AttributeValueType `json:"type,omitempty"`
@@ -135,6 +138,14 @@ func (o *AttributeValueDTO) SetValues(v []string) {
 }
 
 func (o AttributeValueDTO) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AttributeValueDTO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
@@ -145,7 +156,7 @@ func (o AttributeValueDTO) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Values) {
 		toSerialize["values"] = o.Values
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAttributeValueDTO struct {
