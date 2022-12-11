@@ -176,13 +176,13 @@ func (a *GraphQLApiService) GraphQLGetExecute(r ApiGraphQLGetRequest) (*http.Res
 	localVarFormParams := url.Values{}
 
 	if r.operationName != nil {
-	    parameterAddToQuery(localVarQueryParams, "operationName", r.operationName, "")
+		parameterAddToQuery(localVarQueryParams, "operationName", r.operationName, "")
 	}
 	if r.query != nil {
-	    parameterAddToQuery(localVarQueryParams, "query", r.query, "")
+		parameterAddToQuery(localVarQueryParams, "query", r.query, "")
 	}
 	if r.variables != nil {
-	    parameterAddToQuery(localVarQueryParams, "variables", r.variables, "")
+		parameterAddToQuery(localVarQueryParams, "variables", r.variables, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

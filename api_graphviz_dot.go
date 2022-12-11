@@ -244,7 +244,7 @@ func (a *GraphvizDotApiService) GraphvizDotTraitCentricExecute(r ApiGraphvizDotT
 		}
 	}
 	if r.traitIDsRegex != nil {
-	    parameterAddToQuery(localVarQueryParams, "traitIDsRegex", r.traitIDsRegex, "")
+		parameterAddToQuery(localVarQueryParams, "traitIDsRegex", r.traitIDsRegex, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

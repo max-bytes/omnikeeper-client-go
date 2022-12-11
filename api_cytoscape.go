@@ -113,7 +113,7 @@ func (a *CytoscapeApiService) CytoscapeTraitCentricExecute(r ApiCytoscapeTraitCe
 		}
 	}
 	if r.traitIDsRegex != nil {
-	    parameterAddToQuery(localVarQueryParams, "traitIDsRegex", r.traitIDsRegex, "")
+		parameterAddToQuery(localVarQueryParams, "traitIDsRegex", r.traitIDsRegex, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
