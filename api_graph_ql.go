@@ -13,7 +13,7 @@ package okclient
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
@@ -98,9 +98,9 @@ func (a *GraphQLApiService) GraphQLDebugExecute(r ApiGraphQLDebugRequest) (*http
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -176,13 +176,13 @@ func (a *GraphQLApiService) GraphQLGetExecute(r ApiGraphQLGetRequest) (*http.Res
 	localVarFormParams := url.Values{}
 
 	if r.operationName != nil {
-		parameterAddToQuery(localVarQueryParams, "operationName", r.operationName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "operationName", r.operationName, "")
 	}
 	if r.query != nil {
-		parameterAddToQuery(localVarQueryParams, "query", r.query, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
 	}
 	if r.variables != nil {
-		parameterAddToQuery(localVarQueryParams, "variables", r.variables, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "variables", r.variables, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -211,9 +211,9 @@ func (a *GraphQLApiService) GraphQLGetExecute(r ApiGraphQLGetRequest) (*http.Res
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -305,9 +305,9 @@ func (a *GraphQLApiService) GraphQLIndexExecute(r ApiGraphQLIndexRequest) (*http
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

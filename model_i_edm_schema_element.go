@@ -43,7 +43,7 @@ func NewIEdmSchemaElementWithDefaults() *IEdmSchemaElement {
 
 // GetSchemaElementKind returns the SchemaElementKind field value if set, zero value otherwise.
 func (o *IEdmSchemaElement) GetSchemaElementKind() EdmSchemaElementKind {
-	if o == nil || isNil(o.SchemaElementKind) {
+	if o == nil || IsNil(o.SchemaElementKind) {
 		var ret EdmSchemaElementKind
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IEdmSchemaElement) GetSchemaElementKind() EdmSchemaElementKind {
 // GetSchemaElementKindOk returns a tuple with the SchemaElementKind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmSchemaElement) GetSchemaElementKindOk() (*EdmSchemaElementKind, bool) {
-	if o == nil || isNil(o.SchemaElementKind) {
+	if o == nil || IsNil(o.SchemaElementKind) {
 		return nil, false
 	}
 	return o.SchemaElementKind, true
@@ -61,7 +61,7 @@ func (o *IEdmSchemaElement) GetSchemaElementKindOk() (*EdmSchemaElementKind, boo
 
 // HasSchemaElementKind returns a boolean if a field has been set.
 func (o *IEdmSchemaElement) HasSchemaElementKind() bool {
-	if o != nil && !isNil(o.SchemaElementKind) {
+	if o != nil && !IsNil(o.SchemaElementKind) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *IEdmSchemaElement) SetSchemaElementKind(v EdmSchemaElementKind) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmSchemaElement) GetNamespace() string {
-	if o == nil || isNil(o.Namespace.Get()) {
+	if o == nil || IsNil(o.Namespace.Get()) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *IEdmSchemaElement) UnsetNamespace() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmSchemaElement) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o IEdmSchemaElement) MarshalJSON() ([]byte, error) {
 
 func (o IEdmSchemaElement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SchemaElementKind) {
+	if !IsNil(o.SchemaElementKind) {
 		toSerialize["schemaElementKind"] = o.SchemaElementKind
 	}
 	if o.Namespace.IsSet() {

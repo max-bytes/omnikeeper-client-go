@@ -42,7 +42,7 @@ func NewGenericInboundDataWithDefaults() *GenericInboundData {
 
 // GetCis returns the Cis field value if set, zero value otherwise.
 func (o *GenericInboundData) GetCis() []GenericInboundCI {
-	if o == nil || isNil(o.Cis) {
+	if o == nil || IsNil(o.Cis) {
 		var ret []GenericInboundCI
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GenericInboundData) GetCis() []GenericInboundCI {
 // GetCisOk returns a tuple with the Cis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundData) GetCisOk() ([]GenericInboundCI, bool) {
-	if o == nil || isNil(o.Cis) {
+	if o == nil || IsNil(o.Cis) {
 		return nil, false
 	}
 	return o.Cis, true
@@ -60,7 +60,7 @@ func (o *GenericInboundData) GetCisOk() ([]GenericInboundCI, bool) {
 
 // HasCis returns a boolean if a field has been set.
 func (o *GenericInboundData) HasCis() bool {
-	if o != nil && !isNil(o.Cis) {
+	if o != nil && !IsNil(o.Cis) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GenericInboundData) SetCis(v []GenericInboundCI) {
 
 // GetRelations returns the Relations field value if set, zero value otherwise.
 func (o *GenericInboundData) GetRelations() []GenericInboundRelation {
-	if o == nil || isNil(o.Relations) {
+	if o == nil || IsNil(o.Relations) {
 		var ret []GenericInboundRelation
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GenericInboundData) GetRelations() []GenericInboundRelation {
 // GetRelationsOk returns a tuple with the Relations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundData) GetRelationsOk() ([]GenericInboundRelation, bool) {
-	if o == nil || isNil(o.Relations) {
+	if o == nil || IsNil(o.Relations) {
 		return nil, false
 	}
 	return o.Relations, true
@@ -92,7 +92,7 @@ func (o *GenericInboundData) GetRelationsOk() ([]GenericInboundRelation, bool) {
 
 // HasRelations returns a boolean if a field has been set.
 func (o *GenericInboundData) HasRelations() bool {
-	if o != nil && !isNil(o.Relations) {
+	if o != nil && !IsNil(o.Relations) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o GenericInboundData) MarshalJSON() ([]byte, error) {
 
 func (o GenericInboundData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Cis) {
+	if !IsNil(o.Cis) {
 		toSerialize["cis"] = o.Cis
 	}
-	if !isNil(o.Relations) {
+	if !IsNil(o.Relations) {
 		toSerialize["relations"] = o.Relations
 	}
 	return toSerialize, nil

@@ -13,7 +13,7 @@ package okclient
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -96,16 +96,16 @@ func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestA
 		return nil, reportError("ansibleInventoryScanDTO is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "writeLayerID", r.writeLayerID, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "writeLayerID", r.writeLayerID, "")
 	{
 		t := *r.searchLayerIDs
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "searchLayerIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "searchLayerIDs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "searchLayerIDs", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "searchLayerIDs", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -137,9 +137,9 @@ func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

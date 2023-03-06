@@ -13,7 +13,7 @@ package okclient
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -84,16 +84,16 @@ func (a *ImportExportLayerApiService) ImportExportLayerExportLayerExecute(r ApiI
 		return nil, reportError("layerID is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "layerID", r.layerID, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "layerID", r.layerID, "")
 	if r.ciids != nil {
 		t := *r.ciids
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "ciids", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ciids", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "ciids", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ciids", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -123,9 +123,9 @@ func (a *ImportExportLayerApiService) ImportExportLayerExportLayerExecute(r ApiI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

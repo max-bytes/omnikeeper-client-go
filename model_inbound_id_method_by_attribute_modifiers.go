@@ -41,7 +41,7 @@ func NewInboundIDMethodByAttributeModifiersWithDefaults() *InboundIDMethodByAttr
 
 // GetCaseInsensitive returns the CaseInsensitive field value if set, zero value otherwise.
 func (o *InboundIDMethodByAttributeModifiers) GetCaseInsensitive() bool {
-	if o == nil || isNil(o.CaseInsensitive) {
+	if o == nil || IsNil(o.CaseInsensitive) {
 		var ret bool
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *InboundIDMethodByAttributeModifiers) GetCaseInsensitive() bool {
 // GetCaseInsensitiveOk returns a tuple with the CaseInsensitive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByAttributeModifiers) GetCaseInsensitiveOk() (*bool, bool) {
-	if o == nil || isNil(o.CaseInsensitive) {
+	if o == nil || IsNil(o.CaseInsensitive) {
 		return nil, false
 	}
 	return o.CaseInsensitive, true
@@ -59,7 +59,7 @@ func (o *InboundIDMethodByAttributeModifiers) GetCaseInsensitiveOk() (*bool, boo
 
 // HasCaseInsensitive returns a boolean if a field has been set.
 func (o *InboundIDMethodByAttributeModifiers) HasCaseInsensitive() bool {
-	if o != nil && !isNil(o.CaseInsensitive) {
+	if o != nil && !IsNil(o.CaseInsensitive) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o InboundIDMethodByAttributeModifiers) MarshalJSON() ([]byte, error) {
 
 func (o InboundIDMethodByAttributeModifiers) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CaseInsensitive) {
+	if !IsNil(o.CaseInsensitive) {
 		toSerialize["caseInsensitive"] = o.CaseInsensitive
 	}
 	return toSerialize, nil

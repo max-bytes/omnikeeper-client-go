@@ -57,7 +57,7 @@ func (o *IEdmModel) GetSchemaElements() []IEdmSchemaElement {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmModel) GetSchemaElementsOk() ([]IEdmSchemaElement, bool) {
-	if o == nil || isNil(o.SchemaElements) {
+	if o == nil || IsNil(o.SchemaElements) {
 		return nil, false
 	}
 	return o.SchemaElements, true
@@ -65,7 +65,7 @@ func (o *IEdmModel) GetSchemaElementsOk() ([]IEdmSchemaElement, bool) {
 
 // HasSchemaElements returns a boolean if a field has been set.
 func (o *IEdmModel) HasSchemaElements() bool {
-	if o != nil && isNil(o.SchemaElements) {
+	if o != nil && IsNil(o.SchemaElements) {
 		return true
 	}
 
@@ -90,7 +90,7 @@ func (o *IEdmModel) GetVocabularyAnnotations() []IEdmVocabularyAnnotation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmModel) GetVocabularyAnnotationsOk() ([]IEdmVocabularyAnnotation, bool) {
-	if o == nil || isNil(o.VocabularyAnnotations) {
+	if o == nil || IsNil(o.VocabularyAnnotations) {
 		return nil, false
 	}
 	return o.VocabularyAnnotations, true
@@ -98,7 +98,7 @@ func (o *IEdmModel) GetVocabularyAnnotationsOk() ([]IEdmVocabularyAnnotation, bo
 
 // HasVocabularyAnnotations returns a boolean if a field has been set.
 func (o *IEdmModel) HasVocabularyAnnotations() bool {
-	if o != nil && isNil(o.VocabularyAnnotations) {
+	if o != nil && IsNil(o.VocabularyAnnotations) {
 		return true
 	}
 
@@ -123,7 +123,7 @@ func (o *IEdmModel) GetReferencedModels() []IEdmModel {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmModel) GetReferencedModelsOk() ([]IEdmModel, bool) {
-	if o == nil || isNil(o.ReferencedModels) {
+	if o == nil || IsNil(o.ReferencedModels) {
 		return nil, false
 	}
 	return o.ReferencedModels, true
@@ -131,7 +131,7 @@ func (o *IEdmModel) GetReferencedModelsOk() ([]IEdmModel, bool) {
 
 // HasReferencedModels returns a boolean if a field has been set.
 func (o *IEdmModel) HasReferencedModels() bool {
-	if o != nil && isNil(o.ReferencedModels) {
+	if o != nil && IsNil(o.ReferencedModels) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *IEdmModel) GetDeclaredNamespaces() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmModel) GetDeclaredNamespacesOk() ([]string, bool) {
-	if o == nil || isNil(o.DeclaredNamespaces) {
+	if o == nil || IsNil(o.DeclaredNamespaces) {
 		return nil, false
 	}
 	return o.DeclaredNamespaces, true
@@ -164,7 +164,7 @@ func (o *IEdmModel) GetDeclaredNamespacesOk() ([]string, bool) {
 
 // HasDeclaredNamespaces returns a boolean if a field has been set.
 func (o *IEdmModel) HasDeclaredNamespaces() bool {
-	if o != nil && isNil(o.DeclaredNamespaces) {
+	if o != nil && IsNil(o.DeclaredNamespaces) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *IEdmModel) SetDeclaredNamespaces(v []string) {
 
 // GetDirectValueAnnotationsManager returns the DirectValueAnnotationsManager field value if set, zero value otherwise.
 func (o *IEdmModel) GetDirectValueAnnotationsManager() map[string]interface{} {
-	if o == nil || isNil(o.DirectValueAnnotationsManager) {
+	if o == nil || IsNil(o.DirectValueAnnotationsManager) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *IEdmModel) GetDirectValueAnnotationsManager() map[string]interface{} {
 // GetDirectValueAnnotationsManagerOk returns a tuple with the DirectValueAnnotationsManager field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmModel) GetDirectValueAnnotationsManagerOk() (map[string]interface{}, bool) {
-	if o == nil || isNil(o.DirectValueAnnotationsManager) {
+	if o == nil || IsNil(o.DirectValueAnnotationsManager) {
 		return map[string]interface{}{}, false
 	}
 	return o.DirectValueAnnotationsManager, true
@@ -196,7 +196,7 @@ func (o *IEdmModel) GetDirectValueAnnotationsManagerOk() (map[string]interface{}
 
 // HasDirectValueAnnotationsManager returns a boolean if a field has been set.
 func (o *IEdmModel) HasDirectValueAnnotationsManager() bool {
-	if o != nil && !isNil(o.DirectValueAnnotationsManager) {
+	if o != nil && !IsNil(o.DirectValueAnnotationsManager) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *IEdmModel) SetDirectValueAnnotationsManager(v map[string]interface{}) {
 
 // GetEntityContainer returns the EntityContainer field value if set, zero value otherwise.
 func (o *IEdmModel) GetEntityContainer() IEdmEntityContainer {
-	if o == nil || isNil(o.EntityContainer) {
+	if o == nil || IsNil(o.EntityContainer) {
 		var ret IEdmEntityContainer
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *IEdmModel) GetEntityContainer() IEdmEntityContainer {
 // GetEntityContainerOk returns a tuple with the EntityContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmModel) GetEntityContainerOk() (*IEdmEntityContainer, bool) {
-	if o == nil || isNil(o.EntityContainer) {
+	if o == nil || IsNil(o.EntityContainer) {
 		return nil, false
 	}
 	return o.EntityContainer, true
@@ -228,7 +228,7 @@ func (o *IEdmModel) GetEntityContainerOk() (*IEdmEntityContainer, bool) {
 
 // HasEntityContainer returns a boolean if a field has been set.
 func (o *IEdmModel) HasEntityContainer() bool {
-	if o != nil && !isNil(o.EntityContainer) {
+	if o != nil && !IsNil(o.EntityContainer) {
 		return true
 	}
 
@@ -262,10 +262,10 @@ func (o IEdmModel) ToMap() (map[string]interface{}, error) {
 	if o.DeclaredNamespaces != nil {
 		toSerialize["declaredNamespaces"] = o.DeclaredNamespaces
 	}
-	if !isNil(o.DirectValueAnnotationsManager) {
+	if !IsNil(o.DirectValueAnnotationsManager) {
 		toSerialize["directValueAnnotationsManager"] = o.DirectValueAnnotationsManager
 	}
-	if !isNil(o.EntityContainer) {
+	if !IsNil(o.EntityContainer) {
 		toSerialize["entityContainer"] = o.EntityContainer
 	}
 	return toSerialize, nil

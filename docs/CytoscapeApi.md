@@ -23,7 +23,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CytoscapeApi.CytoscapeTraitCentric(context.Background(), version).LayerIDs(layerIDs).TraitIDs(traitIDs).TraitIDsRegex(traitIDsRegex).Execute()
+    r, err := apiClient.CytoscapeApi.CytoscapeTraitCentric(context.Background(), version).LayerIDs(layerIDs).TraitIDs(traitIDs).TraitIDsRegex(traitIDsRegex).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CytoscapeApi.CytoscapeTraitCentric``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

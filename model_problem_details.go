@@ -45,7 +45,7 @@ func NewProblemDetailsWithDefaults() *ProblemDetails {
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProblemDetails) GetType() string {
-	if o == nil || isNil(o.Type.Get()) {
+	if o == nil || IsNil(o.Type.Get()) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ProblemDetails) UnsetType() {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProblemDetails) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *ProblemDetails) UnsetTitle() {
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProblemDetails) GetStatus() int32 {
-	if o == nil || isNil(o.Status.Get()) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret int32
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *ProblemDetails) UnsetStatus() {
 
 // GetDetail returns the Detail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProblemDetails) GetDetail() string {
-	if o == nil || isNil(o.Detail.Get()) {
+	if o == nil || IsNil(o.Detail.Get()) {
 		var ret string
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *ProblemDetails) UnsetDetail() {
 
 // GetInstance returns the Instance field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProblemDetails) GetInstance() string {
-	if o == nil || isNil(o.Instance.Get()) {
+	if o == nil || IsNil(o.Instance.Get()) {
 		var ret string
 		return ret
 	}

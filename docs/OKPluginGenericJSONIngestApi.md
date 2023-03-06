@@ -27,7 +27,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
@@ -95,7 +95,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
@@ -237,7 +237,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
@@ -307,7 +307,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
@@ -318,7 +318,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OKPluginGenericJSONIngestApi.PassiveDataIngest(context.Background(), version).ReadLayerIDs(readLayerIDs).WriteLayerID(writeLayerID).GenericInboundData(genericInboundData).Execute()
+    r, err := apiClient.OKPluginGenericJSONIngestApi.PassiveDataIngest(context.Background(), version).ReadLayerIDs(readLayerIDs).WriteLayerID(writeLayerID).GenericInboundData(genericInboundData).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestApi.PassiveDataIngest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

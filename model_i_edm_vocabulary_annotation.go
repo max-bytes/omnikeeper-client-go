@@ -44,7 +44,7 @@ func NewIEdmVocabularyAnnotationWithDefaults() *IEdmVocabularyAnnotation {
 
 // GetQualifier returns the Qualifier field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmVocabularyAnnotation) GetQualifier() string {
-	if o == nil || isNil(o.Qualifier.Get()) {
+	if o == nil || IsNil(o.Qualifier.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *IEdmVocabularyAnnotation) UnsetQualifier() {
 
 // GetTerm returns the Term field value if set, zero value otherwise.
 func (o *IEdmVocabularyAnnotation) GetTerm() IEdmTerm {
-	if o == nil || isNil(o.Term) {
+	if o == nil || IsNil(o.Term) {
 		var ret IEdmTerm
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *IEdmVocabularyAnnotation) GetTerm() IEdmTerm {
 // GetTermOk returns a tuple with the Term field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmVocabularyAnnotation) GetTermOk() (*IEdmTerm, bool) {
-	if o == nil || isNil(o.Term) {
+	if o == nil || IsNil(o.Term) {
 		return nil, false
 	}
 	return o.Term, true
@@ -104,7 +104,7 @@ func (o *IEdmVocabularyAnnotation) GetTermOk() (*IEdmTerm, bool) {
 
 // HasTerm returns a boolean if a field has been set.
 func (o *IEdmVocabularyAnnotation) HasTerm() bool {
-	if o != nil && !isNil(o.Term) {
+	if o != nil && !IsNil(o.Term) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *IEdmVocabularyAnnotation) SetTerm(v IEdmTerm) {
 
 // GetTarget returns the Target field value if set, zero value otherwise.
 func (o *IEdmVocabularyAnnotation) GetTarget() map[string]interface{} {
-	if o == nil || isNil(o.Target) {
+	if o == nil || IsNil(o.Target) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *IEdmVocabularyAnnotation) GetTarget() map[string]interface{} {
 // GetTargetOk returns a tuple with the Target field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmVocabularyAnnotation) GetTargetOk() (map[string]interface{}, bool) {
-	if o == nil || isNil(o.Target) {
+	if o == nil || IsNil(o.Target) {
 		return map[string]interface{}{}, false
 	}
 	return o.Target, true
@@ -136,7 +136,7 @@ func (o *IEdmVocabularyAnnotation) GetTargetOk() (map[string]interface{}, bool) 
 
 // HasTarget returns a boolean if a field has been set.
 func (o *IEdmVocabularyAnnotation) HasTarget() bool {
-	if o != nil && !isNil(o.Target) {
+	if o != nil && !IsNil(o.Target) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *IEdmVocabularyAnnotation) SetTarget(v map[string]interface{}) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *IEdmVocabularyAnnotation) GetValue() IEdmExpression {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret IEdmExpression
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *IEdmVocabularyAnnotation) GetValue() IEdmExpression {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmVocabularyAnnotation) GetValueOk() (*IEdmExpression, bool) {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
 	return o.Value, true
@@ -168,7 +168,7 @@ func (o *IEdmVocabularyAnnotation) GetValueOk() (*IEdmExpression, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *IEdmVocabularyAnnotation) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -193,13 +193,13 @@ func (o IEdmVocabularyAnnotation) ToMap() (map[string]interface{}, error) {
 	if o.Qualifier.IsSet() {
 		toSerialize["qualifier"] = o.Qualifier.Get()
 	}
-	if !isNil(o.Term) {
+	if !IsNil(o.Term) {
 		toSerialize["term"] = o.Term
 	}
-	if !isNil(o.Target) {
+	if !IsNil(o.Target) {
 		toSerialize["target"] = o.Target
 	}
-	if !isNil(o.Value) {
+	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
 	return toSerialize, nil

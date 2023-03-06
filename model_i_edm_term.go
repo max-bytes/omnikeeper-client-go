@@ -46,7 +46,7 @@ func NewIEdmTermWithDefaults() *IEdmTerm {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *IEdmTerm) GetType() IEdmTypeReference {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret IEdmTypeReference
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *IEdmTerm) GetType() IEdmTypeReference {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmTerm) GetTypeOk() (*IEdmTypeReference, bool) {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -64,7 +64,7 @@ func (o *IEdmTerm) GetTypeOk() (*IEdmTypeReference, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *IEdmTerm) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *IEdmTerm) SetType(v IEdmTypeReference) {
 
 // GetAppliesTo returns the AppliesTo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmTerm) GetAppliesTo() string {
-	if o == nil || isNil(o.AppliesTo.Get()) {
+	if o == nil || IsNil(o.AppliesTo.Get()) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *IEdmTerm) UnsetAppliesTo() {
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmTerm) GetDefaultValue() string {
-	if o == nil || isNil(o.DefaultValue.Get()) {
+	if o == nil || IsNil(o.DefaultValue.Get()) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *IEdmTerm) UnsetDefaultValue() {
 
 // GetSchemaElementKind returns the SchemaElementKind field value if set, zero value otherwise.
 func (o *IEdmTerm) GetSchemaElementKind() EdmSchemaElementKind {
-	if o == nil || isNil(o.SchemaElementKind) {
+	if o == nil || IsNil(o.SchemaElementKind) {
 		var ret EdmSchemaElementKind
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *IEdmTerm) GetSchemaElementKind() EdmSchemaElementKind {
 // GetSchemaElementKindOk returns a tuple with the SchemaElementKind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmTerm) GetSchemaElementKindOk() (*EdmSchemaElementKind, bool) {
-	if o == nil || isNil(o.SchemaElementKind) {
+	if o == nil || IsNil(o.SchemaElementKind) {
 		return nil, false
 	}
 	return o.SchemaElementKind, true
@@ -180,7 +180,7 @@ func (o *IEdmTerm) GetSchemaElementKindOk() (*EdmSchemaElementKind, bool) {
 
 // HasSchemaElementKind returns a boolean if a field has been set.
 func (o *IEdmTerm) HasSchemaElementKind() bool {
-	if o != nil && !isNil(o.SchemaElementKind) {
+	if o != nil && !IsNil(o.SchemaElementKind) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *IEdmTerm) SetSchemaElementKind(v EdmSchemaElementKind) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmTerm) GetNamespace() string {
-	if o == nil || isNil(o.Namespace.Get()) {
+	if o == nil || IsNil(o.Namespace.Get()) {
 		var ret string
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *IEdmTerm) UnsetNamespace() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmTerm) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o IEdmTerm) MarshalJSON() ([]byte, error) {
 
 func (o IEdmTerm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	if o.AppliesTo.IsSet() {
@@ -295,7 +295,7 @@ func (o IEdmTerm) ToMap() (map[string]interface{}, error) {
 	if o.DefaultValue.IsSet() {
 		toSerialize["defaultValue"] = o.DefaultValue.Get()
 	}
-	if !isNil(o.SchemaElementKind) {
+	if !IsNil(o.SchemaElementKind) {
 		toSerialize["schemaElementKind"] = o.SchemaElementKind
 	}
 	if o.Namespace.IsSet() {

@@ -45,7 +45,7 @@ func NewGridViewColumnWithDefaults() *GridViewColumn {
 
 // GetSourceAttributeName returns the SourceAttributeName field value if set, zero value otherwise.
 func (o *GridViewColumn) GetSourceAttributeName() string {
-	if o == nil || isNil(o.SourceAttributeName) {
+	if o == nil || IsNil(o.SourceAttributeName) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *GridViewColumn) GetSourceAttributeName() string {
 // GetSourceAttributeNameOk returns a tuple with the SourceAttributeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GridViewColumn) GetSourceAttributeNameOk() (*string, bool) {
-	if o == nil || isNil(o.SourceAttributeName) {
+	if o == nil || IsNil(o.SourceAttributeName) {
 		return nil, false
 	}
 	return o.SourceAttributeName, true
@@ -63,7 +63,7 @@ func (o *GridViewColumn) GetSourceAttributeNameOk() (*string, bool) {
 
 // HasSourceAttributeName returns a boolean if a field has been set.
 func (o *GridViewColumn) HasSourceAttributeName() bool {
-	if o != nil && !isNil(o.SourceAttributeName) {
+	if o != nil && !IsNil(o.SourceAttributeName) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *GridViewColumn) GetSourceAttributePath() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GridViewColumn) GetSourceAttributePathOk() ([]string, bool) {
-	if o == nil || isNil(o.SourceAttributePath) {
+	if o == nil || IsNil(o.SourceAttributePath) {
 		return nil, false
 	}
 	return o.SourceAttributePath, true
@@ -96,7 +96,7 @@ func (o *GridViewColumn) GetSourceAttributePathOk() ([]string, bool) {
 
 // HasSourceAttributePath returns a boolean if a field has been set.
 func (o *GridViewColumn) HasSourceAttributePath() bool {
-	if o != nil && isNil(o.SourceAttributePath) {
+	if o != nil && IsNil(o.SourceAttributePath) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *GridViewColumn) SetSourceAttributePath(v []string) {
 
 // GetColumnDescription returns the ColumnDescription field value if set, zero value otherwise.
 func (o *GridViewColumn) GetColumnDescription() string {
-	if o == nil || isNil(o.ColumnDescription) {
+	if o == nil || IsNil(o.ColumnDescription) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *GridViewColumn) GetColumnDescription() string {
 // GetColumnDescriptionOk returns a tuple with the ColumnDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GridViewColumn) GetColumnDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ColumnDescription) {
+	if o == nil || IsNil(o.ColumnDescription) {
 		return nil, false
 	}
 	return o.ColumnDescription, true
@@ -128,7 +128,7 @@ func (o *GridViewColumn) GetColumnDescriptionOk() (*string, bool) {
 
 // HasColumnDescription returns a boolean if a field has been set.
 func (o *GridViewColumn) HasColumnDescription() bool {
-	if o != nil && !isNil(o.ColumnDescription) {
+	if o != nil && !IsNil(o.ColumnDescription) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *GridViewColumn) SetColumnDescription(v string) {
 
 // GetValueType returns the ValueType field value if set, zero value otherwise.
 func (o *GridViewColumn) GetValueType() AttributeValueType {
-	if o == nil || isNil(o.ValueType) {
+	if o == nil || IsNil(o.ValueType) {
 		var ret AttributeValueType
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *GridViewColumn) GetValueType() AttributeValueType {
 // GetValueTypeOk returns a tuple with the ValueType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GridViewColumn) GetValueTypeOk() (*AttributeValueType, bool) {
-	if o == nil || isNil(o.ValueType) {
+	if o == nil || IsNil(o.ValueType) {
 		return nil, false
 	}
 	return o.ValueType, true
@@ -160,7 +160,7 @@ func (o *GridViewColumn) GetValueTypeOk() (*AttributeValueType, bool) {
 
 // HasValueType returns a boolean if a field has been set.
 func (o *GridViewColumn) HasValueType() bool {
-	if o != nil && !isNil(o.ValueType) {
+	if o != nil && !IsNil(o.ValueType) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *GridViewColumn) SetValueType(v AttributeValueType) {
 
 // GetWriteLayer returns the WriteLayer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GridViewColumn) GetWriteLayer() string {
-	if o == nil || isNil(o.WriteLayer.Get()) {
+	if o == nil || IsNil(o.WriteLayer.Get()) {
 		var ret string
 		return ret
 	}
@@ -224,16 +224,16 @@ func (o GridViewColumn) MarshalJSON() ([]byte, error) {
 
 func (o GridViewColumn) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SourceAttributeName) {
+	if !IsNil(o.SourceAttributeName) {
 		toSerialize["sourceAttributeName"] = o.SourceAttributeName
 	}
 	if o.SourceAttributePath != nil {
 		toSerialize["sourceAttributePath"] = o.SourceAttributePath
 	}
-	if !isNil(o.ColumnDescription) {
+	if !IsNil(o.ColumnDescription) {
 		toSerialize["columnDescription"] = o.ColumnDescription
 	}
-	if !isNil(o.ValueType) {
+	if !IsNil(o.ValueType) {
 		toSerialize["valueType"] = o.ValueType
 	}
 	if o.WriteLayer.IsSet() {

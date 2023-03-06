@@ -13,7 +13,7 @@ package okclient
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -87,8 +87,8 @@ func (a *UsageStatsApiService) UsageStatsFetchExecute(r ApiUsageStatsFetchReques
 		return nil, reportError("to is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "from", r.from, "")
-	parameterAddToQuery(localVarQueryParams, "to", r.to, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "from", r.from, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "to", r.to, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -116,9 +116,9 @@ func (a *UsageStatsApiService) UsageStatsFetchExecute(r ApiUsageStatsFetchReques
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

@@ -43,7 +43,7 @@ func NewAttributeValueDTOWithDefaults() *AttributeValueDTO {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *AttributeValueDTO) GetType() AttributeValueType {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret AttributeValueType
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AttributeValueDTO) GetType() AttributeValueType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValueDTO) GetTypeOk() (*AttributeValueType, bool) {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -61,7 +61,7 @@ func (o *AttributeValueDTO) GetTypeOk() (*AttributeValueType, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *AttributeValueDTO) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AttributeValueDTO) SetType(v AttributeValueType) {
 
 // GetIsArray returns the IsArray field value if set, zero value otherwise.
 func (o *AttributeValueDTO) GetIsArray() bool {
-	if o == nil || isNil(o.IsArray) {
+	if o == nil || IsNil(o.IsArray) {
 		var ret bool
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AttributeValueDTO) GetIsArray() bool {
 // GetIsArrayOk returns a tuple with the IsArray field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValueDTO) GetIsArrayOk() (*bool, bool) {
-	if o == nil || isNil(o.IsArray) {
+	if o == nil || IsNil(o.IsArray) {
 		return nil, false
 	}
 	return o.IsArray, true
@@ -93,7 +93,7 @@ func (o *AttributeValueDTO) GetIsArrayOk() (*bool, bool) {
 
 // HasIsArray returns a boolean if a field has been set.
 func (o *AttributeValueDTO) HasIsArray() bool {
-	if o != nil && !isNil(o.IsArray) {
+	if o != nil && !IsNil(o.IsArray) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AttributeValueDTO) SetIsArray(v bool) {
 
 // GetValues returns the Values field value if set, zero value otherwise.
 func (o *AttributeValueDTO) GetValues() []string {
-	if o == nil || isNil(o.Values) {
+	if o == nil || IsNil(o.Values) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AttributeValueDTO) GetValues() []string {
 // GetValuesOk returns a tuple with the Values field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValueDTO) GetValuesOk() ([]string, bool) {
-	if o == nil || isNil(o.Values) {
+	if o == nil || IsNil(o.Values) {
 		return nil, false
 	}
 	return o.Values, true
@@ -125,7 +125,7 @@ func (o *AttributeValueDTO) GetValuesOk() ([]string, bool) {
 
 // HasValues returns a boolean if a field has been set.
 func (o *AttributeValueDTO) HasValues() bool {
-	if o != nil && !isNil(o.Values) {
+	if o != nil && !IsNil(o.Values) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o AttributeValueDTO) MarshalJSON() ([]byte, error) {
 
 func (o AttributeValueDTO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !isNil(o.IsArray) {
+	if !IsNil(o.IsArray) {
 		toSerialize["isArray"] = o.IsArray
 	}
-	if !isNil(o.Values) {
+	if !IsNil(o.Values) {
 		toSerialize["values"] = o.Values
 	}
 	return toSerialize, nil

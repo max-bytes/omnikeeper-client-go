@@ -41,7 +41,7 @@ func NewIEdmTypeWithDefaults() *IEdmType {
 
 // GetTypeKind returns the TypeKind field value if set, zero value otherwise.
 func (o *IEdmType) GetTypeKind() EdmTypeKind {
-	if o == nil || isNil(o.TypeKind) {
+	if o == nil || IsNil(o.TypeKind) {
 		var ret EdmTypeKind
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *IEdmType) GetTypeKind() EdmTypeKind {
 // GetTypeKindOk returns a tuple with the TypeKind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmType) GetTypeKindOk() (*EdmTypeKind, bool) {
-	if o == nil || isNil(o.TypeKind) {
+	if o == nil || IsNil(o.TypeKind) {
 		return nil, false
 	}
 	return o.TypeKind, true
@@ -59,7 +59,7 @@ func (o *IEdmType) GetTypeKindOk() (*EdmTypeKind, bool) {
 
 // HasTypeKind returns a boolean if a field has been set.
 func (o *IEdmType) HasTypeKind() bool {
-	if o != nil && !isNil(o.TypeKind) {
+	if o != nil && !IsNil(o.TypeKind) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o IEdmType) MarshalJSON() ([]byte, error) {
 
 func (o IEdmType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TypeKind) {
+	if !IsNil(o.TypeKind) {
 		toSerialize["typeKind"] = o.TypeKind
 	}
 	return toSerialize, nil

@@ -43,7 +43,7 @@ func NewInboundIDMethodByAttributeWithDefaults() *InboundIDMethodByAttribute {
 
 // GetAttribute returns the Attribute field value if set, zero value otherwise.
 func (o *InboundIDMethodByAttribute) GetAttribute() GenericInboundAttribute {
-	if o == nil || isNil(o.Attribute) {
+	if o == nil || IsNil(o.Attribute) {
 		var ret GenericInboundAttribute
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *InboundIDMethodByAttribute) GetAttribute() GenericInboundAttribute {
 // GetAttributeOk returns a tuple with the Attribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByAttribute) GetAttributeOk() (*GenericInboundAttribute, bool) {
-	if o == nil || isNil(o.Attribute) {
+	if o == nil || IsNil(o.Attribute) {
 		return nil, false
 	}
 	return o.Attribute, true
@@ -61,7 +61,7 @@ func (o *InboundIDMethodByAttribute) GetAttributeOk() (*GenericInboundAttribute,
 
 // HasAttribute returns a boolean if a field has been set.
 func (o *InboundIDMethodByAttribute) HasAttribute() bool {
-	if o != nil && !isNil(o.Attribute) {
+	if o != nil && !IsNil(o.Attribute) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *InboundIDMethodByAttribute) SetAttribute(v GenericInboundAttribute) {
 
 // GetModifiers returns the Modifiers field value if set, zero value otherwise.
 func (o *InboundIDMethodByAttribute) GetModifiers() InboundIDMethodByAttributeModifiers {
-	if o == nil || isNil(o.Modifiers) {
+	if o == nil || IsNil(o.Modifiers) {
 		var ret InboundIDMethodByAttributeModifiers
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *InboundIDMethodByAttribute) GetModifiers() InboundIDMethodByAttributeMo
 // GetModifiersOk returns a tuple with the Modifiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByAttribute) GetModifiersOk() (*InboundIDMethodByAttributeModifiers, bool) {
-	if o == nil || isNil(o.Modifiers) {
+	if o == nil || IsNil(o.Modifiers) {
 		return nil, false
 	}
 	return o.Modifiers, true
@@ -93,7 +93,7 @@ func (o *InboundIDMethodByAttribute) GetModifiersOk() (*InboundIDMethodByAttribu
 
 // HasModifiers returns a boolean if a field has been set.
 func (o *InboundIDMethodByAttribute) HasModifiers() bool {
-	if o != nil && !isNil(o.Modifiers) {
+	if o != nil && !IsNil(o.Modifiers) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o InboundIDMethodByAttribute) MarshalJSON() ([]byte, error) {
 
 func (o InboundIDMethodByAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attribute) {
+	if !IsNil(o.Attribute) {
 		toSerialize["attribute"] = o.Attribute
 	}
-	if !isNil(o.Modifiers) {
+	if !IsNil(o.Modifiers) {
 		toSerialize["modifiers"] = o.Modifiers
 	}
 	return toSerialize, nil

@@ -55,7 +55,7 @@ func (o *IEdmEntityContainer) GetElements() []IEdmEntityContainerElement {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IEdmEntityContainer) GetElementsOk() ([]IEdmEntityContainerElement, bool) {
-	if o == nil || isNil(o.Elements) {
+	if o == nil || IsNil(o.Elements) {
 		return nil, false
 	}
 	return o.Elements, true
@@ -63,7 +63,7 @@ func (o *IEdmEntityContainer) GetElementsOk() ([]IEdmEntityContainerElement, boo
 
 // HasElements returns a boolean if a field has been set.
 func (o *IEdmEntityContainer) HasElements() bool {
-	if o != nil && isNil(o.Elements) {
+	if o != nil && IsNil(o.Elements) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *IEdmEntityContainer) SetElements(v []IEdmEntityContainerElement) {
 
 // GetSchemaElementKind returns the SchemaElementKind field value if set, zero value otherwise.
 func (o *IEdmEntityContainer) GetSchemaElementKind() EdmSchemaElementKind {
-	if o == nil || isNil(o.SchemaElementKind) {
+	if o == nil || IsNil(o.SchemaElementKind) {
 		var ret EdmSchemaElementKind
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *IEdmEntityContainer) GetSchemaElementKind() EdmSchemaElementKind {
 // GetSchemaElementKindOk returns a tuple with the SchemaElementKind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmEntityContainer) GetSchemaElementKindOk() (*EdmSchemaElementKind, bool) {
-	if o == nil || isNil(o.SchemaElementKind) {
+	if o == nil || IsNil(o.SchemaElementKind) {
 		return nil, false
 	}
 	return o.SchemaElementKind, true
@@ -95,7 +95,7 @@ func (o *IEdmEntityContainer) GetSchemaElementKindOk() (*EdmSchemaElementKind, b
 
 // HasSchemaElementKind returns a boolean if a field has been set.
 func (o *IEdmEntityContainer) HasSchemaElementKind() bool {
-	if o != nil && !isNil(o.SchemaElementKind) {
+	if o != nil && !IsNil(o.SchemaElementKind) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *IEdmEntityContainer) SetSchemaElementKind(v EdmSchemaElementKind) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmEntityContainer) GetNamespace() string {
-	if o == nil || isNil(o.Namespace.Get()) {
+	if o == nil || IsNil(o.Namespace.Get()) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *IEdmEntityContainer) UnsetNamespace() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmEntityContainer) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o IEdmEntityContainer) ToMap() (map[string]interface{}, error) {
 	if o.Elements != nil {
 		toSerialize["elements"] = o.Elements
 	}
-	if !isNil(o.SchemaElementKind) {
+	if !IsNil(o.SchemaElementKind) {
 		toSerialize["schemaElementKind"] = o.SchemaElementKind
 	}
 	if o.Namespace.IsSet() {

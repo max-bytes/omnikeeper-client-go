@@ -42,7 +42,7 @@ func NewInboundIDMethodByByUnionWithDefaults() *InboundIDMethodByByUnion {
 
 // GetInner returns the Inner field value if set, zero value otherwise.
 func (o *InboundIDMethodByByUnion) GetInner() []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect {
-	if o == nil || isNil(o.Inner) {
+	if o == nil || IsNil(o.Inner) {
 		var ret []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *InboundIDMethodByByUnion) GetInner() []OneOfInboundIDMethodByDataInboun
 // GetInnerOk returns a tuple with the Inner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InboundIDMethodByByUnion) GetInnerOk() ([]OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect, bool) {
-	if o == nil || isNil(o.Inner) {
+	if o == nil || IsNil(o.Inner) {
 		return nil, false
 	}
 	return o.Inner, true
@@ -60,7 +60,7 @@ func (o *InboundIDMethodByByUnion) GetInnerOk() ([]OneOfInboundIDMethodByDataInb
 
 // HasInner returns a boolean if a field has been set.
 func (o *InboundIDMethodByByUnion) HasInner() bool {
-	if o != nil && !isNil(o.Inner) {
+	if o != nil && !IsNil(o.Inner) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o InboundIDMethodByByUnion) MarshalJSON() ([]byte, error) {
 
 func (o InboundIDMethodByByUnion) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Inner) {
+	if !IsNil(o.Inner) {
 		toSerialize["inner"] = o.Inner
 	}
 	return toSerialize, nil

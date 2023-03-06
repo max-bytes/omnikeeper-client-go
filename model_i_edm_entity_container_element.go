@@ -43,7 +43,7 @@ func NewIEdmEntityContainerElementWithDefaults() *IEdmEntityContainerElement {
 
 // GetContainerElementKind returns the ContainerElementKind field value if set, zero value otherwise.
 func (o *IEdmEntityContainerElement) GetContainerElementKind() EdmContainerElementKind {
-	if o == nil || isNil(o.ContainerElementKind) {
+	if o == nil || IsNil(o.ContainerElementKind) {
 		var ret EdmContainerElementKind
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IEdmEntityContainerElement) GetContainerElementKind() EdmContainerEleme
 // GetContainerElementKindOk returns a tuple with the ContainerElementKind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmEntityContainerElement) GetContainerElementKindOk() (*EdmContainerElementKind, bool) {
-	if o == nil || isNil(o.ContainerElementKind) {
+	if o == nil || IsNil(o.ContainerElementKind) {
 		return nil, false
 	}
 	return o.ContainerElementKind, true
@@ -61,7 +61,7 @@ func (o *IEdmEntityContainerElement) GetContainerElementKindOk() (*EdmContainerE
 
 // HasContainerElementKind returns a boolean if a field has been set.
 func (o *IEdmEntityContainerElement) HasContainerElementKind() bool {
-	if o != nil && !isNil(o.ContainerElementKind) {
+	if o != nil && !IsNil(o.ContainerElementKind) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *IEdmEntityContainerElement) SetContainerElementKind(v EdmContainerEleme
 
 // GetContainer returns the Container field value if set, zero value otherwise.
 func (o *IEdmEntityContainerElement) GetContainer() IEdmEntityContainer {
-	if o == nil || isNil(o.Container) {
+	if o == nil || IsNil(o.Container) {
 		var ret IEdmEntityContainer
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *IEdmEntityContainerElement) GetContainer() IEdmEntityContainer {
 // GetContainerOk returns a tuple with the Container field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IEdmEntityContainerElement) GetContainerOk() (*IEdmEntityContainer, bool) {
-	if o == nil || isNil(o.Container) {
+	if o == nil || IsNil(o.Container) {
 		return nil, false
 	}
 	return o.Container, true
@@ -93,7 +93,7 @@ func (o *IEdmEntityContainerElement) GetContainerOk() (*IEdmEntityContainer, boo
 
 // HasContainer returns a boolean if a field has been set.
 func (o *IEdmEntityContainerElement) HasContainer() bool {
-	if o != nil && !isNil(o.Container) {
+	if o != nil && !IsNil(o.Container) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *IEdmEntityContainerElement) SetContainer(v IEdmEntityContainer) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IEdmEntityContainerElement) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -157,10 +157,10 @@ func (o IEdmEntityContainerElement) MarshalJSON() ([]byte, error) {
 
 func (o IEdmEntityContainerElement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ContainerElementKind) {
+	if !IsNil(o.ContainerElementKind) {
 		toSerialize["containerElementKind"] = o.ContainerElementKind
 	}
-	if !isNil(o.Container) {
+	if !IsNil(o.Container) {
 		toSerialize["container"] = o.Container
 	}
 	if o.Name.IsSet() {

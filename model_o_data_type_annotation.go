@@ -41,7 +41,7 @@ func NewODataTypeAnnotationWithDefaults() *ODataTypeAnnotation {
 
 // GetTypeName returns the TypeName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ODataTypeAnnotation) GetTypeName() string {
-	if o == nil || isNil(o.TypeName.Get()) {
+	if o == nil || IsNil(o.TypeName.Get()) {
 		var ret string
 		return ret
 	}

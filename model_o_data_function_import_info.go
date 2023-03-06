@@ -44,7 +44,7 @@ func NewODataFunctionImportInfoWithDefaults() *ODataFunctionImportInfo {
 
 // GetTypeAnnotation returns the TypeAnnotation field value if set, zero value otherwise.
 func (o *ODataFunctionImportInfo) GetTypeAnnotation() ODataTypeAnnotation {
-	if o == nil || isNil(o.TypeAnnotation) {
+	if o == nil || IsNil(o.TypeAnnotation) {
 		var ret ODataTypeAnnotation
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ODataFunctionImportInfo) GetTypeAnnotation() ODataTypeAnnotation {
 // GetTypeAnnotationOk returns a tuple with the TypeAnnotation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ODataFunctionImportInfo) GetTypeAnnotationOk() (*ODataTypeAnnotation, bool) {
-	if o == nil || isNil(o.TypeAnnotation) {
+	if o == nil || IsNil(o.TypeAnnotation) {
 		return nil, false
 	}
 	return o.TypeAnnotation, true
@@ -62,7 +62,7 @@ func (o *ODataFunctionImportInfo) GetTypeAnnotationOk() (*ODataTypeAnnotation, b
 
 // HasTypeAnnotation returns a boolean if a field has been set.
 func (o *ODataFunctionImportInfo) HasTypeAnnotation() bool {
-	if o != nil && !isNil(o.TypeAnnotation) {
+	if o != nil && !IsNil(o.TypeAnnotation) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ODataFunctionImportInfo) SetTypeAnnotation(v ODataTypeAnnotation) {
 
 // GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ODataFunctionImportInfo) GetUrl() string {
-	if o == nil || isNil(o.Url.Get()) {
+	if o == nil || IsNil(o.Url.Get()) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ODataFunctionImportInfo) UnsetUrl() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ODataFunctionImportInfo) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *ODataFunctionImportInfo) UnsetName() {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ODataFunctionImportInfo) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o ODataFunctionImportInfo) MarshalJSON() ([]byte, error) {
 
 func (o ODataFunctionImportInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TypeAnnotation) {
+	if !IsNil(o.TypeAnnotation) {
 		toSerialize["typeAnnotation"] = o.TypeAnnotation
 	}
 	if o.Url.IsSet() {

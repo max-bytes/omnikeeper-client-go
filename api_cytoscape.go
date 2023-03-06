@@ -13,7 +13,7 @@ package okclient
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -95,10 +95,10 @@ func (a *CytoscapeApiService) CytoscapeTraitCentricExecute(r ApiCytoscapeTraitCe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "layerIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "layerIDs", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", t, "multi")
 		}
 	}
 	if r.traitIDs != nil {
@@ -106,14 +106,14 @@ func (a *CytoscapeApiService) CytoscapeTraitCentricExecute(r ApiCytoscapeTraitCe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "traitIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "traitIDs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "traitIDs", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "traitIDs", t, "multi")
 		}
 	}
 	if r.traitIDsRegex != nil {
-		parameterAddToQuery(localVarQueryParams, "traitIDsRegex", r.traitIDsRegex, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "traitIDsRegex", r.traitIDsRegex, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -142,9 +142,9 @@ func (a *CytoscapeApiService) CytoscapeTraitCentricExecute(r ApiCytoscapeTraitCe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

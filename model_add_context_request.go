@@ -44,7 +44,7 @@ func NewAddContextRequestWithDefaults() *AddContextRequest {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AddContextRequest) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AddContextRequest) GetId() string {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddContextRequest) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -62,7 +62,7 @@ func (o *AddContextRequest) GetIdOk() (*string, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *AddContextRequest) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AddContextRequest) SetId(v string) {
 
 // GetSpeakingName returns the SpeakingName field value if set, zero value otherwise.
 func (o *AddContextRequest) GetSpeakingName() string {
-	if o == nil || isNil(o.SpeakingName) {
+	if o == nil || IsNil(o.SpeakingName) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AddContextRequest) GetSpeakingName() string {
 // GetSpeakingNameOk returns a tuple with the SpeakingName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddContextRequest) GetSpeakingNameOk() (*string, bool) {
-	if o == nil || isNil(o.SpeakingName) {
+	if o == nil || IsNil(o.SpeakingName) {
 		return nil, false
 	}
 	return o.SpeakingName, true
@@ -94,7 +94,7 @@ func (o *AddContextRequest) GetSpeakingNameOk() (*string, bool) {
 
 // HasSpeakingName returns a boolean if a field has been set.
 func (o *AddContextRequest) HasSpeakingName() bool {
-	if o != nil && !isNil(o.SpeakingName) {
+	if o != nil && !IsNil(o.SpeakingName) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AddContextRequest) SetSpeakingName(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddContextRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AddContextRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddContextRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -126,7 +126,7 @@ func (o *AddContextRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddContextRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AddContextRequest) SetDescription(v string) {
 
 // GetConfiguration returns the Configuration field value if set, zero value otherwise.
 func (o *AddContextRequest) GetConfiguration() GridViewConfiguration {
-	if o == nil || isNil(o.Configuration) {
+	if o == nil || IsNil(o.Configuration) {
 		var ret GridViewConfiguration
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AddContextRequest) GetConfiguration() GridViewConfiguration {
 // GetConfigurationOk returns a tuple with the Configuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddContextRequest) GetConfigurationOk() (*GridViewConfiguration, bool) {
-	if o == nil || isNil(o.Configuration) {
+	if o == nil || IsNil(o.Configuration) {
 		return nil, false
 	}
 	return o.Configuration, true
@@ -158,7 +158,7 @@ func (o *AddContextRequest) GetConfigurationOk() (*GridViewConfiguration, bool) 
 
 // HasConfiguration returns a boolean if a field has been set.
 func (o *AddContextRequest) HasConfiguration() bool {
-	if o != nil && !isNil(o.Configuration) {
+	if o != nil && !IsNil(o.Configuration) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o AddContextRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddContextRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.SpeakingName) {
+	if !IsNil(o.SpeakingName) {
 		toSerialize["speakingName"] = o.SpeakingName
 	}
-	if !isNil(o.Description) {
+	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !isNil(o.Configuration) {
+	if !IsNil(o.Configuration) {
 		toSerialize["configuration"] = o.Configuration
 	}
 	return toSerialize, nil

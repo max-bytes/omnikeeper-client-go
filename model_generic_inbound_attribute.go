@@ -42,7 +42,7 @@ func NewGenericInboundAttributeWithDefaults() *GenericInboundAttribute {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *GenericInboundAttribute) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GenericInboundAttribute) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundAttribute) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -60,7 +60,7 @@ func (o *GenericInboundAttribute) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *GenericInboundAttribute) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GenericInboundAttribute) SetName(v string) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *GenericInboundAttribute) GetValue() AttributeValueDTO {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret AttributeValueDTO
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GenericInboundAttribute) GetValue() AttributeValueDTO {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericInboundAttribute) GetValueOk() (*AttributeValueDTO, bool) {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
 	return o.Value, true
@@ -92,7 +92,7 @@ func (o *GenericInboundAttribute) GetValueOk() (*AttributeValueDTO, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *GenericInboundAttribute) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o GenericInboundAttribute) MarshalJSON() ([]byte, error) {
 
 func (o GenericInboundAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Value) {
+	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
 	return toSerialize, nil
