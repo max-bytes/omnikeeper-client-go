@@ -19,12 +19,12 @@ import (
 )
 
 
-// GraphQLApiService GraphQLApi service
-type GraphQLApiService service
+// GraphQLAPIService GraphQLAPI service
+type GraphQLAPIService service
 
 type ApiGraphQLDebugRequest struct {
 	ctx context.Context
-	ApiService *GraphQLApiService
+	ApiService *GraphQLAPIService
 	graphQLQuery *GraphQLQuery
 }
 
@@ -43,7 +43,7 @@ GraphQLDebug Method for GraphQLDebug
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGraphQLDebugRequest
 */
-func (a *GraphQLApiService) GraphQLDebug(ctx context.Context) ApiGraphQLDebugRequest {
+func (a *GraphQLAPIService) GraphQLDebug(ctx context.Context) ApiGraphQLDebugRequest {
 	return ApiGraphQLDebugRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,14 +51,14 @@ func (a *GraphQLApiService) GraphQLDebug(ctx context.Context) ApiGraphQLDebugReq
 }
 
 // Execute executes the request
-func (a *GraphQLApiService) GraphQLDebugExecute(r ApiGraphQLDebugRequest) (*http.Response, error) {
+func (a *GraphQLAPIService) GraphQLDebugExecute(r ApiGraphQLDebugRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLApiService.GraphQLDebug")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLAPIService.GraphQLDebug")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -118,7 +118,7 @@ func (a *GraphQLApiService) GraphQLDebugExecute(r ApiGraphQLDebugRequest) (*http
 
 type ApiGraphQLGetRequest struct {
 	ctx context.Context
-	ApiService *GraphQLApiService
+	ApiService *GraphQLAPIService
 	operationName *string
 	query *string
 	variables *map[string]interface{}
@@ -149,7 +149,7 @@ GraphQLGet Method for GraphQLGet
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGraphQLGetRequest
 */
-func (a *GraphQLApiService) GraphQLGet(ctx context.Context) ApiGraphQLGetRequest {
+func (a *GraphQLAPIService) GraphQLGet(ctx context.Context) ApiGraphQLGetRequest {
 	return ApiGraphQLGetRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -157,14 +157,14 @@ func (a *GraphQLApiService) GraphQLGet(ctx context.Context) ApiGraphQLGetRequest
 }
 
 // Execute executes the request
-func (a *GraphQLApiService) GraphQLGetExecute(r ApiGraphQLGetRequest) (*http.Response, error) {
+func (a *GraphQLAPIService) GraphQLGetExecute(r ApiGraphQLGetRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLApiService.GraphQLGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLAPIService.GraphQLGet")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -231,7 +231,7 @@ func (a *GraphQLApiService) GraphQLGetExecute(r ApiGraphQLGetRequest) (*http.Res
 
 type ApiGraphQLIndexRequest struct {
 	ctx context.Context
-	ApiService *GraphQLApiService
+	ApiService *GraphQLAPIService
 	graphQLQuery *GraphQLQuery
 }
 
@@ -250,7 +250,7 @@ GraphQLIndex Method for GraphQLIndex
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGraphQLIndexRequest
 */
-func (a *GraphQLApiService) GraphQLIndex(ctx context.Context) ApiGraphQLIndexRequest {
+func (a *GraphQLAPIService) GraphQLIndex(ctx context.Context) ApiGraphQLIndexRequest {
 	return ApiGraphQLIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -258,14 +258,14 @@ func (a *GraphQLApiService) GraphQLIndex(ctx context.Context) ApiGraphQLIndexReq
 }
 
 // Execute executes the request
-func (a *GraphQLApiService) GraphQLIndexExecute(r ApiGraphQLIndexRequest) (*http.Response, error) {
+func (a *GraphQLAPIService) GraphQLIndexExecute(r ApiGraphQLIndexRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLApiService.GraphQLIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphQLAPIService.GraphQLIndex")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

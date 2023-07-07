@@ -22,12 +22,12 @@ import (
 )
 
 
-// GraphvizDotApiService GraphvizDotApi service
-type GraphvizDotApiService service
+// GraphvizDotAPIService GraphvizDotAPI service
+type GraphvizDotAPIService service
 
 type ApiGraphvizDotLayerCentricRequest struct {
 	ctx context.Context
-	ApiService *GraphvizDotApiService
+	ApiService *GraphvizDotAPIService
 	layerIDs *[]string
 	from *time.Time
 	to *time.Time
@@ -60,7 +60,7 @@ GraphvizDotLayerCentric Method for GraphvizDotLayerCentric
  @param version
  @return ApiGraphvizDotLayerCentricRequest
 */
-func (a *GraphvizDotApiService) GraphvizDotLayerCentric(ctx context.Context, version string) ApiGraphvizDotLayerCentricRequest {
+func (a *GraphvizDotAPIService) GraphvizDotLayerCentric(ctx context.Context, version string) ApiGraphvizDotLayerCentricRequest {
 	return ApiGraphvizDotLayerCentricRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -69,14 +69,14 @@ func (a *GraphvizDotApiService) GraphvizDotLayerCentric(ctx context.Context, ver
 }
 
 // Execute executes the request
-func (a *GraphvizDotApiService) GraphvizDotLayerCentricExecute(r ApiGraphvizDotLayerCentricRequest) (*http.Response, error) {
+func (a *GraphvizDotAPIService) GraphvizDotLayerCentricExecute(r ApiGraphvizDotLayerCentricRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphvizDotApiService.GraphvizDotLayerCentric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphvizDotAPIService.GraphvizDotLayerCentric")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -102,7 +102,7 @@ func (a *GraphvizDotApiService) GraphvizDotLayerCentricExecute(r ApiGraphvizDotL
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", t, "multi")
@@ -157,7 +157,7 @@ func (a *GraphvizDotApiService) GraphvizDotLayerCentricExecute(r ApiGraphvizDotL
 
 type ApiGraphvizDotTraitCentricRequest struct {
 	ctx context.Context
-	ApiService *GraphvizDotApiService
+	ApiService *GraphvizDotAPIService
 	layerIDs *[]string
 	version string
 	traitIDs *[]string
@@ -190,7 +190,7 @@ GraphvizDotTraitCentric Method for GraphvizDotTraitCentric
  @param version
  @return ApiGraphvizDotTraitCentricRequest
 */
-func (a *GraphvizDotApiService) GraphvizDotTraitCentric(ctx context.Context, version string) ApiGraphvizDotTraitCentricRequest {
+func (a *GraphvizDotAPIService) GraphvizDotTraitCentric(ctx context.Context, version string) ApiGraphvizDotTraitCentricRequest {
 	return ApiGraphvizDotTraitCentricRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -199,14 +199,14 @@ func (a *GraphvizDotApiService) GraphvizDotTraitCentric(ctx context.Context, ver
 }
 
 // Execute executes the request
-func (a *GraphvizDotApiService) GraphvizDotTraitCentricExecute(r ApiGraphvizDotTraitCentricRequest) (*http.Response, error) {
+func (a *GraphvizDotAPIService) GraphvizDotTraitCentricExecute(r ApiGraphvizDotTraitCentricRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphvizDotApiService.GraphvizDotTraitCentric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GraphvizDotAPIService.GraphvizDotTraitCentric")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -226,7 +226,7 @@ func (a *GraphvizDotApiService) GraphvizDotTraitCentricExecute(r ApiGraphvizDotT
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", t, "multi")
@@ -237,7 +237,7 @@ func (a *GraphvizDotApiService) GraphvizDotTraitCentricExecute(r ApiGraphvizDotT
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "traitIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "traitIDs", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "traitIDs", t, "multi")

@@ -21,12 +21,12 @@ import (
 )
 
 
-// OKPluginGenericJSONIngestApiService OKPluginGenericJSONIngestApi service
-type OKPluginGenericJSONIngestApiService service
+// OKPluginGenericJSONIngestAPIService OKPluginGenericJSONIngestAPI service
+type OKPluginGenericJSONIngestAPIService service
 
 type ApiManageContextGetAllContextsRequest struct {
 	ctx context.Context
-	ApiService *OKPluginGenericJSONIngestApiService
+	ApiService *OKPluginGenericJSONIngestAPIService
 	version string
 }
 
@@ -41,7 +41,7 @@ ManageContextGetAllContexts Method for ManageContextGetAllContexts
  @param version
  @return ApiManageContextGetAllContextsRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) ManageContextGetAllContexts(ctx context.Context, version string) ApiManageContextGetAllContextsRequest {
+func (a *OKPluginGenericJSONIngestAPIService) ManageContextGetAllContexts(ctx context.Context, version string) ApiManageContextGetAllContextsRequest {
 	return ApiManageContextGetAllContextsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,7 +51,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextGetAllContexts(ctx co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OKPluginGenericJSONIngestApiService) ManageContextGetAllContextsExecute(r ApiManageContextGetAllContextsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OKPluginGenericJSONIngestAPIService) ManageContextGetAllContextsExecute(r ApiManageContextGetAllContextsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextGetAllContextsExecute
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.ManageContextGetAllContexts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestAPIService.ManageContextGetAllContexts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -127,7 +127,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextGetAllContextsExecute
 
 type ApiManageContextGetContextRequest struct {
 	ctx context.Context
-	ApiService *OKPluginGenericJSONIngestApiService
+	ApiService *OKPluginGenericJSONIngestAPIService
 	id string
 	version string
 }
@@ -144,7 +144,7 @@ ManageContextGetContext Method for ManageContextGetContext
  @param version
  @return ApiManageContextGetContextRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) ManageContextGetContext(ctx context.Context, id string, version string) ApiManageContextGetContextRequest {
+func (a *OKPluginGenericJSONIngestAPIService) ManageContextGetContext(ctx context.Context, id string, version string) ApiManageContextGetContextRequest {
 	return ApiManageContextGetContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -155,7 +155,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextGetContext(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OKPluginGenericJSONIngestApiService) ManageContextGetContextExecute(r ApiManageContextGetContextRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OKPluginGenericJSONIngestAPIService) ManageContextGetContextExecute(r ApiManageContextGetContextRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -163,7 +163,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextGetContextExecute(r A
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.ManageContextGetContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestAPIService.ManageContextGetContext")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextGetContextExecute(r A
 
 type ApiManageContextRemoveContextRequest struct {
 	ctx context.Context
-	ApiService *OKPluginGenericJSONIngestApiService
+	ApiService *OKPluginGenericJSONIngestAPIService
 	id string
 	version string
 }
@@ -249,7 +249,7 @@ ManageContextRemoveContext Method for ManageContextRemoveContext
  @param version
  @return ApiManageContextRemoveContextRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) ManageContextRemoveContext(ctx context.Context, id string, version string) ApiManageContextRemoveContextRequest {
+func (a *OKPluginGenericJSONIngestAPIService) ManageContextRemoveContext(ctx context.Context, id string, version string) ApiManageContextRemoveContextRequest {
 	return ApiManageContextRemoveContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -260,7 +260,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextRemoveContext(ctx con
 
 // Execute executes the request
 //  @return bool
-func (a *OKPluginGenericJSONIngestApiService) ManageContextRemoveContextExecute(r ApiManageContextRemoveContextRequest) (bool, *http.Response, error) {
+func (a *OKPluginGenericJSONIngestAPIService) ManageContextRemoveContextExecute(r ApiManageContextRemoveContextRequest) (bool, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -268,7 +268,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextRemoveContextExecute(
 		localVarReturnValue  bool
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.ManageContextRemoveContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestAPIService.ManageContextRemoveContext")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -337,7 +337,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextRemoveContextExecute(
 
 type ApiManageContextUpsertContextRequest struct {
 	ctx context.Context
-	ApiService *OKPluginGenericJSONIngestApiService
+	ApiService *OKPluginGenericJSONIngestAPIService
 	version string
 	body *map[string]interface{}
 }
@@ -358,7 +358,7 @@ ManageContextUpsertContext Method for ManageContextUpsertContext
  @param version
  @return ApiManageContextUpsertContextRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) ManageContextUpsertContext(ctx context.Context, version string) ApiManageContextUpsertContextRequest {
+func (a *OKPluginGenericJSONIngestAPIService) ManageContextUpsertContext(ctx context.Context, version string) ApiManageContextUpsertContextRequest {
 	return ApiManageContextUpsertContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -368,7 +368,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextUpsertContext(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OKPluginGenericJSONIngestApiService) ManageContextUpsertContextExecute(r ApiManageContextUpsertContextRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OKPluginGenericJSONIngestAPIService) ManageContextUpsertContextExecute(r ApiManageContextUpsertContextRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -376,7 +376,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextUpsertContextExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.ManageContextUpsertContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestAPIService.ManageContextUpsertContext")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -449,7 +449,7 @@ func (a *OKPluginGenericJSONIngestApiService) ManageContextUpsertContextExecute(
 
 type ApiPassiveDataIngestRequest struct {
 	ctx context.Context
-	ApiService *OKPluginGenericJSONIngestApiService
+	ApiService *OKPluginGenericJSONIngestAPIService
 	readLayerIDs *[]string
 	writeLayerID *string
 	version string
@@ -482,7 +482,7 @@ PassiveDataIngest Method for PassiveDataIngest
  @param version
  @return ApiPassiveDataIngestRequest
 */
-func (a *OKPluginGenericJSONIngestApiService) PassiveDataIngest(ctx context.Context, version string) ApiPassiveDataIngestRequest {
+func (a *OKPluginGenericJSONIngestAPIService) PassiveDataIngest(ctx context.Context, version string) ApiPassiveDataIngestRequest {
 	return ApiPassiveDataIngestRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -491,14 +491,14 @@ func (a *OKPluginGenericJSONIngestApiService) PassiveDataIngest(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *OKPluginGenericJSONIngestApiService) PassiveDataIngestExecute(r ApiPassiveDataIngestRequest) (*http.Response, error) {
+func (a *OKPluginGenericJSONIngestAPIService) PassiveDataIngestExecute(r ApiPassiveDataIngestRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestApiService.PassiveDataIngest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OKPluginGenericJSONIngestAPIService.PassiveDataIngest")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -524,7 +524,7 @@ func (a *OKPluginGenericJSONIngestApiService) PassiveDataIngestExecute(r ApiPass
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "readLayerIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "readLayerIDs", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "readLayerIDs", t, "multi")

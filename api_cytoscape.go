@@ -21,12 +21,12 @@ import (
 )
 
 
-// CytoscapeApiService CytoscapeApi service
-type CytoscapeApiService service
+// CytoscapeAPIService CytoscapeAPI service
+type CytoscapeAPIService service
 
 type ApiCytoscapeTraitCentricRequest struct {
 	ctx context.Context
-	ApiService *CytoscapeApiService
+	ApiService *CytoscapeAPIService
 	layerIDs *[]string
 	version string
 	traitIDs *[]string
@@ -59,7 +59,7 @@ CytoscapeTraitCentric Method for CytoscapeTraitCentric
  @param version
  @return ApiCytoscapeTraitCentricRequest
 */
-func (a *CytoscapeApiService) CytoscapeTraitCentric(ctx context.Context, version string) ApiCytoscapeTraitCentricRequest {
+func (a *CytoscapeAPIService) CytoscapeTraitCentric(ctx context.Context, version string) ApiCytoscapeTraitCentricRequest {
 	return ApiCytoscapeTraitCentricRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -68,14 +68,14 @@ func (a *CytoscapeApiService) CytoscapeTraitCentric(ctx context.Context, version
 }
 
 // Execute executes the request
-func (a *CytoscapeApiService) CytoscapeTraitCentricExecute(r ApiCytoscapeTraitCentricRequest) (*http.Response, error) {
+func (a *CytoscapeAPIService) CytoscapeTraitCentricExecute(r ApiCytoscapeTraitCentricRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CytoscapeApiService.CytoscapeTraitCentric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CytoscapeAPIService.CytoscapeTraitCentric")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -95,7 +95,7 @@ func (a *CytoscapeApiService) CytoscapeTraitCentricExecute(r ApiCytoscapeTraitCe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "layerIDs", t, "multi")
@@ -106,7 +106,7 @@ func (a *CytoscapeApiService) CytoscapeTraitCentricExecute(r ApiCytoscapeTraitCe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "traitIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "traitIDs", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "traitIDs", t, "multi")

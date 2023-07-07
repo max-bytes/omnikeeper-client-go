@@ -21,12 +21,12 @@ import (
 )
 
 
-// AnsibleInventoryScanIngestApiService AnsibleInventoryScanIngestApi service
-type AnsibleInventoryScanIngestApiService service
+// AnsibleInventoryScanIngestAPIService AnsibleInventoryScanIngestAPI service
+type AnsibleInventoryScanIngestAPIService service
 
 type ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest struct {
 	ctx context.Context
-	ApiService *AnsibleInventoryScanIngestApiService
+	ApiService *AnsibleInventoryScanIngestAPIService
 	writeLayerID *string
 	searchLayerIDs *[]string
 	version string
@@ -59,7 +59,7 @@ AnsibleInventoryScanIngestIngestAnsibleInventoryScan Method for AnsibleInventory
  @param version
  @return ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest
 */
-func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestAnsibleInventoryScan(ctx context.Context, version string) ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest {
+func (a *AnsibleInventoryScanIngestAPIService) AnsibleInventoryScanIngestIngestAnsibleInventoryScan(ctx context.Context, version string) ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest {
 	return ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -68,14 +68,14 @@ func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestA
 }
 
 // Execute executes the request
-func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestAnsibleInventoryScanExecute(r ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest) (*http.Response, error) {
+func (a *AnsibleInventoryScanIngestAPIService) AnsibleInventoryScanIngestIngestAnsibleInventoryScanExecute(r ApiAnsibleInventoryScanIngestIngestAnsibleInventoryScanRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnsibleInventoryScanIngestApiService.AnsibleInventoryScanIngestIngestAnsibleInventoryScan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnsibleInventoryScanIngestAPIService.AnsibleInventoryScanIngestIngestAnsibleInventoryScan")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -102,7 +102,7 @@ func (a *AnsibleInventoryScanIngestApiService) AnsibleInventoryScanIngestIngestA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "searchLayerIDs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "searchLayerIDs", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "searchLayerIDs", t, "multi")

@@ -19,12 +19,12 @@ import (
 )
 
 
-// AuthRedirectApiService AuthRedirectApi service
-type AuthRedirectApiService service
+// AuthRedirectAPIService AuthRedirectAPI service
+type AuthRedirectAPIService service
 
 type ApiAuthRedirectIndexRequest struct {
 	ctx context.Context
-	ApiService *AuthRedirectApiService
+	ApiService *AuthRedirectAPIService
 }
 
 func (r ApiAuthRedirectIndexRequest) Execute() (*http.Response, error) {
@@ -37,7 +37,7 @@ AuthRedirectIndex Method for AuthRedirectIndex
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiAuthRedirectIndexRequest
 */
-func (a *AuthRedirectApiService) AuthRedirectIndex(ctx context.Context) ApiAuthRedirectIndexRequest {
+func (a *AuthRedirectAPIService) AuthRedirectIndex(ctx context.Context) ApiAuthRedirectIndexRequest {
 	return ApiAuthRedirectIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,14 +45,14 @@ func (a *AuthRedirectApiService) AuthRedirectIndex(ctx context.Context) ApiAuthR
 }
 
 // Execute executes the request
-func (a *AuthRedirectApiService) AuthRedirectIndexExecute(r ApiAuthRedirectIndexRequest) (*http.Response, error) {
+func (a *AuthRedirectAPIService) AuthRedirectIndexExecute(r ApiAuthRedirectIndexRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthRedirectApiService.AuthRedirectIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthRedirectAPIService.AuthRedirectIndex")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

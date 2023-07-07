@@ -20,12 +20,12 @@ import (
 )
 
 
-// GridViewApiService GridViewApi service
-type GridViewApiService service
+// GridViewAPIService GridViewAPI service
+type GridViewAPIService service
 
 type ApiGridViewAddContextRequest struct {
 	ctx context.Context
-	ApiService *GridViewApiService
+	ApiService *GridViewAPIService
 	version string
 	addContextRequest *AddContextRequest
 }
@@ -47,7 +47,7 @@ GridViewAddContext Adds new context
  @param version
  @return ApiGridViewAddContextRequest
 */
-func (a *GridViewApiService) GridViewAddContext(ctx context.Context, version string) ApiGridViewAddContextRequest {
+func (a *GridViewAPIService) GridViewAddContext(ctx context.Context, version string) ApiGridViewAddContextRequest {
 	return ApiGridViewAddContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -56,14 +56,14 @@ func (a *GridViewApiService) GridViewAddContext(ctx context.Context, version str
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GridViewAddContextExecute(r ApiGridViewAddContextRequest) (*http.Response, error) {
+func (a *GridViewAPIService) GridViewAddContextExecute(r ApiGridViewAddContextRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewAddContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewAPIService.GridViewAddContext")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *GridViewApiService) GridViewAddContextExecute(r ApiGridViewAddContextRe
 
 type ApiGridViewChangeDataRequest struct {
 	ctx context.Context
-	ApiService *GridViewApiService
+	ApiService *GridViewAPIService
 	context string
 	version string
 	changeDataRequest *ChangeDataRequest
@@ -158,7 +158,7 @@ GridViewChangeData Saves grid view row changes and returns change results
  @param version
  @return ApiGridViewChangeDataRequest
 */
-func (a *GridViewApiService) GridViewChangeData(ctx context.Context, context string, version string) ApiGridViewChangeDataRequest {
+func (a *GridViewAPIService) GridViewChangeData(ctx context.Context, context string, version string) ApiGridViewChangeDataRequest {
 	return ApiGridViewChangeDataRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,14 +168,14 @@ func (a *GridViewApiService) GridViewChangeData(ctx context.Context, context str
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GridViewChangeDataExecute(r ApiGridViewChangeDataRequest) (*http.Response, error) {
+func (a *GridViewAPIService) GridViewChangeDataExecute(r ApiGridViewChangeDataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewChangeData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewAPIService.GridViewChangeData")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -248,7 +248,7 @@ func (a *GridViewApiService) GridViewChangeDataExecute(r ApiGridViewChangeDataRe
 
 type ApiGridViewDeleteContextRequest struct {
 	ctx context.Context
-	ApiService *GridViewApiService
+	ApiService *GridViewAPIService
 	name string
 	version string
 }
@@ -265,7 +265,7 @@ GridViewDeleteContext Deletes specific context
  @param version
  @return ApiGridViewDeleteContextRequest
 */
-func (a *GridViewApiService) GridViewDeleteContext(ctx context.Context, name string, version string) ApiGridViewDeleteContextRequest {
+func (a *GridViewAPIService) GridViewDeleteContext(ctx context.Context, name string, version string) ApiGridViewDeleteContextRequest {
 	return ApiGridViewDeleteContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -275,14 +275,14 @@ func (a *GridViewApiService) GridViewDeleteContext(ctx context.Context, name str
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GridViewDeleteContextExecute(r ApiGridViewDeleteContextRequest) (*http.Response, error) {
+func (a *GridViewAPIService) GridViewDeleteContextExecute(r ApiGridViewDeleteContextRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewDeleteContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewAPIService.GridViewDeleteContext")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -352,7 +352,7 @@ func (a *GridViewApiService) GridViewDeleteContextExecute(r ApiGridViewDeleteCon
 
 type ApiGridViewEditContextRequest struct {
 	ctx context.Context
-	ApiService *GridViewApiService
+	ApiService *GridViewAPIService
 	name string
 	version string
 	editContextRequest *EditContextRequest
@@ -376,7 +376,7 @@ GridViewEditContext Edits specific context
  @param version
  @return ApiGridViewEditContextRequest
 */
-func (a *GridViewApiService) GridViewEditContext(ctx context.Context, name string, version string) ApiGridViewEditContextRequest {
+func (a *GridViewAPIService) GridViewEditContext(ctx context.Context, name string, version string) ApiGridViewEditContextRequest {
 	return ApiGridViewEditContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -386,14 +386,14 @@ func (a *GridViewApiService) GridViewEditContext(ctx context.Context, name strin
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GridViewEditContextExecute(r ApiGridViewEditContextRequest) (*http.Response, error) {
+func (a *GridViewAPIService) GridViewEditContextExecute(r ApiGridViewEditContextRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewEditContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewAPIService.GridViewEditContext")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -465,7 +465,7 @@ func (a *GridViewApiService) GridViewEditContextExecute(r ApiGridViewEditContext
 
 type ApiGridViewGetDataRequest struct {
 	ctx context.Context
-	ApiService *GridViewApiService
+	ApiService *GridViewAPIService
 	context string
 	version string
 }
@@ -482,7 +482,7 @@ GridViewGetData Returns grid view data for specific context
  @param version
  @return ApiGridViewGetDataRequest
 */
-func (a *GridViewApiService) GridViewGetData(ctx context.Context, context string, version string) ApiGridViewGetDataRequest {
+func (a *GridViewAPIService) GridViewGetData(ctx context.Context, context string, version string) ApiGridViewGetDataRequest {
 	return ApiGridViewGetDataRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -492,14 +492,14 @@ func (a *GridViewApiService) GridViewGetData(ctx context.Context, context string
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GridViewGetDataExecute(r ApiGridViewGetDataRequest) (*http.Response, error) {
+func (a *GridViewAPIService) GridViewGetDataExecute(r ApiGridViewGetDataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewGetData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewAPIService.GridViewGetData")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -559,7 +559,7 @@ func (a *GridViewApiService) GridViewGetDataExecute(r ApiGridViewGetDataRequest)
 
 type ApiGridViewGetGridViewContextRequest struct {
 	ctx context.Context
-	ApiService *GridViewApiService
+	ApiService *GridViewAPIService
 	name string
 	version string
 }
@@ -576,7 +576,7 @@ GridViewGetGridViewContext Returns a single context in full
  @param version
  @return ApiGridViewGetGridViewContextRequest
 */
-func (a *GridViewApiService) GridViewGetGridViewContext(ctx context.Context, name string, version string) ApiGridViewGetGridViewContextRequest {
+func (a *GridViewAPIService) GridViewGetGridViewContext(ctx context.Context, name string, version string) ApiGridViewGetGridViewContextRequest {
 	return ApiGridViewGetGridViewContextRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -586,14 +586,14 @@ func (a *GridViewApiService) GridViewGetGridViewContext(ctx context.Context, nam
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GridViewGetGridViewContextExecute(r ApiGridViewGetGridViewContextRequest) (*http.Response, error) {
+func (a *GridViewAPIService) GridViewGetGridViewContextExecute(r ApiGridViewGetGridViewContextRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewGetGridViewContext")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewAPIService.GridViewGetGridViewContext")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -653,7 +653,7 @@ func (a *GridViewApiService) GridViewGetGridViewContextExecute(r ApiGridViewGetG
 
 type ApiGridViewGetGridViewContextsRequest struct {
 	ctx context.Context
-	ApiService *GridViewApiService
+	ApiService *GridViewAPIService
 	version string
 }
 
@@ -668,7 +668,7 @@ GridViewGetGridViewContexts Returns a list of contexts for grid view.
  @param version
  @return ApiGridViewGetGridViewContextsRequest
 */
-func (a *GridViewApiService) GridViewGetGridViewContexts(ctx context.Context, version string) ApiGridViewGetGridViewContextsRequest {
+func (a *GridViewAPIService) GridViewGetGridViewContexts(ctx context.Context, version string) ApiGridViewGetGridViewContextsRequest {
 	return ApiGridViewGetGridViewContextsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -677,14 +677,14 @@ func (a *GridViewApiService) GridViewGetGridViewContexts(ctx context.Context, ve
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GridViewGetGridViewContextsExecute(r ApiGridViewGetGridViewContextsRequest) (*http.Response, error) {
+func (a *GridViewAPIService) GridViewGetGridViewContextsExecute(r ApiGridViewGetGridViewContextsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewGetGridViewContexts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewAPIService.GridViewGetGridViewContexts")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -743,7 +743,7 @@ func (a *GridViewApiService) GridViewGetGridViewContextsExecute(r ApiGridViewGet
 
 type ApiGridViewGetSchemaRequest struct {
 	ctx context.Context
-	ApiService *GridViewApiService
+	ApiService *GridViewAPIService
 	context string
 	version string
 }
@@ -760,7 +760,7 @@ GridViewGetSchema Returns grid view schema for specific context
  @param version
  @return ApiGridViewGetSchemaRequest
 */
-func (a *GridViewApiService) GridViewGetSchema(ctx context.Context, context string, version string) ApiGridViewGetSchemaRequest {
+func (a *GridViewAPIService) GridViewGetSchema(ctx context.Context, context string, version string) ApiGridViewGetSchemaRequest {
 	return ApiGridViewGetSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -770,14 +770,14 @@ func (a *GridViewApiService) GridViewGetSchema(ctx context.Context, context stri
 }
 
 // Execute executes the request
-func (a *GridViewApiService) GridViewGetSchemaExecute(r ApiGridViewGetSchemaRequest) (*http.Response, error) {
+func (a *GridViewAPIService) GridViewGetSchemaExecute(r ApiGridViewGetSchemaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewApiService.GridViewGetSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GridViewAPIService.GridViewGetSchema")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

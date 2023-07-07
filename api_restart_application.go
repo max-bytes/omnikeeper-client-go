@@ -20,12 +20,12 @@ import (
 )
 
 
-// RestartApplicationApiService RestartApplicationApi service
-type RestartApplicationApiService service
+// RestartApplicationAPIService RestartApplicationAPI service
+type RestartApplicationAPIService service
 
 type ApiRestartApplicationRestartRequest struct {
 	ctx context.Context
-	ApiService *RestartApplicationApiService
+	ApiService *RestartApplicationAPIService
 	version string
 }
 
@@ -40,7 +40,7 @@ RestartApplicationRestart Method for RestartApplicationRestart
  @param version
  @return ApiRestartApplicationRestartRequest
 */
-func (a *RestartApplicationApiService) RestartApplicationRestart(ctx context.Context, version string) ApiRestartApplicationRestartRequest {
+func (a *RestartApplicationAPIService) RestartApplicationRestart(ctx context.Context, version string) ApiRestartApplicationRestartRequest {
 	return ApiRestartApplicationRestartRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -49,14 +49,14 @@ func (a *RestartApplicationApiService) RestartApplicationRestart(ctx context.Con
 }
 
 // Execute executes the request
-func (a *RestartApplicationApiService) RestartApplicationRestartExecute(r ApiRestartApplicationRestartRequest) (*http.Response, error) {
+func (a *RestartApplicationAPIService) RestartApplicationRestartExecute(r ApiRestartApplicationRestartRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestartApplicationApiService.RestartApplicationRestart")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestartApplicationAPIService.RestartApplicationRestart")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

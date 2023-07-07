@@ -20,12 +20,12 @@ import (
 )
 
 
-// MetadataApiService MetadataApi service
-type MetadataApiService service
+// MetadataAPIService MetadataAPI service
+type MetadataAPIService service
 
 type ApiMetadataGetMetadataRequest struct {
 	ctx context.Context
-	ApiService *MetadataApiService
+	ApiService *MetadataAPIService
 	context string
 }
 
@@ -40,7 +40,7 @@ MetadataGetMetadata Method for MetadataGetMetadata
  @param context
  @return ApiMetadataGetMetadataRequest
 */
-func (a *MetadataApiService) MetadataGetMetadata(ctx context.Context, context string) ApiMetadataGetMetadataRequest {
+func (a *MetadataAPIService) MetadataGetMetadata(ctx context.Context, context string) ApiMetadataGetMetadataRequest {
 	return ApiMetadataGetMetadataRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,7 +50,7 @@ func (a *MetadataApiService) MetadataGetMetadata(ctx context.Context, context st
 
 // Execute executes the request
 //  @return IEdmModel
-func (a *MetadataApiService) MetadataGetMetadataExecute(r ApiMetadataGetMetadataRequest) (*IEdmModel, *http.Response, error) {
+func (a *MetadataAPIService) MetadataGetMetadataExecute(r ApiMetadataGetMetadataRequest) (*IEdmModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +58,7 @@ func (a *MetadataApiService) MetadataGetMetadataExecute(r ApiMetadataGetMetadata
 		localVarReturnValue  *IEdmModel
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.MetadataGetMetadata")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.MetadataGetMetadata")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *MetadataApiService) MetadataGetMetadataExecute(r ApiMetadataGetMetadata
 
 type ApiMetadataGetServiceDocumentRequest struct {
 	ctx context.Context
-	ApiService *MetadataApiService
+	ApiService *MetadataAPIService
 	context string
 }
 
@@ -141,7 +141,7 @@ MetadataGetServiceDocument Method for MetadataGetServiceDocument
  @param context
  @return ApiMetadataGetServiceDocumentRequest
 */
-func (a *MetadataApiService) MetadataGetServiceDocument(ctx context.Context, context string) ApiMetadataGetServiceDocumentRequest {
+func (a *MetadataAPIService) MetadataGetServiceDocument(ctx context.Context, context string) ApiMetadataGetServiceDocumentRequest {
 	return ApiMetadataGetServiceDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -151,7 +151,7 @@ func (a *MetadataApiService) MetadataGetServiceDocument(ctx context.Context, con
 
 // Execute executes the request
 //  @return ODataServiceDocument
-func (a *MetadataApiService) MetadataGetServiceDocumentExecute(r ApiMetadataGetServiceDocumentRequest) (*ODataServiceDocument, *http.Response, error) {
+func (a *MetadataAPIService) MetadataGetServiceDocumentExecute(r ApiMetadataGetServiceDocumentRequest) (*ODataServiceDocument, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -159,7 +159,7 @@ func (a *MetadataApiService) MetadataGetServiceDocumentExecute(r ApiMetadataGetS
 		localVarReturnValue  *ODataServiceDocument
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.MetadataGetServiceDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.MetadataGetServiceDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

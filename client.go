@@ -50,27 +50,27 @@ type APIClient struct {
 
 	// API Services
 
-	AnsibleInventoryScanIngestApi *AnsibleInventoryScanIngestApiService
+	AnsibleInventoryScanIngestAPI *AnsibleInventoryScanIngestAPIService
 
-	AuthRedirectApi *AuthRedirectApiService
+	AuthRedirectAPI *AuthRedirectAPIService
 
-	CytoscapeApi *CytoscapeApiService
+	CytoscapeAPI *CytoscapeAPIService
 
-	GraphQLApi *GraphQLApiService
+	GraphQLAPI *GraphQLAPIService
 
-	GraphvizDotApi *GraphvizDotApiService
+	GraphvizDotAPI *GraphvizDotAPIService
 
-	GridViewApi *GridViewApiService
+	GridViewAPI *GridViewAPIService
 
-	ImportExportLayerApi *ImportExportLayerApiService
+	ImportExportLayerAPI *ImportExportLayerAPIService
 
-	MetadataApi *MetadataApiService
+	MetadataAPI *MetadataAPIService
 
-	OKPluginGenericJSONIngestApi *OKPluginGenericJSONIngestApiService
+	OKPluginGenericJSONIngestAPI *OKPluginGenericJSONIngestAPIService
 
-	RestartApplicationApi *RestartApplicationApiService
+	RestartApplicationAPI *RestartApplicationAPIService
 
-	UsageStatsApi *UsageStatsApiService
+	UsageStatsAPI *UsageStatsAPIService
 }
 
 type service struct {
@@ -89,17 +89,17 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.AnsibleInventoryScanIngestApi = (*AnsibleInventoryScanIngestApiService)(&c.common)
-	c.AuthRedirectApi = (*AuthRedirectApiService)(&c.common)
-	c.CytoscapeApi = (*CytoscapeApiService)(&c.common)
-	c.GraphQLApi = (*GraphQLApiService)(&c.common)
-	c.GraphvizDotApi = (*GraphvizDotApiService)(&c.common)
-	c.GridViewApi = (*GridViewApiService)(&c.common)
-	c.ImportExportLayerApi = (*ImportExportLayerApiService)(&c.common)
-	c.MetadataApi = (*MetadataApiService)(&c.common)
-	c.OKPluginGenericJSONIngestApi = (*OKPluginGenericJSONIngestApiService)(&c.common)
-	c.RestartApplicationApi = (*RestartApplicationApiService)(&c.common)
-	c.UsageStatsApi = (*UsageStatsApiService)(&c.common)
+	c.AnsibleInventoryScanIngestAPI = (*AnsibleInventoryScanIngestAPIService)(&c.common)
+	c.AuthRedirectAPI = (*AuthRedirectAPIService)(&c.common)
+	c.CytoscapeAPI = (*CytoscapeAPIService)(&c.common)
+	c.GraphQLAPI = (*GraphQLAPIService)(&c.common)
+	c.GraphvizDotAPI = (*GraphvizDotAPIService)(&c.common)
+	c.GridViewAPI = (*GridViewAPIService)(&c.common)
+	c.ImportExportLayerAPI = (*ImportExportLayerAPIService)(&c.common)
+	c.MetadataAPI = (*MetadataAPIService)(&c.common)
+	c.OKPluginGenericJSONIngestAPI = (*OKPluginGenericJSONIngestAPIService)(&c.common)
+	c.RestartApplicationAPI = (*RestartApplicationAPIService)(&c.common)
+	c.UsageStatsAPI = (*UsageStatsAPIService)(&c.common)
 
 	return c
 }

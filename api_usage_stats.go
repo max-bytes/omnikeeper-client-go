@@ -21,12 +21,12 @@ import (
 )
 
 
-// UsageStatsApiService UsageStatsApi service
-type UsageStatsApiService service
+// UsageStatsAPIService UsageStatsAPI service
+type UsageStatsAPIService service
 
 type ApiUsageStatsFetchRequest struct {
 	ctx context.Context
-	ApiService *UsageStatsApiService
+	ApiService *UsageStatsAPIService
 	from *time.Time
 	to *time.Time
 	version string
@@ -53,7 +53,7 @@ UsageStatsFetch Method for UsageStatsFetch
  @param version
  @return ApiUsageStatsFetchRequest
 */
-func (a *UsageStatsApiService) UsageStatsFetch(ctx context.Context, version string) ApiUsageStatsFetchRequest {
+func (a *UsageStatsAPIService) UsageStatsFetch(ctx context.Context, version string) ApiUsageStatsFetchRequest {
 	return ApiUsageStatsFetchRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -62,14 +62,14 @@ func (a *UsageStatsApiService) UsageStatsFetch(ctx context.Context, version stri
 }
 
 // Execute executes the request
-func (a *UsageStatsApiService) UsageStatsFetchExecute(r ApiUsageStatsFetchRequest) (*http.Response, error) {
+func (a *UsageStatsAPIService) UsageStatsFetchExecute(r ApiUsageStatsFetchRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageStatsApiService.UsageStatsFetch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageStatsAPIService.UsageStatsFetch")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -114,7 +114,9 @@ func (o IEdmTypeReference) MarshalJSON() ([]byte, error) {
 
 func (o IEdmTypeReference) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: isNullable is readOnly
+	if !IsNil(o.IsNullable) {
+		toSerialize["isNullable"] = o.IsNullable
+	}
 	if !IsNil(o.Definition) {
 		toSerialize["definition"] = o.Definition
 	}

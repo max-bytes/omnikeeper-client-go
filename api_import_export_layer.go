@@ -21,12 +21,12 @@ import (
 )
 
 
-// ImportExportLayerApiService ImportExportLayerApi service
-type ImportExportLayerApiService service
+// ImportExportLayerAPIService ImportExportLayerAPI service
+type ImportExportLayerAPIService service
 
 type ApiImportExportLayerExportLayerRequest struct {
 	ctx context.Context
-	ApiService *ImportExportLayerApiService
+	ApiService *ImportExportLayerAPIService
 	layerID *string
 	version string
 	ciids *[]string
@@ -53,7 +53,7 @@ ImportExportLayerExportLayer Method for ImportExportLayerExportLayer
  @param version
  @return ApiImportExportLayerExportLayerRequest
 */
-func (a *ImportExportLayerApiService) ImportExportLayerExportLayer(ctx context.Context, version string) ApiImportExportLayerExportLayerRequest {
+func (a *ImportExportLayerAPIService) ImportExportLayerExportLayer(ctx context.Context, version string) ApiImportExportLayerExportLayerRequest {
 	return ApiImportExportLayerExportLayerRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -62,14 +62,14 @@ func (a *ImportExportLayerApiService) ImportExportLayerExportLayer(ctx context.C
 }
 
 // Execute executes the request
-func (a *ImportExportLayerApiService) ImportExportLayerExportLayerExecute(r ApiImportExportLayerExportLayerRequest) (*http.Response, error) {
+func (a *ImportExportLayerAPIService) ImportExportLayerExportLayerExecute(r ApiImportExportLayerExportLayerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportExportLayerApiService.ImportExportLayerExportLayer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportExportLayerAPIService.ImportExportLayerExportLayer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -90,7 +90,7 @@ func (a *ImportExportLayerApiService) ImportExportLayerExportLayerExecute(r ApiI
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ciids", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ciids", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ciids", t, "multi")
