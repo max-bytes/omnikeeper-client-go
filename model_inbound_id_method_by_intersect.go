@@ -19,6 +19,7 @@ var _ MappedNullable = &InboundIDMethodByIntersect{}
 
 // InboundIDMethodByIntersect struct for InboundIDMethodByIntersect
 type InboundIDMethodByIntersect struct {
+	AbstractInboundIDMethod
 	Inner []OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect `json:"inner,omitempty"`
 }
 
@@ -82,6 +83,14 @@ func (o InboundIDMethodByIntersect) MarshalJSON() ([]byte, error) {
 
 func (o InboundIDMethodByIntersect) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedAbstractInboundIDMethod, errAbstractInboundIDMethod := json.Marshal(o.AbstractInboundIDMethod)
+	if errAbstractInboundIDMethod != nil {
+		return map[string]interface{}{}, errAbstractInboundIDMethod
+	}
+	errAbstractInboundIDMethod = json.Unmarshal([]byte(serializedAbstractInboundIDMethod), &toSerialize)
+	if errAbstractInboundIDMethod != nil {
+		return map[string]interface{}{}, errAbstractInboundIDMethod
+	}
 	if !IsNil(o.Inner) {
 		toSerialize["inner"] = o.Inner
 	}

@@ -19,6 +19,7 @@ var _ MappedNullable = &InboundIDMethodByTemporaryCIID{}
 
 // InboundIDMethodByTemporaryCIID struct for InboundIDMethodByTemporaryCIID
 type InboundIDMethodByTemporaryCIID struct {
+	AbstractInboundIDMethod
 	TempID *string `json:"tempID,omitempty"`
 }
 
@@ -82,6 +83,14 @@ func (o InboundIDMethodByTemporaryCIID) MarshalJSON() ([]byte, error) {
 
 func (o InboundIDMethodByTemporaryCIID) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedAbstractInboundIDMethod, errAbstractInboundIDMethod := json.Marshal(o.AbstractInboundIDMethod)
+	if errAbstractInboundIDMethod != nil {
+		return map[string]interface{}{}, errAbstractInboundIDMethod
+	}
+	errAbstractInboundIDMethod = json.Unmarshal([]byte(serializedAbstractInboundIDMethod), &toSerialize)
+	if errAbstractInboundIDMethod != nil {
+		return map[string]interface{}{}, errAbstractInboundIDMethod
+	}
 	if !IsNil(o.TempID) {
 		toSerialize["tempID"] = o.TempID
 	}

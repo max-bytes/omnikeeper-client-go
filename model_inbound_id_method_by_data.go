@@ -19,6 +19,7 @@ var _ MappedNullable = &InboundIDMethodByData{}
 
 // InboundIDMethodByData struct for InboundIDMethodByData
 type InboundIDMethodByData struct {
+	AbstractInboundIDMethod
 	Attributes []string `json:"attributes,omitempty"`
 }
 
@@ -82,6 +83,14 @@ func (o InboundIDMethodByData) MarshalJSON() ([]byte, error) {
 
 func (o InboundIDMethodByData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedAbstractInboundIDMethod, errAbstractInboundIDMethod := json.Marshal(o.AbstractInboundIDMethod)
+	if errAbstractInboundIDMethod != nil {
+		return map[string]interface{}{}, errAbstractInboundIDMethod
+	}
+	errAbstractInboundIDMethod = json.Unmarshal([]byte(serializedAbstractInboundIDMethod), &toSerialize)
+	if errAbstractInboundIDMethod != nil {
+		return map[string]interface{}{}, errAbstractInboundIDMethod
+	}
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}

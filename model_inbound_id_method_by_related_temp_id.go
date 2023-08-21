@@ -19,6 +19,7 @@ var _ MappedNullable = &InboundIDMethodByRelatedTempID{}
 
 // InboundIDMethodByRelatedTempID struct for InboundIDMethodByRelatedTempID
 type InboundIDMethodByRelatedTempID struct {
+	AbstractInboundIDMethod
 	TempID *string `json:"tempID,omitempty"`
 	OutgoingRelation *bool `json:"outgoingRelation,omitempty"`
 	PredicateID *string `json:"predicateID,omitempty"`
@@ -148,6 +149,14 @@ func (o InboundIDMethodByRelatedTempID) MarshalJSON() ([]byte, error) {
 
 func (o InboundIDMethodByRelatedTempID) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedAbstractInboundIDMethod, errAbstractInboundIDMethod := json.Marshal(o.AbstractInboundIDMethod)
+	if errAbstractInboundIDMethod != nil {
+		return map[string]interface{}{}, errAbstractInboundIDMethod
+	}
+	errAbstractInboundIDMethod = json.Unmarshal([]byte(serializedAbstractInboundIDMethod), &toSerialize)
+	if errAbstractInboundIDMethod != nil {
+		return map[string]interface{}{}, errAbstractInboundIDMethod
+	}
 	if !IsNil(o.TempID) {
 		toSerialize["tempID"] = o.TempID
 	}
