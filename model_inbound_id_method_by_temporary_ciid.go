@@ -12,6 +12,7 @@ package okclient
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the InboundIDMethodByTemporaryCIID type satisfies the MappedNullable interface at compile time
@@ -22,6 +23,8 @@ type InboundIDMethodByTemporaryCIID struct {
 	AbstractInboundIDMethod
 	TempID *string `json:"tempID,omitempty"`
 }
+
+type _InboundIDMethodByTemporaryCIID InboundIDMethodByTemporaryCIID
 
 // NewInboundIDMethodByTemporaryCIID instantiates a new InboundIDMethodByTemporaryCIID object
 // This constructor will assign default values to properties that have it defined,
@@ -95,6 +98,41 @@ func (o InboundIDMethodByTemporaryCIID) ToMap() (map[string]interface{}, error) 
 		toSerialize["tempID"] = o.TempID
 	}
 	return toSerialize, nil
+}
+
+func (o *InboundIDMethodByTemporaryCIID) UnmarshalJSON(bytes []byte) (err error) {
+    // This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varInboundIDMethodByTemporaryCIID := _InboundIDMethodByTemporaryCIID{}
+
+	err = json.Unmarshal(bytes, &varInboundIDMethodByTemporaryCIID)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InboundIDMethodByTemporaryCIID(varInboundIDMethodByTemporaryCIID)
+
+	return err
 }
 
 type NullableInboundIDMethodByTemporaryCIID struct {

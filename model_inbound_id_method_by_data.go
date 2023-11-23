@@ -12,6 +12,7 @@ package okclient
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the InboundIDMethodByData type satisfies the MappedNullable interface at compile time
@@ -22,6 +23,8 @@ type InboundIDMethodByData struct {
 	AbstractInboundIDMethod
 	Attributes []string `json:"attributes,omitempty"`
 }
+
+type _InboundIDMethodByData InboundIDMethodByData
 
 // NewInboundIDMethodByData instantiates a new InboundIDMethodByData object
 // This constructor will assign default values to properties that have it defined,
@@ -95,6 +98,41 @@ func (o InboundIDMethodByData) ToMap() (map[string]interface{}, error) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
+}
+
+func (o *InboundIDMethodByData) UnmarshalJSON(bytes []byte) (err error) {
+    // This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varInboundIDMethodByData := _InboundIDMethodByData{}
+
+	err = json.Unmarshal(bytes, &varInboundIDMethodByData)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InboundIDMethodByData(varInboundIDMethodByData)
+
+	return err
 }
 
 type NullableInboundIDMethodByData struct {
