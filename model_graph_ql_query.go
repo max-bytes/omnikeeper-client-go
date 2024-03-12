@@ -146,7 +146,7 @@ func (o *GraphQLQuery) GetVariablesOk() (map[string]interface{}, bool) {
 
 // HasVariables returns a boolean if a field has been set.
 func (o *GraphQLQuery) HasVariables() bool {
-	if o != nil && IsNil(o.Variables) {
+	if o != nil && !IsNil(o.Variables) {
 		return true
 	}
 

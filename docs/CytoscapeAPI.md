@@ -20,25 +20,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    layerIDs := []string{"Inner_example"} // []string | 
-    version := "version_example" // string | 
-    traitIDs := []string{"Inner_example"} // []string |  (optional)
-    traitIDsRegex := "traitIDsRegex_example" // string |  (optional)
+	layerIDs := []string{"Inner_example"} // []string | 
+	version := "version_example" // string | 
+	traitIDs := []string{"Inner_example"} // []string |  (optional)
+	traitIDsRegex := "traitIDsRegex_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CytoscapeAPI.CytoscapeTraitCentric(context.Background(), version).LayerIDs(layerIDs).TraitIDs(traitIDs).TraitIDsRegex(traitIDsRegex).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CytoscapeAPI.CytoscapeTraitCentric``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CytoscapeAPI.CytoscapeTraitCentric(context.Background(), version).LayerIDs(layerIDs).TraitIDs(traitIDs).TraitIDsRegex(traitIDsRegex).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CytoscapeAPI.CytoscapeTraitCentric``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

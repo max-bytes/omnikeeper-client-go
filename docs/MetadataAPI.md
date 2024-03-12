@@ -21,24 +21,24 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    context := "context_example" // string | 
+	context := "context_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataAPI.MetadataGetMetadata(context.Background(), context).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.MetadataGetMetadata``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MetadataGetMetadata`: IEdmModel
-    fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.MetadataGetMetadata`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetadataAPI.MetadataGetMetadata(context.Background(), context).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.MetadataGetMetadata``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MetadataGetMetadata`: IEdmModel
+	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.MetadataGetMetadata`: %v\n", resp)
 }
 ```
 
@@ -89,24 +89,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    context := "context_example" // string | 
+	context := "context_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataAPI.MetadataGetServiceDocument(context.Background(), context).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.MetadataGetServiceDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MetadataGetServiceDocument`: ODataServiceDocument
-    fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.MetadataGetServiceDocument`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetadataAPI.MetadataGetServiceDocument(context.Background(), context).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.MetadataGetServiceDocument``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MetadataGetServiceDocument`: ODataServiceDocument
+	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.MetadataGetServiceDocument`: %v\n", resp)
 }
 ```
 

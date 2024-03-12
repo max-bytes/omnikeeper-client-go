@@ -24,24 +24,24 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    version := "version_example" // string | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OKPluginGenericJSONIngestAPI.ManageContextGetAllContexts(context.Background(), version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.ManageContextGetAllContexts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ManageContextGetAllContexts`: []map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `OKPluginGenericJSONIngestAPI.ManageContextGetAllContexts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OKPluginGenericJSONIngestAPI.ManageContextGetAllContexts(context.Background(), version).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.ManageContextGetAllContexts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ManageContextGetAllContexts`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OKPluginGenericJSONIngestAPI.ManageContextGetAllContexts`: %v\n", resp)
 }
 ```
 
@@ -92,25 +92,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    id := "id_example" // string | 
-    version := "version_example" // string | 
+	id := "id_example" // string | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OKPluginGenericJSONIngestAPI.ManageContextGetContext(context.Background(), id, version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.ManageContextGetContext``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ManageContextGetContext`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `OKPluginGenericJSONIngestAPI.ManageContextGetContext`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OKPluginGenericJSONIngestAPI.ManageContextGetContext(context.Background(), id, version).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.ManageContextGetContext``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ManageContextGetContext`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OKPluginGenericJSONIngestAPI.ManageContextGetContext`: %v\n", resp)
 }
 ```
 
@@ -163,25 +163,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    id := "id_example" // string | 
-    version := "version_example" // string | 
+	id := "id_example" // string | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OKPluginGenericJSONIngestAPI.ManageContextRemoveContext(context.Background(), id, version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.ManageContextRemoveContext``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ManageContextRemoveContext`: bool
-    fmt.Fprintf(os.Stdout, "Response from `OKPluginGenericJSONIngestAPI.ManageContextRemoveContext`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OKPluginGenericJSONIngestAPI.ManageContextRemoveContext(context.Background(), id, version).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.ManageContextRemoveContext``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ManageContextRemoveContext`: bool
+	fmt.Fprintf(os.Stdout, "Response from `OKPluginGenericJSONIngestAPI.ManageContextRemoveContext`: %v\n", resp)
 }
 ```
 
@@ -234,25 +234,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    version := "version_example" // string | 
-    body := map[string]interface{}{ ... } // map[string]interface{} | 
+	version := "version_example" // string | 
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OKPluginGenericJSONIngestAPI.ManageContextUpsertContext(context.Background(), version).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.ManageContextUpsertContext``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ManageContextUpsertContext`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `OKPluginGenericJSONIngestAPI.ManageContextUpsertContext`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OKPluginGenericJSONIngestAPI.ManageContextUpsertContext(context.Background(), version).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.ManageContextUpsertContext``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ManageContextUpsertContext`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OKPluginGenericJSONIngestAPI.ManageContextUpsertContext`: %v\n", resp)
 }
 ```
 
@@ -304,25 +304,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    readLayerIDs := []string{"Inner_example"} // []string | 
-    writeLayerID := "writeLayerID_example" // string | 
-    version := "version_example" // string | 
-    genericInboundData := *openapiclient.NewGenericInboundData() // GenericInboundData | 
+	readLayerIDs := []string{"Inner_example"} // []string | 
+	writeLayerID := "writeLayerID_example" // string | 
+	version := "version_example" // string | 
+	genericInboundData := *openapiclient.NewGenericInboundData() // GenericInboundData | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OKPluginGenericJSONIngestAPI.PassiveDataIngest(context.Background(), version).ReadLayerIDs(readLayerIDs).WriteLayerID(writeLayerID).GenericInboundData(genericInboundData).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.PassiveDataIngest``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OKPluginGenericJSONIngestAPI.PassiveDataIngest(context.Background(), version).ReadLayerIDs(readLayerIDs).WriteLayerID(writeLayerID).GenericInboundData(genericInboundData).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OKPluginGenericJSONIngestAPI.PassiveDataIngest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

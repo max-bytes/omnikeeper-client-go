@@ -95,7 +95,7 @@ func (o *ODataServiceDocument) GetEntitySetsOk() ([]ODataEntitySetInfo, bool) {
 
 // HasEntitySets returns a boolean if a field has been set.
 func (o *ODataServiceDocument) HasEntitySets() bool {
-	if o != nil && IsNil(o.EntitySets) {
+	if o != nil && !IsNil(o.EntitySets) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *ODataServiceDocument) GetSingletonsOk() ([]ODataSingletonInfo, bool) {
 
 // HasSingletons returns a boolean if a field has been set.
 func (o *ODataServiceDocument) HasSingletons() bool {
-	if o != nil && IsNil(o.Singletons) {
+	if o != nil && !IsNil(o.Singletons) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *ODataServiceDocument) GetFunctionImportsOk() ([]ODataFunctionImportInfo
 
 // HasFunctionImports returns a boolean if a field has been set.
 func (o *ODataServiceDocument) HasFunctionImports() bool {
-	if o != nil && IsNil(o.FunctionImports) {
+	if o != nil && !IsNil(o.FunctionImports) {
 		return true
 	}
 

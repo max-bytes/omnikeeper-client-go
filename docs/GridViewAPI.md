@@ -27,23 +27,23 @@ Adds new context
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    version := "version_example" // string | 
-    addContextRequest := *openapiclient.NewAddContextRequest() // AddContextRequest |  (optional)
+	version := "version_example" // string | 
+	addContextRequest := *openapiclient.NewAddContextRequest() // AddContextRequest |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GridViewAPI.GridViewAddContext(context.Background(), version).AddContextRequest(addContextRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewAddContext``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GridViewAPI.GridViewAddContext(context.Background(), version).AddContextRequest(addContextRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewAddContext``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -95,24 +95,24 @@ Saves grid view row changes and returns change results
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    context := "context_example" // string | 
-    version := "version_example" // string | 
-    changeDataRequest := *openapiclient.NewChangeDataRequest() // ChangeDataRequest |  (optional)
+	context := "context_example" // string | 
+	version := "version_example" // string | 
+	changeDataRequest := *openapiclient.NewChangeDataRequest() // ChangeDataRequest |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GridViewAPI.GridViewChangeData(context.Background(), context, version).ChangeDataRequest(changeDataRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewChangeData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GridViewAPI.GridViewChangeData(context.Background(), context, version).ChangeDataRequest(changeDataRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewChangeData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -166,23 +166,23 @@ Deletes specific context
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    name := "name_example" // string | 
-    version := "version_example" // string | 
+	name := "name_example" // string | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GridViewAPI.GridViewDeleteContext(context.Background(), name, version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewDeleteContext``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GridViewAPI.GridViewDeleteContext(context.Background(), name, version).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewDeleteContext``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -235,24 +235,24 @@ Edits specific context
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    name := "name_example" // string | 
-    version := "version_example" // string | 
-    editContextRequest := *openapiclient.NewEditContextRequest() // EditContextRequest |  (optional)
+	name := "name_example" // string | 
+	version := "version_example" // string | 
+	editContextRequest := *openapiclient.NewEditContextRequest() // EditContextRequest |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GridViewAPI.GridViewEditContext(context.Background(), name, version).EditContextRequest(editContextRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewEditContext``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GridViewAPI.GridViewEditContext(context.Background(), name, version).EditContextRequest(editContextRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewEditContext``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -306,23 +306,23 @@ Returns grid view data for specific context
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    context := "context_example" // string | 
-    version := "version_example" // string | 
+	context := "context_example" // string | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GridViewAPI.GridViewGetData(context.Background(), context, version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewGetData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GridViewAPI.GridViewGetData(context.Background(), context, version).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewGetData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -375,23 +375,23 @@ Returns a single context in full
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    name := "name_example" // string | 
-    version := "version_example" // string | 
+	name := "name_example" // string | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GridViewAPI.GridViewGetGridViewContext(context.Background(), name, version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewGetGridViewContext``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GridViewAPI.GridViewGetGridViewContext(context.Background(), name, version).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewGetGridViewContext``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -444,22 +444,22 @@ Returns a list of contexts for grid view.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    version := "version_example" // string | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GridViewAPI.GridViewGetGridViewContexts(context.Background(), version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewGetGridViewContexts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GridViewAPI.GridViewGetGridViewContexts(context.Background(), version).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewGetGridViewContexts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -510,23 +510,23 @@ Returns grid view schema for specific context
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    context := "context_example" // string | 
-    version := "version_example" // string | 
+	context := "context_example" // string | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GridViewAPI.GridViewGetSchema(context.Background(), context, version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewGetSchema``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GridViewAPI.GridViewGetSchema(context.Background(), context, version).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GridViewAPI.GridViewGetSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

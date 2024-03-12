@@ -63,7 +63,7 @@ func (o *IEdmEntityContainer) GetElementsOk() ([]IEdmEntityContainerElement, boo
 
 // HasElements returns a boolean if a field has been set.
 func (o *IEdmEntityContainer) HasElements() bool {
-	if o != nil && IsNil(o.Elements) {
+	if o != nil && !IsNil(o.Elements) {
 		return true
 	}
 

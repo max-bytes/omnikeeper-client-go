@@ -22,22 +22,22 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    graphQLQuery := *openapiclient.NewGraphQLQuery() // GraphQLQuery |  (optional)
+	graphQLQuery := *openapiclient.NewGraphQLQuery() // GraphQLQuery |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GraphQLAPI.GraphQLDebug(context.Background()).GraphQLQuery(graphQLQuery).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GraphQLAPI.GraphQLDebug``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GraphQLAPI.GraphQLDebug(context.Background()).GraphQLQuery(graphQLQuery).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GraphQLAPI.GraphQLDebug``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -84,24 +84,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    operationName := "operationName_example" // string |  (optional)
-    query := "query_example" // string |  (optional)
-    variables := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} |  (optional)
+	operationName := "operationName_example" // string |  (optional)
+	query := "query_example" // string |  (optional)
+	variables := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GraphQLAPI.GraphQLGet(context.Background()).OperationName(operationName).Query(query).Variables(variables).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GraphQLAPI.GraphQLGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GraphQLAPI.GraphQLGet(context.Background()).OperationName(operationName).Query(query).Variables(variables).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GraphQLAPI.GraphQLGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -150,22 +150,22 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    graphQLQuery := *openapiclient.NewGraphQLQuery() // GraphQLQuery |  (optional)
+	graphQLQuery := *openapiclient.NewGraphQLQuery() // GraphQLQuery |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GraphQLAPI.GraphQLIndex(context.Background()).GraphQLQuery(graphQLQuery).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GraphQLAPI.GraphQLIndex``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GraphQLAPI.GraphQLIndex(context.Background()).GraphQLQuery(graphQLQuery).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GraphQLAPI.GraphQLIndex``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

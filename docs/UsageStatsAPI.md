@@ -20,25 +20,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
+	"context"
+	"fmt"
+	"os"
     "time"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    from := time.Now() // time.Time | 
-    to := time.Now() // time.Time | 
-    version := "version_example" // string | 
+	from := time.Now() // time.Time | 
+	to := time.Now() // time.Time | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsageStatsAPI.UsageStatsFetch(context.Background(), version).From(from).To(to).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsageStatsAPI.UsageStatsFetch``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsageStatsAPI.UsageStatsFetch(context.Background(), version).From(from).To(to).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsageStatsAPI.UsageStatsFetch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

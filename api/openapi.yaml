@@ -1905,7 +1905,10 @@ components:
     GenericInboundCI:
       example:
         noFoundTargetCIHandling: null
-        idMethod: null
+        idMethod:
+          attributes:
+          - attributes
+          - attributes
         attributes:
         - name: name
           value:
@@ -1944,7 +1947,10 @@ components:
       example:
         cis:
         - noFoundTargetCIHandling: null
-          idMethod: null
+          idMethod:
+            attributes:
+            - attributes
+            - attributes
           attributes:
           - name: name
             value:
@@ -1964,7 +1970,10 @@ components:
           sameTempIDHandling: null
           sameTargetCIHandling: null
         - noFoundTargetCIHandling: null
-          idMethod: null
+          idMethod:
+            attributes:
+            - attributes
+            - attributes
           attributes:
           - name: name
             value:
@@ -2368,6 +2377,10 @@ components:
     InboundIDMethodByData:
       allOf:
       - $ref: '#/components/schemas/AbstractInboundIDMethod'
+      example:
+        attributes:
+        - attributes
+        - attributes
       properties:
         attributes:
           items:
@@ -2544,6 +2557,12 @@ components:
       type: object
     ProblemDetails:
       additionalProperties: {}
+      example:
+        instance: instance
+        detail: detail
+        type: type
+        title: title
+        status: 0
       properties:
         type:
           nullable: true

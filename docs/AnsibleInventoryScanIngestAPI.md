@@ -20,25 +20,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    writeLayerID := "writeLayerID_example" // string | 
-    searchLayerIDs := []string{"Inner_example"} // []string | 
-    version := "version_example" // string | 
-    ansibleInventoryScanDTO := *openapiclient.NewAnsibleInventoryScanDTO(map[string]string{"key": "Inner_example"}, map[string]string{"key": "Inner_example"}, map[string]string{"key": "Inner_example"}, map[string]string{"key": "Inner_example"}) // AnsibleInventoryScanDTO | 
+	writeLayerID := "writeLayerID_example" // string | 
+	searchLayerIDs := []string{"Inner_example"} // []string | 
+	version := "version_example" // string | 
+	ansibleInventoryScanDTO := *openapiclient.NewAnsibleInventoryScanDTO(map[string]string{"key": "Inner_example"}, map[string]string{"key": "Inner_example"}, map[string]string{"key": "Inner_example"}, map[string]string{"key": "Inner_example"}) // AnsibleInventoryScanDTO | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AnsibleInventoryScanIngestAPI.AnsibleInventoryScanIngestIngestAnsibleInventoryScan(context.Background(), version).WriteLayerID(writeLayerID).SearchLayerIDs(searchLayerIDs).AnsibleInventoryScanDTO(ansibleInventoryScanDTO).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AnsibleInventoryScanIngestAPI.AnsibleInventoryScanIngestIngestAnsibleInventoryScan``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AnsibleInventoryScanIngestAPI.AnsibleInventoryScanIngestIngestAnsibleInventoryScan(context.Background(), version).WriteLayerID(writeLayerID).SearchLayerIDs(searchLayerIDs).AnsibleInventoryScanDTO(ansibleInventoryScanDTO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AnsibleInventoryScanIngestAPI.AnsibleInventoryScanIngestIngestAnsibleInventoryScan``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

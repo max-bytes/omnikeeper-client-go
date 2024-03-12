@@ -21,26 +21,26 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
+	"context"
+	"fmt"
+	"os"
     "time"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    layerIDs := []string{"Inner_example"} // []string | 
-    from := time.Now() // time.Time | 
-    to := time.Now() // time.Time | 
-    version := "version_example" // string | 
+	layerIDs := []string{"Inner_example"} // []string | 
+	from := time.Now() // time.Time | 
+	to := time.Now() // time.Time | 
+	version := "version_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GraphvizDotAPI.GraphvizDotLayerCentric(context.Background(), version).LayerIDs(layerIDs).From(from).To(to).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GraphvizDotAPI.GraphvizDotLayerCentric``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GraphvizDotAPI.GraphvizDotLayerCentric(context.Background(), version).LayerIDs(layerIDs).From(from).To(to).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GraphvizDotAPI.GraphvizDotLayerCentric``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -94,25 +94,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/max-bytes/omnikeeper-client-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/max-bytes/omnikeeper-client-go"
 )
 
 func main() {
-    layerIDs := []string{"Inner_example"} // []string | 
-    version := "version_example" // string | 
-    traitIDs := []string{"Inner_example"} // []string |  (optional)
-    traitIDsRegex := "traitIDsRegex_example" // string |  (optional)
+	layerIDs := []string{"Inner_example"} // []string | 
+	version := "version_example" // string | 
+	traitIDs := []string{"Inner_example"} // []string |  (optional)
+	traitIDsRegex := "traitIDsRegex_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GraphvizDotAPI.GraphvizDotTraitCentric(context.Background(), version).LayerIDs(layerIDs).TraitIDs(traitIDs).TraitIDsRegex(traitIDsRegex).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GraphvizDotAPI.GraphvizDotTraitCentric``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GraphvizDotAPI.GraphvizDotTraitCentric(context.Background(), version).LayerIDs(layerIDs).TraitIDs(traitIDs).TraitIDsRegex(traitIDsRegex).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GraphvizDotAPI.GraphvizDotTraitCentric``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

@@ -65,7 +65,7 @@ func (o *IEdmModel) GetSchemaElementsOk() ([]IEdmSchemaElement, bool) {
 
 // HasSchemaElements returns a boolean if a field has been set.
 func (o *IEdmModel) HasSchemaElements() bool {
-	if o != nil && IsNil(o.SchemaElements) {
+	if o != nil && !IsNil(o.SchemaElements) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *IEdmModel) GetVocabularyAnnotationsOk() ([]IEdmVocabularyAnnotation, bo
 
 // HasVocabularyAnnotations returns a boolean if a field has been set.
 func (o *IEdmModel) HasVocabularyAnnotations() bool {
-	if o != nil && IsNil(o.VocabularyAnnotations) {
+	if o != nil && !IsNil(o.VocabularyAnnotations) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *IEdmModel) GetReferencedModelsOk() ([]IEdmModel, bool) {
 
 // HasReferencedModels returns a boolean if a field has been set.
 func (o *IEdmModel) HasReferencedModels() bool {
-	if o != nil && IsNil(o.ReferencedModels) {
+	if o != nil && !IsNil(o.ReferencedModels) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *IEdmModel) GetDeclaredNamespacesOk() ([]string, bool) {
 
 // HasDeclaredNamespaces returns a boolean if a field has been set.
 func (o *IEdmModel) HasDeclaredNamespaces() bool {
-	if o != nil && IsNil(o.DeclaredNamespaces) {
+	if o != nil && !IsNil(o.DeclaredNamespaces) {
 		return true
 	}
 

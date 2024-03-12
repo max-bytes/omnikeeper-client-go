@@ -96,7 +96,7 @@ func (o *GridViewColumn) GetSourceAttributePathOk() ([]string, bool) {
 
 // HasSourceAttributePath returns a boolean if a field has been set.
 func (o *GridViewColumn) HasSourceAttributePath() bool {
-	if o != nil && IsNil(o.SourceAttributePath) {
+	if o != nil && !IsNil(o.SourceAttributePath) {
 		return true
 	}
 
